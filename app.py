@@ -169,6 +169,9 @@ def bot_bubble(res: dict, debug: bool):
                 st.markdown("".join(cards), unsafe_allow_html=True)
         meta = f'{res["pipeline"]} · {res["sec"]}s' + ("" if cited or not hits else " · 인용한 출처 없음")
         st.markdown(f'<div class="meta">{meta}</div>', unsafe_allow_html=True)
+        if debug and res.get("hyde"):
+            with st.expander("디버그 · HyDE가 지어낸 가상 문서 (이걸 임베딩해서 검색함)"):
+                st.text(res["hyde"])
         if debug and hits:
             with st.expander(f"디버그 · 검색 결과 {len(hits)}개 (모델에 전부 삽입됨)"):
                 for i, h in enumerate(hits, 1):

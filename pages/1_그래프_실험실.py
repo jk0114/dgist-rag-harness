@@ -6,6 +6,10 @@
      (graph-rag가 실제로 쓰는 step2_retrieval.graph_rag.graph_retrieve()를 그대로 호출한다 — dense
       top-k만 보여주면 "그래프 덕분에 풀 밖에서 새로 끌려온 청크"가 아예 안 보이는 문제가
       있어서, 1·2번 모두 그래프 재점수화까지 끝난 결과를 그대로 쓴다)
+
+"HyDE 사용" 체크박스를 켜면 질문을 그대로 임베딩하는 대신, step2_retrieval/hyde.py가 LLM으로
+지어낸 가상의 강의계획서를 임베딩해서 검색한다(vanilla_pool/graph_rescore 둘 다). 즉 vanilla와
+graph-rag 각각을 HyDE 유무로 비교해볼 수 있다 — step3_eval.run_eval의 4-way 비교와 같은 축.
 """
 import html as html_mod
 import streamlit as st
@@ -14,6 +18,7 @@ from pyvis.network import Network
 
 from step2_retrieval.core import retrieve
 from step2_retrieval import graph_rag as gr
+from step2_retrieval import hyde
 
 html_escape = html_mod.escape
 
@@ -22,8 +27,14 @@ st.title("🔬 RAG 실험실")
 st.caption("질문 → vanilla/graph-rag 유사도 비교, 그래프 시각화까지 한 번에 확인합니다.")
 
 query = st.text_input("질문", value="저는 인공지능에 관심이 많은데 어떤 과목을 들으면 좋을까요?")
-top_k = st.slider("볼 후보 개수", 5, 40, 15)
+c1, c2 = st.columns([3, 1])
+with c1:
+    top_k = st.slider("볼 후보 개수", 5, 40, 15)
+with c2:
+    use_hyde = st.checkbox("HyDE 사용", value=False,
+                            help="질문 대신 LLM이 지어낸 가상의 강의계획서를 임베딩해서 검색")
 run = st.button("검색 실행", type="primary")
+label_suffix = "+hyde" if use_hyde else ""
 
 
 def _score_to_color(score: float, lo: float = 0.3, hi: float = 0.75) -> str:
@@ -48,9 +59,25 @@ if run and query.strip():
 active_query = st.session_state.get("exp_query", "")
 
 if active_query:
+    # HyDE 텍스트는 (질문, 사용여부)가 안 바뀌면 재생성하지 않는다 — top_k 슬라이더만 움직여도
+    # 이 블록 전체가 다시 실행되는데, 그때마다 LLM을 다시 부르면 느리고(HyDE는 생성에 몇 초 걸림)
+    # 결과도 temperature=0이라 어차피 똑같다.
+    hyde_text = None
+    if use_hyde:
+        cache_key = active_query
+        if st.session_state.get("exp_hyde_key") != cache_key:
+            with st.spinner("HyDE 가상 문서 생성 중..."):
+                st.session_state["exp_hyde_text"] = hyde.generate(active_query)
+                st.session_state["exp_hyde_key"] = cache_key
+        hyde_text = st.session_state["exp_hyde_text"]
+        with st.expander("HyDE가 지어낸 가상 문서 (이걸 임베딩해서 검색함)", expanded=False):
+            st.text(hyde_text)
+
+    embed_text = hyde_text or active_query
+
     with st.spinner("검색 중..."):
         # vanilla 순위는 별도로 진짜 top_k dense 검색을 한다 (top_k가 그래프 쪽 POOL_K보다 클 수도 있어서).
-        vanilla_pool = retrieve(active_query, top_k)
+        vanilla_pool = retrieve(embed_text, top_k)
         vanilla_sorted = sorted(vanilla_pool, key=lambda h: h["score"], reverse=True)
         vanilla_top = vanilla_sorted[:top_k]
         vanilla_ids = {h["id"] for h in vanilla_top}
@@ -59,7 +86,7 @@ if active_query:
         # dense top-k 밖에서 그래프로 새로 끌려온 청크(예: 기계학습개론)의 vanilla 점수도 여기 이미
         # 들어있고(프런티어 청크는 직접 코사인 유사도를 계산해서 채워둠), top-k 밖으로 밀린 vanilla
         # 후보의 graph_score도 여기서 같이 계산되므로 "top-k 밖이라 점수가 없다"는 경우가 안 생긴다.
-        all_scored = gr.graph_rescore(active_query)
+        all_scored = gr.graph_rescore(active_query, embed_text=hyde_text)
         info_by_id = {h["id"]: h for h in all_scored}
 
         # vanilla_top 중에 그래프 쪽 후보 풀에도 안 잡힌 애(아주 드묾)가 있으면, 최소한 자기 자신
@@ -75,7 +102,7 @@ if active_query:
         graph_rank = {h["id"]: i + 1 for i, h in enumerate(graph_hits)}
 
     # ==== 1) vanilla vs graph-rag 유사도 비교 ====
-    st.subheader("1. Query ↔ Chunk 유사도 — vanilla vs graph-rag")
+    st.subheader(f"1. Query ↔ Chunk 유사도 — vanilla{label_suffix} vs graph-rag{label_suffix}")
     union_ids = list(vanilla_ids | graph_ids)
     union_ids.sort(key=lambda cid: graph_rank.get(cid, 999))
 
@@ -90,10 +117,10 @@ if active_query:
 
     fig = go.Figure()
     fig.add_trace(go.Bar(x=vanilla_scores[::-1], y=labels[::-1], orientation="h",
-                          name="vanilla (dense score)", marker_color="#B9CBD8",
+                          name=f"vanilla{label_suffix} (dense score)", marker_color="#B9CBD8",
                           hovertemplate="%{y}<br>vanilla 유사도 %{x:.3f}<extra></extra>"))
     fig.add_trace(go.Bar(x=graph_scores[::-1], y=labels[::-1], orientation="h",
-                          name="graph-rag 점수", marker_color="#174E89",
+                          name=f"graph-rag{label_suffix} 점수", marker_color="#174E89",
                           hovertemplate="%{y}<br>graph 점수 %{x:.3f}<extra></extra>"))
     fig.update_layout(barmode="group", height=max(360, 30 * len(union_ids)),
                        margin=dict(l=10, r=10, t=10, b=10), xaxis_title="유사도 / 점수",
@@ -123,7 +150,7 @@ if active_query:
 
     # ==== 2) 그래프(구조적 인접 / 키워드 공유) 시각화 ====
     st.divider()
-    st.subheader("2. 그래프 — graph-rag가 실제로 후보로 삼은 청크들 사이의 edge")
+    st.subheader(f"2. 그래프 — graph-rag{label_suffix}가 실제로 후보로 삼은 청크들 사이의 edge")
     st.caption("dense top-k만이 아니라, 그래프로 새로 끌려온 청크(vanilla top-k 밖이었던 것)도 노드로 포함합니다 "
                "— 점선 테두리 + ✨ 표시가 그 청크입니다.")
 

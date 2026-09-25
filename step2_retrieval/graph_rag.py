@@ -1,5 +1,6 @@
 """Graph-RAG: GNN-Ret(arXiv 2406.06572) 논문 3.1절을 그대로 따라 만든 "청크들의 그래프(GoPs)"
-기반 검색. (이 프로젝트의 세 번째, 마지막 파이프라인 — no-rag / vanilla / graph-rag 중 하나.)
+기반 검색. graph-rag+hyde도 여기서 등록한다(HyDE 생성 자체는 hyde.py, 그래프 재점수화는 아래
+graph_rescore()의 embed_text 인자로 HyDE 결과를 흘려보내기만 하면 됨).
 
 edge는 논문과 동일하게 두 종류:
   1) 구조적 인접(structure-related) — 같은 문서(PDF) 안에서 순서상 바로 옆에 있는 청크끼리 연결
@@ -21,6 +22,7 @@ from collections import defaultdict
 
 import config as C
 from .core import chat, collection, embedder, retrieve, sanitize
+from .hyde import generate as hyde_generate
 from .pipelines import register, SYSTEM_RAG, RULE_TAIL, _ctx
 
 ALPHA = 0.5
@@ -157,3 +159,14 @@ def graph_rag(question, history, params):
     msgs = [{"role": "system", "content": SYSTEM_RAG}, *history,
             {"role": "user", "content": f"[근거]\n{_ctx(hits)}\n\n[질문]\n{question}{RULE_TAIL}"}]
     return {"answer": chat(msgs), "retrieved": hits, "prompt": msgs}
+
+
+@register("graph-rag+hyde", "graph-rag + HyDE: 질문 대신 LLM이 지어낸 가상의 강의계획서를 임베딩해서 "
+                            "검색 풀을 만들고, 거기에 그래프 재점수화를 적용 (질문마다 LLM 호출이 하나 더 붙음)")
+def graph_rag_hyde(question, history, params):
+    k = int(params.get("top_k", C.TOP_K))
+    hyde_text = hyde_generate(question)
+    hits = graph_rescore(question, embed_text=hyde_text)[:k]
+    msgs = [{"role": "system", "content": SYSTEM_RAG}, *history,
+            {"role": "user", "content": f"[근거]\n{_ctx(hits)}\n\n[질문]\n{question}{RULE_TAIL}"}]
+    return {"answer": chat(msgs), "retrieved": hits, "prompt": msgs, "hyde": hyde_text}

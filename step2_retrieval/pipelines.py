@@ -1,15 +1,21 @@
 """RAG 파이프라인 레지스트리.
 
-세 가지만 둔다 — no-rag(대조군), vanilla(순정 RAG), graph-rag(retrieval/graph_rag.py):
+no-rag(대조군), vanilla(순정 RAG), vanilla+hyde, graph-rag(retrieval/graph_rag.py),
+graph-rag+hyde 다섯 가지를 둔다. +hyde 버전은 질문을 그대로 임베딩하는 대신 hyde.py가
+LLM으로 지어낸 가상의 강의계획서를 임베딩해서 검색한다(step3_eval 평가에서 vanilla/graph-rag
+둘 다에 상당한 개선을 보여서 실제 앱에도 추가함) — 응답 생성에 쓰는 질문 자체는 그대로다,
+검색 단계만 바뀐다.
 새 변형을 추가하려면 함수를 하나 만들고 @register("이름")을 붙이면 UI 드롭다운과 CLI에 자동으로 뜬다.
 시그니처:  fn(question: str, history: list[dict], params: dict) -> dict
 반환 dict 키:
   answer    : 최종 답변 문자열
   retrieved : [{text, score, source, page, title}]  (검색 안 하면 [])
   prompt    : 실제로 모델에 보낸 messages (디버그/발표용)
+  hyde      : HyDE가 생성한 가상 문서 (HyDE 안 쓰는 파이프라인은 이 키 자체가 없음)
 history 는 이전 대화 [{"role","content"}] 목록 (retrieved 등은 제외된 순수 대화).
 """
 from .core import retrieve, chat
+from .hyde import generate as hyde_generate
 import config as C
 
 PIPELINES: dict[str, dict] = {}
@@ -61,6 +67,17 @@ def vanilla(question, history, params):
     msgs = [{"role": "system", "content": SYSTEM_RAG}, *history,
             {"role": "user", "content": f"[근거]\n{_ctx(hits)}\n\n[질문]\n{question}{RULE_TAIL}"}]
     return {"answer": chat(msgs), "retrieved": hits, "prompt": msgs}
+
+
+@register("vanilla+hyde", "vanilla + HyDE: 질문 대신 LLM이 지어낸 가상의 강의계획서를 임베딩해서 검색"
+                          "(질문마다 LLM 호출이 하나 더 붙어서 vanilla보다 느림)")
+def vanilla_hyde(question, history, params):
+    k = int(params.get("top_k", C.TOP_K))
+    hyde_text = hyde_generate(question)
+    hits = retrieve(hyde_text, k)
+    msgs = [{"role": "system", "content": SYSTEM_RAG}, *history,
+            {"role": "user", "content": f"[근거]\n{_ctx(hits)}\n\n[질문]\n{question}{RULE_TAIL}"}]
+    return {"answer": chat(msgs), "retrieved": hits, "prompt": msgs, "hyde": hyde_text}
 
 
 # ---- 이후 변형은 여기 아래에 추가 ----
