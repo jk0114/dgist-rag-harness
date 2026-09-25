@@ -1,22 +1,22 @@
 """실험용 시각화 페이지 (Streamlit 멀티페이지 — 사이드바에 "1 그래프 실험실"로 자동으로 뜸).
 
 질문 하나를 넣으면:
-  1) vanilla(dense만) vs graph-rag 유사도를 나란히 비교하고, 점수가 얼마나 바뀌었는지 표로 보여준다
-  2) 그 후보들 사이의 그래프(구조적 인접 / 키워드 공유)를 노드-엣지로 보여준다
-     (graph-rag가 실제로 쓰는 step2_retrieval.graph_rag.graph_retrieve()를 그대로 호출한다 — dense
-      top-k만 보여주면 "그래프 덕분에 풀 밖에서 새로 끌려온 청크"가 아예 안 보이는 문제가
-      있어서, 1·2번 모두 그래프 재점수화까지 끝난 결과를 그대로 쓴다)
+  1) vanilla / graph-rag / vanilla+hyde / graph-rag+hyde 4개 파이프라인의 Query-Chunk 유사도를
+     한 화면에서 비교한다 (막대그래프 + 표)
+  2) 그 후보들 사이의 그래프(구조적 인접 / 키워드 공유)를 노드-엣지로 보여준다 (HyDE 적용 전,
+     즉 순정 graph-rag 풀 기준 — 구조/키워드 edge 자체는 HyDE로 바뀌는 게 아니라 "어떤 청크가
+     후보로 뽑혔는지"만 바뀌므로, 그래프 구조를 보는 이 파트는 하나의 기준으로 고정해둔다)
 
-"HyDE 사용" 체크박스를 켜면 질문을 그대로 임베딩하는 대신, step2_retrieval/hyde.py가 LLM으로
-지어낸 가상의 강의계획서를 임베딩해서 검색한다(vanilla_pool/graph_rescore 둘 다). 즉 vanilla와
-graph-rag 각각을 HyDE 유무로 비교해볼 수 있다 — step3_eval.run_eval의 4-way 비교와 같은 축.
+4개 숫자를 얻는 방법: step2_retrieval.graph_rag.graph_rescore()를 (a) 원래 질문, (b) HyDE가
+지어낸 가상 문서로 각각 한 번씩만 돌린다. 결과 dict마다 이미 "score"(dense 유사도, = vanilla
+점수)와 "graph_score"(그래프 재점수화 후, = graph-rag 점수)가 같이 들어있어서, 호출 2번으로
+vanilla/graph-rag/vanilla+hyde/graph-rag+hyde 4개를 전부 얻는다(따로 4번 검색할 필요 없음).
 """
 import html as html_mod
 import streamlit as st
 import plotly.graph_objects as go
 from pyvis.network import Network
 
-from step2_retrieval.core import retrieve
 from step2_retrieval import graph_rag as gr
 from step2_retrieval import hyde
 
@@ -24,17 +24,18 @@ html_escape = html_mod.escape
 
 st.set_page_config(page_title="RAG 실험실", page_icon="🔬", layout="wide")
 st.title("🔬 RAG 실험실")
-st.caption("질문 → vanilla/graph-rag 유사도 비교, 그래프 시각화까지 한 번에 확인합니다.")
+st.caption("질문 → vanilla/graph-rag/+hyde 4가지 유사도 비교, 그래프 시각화까지 한 번에 확인합니다.")
 
 query = st.text_input("질문", value="저는 인공지능에 관심이 많은데 어떤 과목을 들으면 좋을까요?")
-c1, c2 = st.columns([3, 1])
-with c1:
-    top_k = st.slider("볼 후보 개수", 5, 40, 15)
-with c2:
-    use_hyde = st.checkbox("HyDE 사용", value=False,
-                            help="질문 대신 LLM이 지어낸 가상의 강의계획서를 임베딩해서 검색")
+top_k = st.slider("볼 후보 개수", 5, 40, 15)
 run = st.button("검색 실행", type="primary")
-label_suffix = "+hyde" if use_hyde else ""
+
+VARIANTS = [
+    ("vanilla", "score", "plain", "#B9CBD8"),
+    ("graph-rag", "graph_score", "plain", "#174E89"),
+    ("vanilla+hyde", "score", "hyde", "#F5C6A5"),
+    ("graph-rag+hyde", "graph_score", "hyde", "#C0392B"),
+]
 
 
 def _score_to_color(score: float, lo: float = 0.3, hi: float = 0.75) -> str:
@@ -53,107 +54,107 @@ def _name(h: dict) -> str:
 if run and query.strip():
     # 버튼 클릭 시점의 질문만 session_state에 고정한다. 아래 슬라이더를 움직여서 생기는
     # 재실행에서는 run이 다시 False가 되지만, 고정해둔 질문이 있으면 이 블록이 계속 돌아야
-    # top_k 같은 위젯이 실제로 반응한다 (안 그러면 버튼을 다시 눌러야만 반영됨).
+    # top_k 위젯이 실제로 반응한다 (안 그러면 버튼을 다시 눌러야만 반영됨).
     st.session_state["exp_query"] = query.strip()
 
 active_query = st.session_state.get("exp_query", "")
 
 if active_query:
-    # HyDE 텍스트는 (질문, 사용여부)가 안 바뀌면 재생성하지 않는다 — top_k 슬라이더만 움직여도
-    # 이 블록 전체가 다시 실행되는데, 그때마다 LLM을 다시 부르면 느리고(HyDE는 생성에 몇 초 걸림)
+    # HyDE 텍스트는 질문이 안 바뀌면 재생성하지 않는다 — top_k 슬라이더만 움직여도 이 블록
+    # 전체가 다시 실행되는데, 그때마다 LLM을 다시 부르면 느리고(HyDE는 생성에 몇 초 걸림)
     # 결과도 temperature=0이라 어차피 똑같다.
-    hyde_text = None
-    if use_hyde:
-        cache_key = active_query
-        if st.session_state.get("exp_hyde_key") != cache_key:
-            with st.spinner("HyDE 가상 문서 생성 중..."):
-                st.session_state["exp_hyde_text"] = hyde.generate(active_query)
-                st.session_state["exp_hyde_key"] = cache_key
-        hyde_text = st.session_state["exp_hyde_text"]
-        with st.expander("HyDE가 지어낸 가상 문서 (이걸 임베딩해서 검색함)", expanded=False):
-            st.text(hyde_text)
+    if st.session_state.get("exp_hyde_key") != active_query:
+        with st.spinner("HyDE 가상 문서 생성 중..."):
+            st.session_state["exp_hyde_text"] = hyde.generate(active_query)
+            st.session_state["exp_hyde_key"] = active_query
+    hyde_text = st.session_state["exp_hyde_text"]
+    with st.expander("HyDE가 지어낸 가상 문서 (vanilla+hyde/graph-rag+hyde가 이걸 임베딩해서 검색함)"):
+        st.text(hyde_text)
 
-    embed_text = hyde_text or active_query
+    with st.spinner("검색 중... (원래 질문 1번 + HyDE 문서 1번, 그래프 재점수화까지)"):
+        # graph_rescore() 결과 하나에 score(=vanilla류)와 graph_score(=graph-rag류)가 같이
+        # 들어있어서, 이 호출 2번으로 4개 파이프라인 점수를 전부 얻는다.
+        plain_all = gr.graph_rescore(active_query, embed_text=None)
+        hyde_all = gr.graph_rescore(active_query, embed_text=hyde_text)
+        plain_by_id = {h["id"]: h for h in plain_all}
+        hyde_by_id = {h["id"]: h for h in hyde_all}
+        meta_by_id = {**plain_by_id, **hyde_by_id}  # source/page/title/text는 둘 다 동일, 점수만 다름
 
-    with st.spinner("검색 중..."):
-        # vanilla 순위는 별도로 진짜 top_k dense 검색을 한다 (top_k가 그래프 쪽 POOL_K보다 클 수도 있어서).
-        vanilla_pool = retrieve(embed_text, top_k)
-        vanilla_sorted = sorted(vanilla_pool, key=lambda h: h["score"], reverse=True)
-        vanilla_top = vanilla_sorted[:top_k]
-        vanilla_ids = {h["id"] for h in vanilla_top}
+        pool_by_source = {"plain": plain_by_id, "hyde": hyde_by_id}
 
-        # graph_rescore(): 실제 graph-rag 파이프라인이 쓰는 재점수화를 '자르지 않고' 전부 돌려준다.
-        # dense top-k 밖에서 그래프로 새로 끌려온 청크(예: 기계학습개론)의 vanilla 점수도 여기 이미
-        # 들어있고(프런티어 청크는 직접 코사인 유사도를 계산해서 채워둠), top-k 밖으로 밀린 vanilla
-        # 후보의 graph_score도 여기서 같이 계산되므로 "top-k 밖이라 점수가 없다"는 경우가 안 생긴다.
-        all_scored = gr.graph_rescore(active_query, embed_text=hyde_text)
-        info_by_id = {h["id"]: h for h in all_scored}
+        def topk_ids(score_key: str, source: str) -> list[str]:
+            pool = pool_by_source[source]
+            ranked = sorted(pool.values(), key=lambda h: h[score_key], reverse=True)
+            return [h["id"] for h in ranked[:top_k]]
 
-        # vanilla_top 중에 그래프 쪽 후보 풀에도 안 잡힌 애(아주 드묾)가 있으면, 최소한 자기 자신
-        # 점수로라도 graph_score를 채워준다 (이 풀 안에서는 그래프 이웃 정보를 아예 못 찾았다는 뜻).
-        for h in vanilla_top:
-            if h["id"] not in info_by_id:
-                h["graph_score"] = h["score"]
-                info_by_id[h["id"]] = h
+        variant_topk = {name: set(topk_ids(score_key, source)) for name, score_key, source, _ in VARIANTS}
 
-        graph_sorted = sorted(info_by_id.values(), key=lambda h: h["graph_score"], reverse=True)
-        graph_hits = graph_sorted[:top_k]
-        graph_ids = {h["id"] for h in graph_hits}
-        graph_rank = {h["id"]: i + 1 for i, h in enumerate(graph_hits)}
+    # ==== 1) 4개 파이프라인 Query-Chunk 유사도 비교 ====
+    st.subheader("1. Query ↔ Chunk 유사도 — vanilla / graph-rag / vanilla+hyde / graph-rag+hyde")
+    st.caption("4개 중 하나라도 top-k에 뽑은 청크를 전부 모아, 각 파이프라인이 그 청크에 준 점수를 나란히 보여줍니다. "
+               "빈 칸(—)은 그 파이프라인의 검색 풀에 아예 없었던 청크입니다.")
 
-    # ==== 1) vanilla vs graph-rag 유사도 비교 ====
-    st.subheader(f"1. Query ↔ Chunk 유사도 — vanilla{label_suffix} vs graph-rag{label_suffix}")
-    union_ids = list(vanilla_ids | graph_ids)
-    union_ids.sort(key=lambda cid: graph_rank.get(cid, 999))
+    union_ids = set()
+    for ids in variant_topk.values():
+        union_ids |= ids
+
+    def _score_of(cid: str, score_key: str, source: str):
+        h = pool_by_source[source].get(cid)
+        return h[score_key] if h else None
+
+    def _best_score(cid: str) -> float:
+        vals = [v for _, score_key, source, _ in VARIANTS if (v := _score_of(cid, score_key, source)) is not None]
+        return max(vals) if vals else 0.0
+
+    union_ids = sorted(union_ids, key=_best_score, reverse=True)
 
     def _label(cid):
-        h = info_by_id[cid]
+        h = meta_by_id[cid]
         return f"{(h.get('title') or h['source'])[:24]} (p.{h['page']})"
 
     labels = [_label(cid) for cid in union_ids]
-    # 이제 info_by_id 전원이 score/graph_score를 다 갖고 있어서, top-k 밖이라고 값이 비는 경우가 없다.
-    vanilla_scores = [info_by_id[cid]["score"] for cid in union_ids]
-    graph_scores = [info_by_id[cid]["graph_score"] for cid in union_ids]
 
     fig = go.Figure()
-    fig.add_trace(go.Bar(x=vanilla_scores[::-1], y=labels[::-1], orientation="h",
-                          name=f"vanilla{label_suffix} (dense score)", marker_color="#B9CBD8",
-                          hovertemplate="%{y}<br>vanilla 유사도 %{x:.3f}<extra></extra>"))
-    fig.add_trace(go.Bar(x=graph_scores[::-1], y=labels[::-1], orientation="h",
-                          name=f"graph-rag{label_suffix} 점수", marker_color="#174E89",
-                          hovertemplate="%{y}<br>graph 점수 %{x:.3f}<extra></extra>"))
-    fig.update_layout(barmode="group", height=max(360, 30 * len(union_ids)),
+    for name, score_key, source, color in VARIANTS:
+        scores = [_score_of(cid, score_key, source) for cid in union_ids]
+        fig.add_trace(go.Bar(x=scores[::-1], y=labels[::-1], orientation="h",
+                              name=name, marker_color=color,
+                              hovertemplate=f"%{{y}}<br>{name} %{{x:.3f}}<extra></extra>"))
+    fig.update_layout(barmode="group", height=max(420, 30 * len(union_ids)),
                        margin=dict(l=10, r=10, t=10, b=10), xaxis_title="유사도 / 점수",
                        xaxis_range=[0, 1], legend=dict(orientation="h", yanchor="bottom", y=1.02))
     st.plotly_chart(fig, use_container_width=True)
 
-    st.markdown("**점수 변화표** (vanilla top-k 안이었는지/그래프 top-k 안인지도 같이 표시)")
-    delta_rows = []
+    st.markdown("**점수표** (마지막 열은 graph-rag+hyde가 vanilla 대비 얼마나 바뀌었는지)")
+    rows = []
     for cid in union_ids:
-        h = info_by_id[cid]
-        vs, gs = h["score"], h["graph_score"]
-        tag = "🆕 신규 진입" if cid not in vanilla_ids else ("❌ 이탈" if cid not in graph_ids else "✅ 유지")
-        delta_rows.append({
-            "상태": tag,
-            "청크": _name(h),
-            "vanilla 점수": round(vs, 3),
-            "graph 점수": round(gs, 3),
-            "변화(Δ)": round(gs - vs, 3),
-        })
-    st.dataframe(delta_rows, use_container_width=True, hide_index=True)
+        h = meta_by_id[cid]
+        vals = {name: _score_of(cid, score_key, source) for name, score_key, source, _ in VARIANTS}
+        row = {"청크": _name(h)}
+        for name, _, _, _ in VARIANTS:
+            v = vals[name]
+            row[name] = round(v, 3) if v is not None else "—"
+        v0, v3 = vals["vanilla"], vals["graph-rag+hyde"]
+        row["Δ(graph+hyde-vanilla)"] = round(v3 - v0, 3) if v0 is not None and v3 is not None else "—"
+        rows.append(row)
+    st.dataframe(rows, use_container_width=True, hide_index=True)
 
     with st.expander("본문 미리보기"):
         for cid in union_ids:
-            h = info_by_id[cid]
-            st.markdown(f"**{h['score']:.3f}** — `{h['source']}` p.{h['page']} · {h['title']}")
+            h = meta_by_id[cid]
+            st.markdown(f"**{_best_score(cid):.3f}** — `{h['source']}` p.{h['page']} · {h['title']}")
             st.caption(h["text"][:200].replace("\n", " ") + "…")
 
     # ==== 2) 그래프(구조적 인접 / 키워드 공유) 시각화 ====
     st.divider()
-    st.subheader(f"2. 그래프 — graph-rag{label_suffix}가 실제로 후보로 삼은 청크들 사이의 edge")
-    st.caption("dense top-k만이 아니라, 그래프로 새로 끌려온 청크(vanilla top-k 밖이었던 것)도 노드로 포함합니다 "
+    st.subheader("2. 그래프 — graph-rag가 실제로 후보로 삼은 청크들 사이의 edge")
+    st.caption("HyDE 적용 전(순정 질문) 기준의 graph-rag 후보로 고정해서 보여줍니다 — 구조/키워드 edge 자체는 "
+               "HyDE로 바뀌지 않고 '어떤 청크가 후보인지'만 바뀌기 때문입니다. "
+               "dense top-k만이 아니라, 그래프로 새로 끌려온 청크(vanilla top-k 밖이었던 것)도 노드로 포함합니다 "
                "— 점선 테두리 + ✨ 표시가 그 청크입니다.")
 
+    vanilla_ids = variant_topk["vanilla"]
+    graph_ids = variant_topk["graph-rag"]
     node_ids = graph_ids | vanilla_ids  # graph-rag 후보 + 비교용 vanilla 후보를 합쳐서 보여준다
     graph_obj = gr.get_graph()
 
@@ -185,7 +186,7 @@ if active_query:
     net.barnes_hut()
 
     for cid in node_ids:
-        h = info_by_id[cid]
+        h = plain_by_id[cid]
         is_frontier = cid not in vanilla_ids  # dense top-k 밖이었는데 그래프 덕분에 들어온 노드
         title_text = (h.get("title") or h["source"]).strip()
         badge = "✨ " if is_frontier else ""
@@ -205,14 +206,14 @@ if active_query:
     # 점수가 어떻게 바뀌었는지"를 노드 라벨(vanilla → graph)과 같이 보고 판단할 수 있다.
     for pair in struct_pairs:
         a, b = tuple(pair)
-        sa, sb = info_by_id[a]["score"], info_by_id[b]["score"]
+        sa, sb = plain_by_id[a]["score"], plain_by_id[b]["score"]
         net.add_edge(a, b, color="#7A8B99", width=2,
                      label=f"vanilla {sa:.2f} / {sb:.2f}",
                      title=f"[구조적 인접] 같은 문서(과목) 안 바로 옆 페이지<br>vanilla 유사도(그래프 적용 전) {sa:.3f} / {sb:.3f}")
 
     for pair, kws in kw_pairs.items():
         a, b = tuple(pair)
-        sa, sb = info_by_id[a]["score"], info_by_id[b]["score"]
+        sa, sb = plain_by_id[a]["score"], plain_by_id[b]["score"]
         kw_text = ", ".join(sorted(kws))
         net.add_edge(a, b, color="#E67E22", width=1, dashes=True,
                      label=f"vanilla {sa:.2f} / {sb:.2f}",
