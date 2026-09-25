@@ -7,10 +7,17 @@ GT(정답)는 extract_course_tree.py가 만든 step3_eval/data/course_tree_gt.js
 
 각 파이프라인의 retrieve()/graph_rescore()가 돌려주는 "청크 랭킹"을, source 파일명에서
 과목명을 뽑아 "과목 랭킹"으로 바꾼다(같은 과목의 여러 청크는 제일 높은 순위 것만 남기고
-중복 제거). 그 top-K 과목 랭킹을 정답 집합과 비교해 Precision/Recall/MRR/nDCG를 계산한다.
-계산식은 metrics() 함수 그대로가 정의다 — 표준 IR 지표(이진 관련성, k 잘라서 평가).
+중복 제거). 그 과목 랭킹을 정답 집합과 비교해 Precision/Recall/MRR/nDCG(top-K 고정)와
+MAP(전체 랭킹, K 무관)을 계산한다. 계산식은 metrics()/average_precision() 그대로가 정의다.
 
-실행:  python -m step3_eval.run_eval [K]   (K 기본값 10)
+Precision@K·Recall@K는 질의마다 정답 개수가 다르면(이 데이터셋은 3~33개로 편차가 큼)
+질의 간 비교가 공정하지 않다 — 정답 5개인 질의는 Precision@10이 구조적으로 0.5를 못
+넘고, 정답 30개인 질의는 Recall@10이 구조적으로 0.33을 못 넘는다. nDCG@K는 IDCG를
+min(|정답|,K)로 정규화해서 이미 이 문제에서 자유롭고, MAP은 랭킹 전체를 보고 정답을
+찾을 때마다의 precision을 평균 내므로 K 자체가 필요 없다 — 그래서 이 두 지표가 질의
+간 공정 비교에 더 적합하다. Precision/Recall@K는 참고용으로 남겨둔다.
+
+실행:  python -m step3_eval.run_eval [K]   (K 기본값 10, Precision/Recall/nDCG@K 계산용. MAP은 K와 무관)
 출력:  step3_eval/data/queries.json          사람이 볼 수 있는 질의+정답 목록 (채점과 별개로 항상 갱신)
        step3_eval/data/results/latest.json   질의별 상세 결과 + 콘솔에 파이프라인별 macro-average 비교표
 """
@@ -58,7 +65,10 @@ def build_queries() -> list[dict]:
     return queries
 
 
-def hits_to_courses(hits: list[dict], score_key: str, k: int) -> list[str]:
+def hits_to_courses(hits: list[dict], score_key: str) -> list[str]:
+    """자르지 않은 전체 과목 랭킹(중복 과목 제거, 점수 내림차순). metrics()가 K로 자르고,
+    average_precision()은 이 전체를 그대로 쓴다 — 그래야 같은 한 번의 검색 결과로 두 종류의
+    지표를 다 낼 수 있다(K별로 다시 검색할 필요 없음)."""
     ordered = sorted(hits, key=lambda h: h[score_key], reverse=True)
     seen, out = set(), []
     for h in ordered:
@@ -70,21 +80,19 @@ def hits_to_courses(hits: list[dict], score_key: str, k: int) -> list[str]:
             continue
         seen.add(name)
         out.append(name)
-        if len(out) >= k:
-            break
     return out
 
 
-def run_pipeline(name: str, query: str, k: int) -> list[str]:
+def run_pipeline(name: str, query: str) -> list[str]:
     if name == "vanilla":
-        return hits_to_courses(retrieve(query, POOL), "score", k)
+        return hits_to_courses(retrieve(query, POOL), "score")
     if name == "graph-rag":
-        return hits_to_courses(graph_rescore(query), "graph_score", k)
+        return hits_to_courses(graph_rescore(query), "graph_score")
     raise ValueError(name)
 
 
 def metrics(retrieved: list[str], relevant: set[str], k: int) -> dict:
-    """표준 이진-관련성 IR 지표. retrieved/relevant는 과목명 문자열(랭킹은 retrieved의 순서)."""
+    """표준 이진-관련성 IR 지표(top-K 고정). retrieved/relevant는 과목명 문자열."""
     topk = retrieved[:k]
     hit_flags = [1 if c in relevant else 0 for c in topk]
     n_hit = sum(hit_flags)
@@ -101,6 +109,22 @@ def metrics(retrieved: list[str], relevant: set[str], k: int) -> dict:
     return {"precision": precision, "recall": recall, "mrr": rr, "ndcg": ndcg, "n_hit": n_hit}
 
 
+def average_precision(retrieved: list[str], relevant: set[str]) -> float:
+    """AP: 랭킹 전체(자르지 않음)를 보고, 정답을 찾을 때마다 그 순간까지의 precision을 기록해
+    평균낸다. K도 유사도 임계값도 필요 없이 질의마다 정답 개수에 자동으로 맞춰지므로(정답 5개
+    질의와 30개 질의를 같은 잣대로 비교 가능), Precision/Recall@K가 안고 있는 "질의별 정답
+    개수 편차" 문제에서 자유롭다. 찾은 정답 수가 아니라 전체 정답 개수(len(relevant))로
+    나누는 게 표준 정의 — 끝까지 못 찾은 정답은 자동으로 0점 취급된다."""
+    if not relevant:
+        return 0.0
+    hits, total = 0, 0.0
+    for i, c in enumerate(retrieved, 1):
+        if c in relevant:
+            hits += 1
+            total += hits / i
+    return total / len(relevant)
+
+
 def main():
     k = int(sys.argv[1]) if len(sys.argv) > 1 else 10
     queries = build_queries()
@@ -113,28 +137,33 @@ def main():
     for i, q in enumerate(queries, 1):
         row = {"id": q["id"], "professor": q["professor"], "lab": q["lab"],
                "query": q["query"], "relevant": q["relevant"], "pipelines": {}}
+        relevant_set = set(q["relevant"])
         for p in PIPELINES:
-            retrieved = run_pipeline(p, q["query"], k)
-            m = metrics(retrieved, set(q["relevant"]), k)
-            row["pipelines"][p] = {"retrieved": retrieved, **m}
+            retrieved = run_pipeline(p, q["query"])  # 자르지 않은 전체 랭킹
+            m = metrics(retrieved, relevant_set, k)
+            m["ap"] = average_precision(retrieved, relevant_set)
+            row["pipelines"][p] = {"retrieved": retrieved[:k], **m}
             agg[p].append(m)
         detail.append(row)
         print(f"[{i}/{len(queries)}] {q['professor']} ({q['lab']}) - "
-              + " / ".join(f"{p}:P{agg[p][-1]['precision']:.2f}" for p in PIPELINES), flush=True)
+              + " / ".join(f"{p}:P{agg[p][-1]['precision']:.2f} AP{agg[p][-1]['ap']:.2f}" for p in PIPELINES),
+              flush=True)
 
     RESULT_PATH.parent.mkdir(parents=True, exist_ok=True)
     RESULT_PATH.write_text(json.dumps({"k": k, "detail": detail}, ensure_ascii=False, indent=1),
                             encoding="utf-8")
 
     print(f"\n=== macro-average (질의 {len(queries)}개, k={k}) ===")
-    header = f"{'pipeline':<14}{'Precision@k':>13}{'Recall@k':>11}{'MRR':>9}{'nDCG@k':>9}"
+    print("nDCG@k, MAP은 질의별 정답 개수 차이에 자동 정규화됨 — 가장 신뢰할 수 있는 비교 지표.")
+    header = f"{'pipeline':<14}{'Precision@k':>13}{'Recall@k':>11}{'MRR':>9}{'nDCG@k':>9}{'MAP':>9}"
     print(header)
     print("-" * len(header))
     for p in PIPELINES:
         rows = agg[p]
         n = len(rows)
-        avg = {m: sum(r[m] for r in rows) / n for m in ("precision", "recall", "mrr", "ndcg")}
-        print(f"{p:<14}{avg['precision']:>13.4f}{avg['recall']:>11.4f}{avg['mrr']:>9.4f}{avg['ndcg']:>9.4f}")
+        avg = {m: sum(r[m] for r in rows) / n for m in ("precision", "recall", "mrr", "ndcg", "ap")}
+        print(f"{p:<14}{avg['precision']:>13.4f}{avg['recall']:>11.4f}{avg['mrr']:>9.4f}"
+              f"{avg['ndcg']:>9.4f}{avg['ap']:>9.4f}")
 
     print(f"\n상세 결과 저장: {RESULT_PATH}")
 
