@@ -1,6 +1,8 @@
-"""PDF -> 페이지 단위 청크 -> bge-m3 임베딩 -> Chroma 저장.
-실행:  python ingest.py          # chroma/ocr_cache.json 이 있으면 이미지 페이지에 OCR 텍스트를 합친다
-       python ingest.py --ocr    # OCR 캐시를 (재)생성한 뒤 색인 (easyocr 필요, GPU 있으면 자동 사용)
+"""PDF -> 페이지 단위 청크 -> 임베딩 -> Chroma 저장.
+실행:  python -m indexing.ingest          # chroma/ocr_cache.json 이 있으면 이미지 페이지에 OCR 텍스트를 합친다
+       python -m indexing.ingest --ocr    # OCR 캐시를 (재)생성한 뒤 색인 (easyocr 필요, GPU 있으면 자동 사용)
+
+청킹 크기/중복, 임베딩 모델은 indexing/config.py 에서 바꾼다.
 
 페이지 처리 순서
   1. PyMuPDF 텍스트 레이어 추출 (블록을 위→아래, 왼→오른 순으로 정렬)
@@ -14,8 +16,12 @@ import pymupdf
 import torch
 import chromadb
 from sentence_transformers import SentenceTransformer
-from config import *
-from core import sanitize
+
+import config as C
+from indexing.config import (
+    EMBED_MODEL, MAX_CHUNK_CHARS, OVERLAP_CHARS, OCR_MAX_CHARS, MIN_PAGE_CHARS,
+)
+from retrieval.core import sanitize
 
 _PAGE_NO = re.compile(r"^\s*[-–—]?\s*\d{1,3}\s*[-–—]?\s*$|^\s*\d{1,3}\s*/\s*\d{1,3}\s*$|^\s*(page|p\.)\s*\d{1,3}\s*$", re.I)
 
@@ -83,24 +89,24 @@ def build_ocr_cache():
     reader = easyocr.Reader(["ko", "en"], gpu=gpu, verbose=False)
     cache = {"_meta": {"engine": f"easyocr {easyocr.__version__} ko+en", "width": 1600, "min_conf": 0.3,
                        "rule": f"text layer < {OCR_MAX_CHARS} chars"}}
-    for pdf in sorted(PDF_DIR.rglob("*.pdf")):
+    for pdf in sorted(C.PDF_DIR.rglob("*.pdf")):
         doc = pymupdf.open(pdf)
         pages = [i + 1 for i, p in enumerate(doc) if len(page_text(p)) < OCR_MAX_CHARS]
         if pages:
             print(f"OCR {pdf.name}: {len(pages)}p", flush=True)
             cache[pdf.name] = ocr_pdf_pages(reader, doc, pages)
-    DB_DIR.mkdir(parents=True, exist_ok=True)
-    OCR_CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"OCR 캐시 저장: {OCR_CACHE}")
+    C.DB_DIR.mkdir(parents=True, exist_ok=True)
+    C.OCR_CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"OCR 캐시 저장: {C.OCR_CACHE}")
 
 
 # ---- 청크 ----
 def build_chunks():
-    ocr = json.loads(OCR_CACHE.read_text(encoding="utf-8")) if OCR_CACHE.exists() else {}
+    ocr = json.loads(C.OCR_CACHE.read_text(encoding="utf-8")) if C.OCR_CACHE.exists() else {}
     if not ocr:
-        print("※ OCR 캐시 없음 — 이미지 페이지는 건너뜀. `python ingest.py --ocr` 로 생성 가능.")
+        print("※ OCR 캐시 없음 — 이미지 페이지는 건너뜀. `python -m indexing.ingest --ocr` 로 생성 가능.")
     chunks, skipped, seen = [], [], {}
-    for pdf in sorted(PDF_DIR.rglob("*.pdf")):
+    for pdf in sorted(C.PDF_DIR.rglob("*.pdf")):
         digest = hashlib.sha1(pdf.read_bytes()).hexdigest()
         if digest in seen:  # 내용이 완전히 같은 파일(이름만 다름)은 한 번만 색인하고 출처에 두 이름을 적는다
             for c in chunks:
@@ -146,20 +152,20 @@ def main():
         build_ocr_cache()
     chunks, skipped = build_chunks()
     print(f"\n청크 {len(chunks)}개, 건너뛴 페이지 {len(skipped)}개")
-    DB_DIR.mkdir(parents=True, exist_ok=True)
-    (DB_DIR / "skipped_pages.json").write_text(
+    C.DB_DIR.mkdir(parents=True, exist_ok=True)
+    (C.DB_DIR / "skipped_pages.json").write_text(
         json.dumps(skipped, ensure_ascii=False, indent=2), encoding="utf-8")
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"임베딩 모델 로드 ({device})...")
+    print(f"임베딩 모델 로드: {EMBED_MODEL} ({device})...")
     emb = SentenceTransformer(EMBED_MODEL, device=device)
 
-    client = chromadb.PersistentClient(str(DB_DIR))
+    client = chromadb.PersistentClient(str(C.DB_DIR))
     try:
-        client.delete_collection(COLLECTION)   # 재실행 시 깨끗이 다시 만든다
+        client.delete_collection(C.COLLECTION)   # 재실행 시 깨끗이 다시 만든다
     except Exception:
         pass
-    col = client.create_collection(COLLECTION, metadata={"hnsw:space": "cosine"})
+    col = client.create_collection(C.COLLECTION, metadata={"hnsw:space": "cosine"})
 
     B = 32
     for i in range(0, len(chunks), B):
@@ -171,7 +177,7 @@ def main():
                 metadatas=[c["meta"] for c in batch],
                 embeddings=vecs.tolist())
         print(f"  {min(i + B, len(chunks))}/{len(chunks)}", end="\r")
-    print(f"\n완료. DB: {DB_DIR}  (건너뛴 페이지 목록: skipped_pages.json)")
+    print(f"\n완료. DB: {C.DB_DIR}  (건너뛴 페이지 목록: skipped_pages.json)")
 
 
 if __name__ == "__main__":

@@ -1,36 +1,29 @@
-"""실험용 시각화 페이지 (Streamlit 멀티페이지 — 사이드바에 "1 실험실"로 자동으로 뜸).
+"""실험용 시각화 페이지 (Streamlit 멀티페이지 — 사이드바에 "1 그래프 실험실"로 자동으로 뜸).
 
 질문 하나를 넣으면:
-  1) vanilla(dense만) vs 그래프-RAG 유사도를 나란히 비교하고, 점수가 얼마나 바뀌었는지 표로 보여준다
+  1) vanilla(dense만) vs graph-rag 유사도를 나란히 비교하고, 점수가 얼마나 바뀌었는지 표로 보여준다
   2) 그 후보들 사이의 그래프(구조적 인접 / 키워드 공유)를 노드-엣지로 보여준다
-     (그래프-RAG가 실제로 쓰는 pipeline_gnn_ret.graph_retrieve()/pipeline_track_graph.graph_retrieve()를
-      그대로 호출한다 — dense top-k만 보여주면 "그래프 덕분에 풀 밖에서 새로 끌려온 청크"가 아예 안
-      보이는 문제가 있어서, 1·2번 모두 그래프 재점수화까지 끝난 결과를 그대로 쓴다)
+     (graph-rag가 실제로 쓰는 retrieval.graph_rag.graph_retrieve()를 그대로 호출한다 — dense
+      top-k만 보여주면 "그래프 덕분에 풀 밖에서 새로 끌려온 청크"가 아예 안 보이는 문제가
+      있어서, 1·2번 모두 그래프 재점수화까지 끝난 결과를 그대로 쓴다)
 """
 import html as html_mod
 import streamlit as st
 import plotly.graph_objects as go
 from pyvis.network import Network
 
-from core import retrieve
-import pipeline_gnn_ret as gr
-import pipeline_track_graph as tg
+from retrieval.core import retrieve
+from retrieval import graph_rag as gr
 
 html_escape = html_mod.escape
 
 st.set_page_config(page_title="RAG 실험실", page_icon="🔬", layout="wide")
 st.title("🔬 RAG 실험실")
-st.caption("질문 → vanilla/그래프-RAG 유사도 비교, 그래프 시각화까지 한 번에 확인합니다.")
+st.caption("질문 → vanilla/graph-rag 유사도 비교, 그래프 시각화까지 한 번에 확인합니다.")
 
 query = st.text_input("질문", value="저는 인공지능에 관심이 많은데 어떤 과목을 들으면 좋을까요?")
-c1, c2 = st.columns(2)
-with c1:
-    graph_choice = st.radio("그래프 방식", ["gnn_ret (구조+키워드)", "track_graph (트랙)"])
-with c2:
-    top_k = st.slider("볼 후보 개수", 5, 40, 15)
+top_k = st.slider("볼 후보 개수", 5, 40, 15)
 run = st.button("검색 실행", type="primary")
-
-gmod = gr if graph_choice.startswith("gnn_ret") else tg
 
 
 def _score_to_color(score: float, lo: float = 0.3, hi: float = 0.75) -> str:
@@ -47,9 +40,9 @@ def _name(h: dict) -> str:
 
 
 if run and query.strip():
-    # 버튼 클릭 시점의 질문만 session_state에 고정한다. 아래 슬라이더/라디오를 움직여서 생기는
+    # 버튼 클릭 시점의 질문만 session_state에 고정한다. 아래 슬라이더를 움직여서 생기는
     # 재실행에서는 run이 다시 False가 되지만, 고정해둔 질문이 있으면 이 블록이 계속 돌아야
-    # top_k/final_k/그래프 선택 같은 위젯들이 실제로 반응한다 (안 그러면 버튼을 다시 눌러야만 반영됨).
+    # top_k 같은 위젯이 실제로 반응한다 (안 그러면 버튼을 다시 눌러야만 반영됨).
     st.session_state["exp_query"] = query.strip()
 
 active_query = st.session_state.get("exp_query", "")
@@ -62,14 +55,11 @@ if active_query:
         vanilla_top = vanilla_sorted[:top_k]
         vanilla_ids = {h["id"] for h in vanilla_top}
 
-        # graph_rescore(): 실제 그래프-RAG 파이프라인이 쓰는 재점수화를 '자르지 않고' 전부 돌려준다.
+        # graph_rescore(): 실제 graph-rag 파이프라인이 쓰는 재점수화를 '자르지 않고' 전부 돌려준다.
         # dense top-k 밖에서 그래프로 새로 끌려온 청크(예: 기계학습개론)의 vanilla 점수도 여기 이미
         # 들어있고(프런티어 청크는 직접 코사인 유사도를 계산해서 채워둠), top-k 밖으로 밀린 vanilla
         # 후보의 graph_score도 여기서 같이 계산되므로 "top-k 밖이라 점수가 없다"는 경우가 안 생긴다.
-        if graph_choice.startswith("gnn_ret"):
-            all_scored = gr.graph_rescore(active_query)
-        else:
-            all_scored = tg.graph_rescore(active_query, max(top_k, tg.POOL_K))
+        all_scored = gr.graph_rescore(active_query)
         info_by_id = {h["id"]: h for h in all_scored}
 
         # vanilla_top 중에 그래프 쪽 후보 풀에도 안 잡힌 애(아주 드묾)가 있으면, 최소한 자기 자신
@@ -84,8 +74,8 @@ if active_query:
         graph_ids = {h["id"] for h in graph_hits}
         graph_rank = {h["id"]: i + 1 for i, h in enumerate(graph_hits)}
 
-    # ==== 1) vanilla vs 그래프-RAG 유사도 비교 ====
-    st.subheader("1. Query ↔ Chunk 유사도 — vanilla vs 그래프-RAG")
+    # ==== 1) vanilla vs graph-rag 유사도 비교 ====
+    st.subheader("1. Query ↔ Chunk 유사도 — vanilla vs graph-rag")
     union_ids = list(vanilla_ids | graph_ids)
     union_ids.sort(key=lambda cid: graph_rank.get(cid, 999))
 
@@ -103,7 +93,7 @@ if active_query:
                           name="vanilla (dense score)", marker_color="#B9CBD8",
                           hovertemplate="%{y}<br>vanilla 유사도 %{x:.3f}<extra></extra>"))
     fig.add_trace(go.Bar(x=graph_scores[::-1], y=labels[::-1], orientation="h",
-                          name=f"그래프-RAG ({graph_choice.split()[0]})", marker_color="#174E89",
+                          name="graph-rag 점수", marker_color="#174E89",
                           hovertemplate="%{y}<br>graph 점수 %{x:.3f}<extra></extra>"))
     fig.update_layout(barmode="group", height=max(360, 30 * len(union_ids)),
                        margin=dict(l=10, r=10, t=10, b=10), xaxis_title="유사도 / 점수",
@@ -133,39 +123,23 @@ if active_query:
 
     # ==== 2) 그래프(구조적 인접 / 키워드 공유) 시각화 ====
     st.divider()
-    st.subheader("2. 그래프 — 그래프-RAG가 실제로 후보로 삼은 청크들 사이의 edge")
+    st.subheader("2. 그래프 — graph-rag가 실제로 후보로 삼은 청크들 사이의 edge")
     st.caption("dense top-k만이 아니라, 그래프로 새로 끌려온 청크(vanilla top-k 밖이었던 것)도 노드로 포함합니다 "
                "— 점선 테두리 + ✨ 표시가 그 청크입니다.")
 
-    node_ids = graph_ids | vanilla_ids  # 그래프-RAG 후보 + 비교용 vanilla 후보를 합쳐서 보여준다
-    graph_obj = gr.get_graph() if graph_choice.startswith("gnn_ret") else None
+    node_ids = graph_ids | vanilla_ids  # graph-rag 후보 + 비교용 vanilla 후보를 합쳐서 보여준다
+    graph_obj = gr.get_graph()
 
     struct_pairs: set[frozenset] = set()
     kw_pairs: dict[frozenset, set[str]] = {}
-    if graph_obj is not None:
-        for cid in node_ids:
-            for nid in graph_obj.struct_neighbors.get(cid, set()):
+    for cid in node_ids:
+        for nid in graph_obj.struct_neighbors.get(cid, set()):
+            if nid in node_ids and nid != cid:
+                struct_pairs.add(frozenset((cid, nid)))
+        for kw in graph_obj.keywords.get(cid, []):
+            for nid in graph_obj.kw_index.get(gr._norm_kw(kw), set()):
                 if nid in node_ids and nid != cid:
-                    struct_pairs.add(frozenset((cid, nid)))
-            for kw in graph_obj.keywords.get(cid, []):
-                for nid in graph_obj.kw_index.get(gr._norm_kw(kw), set()):
-                    if nid in node_ids and nid != cid:
-                        kw_pairs.setdefault(frozenset((cid, nid)), set()).add(kw)
-    else:  # track_graph: "같은 트랙" 또는 "같은 과목"을 edge로 취급
-        for cid in node_ids:
-            h_c = info_by_id[cid]
-            tracks_c = tg.course_tracks(h_c["source"])
-            for nid in node_ids:
-                if nid == cid:
-                    continue
-                h_n = info_by_id[nid]
-                pair = frozenset((cid, nid))
-                if h_n["source"] == h_c["source"]:
-                    struct_pairs.add(pair)
-                else:
-                    shared = tracks_c & tg.course_tracks(h_n["source"])
-                    if shared:
-                        kw_pairs.setdefault(pair, set()).update(shared)
+                    kw_pairs.setdefault(frozenset((cid, nid)), set()).add(kw)
 
     node_struct_ids = {n for pair in struct_pairs for n in pair}
     node_kw_ids = {n for pair in kw_pairs for n in pair}

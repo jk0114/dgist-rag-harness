@@ -1,0 +1,6172 @@
+{
+ "p3_L": {
+  "professor": "CONTENTS",
+  "lab_ko": "",
+  "lab_en": "",
+  "research_fields": [],
+  "courses": []
+ },
+ "p3_R": null,
+ "p6_L": {
+  "professor": "김성균",
+  "lab_ko": "지속가능화학 연구실",
+  "lab_en": "Sustainable Chemistry Lab.",
+  "research_fields": [
+   "무기/유기금속화학",
+   "균일계 촉매",
+   "기능성 고분자",
+   "바이오매스"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "일반화학실험 Ⅱ",
+   "무기화학 Ⅱ",
+   "고분자개론",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "물리화학 Ⅱ",
+   "심화화학실험 Ⅰ(유기.분석 화학)",
+   "심화화학실험 Ⅱ (물리.무기화학)",
+   "분석화학",
+   "무기화학 Ⅰ",
+   "물리화학Ⅰ",
+   "화학공학개론"
+  ]
+ },
+ "p6_R": {
+  "professor": "김종구",
+  "lab_ko": "반응 매커니즘 및 구조동역학 실험실",
+  "lab_en": "Reaction Mechanism & Structural Dynamics Lab.",
+  "research_fields": [
+   "시간분해 엑스선 산란",
+   "반응 메커니즘 연구",
+   "단백질 구조동역학"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "물리화학Ⅰ",
+   "물리화학 Ⅱ",
+   "물리화학 Ⅲ",
+   "프로그래밍"
+  ]
+ },
+ "p7_L": {
+  "professor": "남은주",
+  "lab_ko": "생분자&단백질화학 연구실",
+  "lab_en": "Biomolecular & Protein Chemistry Lab",
+  "research_fields": [
+   "단백질화학",
+   "화학생물학",
+   "생화학"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "생화학Ⅱ",
+   "무기화학 Ⅰ",
+   "무기화학 Ⅱ",
+   "일반생물학Ⅰ",
+   "분석화학",
+   "분자생물학",
+   "물리화학Ⅰ",
+   "심화화학실험 Ⅰ(유기.분석 화학)"
+  ]
+ },
+ "p7_R": null,
+ "p8_L": {
+  "professor": "박진희",
+  "lab_ko": "유무기하이브리드 연구실",
+  "lab_en": "Organic-Inorganic Hybrids Lab.",
+  "research_fields": [
+   "다공성 금속유기구조체(MOFs) 합성 및 환경 분야 응용"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "일반화학실험 Ⅱ",
+   "무기화학 Ⅱ",
+   "분석화학",
+   "심화화학실험 Ⅰ(유기.분석 화학)",
+   "심화화학실험 Ⅱ (물리.무기화학)",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "물리화학 Ⅱ",
+   "무기화학 Ⅰ",
+   "물리화학Ⅰ"
+  ]
+ },
+ "p8_R": {
+  "professor": "서상원",
+  "lab_ko": "친환경 촉매반응 연구실",
+  "lab_en": "Chemical Design & Sustainable Catalysis Lab.",
+  "research_fields": [
+   "유기화학",
+   "유기금속화학",
+   "촉매"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "유기화학 Ⅲ",
+   "분석화학",
+   "무기화학 Ⅱ",
+   "무기화학 Ⅰ",
+   "물리화학 Ⅱ",
+   "물리화학Ⅰ",
+   "심화화학실험 Ⅰ(유기.분석 화학)",
+   "심화화학실험 Ⅱ (물리.무기화학)",
+   "일반화학실험 Ⅱ"
+  ]
+ },
+ "p9_L": {
+  "professor": "성주영",
+  "lab_ko": "에너지물질 반응동역학 연구실",
+  "lab_en": "FemtoLab for Advanced Energy Materials",
+  "research_fields": [
+   "펨토초 이미징",
+   "초고속 동역학",
+   "차세대 반도체 물성 분석"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "물리화학Ⅰ",
+   "물리화학 Ⅱ",
+   "물리화학 Ⅲ"
+  ]
+ },
+ "p9_R": {
+  "professor": "이성기",
+  "lab_ko": "유기합성 및 촉매 연구실",
+  "lab_en": "Organic Synthesis and Catalysis Lab.",
+  "research_fields": [
+   "유기합성",
+   "촉매개발",
+   "비대칭 합성",
+   "라디칼 반응"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "분석화학",
+   "무기화학 Ⅱ",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "물리화학 Ⅱ",
+   "무기화학 Ⅰ",
+   "유기화학 Ⅲ",
+   "물리화학Ⅰ",
+   "심화화학실험 Ⅰ(유기.분석 화학)",
+   "일반화학실험 Ⅱ"
+  ]
+ },
+ "p10_L": {
+  "professor": "정낙천",
+  "lab_ko": "소재화학 연구실",
+  "lab_en": "NC Laboratory of Materials Chemistry",
+  "research_fields": [
+   "소재화학",
+   "초분자화학",
+   "대기물수확 소재",
+   "금속유기구조체",
+   "전도성물질"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "일반화학실험 Ⅱ",
+   "물리화학 Ⅱ",
+   "분석화학",
+   "심화화학실험 Ⅰ(유기.분석 화학)",
+   "심화화학실험 Ⅱ (물리.무기화학)",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "무기화학 Ⅰ",
+   "물리화학Ⅰ"
+  ]
+ },
+ "p10_R": {
+  "professor": "정병혁",
+  "lab_ko": "비대칭 유기합성 및 의약품 합성 연구실",
+  "lab_en": "Asymmetric Organic Synthesis and Drug Synthesis Lab.",
+  "research_fields": [
+   "비대칭 유기합성",
+   "천연물 및 의약품 합성"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "일반화학실험 Ⅱ",
+   "물리화학 Ⅱ",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "무기화학 Ⅱ",
+   "유기화학 Ⅲ",
+   "무기화학 Ⅰ",
+   "심화화학실험 Ⅰ(유기.분석 화학)",
+   "심화화학실험 Ⅱ (물리.무기화학)",
+   "물리화학Ⅰ"
+  ]
+ },
+ "p11_L": {
+  "professor": "홍선기",
+  "lab_ko": "생체모사 유기소재 연구실",
+  "lab_en": "Bioinspired Organic Materials Lab.",
+  "research_fields": [
+   "자연모사 유기/고분자 소재",
+   "조직 접착성 하이드로젤",
+   "생체친화적 표면 개질",
+   "간편 분자 진단"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "일반화학실험 Ⅱ",
+   "재료공학개론Ⅰ",
+   "고분자개론",
+   "분석화학",
+   "심화화학실험 Ⅰ(유기.분석 화학)",
+   "생명과학개론",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ"
+  ]
+ },
+ "p11_R": null,
+ "p12_L": {
+  "professor": "강준구",
+  "lab_ko": "계산물질이론 연구실",
+  "lab_en": "Computational Materials Theory Group",
+  "research_fields": [
+   "제일원리",
+   "머신러닝에 기반한 양자물성연구/통계물리"
+  ],
+  "courses": [
+   "양자역학Ⅰ",
+   "양자역학Ⅱ",
+   "고체물리Ⅰ",
+   "열 및 통계 물리"
+  ]
+ },
+ "p12_R": {
+  "professor": "권상일",
+  "lab_ko": "초전도 양자 회로 실험실",
+  "lab_en": "Superconducting Quantum Circuits lab.",
+  "research_fields": [
+   "초전도 회로 기반 양자 전산과 센싱"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "선형대수학",
+   "전기역학Ⅱ",
+   "양자 컴퓨팅 개론",
+   "프로그래밍",
+   "해석역학Ⅰ",
+   "해석역학Ⅱ",
+   "양자역학Ⅰ",
+   "양자역학Ⅱ"
+  ]
+ },
+ "p13_L": {
+  "professor": "김소연",
+  "lab_ko": "강상관 물질 분광학 연구실",
+  "lab_en": "Correlated Matter Spectroscopy Lab.",
+  "research_fields": [
+   "초고속 동역학",
+   "적외선 분광학",
+   "강상관계 양자물질"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "양자역학Ⅰ",
+   "양자역학Ⅱ",
+   "결정학 및 회절",
+   "열 및 통계 물리",
+   "고체물리Ⅰ"
+  ]
+ },
+ "p13_R": {
+  "professor": "김아람",
+  "lab_ko": "양자 다체계 이론 연구실",
+  "lab_en": "Quantum Many-Body Theory Group",
+  "research_fields": [
+   "Strongly Correlated Systems",
+   "Quantum Many-Body Physics",
+   "Quantum Monte Carlo Method"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "해석역학Ⅰ",
+   "해석역학Ⅱ",
+   "양자역학Ⅰ",
+   "양자역학Ⅱ",
+   "고체물리Ⅰ",
+   "고체물리Ⅱ",
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "열 및 통계 물리",
+   "수리물리",
+   "양자 컴퓨팅 개론"
+  ]
+ },
+ "p14_L": {
+  "professor": "김영욱",
+  "lab_ko": "위상 양자소자 연구실",
+  "lab_en": "Topological Quantum Device",
+  "research_fields": [
+   "Quantum Transport",
+   "Quantum Engineering & Computing"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "해석역학Ⅰ",
+   "해석역학Ⅱ",
+   "열 및 통계 물리",
+   "고체물리Ⅱ",
+   "양자역학Ⅰ",
+   "양자역학Ⅱ",
+   "현대물리",
+   "고체물리Ⅰ",
+   "수리물리",
+   "전기역학Ⅱ"
+  ]
+ },
+ "p14_R": {
+  "professor": "박기성",
+  "lab_ko": "재미있는 양자물질 연구실",
+  "lab_en": "Novel Quantum Materials Lab.",
+  "research_fields": [
+   "초전도체",
+   "자성체",
+   "위상물질",
+   "단결정합성",
+   "저온물리특성",
+   "Xray와 중성자산란"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "해석역학Ⅰ",
+   "해석역학Ⅱ",
+   "양자역학Ⅰ",
+   "양자역학Ⅱ",
+   "응용물리특론",
+   "일반물리실험Ⅰ",
+   "수리물리",
+   "고체물리Ⅱ",
+   "일반물리Ⅱ",
+   "열 및 통계 물리",
+   "고체물리Ⅰ",
+   "결정학 및 회절",
+   "일반물리실험Ⅱ",
+   "응용물리 실험"
+  ]
+ },
+ "p15_L": {
+  "professor": "서정필",
+  "lab_ko": "저차원 위상물질 연구실",
+  "lab_en": "Nanospm Lab.",
+  "research_fields": [
+   "양자물질",
+   "저차원 물질",
+   "양자현미경(STM)"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "열 및 통계 물리",
+   "고체물리Ⅰ"
+  ]
+ },
+ "p15_R": {
+  "professor": "유천열",
+  "lab_ko": "스핀 정보 나노 소자 연구실",
+  "lab_en": "Spin Phenomena for Information Nano-Device Lab.",
+  "research_fields": [
+   "나노 스핀 소자",
+   "응집물질 물리",
+   "자성체 및 자성 박막"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "수리물리",
+   "고체물리Ⅱ",
+   "다변수 미적분학",
+   "양자역학Ⅰ",
+   "양자역학Ⅱ",
+   "응용물리특론",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "고체물리Ⅰ",
+   "일반물리실험Ⅰ",
+   "일반물리실험Ⅱ",
+   "열 및 통계 물리",
+   "응용물리 실험",
+   "프로그래밍",
+   "고급물리 실험"
+  ]
+ },
+ "p16_L": {
+  "professor": "이재동",
+  "lab_ko": "광물성 이론 연구실",
+  "lab_en": "Light and Matter Theory Lab.",
+  "research_fields": [
+   "고체물리이론",
+   "초고속동역학",
+   "비평형현상",
+   "제일원리계산"
+  ],
+  "courses": [
+   "양자역학Ⅰ",
+   "현대광학",
+   "고체물리Ⅰ",
+   "응용물리특론",
+   "양자역학Ⅱ",
+   "열 및 통계 물리"
+  ]
+ },
+ "p16_R": {
+  "professor": "조창희",
+  "lab_ko": "미래 반도체 나노포토닉스 연구실",
+  "lab_en": "Future Semiconductor Nanophotonics Lab.",
+  "research_fields": [
+   "반도체",
+   "포토닉스 정보소자",
+   "빛-물질 상호작용"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "해석역학Ⅱ",
+   "양자역학Ⅰ",
+   "현대광학",
+   "일반물리Ⅱ",
+   "열 및 통계 물리",
+   "양자역학Ⅱ",
+   "고체물리Ⅱ",
+   "고체물리Ⅰ",
+   "수리물리",
+   "응용물리특론"
+  ]
+ },
+ "p17_L": {
+  "professor": "허승정",
+  "lab_ko": "극저온 원자 및 양자 시스템 설계 연구실",
+  "lab_en": "Ultracold Atoms and Engineered Quantum Systems Group",
+  "research_fields": [
+   "극저온 원자 기반 양자 시뮬레이션 및 양자 컴퓨터"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "원자분자물리학",
+   "열 및 통계 물리",
+   "현대광학",
+   "전기역학Ⅱ"
+  ]
+ },
+ "p17_R": {
+  "professor": "홍정일",
+  "lab_ko": "스핀공학 연구실",
+  "lab_en": "Spin Nanotech Lab.",
+  "research_fields": [
+   "나노물질의 전기적/자기적 성징"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "선형대수학",
+   "양자역학Ⅰ",
+   "일반물리Ⅱ",
+   "재료열역학 개론",
+   "열 및 통계 물리",
+   "프로그래밍"
+  ]
+ },
+ "p18_L": {
+  "professor": "이성원",
+  "lab_ko": "생체조화소자 연구실",
+  "lab_en": "Bio Harmonized Device Lab.",
+  "research_fields": [
+   "초박막 소자 및 바이오센서 개발"
+  ],
+  "courses": []
+ },
+ "p18_R": {
+  "professor": "이신범",
+  "lab_ko": "반도체 에너지 센서 연구실",
+  "lab_en": "Semiconductor Energy Sensor Lab.",
+  "research_fields": [
+   "반도체",
+   "에너지",
+   "센서",
+   "박막",
+   "나노구조"
+  ],
+  "courses": [
+   "양자역학Ⅰ",
+   "응용물리특론",
+   "공학수학Ⅰ",
+   "선형대수학",
+   "확률과 통계 및 실습",
+   "재료열역학 개론",
+   "다변수 미적분학",
+   "고체물리Ⅰ",
+   "일반물리Ⅰ",
+   "응용물리 실험",
+   "일반물리실험Ⅱ",
+   "양자역학Ⅱ",
+   "일반물리Ⅱ",
+   "열 및 통계 물리",
+   "프로그래밍"
+  ]
+ },
+ "p19_L": null,
+ "p19_R": null,
+ "p22_L": {
+  "professor": "길현재",
+  "lab_ko": "차세대 경험 및 기술 연구실",
+  "lab_en": "Next-generation Experience and Technology Lab.",
+  "research_fields": [
+   "Human-Computer Interaction(HCI) / VR/AR/MR Interaction / Text Entry",
+   "/ Multi-sensory Haptics / Wearable & Smart Glasses Interfaces"
+  ],
+  "courses": [
+   "프로그래밍",
+   "선형대수학",
+   "공학수학Ⅰ",
+   "확률과 통계 및 실습",
+   "컴퓨터 알고리즘",
+   "컴퓨터 비전 개론",
+   "데이터사이언스기초",
+   "인공지능 개론",
+   "디지털 신호처리",
+   "객체지향 프로그래밍",
+   "기계학습개론",
+   "디지털 영상처리",
+   "디지털 논리회로",
+   "신호 및 시스템",
+   "회로이론과 계측법"
+  ]
+ },
+ "p22_R": {
+  "professor": "김기섭",
+  "lab_ko": "인공지능 소프트웨어 연구실 (BASE)",
+  "lab_en": "Bi-directional AI-Software Lab.",
+  "research_fields": [
+   "AI Training & Tuning / AI for Software Engineering / Data for AI /",
+   "Architecture Design / Model Engineering"
+  ],
+  "courses": [
+   "선형대수학",
+   "기계학습개론",
+   "강화학습",
+   "컴퓨터구조",
+   "확률과 통계 및 실습",
+   "컴퓨터보안개론",
+   "컴퓨터 네트워크",
+   "자료구조",
+   "딥러닝개론",
+   "인공지능기초",
+   "시스템 프로그래밍",
+   "이산수학",
+   "운영체제",
+   "객체지향 프로그래밍"
+  ]
+ },
+ "p23_L": {
+  "professor": "김백규",
+  "lab_ko": "고신뢰성 소프트웨어 시스템 연구실(HASS Lab)",
+  "lab_en": "High-Assurance Software Systems Lab.",
+  "research_fields": [
+   "Embedded software / Software Verification /",
+   "Autonomous systems / Cyber-Physical Systems"
+  ],
+  "courses": [
+   "프로그래밍",
+   "인공지능기초",
+   "컴퓨터구조",
+   "컴퓨터 네트워크",
+   "운영체제",
+   "이산수학",
+   "자료구조",
+   "시스템 프로그래밍",
+   "객체지향 프로그래밍",
+   "컴퓨터 알고리즘",
+   "디지털 논리회로"
+  ]
+ },
+ "p23_R": {
+  "professor": "김선준",
+  "lab_ko": "스마트 입력장치 연구실(SID Lab)",
+  "lab_en": "Smart Input Device Lab.",
+  "research_fields": [
+   "Human-Computer Interaction",
+   "Interaction Design"
+  ],
+  "courses": [
+   "디자인 사고",
+   "자료구조",
+   "컴퓨터 알고리즘",
+   "강화학습",
+   "전자회로 이론",
+   "데이터사이언스기초",
+   "딥러닝개론",
+   "확률과 통계 및 실습",
+   "프로그래밍"
+  ]
+ },
+ "p24_L": {
+  "professor": "김윤승",
+  "lab_ko": "무결점시스템 연구실 (VeSL)",
+  "lab_en": "Verified Systems Lab.",
+  "research_fields": [
+   "Formal Verification / Real-Time System Verification / Consensus Algorithms",
+   "/ Compiler Verification / Programming Languages / Provable AI"
+  ],
+  "courses": [
+   "프로그래밍",
+   "자료구조",
+   "컴퓨터구조",
+   "컴퓨터보안개론",
+   "이산수학",
+   "시스템 프로그래밍",
+   "컴퓨터 네트워크",
+   "객체지향 프로그래밍",
+   "기계학습개론",
+   "인공지능기초",
+   "프로그래밍 언어",
+   "선형대수학",
+   "컴퓨터 알고리즘",
+   "확률과 통계 및 실습",
+   "운영체제"
+  ]
+ },
+ "p24_R": {
+  "professor": "박대희",
+  "lab_ko": "지능시스템 및 학습 연구실(ISL Lab)",
+  "lab_en": "Intelligent Systems and Learning Lab.",
+  "research_fields": [
+   "Decision-Making AI",
+   "Multimodal AI",
+   "Autonomous Systems",
+   "(Autonomous driving",
+   "robots)"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "인공지능기초",
+   "기계학습개론",
+   "강화학습",
+   "선형대수학",
+   "컴퓨터 알고리즘",
+   "컴퓨터 비전 개론",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "딥러닝개론",
+   "디지털 신호처리",
+   "데이터사이언스기초",
+   "신호 및 시스템",
+   "디지털 영상처리",
+   "자료구조",
+   "이산수학",
+   "객체지향 프로그래밍"
+  ]
+ },
+ "p25_L": {
+  "professor": "배인환",
+  "lab_ko": "시각 및 물리 지능 연구실",
+  "lab_en": "Visual & Physical Intelligence Lab.",
+  "research_fields": [
+   "Computer Vision",
+   "Social Kinematics",
+   "3D Scene Understanding",
+   "LLMs · VLA · Creative AI"
+  ],
+  "courses": [
+   "인공지능기초",
+   "기계학습개론",
+   "강화학습",
+   "공학수학Ⅰ",
+   "선형대수학",
+   "딥러닝개론",
+   "디지털 신호처리",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "디지털 영상처리",
+   "데이터사이언스기초",
+   "컴퓨터 알고리즘",
+   "컴퓨터 비전 개론",
+   "자료구조",
+   "이산수학",
+   "객체지향 프로그래밍"
+  ]
+ },
+ "p25_R": {
+  "professor": "신동훈",
+  "lab_ko": "계산 이론 및 응용 연구실(CTA Lab)",
+  "lab_en": "Computational Theory and Applications Lab.",
+  "research_fields": [
+   "Theory of Computation (Computational Geometry",
+   "Graph Theory)",
+   "Security for Critical Infrastructure",
+   "ICS Security",
+   "Wireless Sensor Networks"
+  ],
+  "courses": [
+   "프로그래밍",
+   "객체지향 프로그래밍",
+   "컴퓨터구조",
+   "컴퓨터 네트워크",
+   "확률과 통계 및 실습",
+   "기계학습개론",
+   "컴퓨터 비전 개론",
+   "자료구조",
+   "컴퓨터 알고리즘",
+   "강화학습",
+   "이산수학",
+   "운영체제",
+   "인공지능 개론",
+   "딥러닝개론",
+   "자동제어시스템"
+  ]
+ },
+ "p26_L": {
+  "professor": "윤성훈",
+  "lab_ko": "멀티모달지능 연구실 (MIPLab)",
+  "lab_en": "Multimodal Intelligence and Perception Lab.",
+  "research_fields": [
+   "Computer Vision",
+   "Multimodal AI",
+   "Physical AI",
+   "Medical AI"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "기계학습개론",
+   "강화학습",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "컴퓨터 비전 개론",
+   "자료구조",
+   "컴퓨터 알고리즘",
+   "디지털 영상처리",
+   "인공지능기초",
+   "딥러닝개론",
+   "디지털 신호처리",
+   "이산수학",
+   "객체지향 프로그래밍",
+   "데이터사이언스기초"
+  ]
+ },
+ "p26_R": {
+  "professor": "이용우",
+  "lab_ko": "컴파일러 및 런타임 시스템 연구실(Corus Lab)",
+  "lab_en": "Compiler and Runtime Systems Lab.",
+  "research_fields": [
+   "Compiler Optimization / Homomorphic Encryption Compiler /",
+   "GPU Compiler for AI/Graph / Domain-specific Compiler"
+  ],
+  "courses": [
+   "프로그래밍",
+   "인공지능기초",
+   "시스템 프로그래밍",
+   "강화학습",
+   "데이터사이언스기초",
+   "컴퓨터구조",
+   "컴퓨터 비전 개론",
+   "자료구조",
+   "운영체제",
+   "이산수학",
+   "컴퓨터 알고리즘",
+   "컴퓨터 네트워크",
+   "객체지향 프로그래밍",
+   "딥러닝개론",
+   "컴퓨터보안개론",
+   "디지털 논리회로",
+   "기계학습개론"
+  ]
+ },
+ "p27_L": {
+  "professor": "이효근",
+  "lab_ko": "RELACS 연구실",
+  "lab_en": "Reliable  and  Large-scale  Computer  System",
+  "research_fields": [
+   "Computer architecture / Resource disaggregation / Memory",
+   "security / Memory compression / Chiplet"
+  ],
+  "courses": [
+   "프로그래밍",
+   "디지털 논리회로",
+   "컴퓨터구조",
+   "컴퓨터보안개론",
+   "객체지향 프로그래밍",
+   "컴퓨터 알고리즘",
+   "디지털집적회로설계",
+   "이산수학",
+   "운영체제",
+   "자료구조",
+   "시스템 프로그래밍",
+   "확률과 통계 및 실습"
+  ]
+ },
+ "p27_R": {
+  "professor": "장준기",
+  "lab_ko": "데이터 인텔리전스 연구실",
+  "lab_en": "Data Intelligence Lab.",
+  "research_fields": [
+   "Data Mining / Query-Aware Data Systems /",
+   "Streaming & Adaptive Computation / Applied AI"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "인공지능기초",
+   "기계학습개론",
+   "프로그래밍",
+   "선형대수학",
+   "컴퓨터 알고리즘",
+   "컴퓨터 네트워크",
+   "확률과 통계 및 실습",
+   "딥러닝개론",
+   "강화학습",
+   "데이터사이언스기초",
+   "시스템 프로그래밍",
+   "자료구조",
+   "이산수학",
+   "객체지향 프로그래밍"
+  ]
+ },
+ "p28_L": {
+  "professor": "전민석",
+  "lab_ko": "프로그래밍 언어 응용 연구실(PLX Lab)",
+  "lab_en": "Programming Language Application Lab.",
+  "research_fields": [
+   "PL4SE: Developing programming language technologies for",
+   "software engineering.",
+   "PL4ML: Developing programming language technologies for",
+   "machine learning."
+  ],
+  "courses": [
+   "프로그래밍 언어",
+   "컴퓨터보안개론",
+   "프로그래밍",
+   "이산수학",
+   "자료구조",
+   "컴퓨터 알고리즘",
+   "인공지능기초",
+   "시스템 프로그래밍",
+   "데이터사이언스기초",
+   "딥러닝개론",
+   "객체지향 프로그래밍"
+  ]
+ },
+ "p28_R": {
+  "professor": "좌훈승",
+  "lab_ko": "실시간 컴퓨팅 연구실(RTCL)",
+  "lab_en": "Real-Time Computing Lab.",
+  "research_fields": [
+   "Real-Time Systems",
+   "Real-Time AI Services",
+   "Cyber-Physical Systems",
+   "Mobile Systems"
+  ],
+  "courses": [
+   "프로그래밍",
+   "데이터사이언스기초",
+   "컴퓨터구조",
+   "강화학습",
+   "자료구조",
+   "시스템 프로그래밍",
+   "컴퓨터 비전 개론",
+   "인공지능기초",
+   "기계학습개론",
+   "이산수학",
+   "컴퓨터 알고리즘",
+   "디지털 신호처리",
+   "객체지향 프로그래밍",
+   "운영체제",
+   "컴퓨터 네트워크",
+   "디지털 논리회로",
+   "딥러닝개론",
+   "디지털 영상처리"
+  ]
+ },
+ "p29_L": {
+  "professor": "최원석",
+  "lab_ko": "암호 및 정보보호 연구실(CIS Lab)",
+  "lab_en": "Cryptology and Information Security Lab.",
+  "research_fields": [
+   "Cryptography",
+   "Distributed Computing",
+   "Privacy Enhancing",
+   "Technologies"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "현대대수학 개론",
+   "컴퓨터보안개론",
+   "일변수 미적분학",
+   "이산수학",
+   "학부생을 위한 해석학 개론",
+   "양자 컴퓨팅 개론",
+   "다변수 미적분학",
+   "공학수학Ⅱ",
+   "컴퓨터 네트워크",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "컴퓨터 알고리즘",
+   "자료구조",
+   "컴퓨터구조",
+   "객체지향 프로그래밍",
+   "통신의 기초",
+   "디지털 논리회로",
+   "게임이론"
+  ]
+ },
+ "p29_R": null,
+ "p30_L": {
+  "professor": "권혁준",
+  "lab_ko": "첨단전자소자 그룹(AEDRG, K-Lab)",
+  "lab_en": "Advanced Electronic Device Research Group",
+  "research_fields": [
+   "Disruptive Electronic Device",
+   "Intense Optical Fabrication Process",
+   "Flexible/Wearable Platform",
+   "AI Device"
+  ],
+  "courses": [
+   "회로이론과 계측법",
+   "반도체물성 개론",
+   "반도체공정개론",
+   "일반물리Ⅰ",
+   "반도체공정실습",
+   "전자소자개론",
+   "일반물리Ⅱ",
+   "프로그래밍",
+   "전자회로 이론",
+   "인공지능기초",
+   "전자재료학",
+   "분석화학",
+   "재료공학개론Ⅱ",
+   "기계학습개론",
+   "선형대수학",
+   "결정학 및 회절",
+   "공학수학Ⅱ",
+   "재료상변태",
+   "나노재료학",
+   "열전달"
+  ]
+ },
+ "p30_R": {
+  "professor": "김가인",
+  "lab_ko": "신호처리 회로 및 시스템 연구실(CASSP Lab)",
+  "lab_en": "Circuits And Systems for Signal Processing Lab.",
+  "research_fields": [
+   "Analog/mixed-signal circuit design",
+   "Ultra-high-speed wireline chip-",
+   "to-chip transmitter/receiver (SerDes)",
+   "Analog-to-digital converter",
+   "(ADC)",
+   "RFSoC-based programmable digital system design"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "전자회로 이론",
+   "디지털집적회로설계",
+   "다변수 미적분학",
+   "이산수학",
+   "아날로그 전자회로",
+   "디지털통신",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "회로이론과 계측법",
+   "전자소자개론",
+   "반도체공정개론",
+   "디지털 논리회로",
+   "통신의 기초",
+   "객체지향 프로그래밍",
+   "자동제어시스템"
+  ]
+ },
+ "p31_L": {
+  "professor": "송민영",
+  "lab_ko": "무선 집적 시스템 설계 연구실(WISE Lab)",
+  "lab_en": "Wireless Integrated Systems Engineering Lab.",
+  "research_fields": [
+   "Wireless sensor node for Biomedical/IoT applications",
+   "Energy-efficient RFIC design",
+   "Analog/Mixed-signal/",
+   "RF core circuit design"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "전자회로 이론",
+   "디지털통신",
+   "일변수 미적분학",
+   "이산수학",
+   "아날로그 전자회로",
+   "디지털 신호처리",
+   "다변수 미적분학",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "프로그래밍",
+   "회로이론과 계측법",
+   "통신의 기초",
+   "디지털 논리회로"
+  ]
+ },
+ "p31_R": {
+  "professor": "윤종혁",
+  "lab_ko": "지능형 집적 회로 및 시스템 연구실(IICS Lab)",
+  "lab_en": "Intelligent Integrated Circuits and Systems Lab.",
+  "research_fields": [
+   "Edge-intelligent system",
+   "Processing-in-memory circuits",
+   "Clock and",
+   "data recovery",
+   "Mixed-signal circuit design"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "이산수학",
+   "전자회로 이론",
+   "반도체공정개론",
+   "다변수 미적분학",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "일반물리Ⅱ",
+   "선형대수학",
+   "전자소자개론",
+   "프로그래밍",
+   "회로이론과 계측법",
+   "디지털 논리회로"
+  ]
+ },
+ "p32_L": {
+  "professor": "이경태",
+  "lab_ko": "센서 시스템 연구실(Sett Lab)",
+  "lab_en": "Sensor Systems and Circuits",
+  "research_fields": [
+   "Biomedical sensor system design",
+   "Low power sensor IC design",
+   "Li-ion battery management IC design"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "이산수학",
+   "전자회로 이론",
+   "디지털집적회로설계",
+   "다변수 미적분학",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "프로그래밍",
+   "선형대수학",
+   "전자소자개론",
+   "회로이론과 계측법",
+   "의공학개론",
+   "디지털 논리회로",
+   "아날로그 전자회로",
+   "기계학습개론"
+  ]
+ },
+ "p32_R": {
+  "professor": "이병문",
+  "lab_ko": "첨단전자소자 그룹(AEDRG, Lee Lab)",
+  "lab_en": "Advanced Electronic Device Research Group",
+  "research_fields": [
+   "Skin  Electronics",
+   "Energy  Devices",
+   "Intelligent  Prosthetics  &",
+   "Bioelectronics",
+   "Additive Manufacturing",
+   "초고유연성 전자 및 에너지",
+   "소재/소자/시스템 개발"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "선형대수학",
+   "반도체물성 개론",
+   "반도체공정개론",
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "공학수학Ⅱ",
+   "전자회로 이론",
+   "반도체공정실습",
+   "공학수학Ⅰ",
+   "회로이론과 계측법",
+   "전자소자개론",
+   "전자재료학",
+   "프로그래밍",
+   "인공지능기초",
+   "재료공학개론Ⅰ",
+   "재료공학개론Ⅱ",
+   "고체역학",
+   "재료열역학 개론"
+  ]
+ },
+ "p33_L": {
+  "professor": "이정협",
+  "lab_ko": "집적 나노시스템 연구실(INS Lab)",
+  "lab_en": "Integrated Nano-Systems Lab.",
+  "research_fields": [
+   "Analog & mixed-signal circuits",
+   "Low-power",
+   "High-resolution ADC",
+   "Brain-computer-interface microsystems",
+   "Bio-application AI systems"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "공학수학Ⅱ",
+   "전자회로 이론",
+   "디지털집적회로설계",
+   "공학수학Ⅰ",
+   "이산수학",
+   "아날로그 전자회로",
+   "반도체공정개론",
+   "일변수 미적분학",
+   "확률과 통계 및 실습",
+   "반도체물성 개론",
+   "디지털 신호처리",
+   "다변수 미적분학",
+   "회로이론과 계측법",
+   "전자소자개론",
+   "프로그래밍",
+   "디지털 논리회로",
+   "신호 및 시스템",
+   "인공지능기초",
+   "컴퓨터구조",
+   "객체지향 프로그래밍",
+   "의공학개론"
+  ]
+ },
+ "p33_R": {
+  "professor": "장재은",
+  "lab_ko": "첨단전자소자 그룹(AEDRG, J-Lab)",
+  "lab_en": "Advanced Electronic Device Research Group",
+  "research_fields": [
+   "Advanced semiconductor device",
+   "Haptic device",
+   "Bioelectronics",
+   "Human-Machine Interface device"
+  ],
+  "courses": [
+   "반도체공정개론",
+   "반도체물성 개론",
+   "일반물리Ⅰ",
+   "회로이론과 계측법",
+   "전자회로 이론",
+   "반도체공정실습",
+   "일반물리Ⅱ",
+   "디지털 논리회로",
+   "전자소자개론",
+   "기계학습개론",
+   "인공지능기초",
+   "의공학개론",
+   "전자재료학",
+   "공학수학Ⅰ",
+   "선형대수학",
+   "다변수 미적분학",
+   "확률과 통계 및 실습",
+   "재료열역학 개론",
+   "프로그래밍",
+   "공학수학Ⅱ",
+   "나노재료학"
+  ]
+ },
+ "p34_L": {
+  "professor": "김영식",
+  "lab_ko": "프라이버시 및 응용 암호 연구실(PACL)",
+  "lab_en": "Privacy and Applied Cryptography Lab.",
+  "research_fields": [
+   "Applied cryptography / Quantum safe cryptography / AI security",
+   "/ Privacy enhancing technologies / Vehicular security"
+  ],
+  "courses": [
+   "프로그래밍",
+   "선형대수학",
+   "기계학습개론",
+   "강화학습",
+   "확률과 통계 및 실습",
+   "컴퓨터구조",
+   "디지털통신",
+   "자료구조",
+   "컴퓨터 알고리즘",
+   "컴퓨터보안개론",
+   "인공지능기초",
+   "딥러닝개론",
+   "컴퓨터 네트워크",
+   "이산수학",
+   "통신의 기초",
+   "객체지향 프로그래밍",
+   "디지털 논리회로"
+  ]
+ },
+ "p34_R": {
+  "professor": "박경준",
+  "lab_ko": "사이버물리시스템 통합 연구실(CSI Lab)",
+  "lab_en": "Cyber-Physical Systems Integration",
+  "research_fields": [
+   "사이버-물리 시스템",
+   "Physical AI",
+   "ROS 2 기반 자율이동로봇",
+   "ROS 2 통신",
+   "미들웨어",
+   "스마트 생산시스템",
+   "네트워크/제어/컴퓨팅 동시설계",
+   "사이버-물리",
+   "융합보안"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "다변수 미적분학",
+   "인공지능 개론",
+   "컴퓨터 네트워크",
+   "신호 및 시스템",
+   "프로그래밍",
+   "선형대수학",
+   "강화학습",
+   "자동제어시스템",
+   "확률과 통계 및 실습",
+   "디지털 신호처리",
+   "운영체제",
+   "공학수학Ⅱ",
+   "통신의 기초",
+   "인공지능기초",
+   "기계학습개론",
+   "객체지향 프로그래밍",
+   "컴퓨터 알고리즘"
+  ]
+ },
+ "p35_L": {
+  "professor": "서대원",
+  "lab_ko": "정보 및 학습이론 연구실",
+  "lab_en": "Information and Learning Theory Lab.",
+  "research_fields": [
+   "Learning over networks",
+   "Machine learning theory",
+   "Information theory"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "강화학습",
+   "다변수 미적분학",
+   "공학수학Ⅱ",
+   "기계학습개론",
+   "컴퓨터 비전 개론",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "확률과 통계 및 실습",
+   "프로그래밍",
+   "인공지능 개론",
+   "객체지향 프로그래밍",
+   "딥러닝개론",
+   "통신의 기초"
+  ]
+ },
+ "p35_R": {
+  "professor": "소진현",
+  "lab_ko": "분산 인공지능 연구실",
+  "lab_en": "Distributed Artificial Intelligence Lab.",
+  "research_fields": [
+   "Distributed AI",
+   "Trustworthy AI",
+   "On-device AI",
+   "Multi-modal AI",
+   "Federated Learning"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "딥러닝개론",
+   "강화학습",
+   "다변수 미적분학",
+   "이산수학",
+   "기계학습개론",
+   "디지털 신호처리",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "컴퓨터 비전 개론",
+   "인공지능 개론",
+   "컴퓨터 알고리즘",
+   "컴퓨터구조",
+   "객체지향 프로그래밍"
+  ]
+ },
+ "p36_L": {
+  "professor": "은용순",
+  "lab_ko": "동적 시스템 및 제어 연구실(DSC Lab)",
+  "lab_en": "Dynamic Systems and Control",
+  "research_fields": [
+   "Resilient control systems",
+   "Control systems with nonlinear",
+   "sensors and actuators",
+   "- Quasi-linear & networked control systems",
+   "- Intelligent transportation systems"
+  ],
+  "courses": [
+   "다변수 미적분학",
+   "선형대수학",
+   "기계학습개론",
+   "확률과 통계 및 실습",
+   "메카트로닉스",
+   "프로그래밍",
+   "디지털 신호처리",
+   "자동제어시스템"
+  ]
+ },
+ "p36_R": {
+  "professor": "이기준",
+  "lab_ko": "양자 및 의생명광학 연구실(QBOL)",
+  "lab_en": "Quantum & Biomedical Optics Lab.",
+  "research_fields": [
+   "Diffuse Optical Spectroscopy/Tomography",
+   "Speckle Contrast based Flowmetry",
+   "Complexity of Biosignals",
+   "Quantum Optics",
+   "Sound and Music Visualization",
+   "Blood flow monitoring study in the context of Traditional Chinese Medicine"
+  ],
+  "courses": [
+   "일반물리Ⅱ",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "일반물리실험Ⅱ",
+   "디지털 영상처리",
+   "수리물리",
+   "디자인 사고",
+   "현대광학",
+   "의공학개론",
+   "선형대수학",
+   "양자 컴퓨팅 개론",
+   "기계학습개론",
+   "딥러닝개론",
+   "생명에 대한 융합적 이해"
+  ]
+ },
+ "p37_L": {
+  "professor": "이민선",
+  "lab_ko": "광자 및 방사선 의료 영상 연구실 (PRISM)",
+  "lab_en": "Photon  and  Radiationi  Imaging,  Sensing  and",
+  "research_fields": [
+   "Positron Emission Tomography (PET) / Nanophotonics radiation",
+   "sensor / Photon and Radiation Transport Simulation / AI-based",
+   "Medical Image Analysis"
+  ],
+  "courses": [
+   "회로이론과 계측법",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "공학수학Ⅰ",
+   "아날로그 전자회로",
+   "디지털 영상처리",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "전자회로 이론",
+   "반도체공정개론",
+   "의공학개론",
+   "딥러닝개론",
+   "전자소자개론"
+  ]
+ },
+ "p37_R": {
+  "professor": "이병권",
+  "lab_ko": "전산광학 및 생체광자학 영상 연구실(COBI Lab)",
+  "lab_en": "Computational Optics and Biophotonic Imaging",
+  "research_fields": [
+   "Biomedical Optics",
+   "Interferometric Microscopy",
+   "Wavelength-Swept Lasers",
+   "Fourier-Domain Image Processing"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "전기역학Ⅱ",
+   "현대광학",
+   "다변수 미적분학",
+   "양자역학Ⅰ",
+   "디지털 신호처리",
+   "일반물리Ⅱ",
+   "신호 및 시스템",
+   "디지털 영상처리",
+   "일반물리실험Ⅱ",
+   "컴퓨터구조",
+   "강화학습",
+   "프로그래밍",
+   "의공학개론",
+   "전자회로 이론",
+   "컴퓨터 비전 개론",
+   "인공지능기초",
+   "딥러닝개론"
+  ]
+ },
+ "p38_L": {
+  "professor": "장진호",
+  "lab_ko": "의료융합기술 연구실(MAFI Lab)",
+  "lab_en": "Medical Acoustic Fusion Innovation",
+  "research_fields": [
+   "Biomedical signal & image processing",
+   "Deep learning for medical",
+   "imaging",
+   "Medical ultrasound imaging systems",
+   "Combined",
+   "ultrasound and optical imaging & therapy",
+   "Ultrasound sensors"
+  ],
+  "courses": [
+   "일반물리Ⅱ",
+   "디지털 논리회로",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "일반물리실험Ⅱ",
+   "선형대수학",
+   "의공학개론",
+   "디지털 영상처리",
+   "공학수학Ⅰ",
+   "자료구조",
+   "컴퓨터구조",
+   "강화학습",
+   "프로그래밍",
+   "이산수학",
+   "전자회로 이론",
+   "컴퓨터 비전 개론",
+   "딥러닝개론",
+   "양자 컴퓨팅 개론"
+  ]
+ },
+ "p38_R": {
+  "professor": "최지웅",
+  "lab_ko": "통신 및 신호처리 연구실(CSP Lab)",
+  "lab_en": "Communicaton & Signal Processing",
+  "research_fields": [
+   "Advanced communication systems",
+   "Brain machine/computer interface (BMI/BCI)",
+   "- Communications theory and signal processing/machine learning",
+   "- Vehicular communications (V2X",
+   "IVN)",
+   "5G/6G",
+   "- Biomedical signal processing/AI",
+   "BMI/BCI"
+  ],
+  "courses": [
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "선형대수학",
+   "딥러닝개론",
+   "객체지향 프로그래밍",
+   "통신의 기초",
+   "디지털통신",
+   "컴퓨터 네트워크",
+   "신경과학Ⅰ",
+   "의공학개론"
+  ]
+ },
+ "p39_L": {
+  "professor": "최재호",
+  "lab_ko": "지능형 무선 센싱 연구실(IRS Lab)",
+  "lab_en": "Intelligent Radio Sensing Lab.",
+  "research_fields": [
+   "AI+Wireless",
+   "Sensor Signal Processing",
+   "Sensor Fusion",
+   "Wireless for Healthcare",
+   "Wireless for Defense"
+  ],
+  "courses": [
+   "인공지능기초",
+   "기계학습개론",
+   "디지털 신호처리",
+   "공학수학Ⅰ",
+   "선형대수학",
+   "딥러닝개론",
+   "디지털 영상처리",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "컴퓨터 비전 개론",
+   "일반물리Ⅱ",
+   "객체지향 프로그래밍",
+   "통신의 기초",
+   "컴퓨터 네트워크",
+   "강화학습"
+  ]
+ },
+ "p39_R": {
+  "professor": "황재윤",
+  "lab_ko": "다중의료영상 및 시스템 연구실(MBIS Lab)",
+  "lab_en": "Multimodal Biomedical Imaging and System",
+  "research_fields": [
+   "Ultrasound and Optical Imaging and System",
+   "Signal and",
+   "Image Processing",
+   "Biomedical Applications of Deep Learning",
+   "Intelligent Remote Sensing"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "신호 및 시스템",
+   "강화학습",
+   "다변수 미적분학",
+   "디지털 논리회로",
+   "전자회로 이론",
+   "디지털 신호처리",
+   "일반물리Ⅱ",
+   "인공지능 개론",
+   "전자소자개론",
+   "일반물리실험Ⅱ",
+   "의공학개론",
+   "딥러닝개론",
+   "선형대수학"
+  ]
+ },
+ "p42_L": {
+  "professor": "김기섭",
+  "lab_ko": "로봇인식 및 자율화 연구실",
+  "lab_en": "Autonomy and Perceptual Robotics Lab.",
+  "research_fields": [
+   "로봇 상태추정/지도작성",
+   "SLAM 2.0 기반 로봇웹",
+   "뉴럴 맵 표현",
+   "의미 및 사",
+   "회적 문맥 기반 비주얼-언어 내비게이션",
+   "로봇 AI 추론",
+   "AI 월드 모델",
+   "강화",
+   "학습 기반 자율 내비게이션"
+  ],
+  "courses": [
+   "선형대수학",
+   "인공지능 개론",
+   "로봇동역학 및 제어",
+   "컴퓨터 비전 개론",
+   "고체역학",
+   "디지털 영상처리",
+   "강화학습",
+   "디자인 사고",
+   "동역학",
+   "기계학습개론",
+   "자동제어시스템",
+   "학술 글쓰기",
+   "프로그래밍",
+   "메카트로닉스",
+   "Scientific Writing",
+   "창의기계설계"
+  ]
+ },
+ "p42_R": {
+  "professor": "김동욱",
+  "lab_ko": "지능형 로보틱스 연구실",
+  "lab_en": "Physical Intelligent Robotics Lab.",
+  "research_fields": [
+   "로봇 상태추정",
+   "로봇 비전",
+   "AI 기반 모델링 및 제어",
+   "로봇 학습",
+   "지능형 하드웨어 시스템",
+   "베이지안 딥러닝"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "인공지능기초",
+   "로봇동역학 및 제어",
+   "다변수 미적분학",
+   "공학수학Ⅱ",
+   "자동제어시스템",
+   "지능형제어시스템",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "확률과 통계 및 실습",
+   "진동공학",
+   "강화학습",
+   "프로그래밍",
+   "데이터사이언스기초",
+   "기구학",
+   "텐서들의 기하학과 그 응용",
+   "동역학",
+   "신호 및 시스템",
+   "딥러닝개론"
+  ]
+ },
+ "p43_L": {
+  "professor": "김민수",
+  "lab_ko": "로보틱스 설계 및 생산 연구실",
+  "lab_en": "Robotics Design and Manufacturing Lab.",
+  "research_fields": [
+   "마이크로 로봇",
+   "의료 로봇",
+   "신경 인터페이스",
+   "센서"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "고체역학",
+   "유체역학",
+   "로봇동역학 및 제어",
+   "일반물리Ⅰ",
+   "동역학",
+   "기구학",
+   "디자인 사고",
+   "기계열역학",
+   "메카트로닉스",
+   "반도체공정개론",
+   "창의기계설계",
+   "의공학개론",
+   "디지털 신호처리",
+   "인공지능 개론",
+   "회로이론과 계측법",
+   "반도체물성 개론",
+   "전자소자개론"
+  ]
+ },
+ "p43_R": {
+  "professor": "김봉훈",
+  "lab_ko": "비에이치 로보틱스",
+  "lab_en": "BH Robotics",
+  "research_fields": [
+   "2차원 나노재료",
+   "3차원 전자소자",
+   "바이오 집적소자",
+   "바이오 모사소자"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "고체역학",
+   "Scientific Writing",
+   "일반물리Ⅱ",
+   "회로이론과 계측법",
+   "자동제어시스템",
+   "반도체공정개론",
+   "일반화학Ⅰ",
+   "반도체물성 개론",
+   "반도체공정실습",
+   "일반화학Ⅱ",
+   "전자소자개론",
+   "메카트로닉스"
+  ]
+ },
+ "p44_L": {
+  "professor": "김소희",
+  "lab_ko": "신경인터페이스 및 마이크로시스템 연구실",
+  "lab_en": "Neural Interfaces & MicroSystems Lab.",
+  "research_fields": [
+   "BCI",
+   "뇌 인터페이스",
+   "신경 인터페이스",
+   "소프트 바이오전자 소자",
+   "의공학 디바이스"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "디지털 신호처리",
+   "인간과 공학",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "회로이론과 계측법",
+   "반도체공정개론",
+   "창의기계설계",
+   "자동제어시스템",
+   "고체역학",
+   "열전달",
+   "의공학개론",
+   "프로그래밍",
+   "신호 및 시스템",
+   "확률과 통계 및 실습",
+   "전자회로 이론"
+  ]
+ },
+ "p44_R": {
+  "professor": "김회준",
+  "lab_ko": "나노 소재 및 소자 연구실",
+  "lab_en": "Nano Materials and Devices Lab.",
+  "research_fields": [
+   "반도체 공정/소자",
+   "에너지 하베스팅",
+   "3D 프린팅",
+   "로봇센서",
+   "환경센서"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "Scientific Writing",
+   "반도체공정개론",
+   "일반물리Ⅰ",
+   "회로이론과 계측법",
+   "기계열역학",
+   "반도체공정실습",
+   "일반물리Ⅱ",
+   "창의기계설계",
+   "인간과 공학",
+   "고체역학",
+   "반도체물성 개론",
+   "열전달",
+   "전자소자개론"
+  ]
+ },
+ "p45_L": {
+  "professor": "남강현",
+  "lab_ko": "모빌리티제어 연구실",
+  "lab_en": "Mobility Control Lab.",
+  "research_fields": [
+   "차량동역학 및 통합 모션제어",
+   "Steer/Brake/Drive-by-Wire 시스템 제어",
+   "전기차·고성능 차량 샤시 통합제어",
+   "AI/ML 기반 차량 상태추정 및 제어",
+   "미래 e-모빌리티 메카트로닉스",
+   "AGV/AMR 자율주행 및 경로생성"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "자동제어시스템",
+   "지능형제어시스템",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "공학수학Ⅱ",
+   "진동공학",
+   "디지털 신호처리",
+   "회로이론과 계측법",
+   "신호 및 시스템",
+   "동역학"
+  ]
+ },
+ "p45_R": {
+  "professor": "노어진",
+  "lab_ko": "소프트 증강지능 연구실",
+  "lab_en": "Soft Augmented Intelligence Lab.",
+  "research_fields": [
+   "소프트 웨어러블 로봇(엑소슈트 등)",
+   "의수",
+   "학습 기반 사용자 의도 인식",
+   "Computer Vision",
+   "Physical AI"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "자동제어시스템",
+   "로봇동역학 및 제어",
+   "메카트로닉스",
+   "일반물리Ⅰ",
+   "공학수학Ⅱ",
+   "디지털 신호처리",
+   "신호 및 시스템",
+   "일반물리Ⅱ",
+   "프로그래밍",
+   "기계학습개론",
+   "동역학",
+   "디자인 사고",
+   "딥러닝개론",
+   "컴퓨터 알고리즘",
+   "인공지능 개론",
+   "강화학습",
+   "의공학개론",
+   "창의기계설계",
+   "Scientific Writing"
+  ]
+ },
+ "p46_L": {
+  "professor": "문인규",
+  "lab_ko": "지능형 이미징 및 비전 시스템(Intelligent",
+  "lab_en": "",
+  "research_fields": [
+   "광이미징 시스템",
+   "딥러닝",
+   "기계학습 및 컴퓨터 비전"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "자료구조",
+   "디지털 신호처리",
+   "일반물리Ⅱ",
+   "공학수학Ⅱ",
+   "의공학개론",
+   "일반물리실험Ⅱ",
+   "확률과 통계 및 실습",
+   "인공지능 개론",
+   "현대광학",
+   "이산수학",
+   "컴퓨터 알고리즘",
+   "기계학습개론",
+   "프로그래밍",
+   "객체지향 프로그래밍"
+  ]
+ },
+ "p46_R": {
+  "professor": "박경서",
+  "lab_ko": "인터랙티브 로봇 연구실",
+  "lab_en": "Interactive Robot Lab.",
+  "research_fields": [
+   "휴머노이드",
+   "물리적 인간-로봇 상호작용",
+   "학습 기반 제어"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "자동제어시스템",
+   "디지털 신호처리",
+   "일반물리Ⅰ",
+   "프로그래밍",
+   "진동공학",
+   "로봇동역학 및 제어",
+   "디자인 사고",
+   "창의기계설계",
+   "메카트로닉스",
+   "기구학",
+   "인공지능 개론",
+   "로봇전자공학",
+   "기계학습개론",
+   "동역학",
+   "딥러닝개론",
+   "Scientific Writing"
+  ]
+ },
+ "p47_L": {
+  "professor": "박석호",
+  "lab_ko": "멀티스케일 의료 로봇 연구실",
+  "lab_en": "Multiscale medical Robotics Lab.",
+  "research_fields": [
+   "의료용(마이크로/나노",
+   "매크로)로봇",
+   "의료용 디바이스"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "동역학",
+   "로봇동역학 및 제어",
+   "기구학",
+   "일반물리Ⅰ",
+   "고체역학",
+   "생물물리학",
+   "객체지향 프로그래밍",
+   "기계학습개론",
+   "메카트로닉스",
+   "디자인 사고",
+   "자동제어시스템",
+   "의공학개론",
+   "인공지능 개론",
+   "컴퓨터 알고리즘"
+  ]
+ },
+ "p47_R": {
+  "professor": "박준혁",
+  "lab_ko": "웨어러블 및 보조로봇 연구실",
+  "lab_en": "Wearable Engineering and Assistive Robotics",
+  "research_fields": [
+   "웨어러블 로봇",
+   "보조 로봇",
+   "임상 실험"
+  ],
+  "courses": [
+   "일반물리Ⅱ",
+   "로봇동역학 및 제어",
+   "일반물리Ⅰ",
+   "자동제어시스템",
+   "기구학",
+   "다변수 미적분학",
+   "확률과 통계 및 실습",
+   "진동공학",
+   "디지털 신호처리",
+   "선형대수학",
+   "동역학",
+   "기계학습개론",
+   "프로그래밍",
+   "인공지능 개론",
+   "창의기계설계"
+  ]
+ },
+ "p48_L": {
+  "professor": "송석호",
+  "lab_ko": "생체융합 로보틱스 연구실",
+  "lab_en": "Biointegrated Robotics Lab.",
+  "research_fields": [
+   "생체모사기반 유연재료",
+   "소프트로봇",
+   "신경인터페이스 및 최소침습형 의료기기"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "자동제어시스템",
+   "반도체공정개론",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "고체역학",
+   "동역학",
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "Scientific Writing",
+   "반도체공정실습",
+   "디지털 신호처리",
+   "의공학개론"
+  ]
+ },
+ "p48_R": {
+  "professor": "송철",
+  "lab_ko": "지능 로봇 광메카트로닉스 연구실",
+  "lab_en": "Intelligent Robot OptoMechatronics Lab.",
+  "research_fields": [
+   "몰입형 인간 로봇 상호작용",
+   "광의료 메카트로닉스",
+   "인공지능 내시경 시스템"
+  ],
+  "courses": [
+   "디자인 사고",
+   "프로그래밍",
+   "의공학개론",
+   "현대광학",
+   "일반물리Ⅰ",
+   "자동제어시스템",
+   "일반물리Ⅱ",
+   "메카트로닉스",
+   "인공지능 개론",
+   "진동공학",
+   "로봇동역학 및 제어",
+   "객체지향 프로그래밍",
+   "동역학",
+   "기계학습개론",
+   "딥러닝개론",
+   "시스템의 통합적 모델링"
+  ]
+ },
+ "p49_L": {
+  "professor": "오세훈",
+  "lab_ko": "모션컨트롤 연구실",
+  "lab_en": "Motion Control Lab.",
+  "research_fields": [
+   "정밀제어",
+   "인간로봇 상호작용제어",
+   "차량제어",
+   "구동기 시스템 개발"
+  ],
+  "courses": [
+   "디자인 사고",
+   "자동제어시스템",
+   "로봇동역학 및 제어",
+   "학술 글쓰기",
+   "프로그래밍",
+   "진동공학",
+   "고전의 산책",
+   "기구학",
+   "동역학"
+  ]
+ },
+ "p49_R": {
+  "professor": "유재석",
+  "lab_ko": "의생명 초음파 연구실",
+  "lab_en": "Advanced Ultrasound Research Lab.",
+  "research_fields": [
+   "의생명 초음파 및 광음향 영상과 치료 기술",
+   "의료 영상 및 신호 처리",
+   "머신러닝 기반의 신호처리 및 진단 기술 개발",
+   "나노 진단/치료 플랫폼 개발"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "디자인 사고",
+   "공학수학Ⅱ",
+   "딥러닝개론",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "확률과 통계 및 실습",
+   "의공학개론",
+   "강화학습",
+   "프로그래밍",
+   "기계학습개론",
+   "인공지능 개론"
+  ]
+ },
+ "p50_L": {
+  "professor": "윤동원",
+  "lab_ko": "바이오로봇 및 메카트로닉스 연구실",
+  "lab_en": "Bio Robotics and Mechatronics Lab.",
+  "research_fields": [
+   "자연모사로봇",
+   "산업용/군사용 등 다양한 분야의 로봇연구",
+   "메카트로닉스",
+   "센서 및 액추에이터"
+  ],
+  "courses": [
+   "일반물리Ⅱ",
+   "로봇동역학 및 제어",
+   "자동제어시스템",
+   "일반물리Ⅰ",
+   "기구학",
+   "확률과 통계 및 실습",
+   "다변수 미적분학",
+   "진동공학",
+   "디지털 신호처리",
+   "선형대수학",
+   "동역학",
+   "기계학습개론",
+   "프로그래밍",
+   "신호 및 시스템",
+   "인공지능 개론",
+   "딥러닝개론",
+   "창의기계설계"
+  ]
+ },
+ "p50_R": {
+  "professor": "이상훈",
+  "lab_ko": "신경로봇 연구실",
+  "lab_en": "Neuro-interfaced Robotics Lab.",
+  "research_fields": [
+   "신경인터페이스",
+   "말초신경조절기술",
+   "신경보철기술",
+   "생체전자의약품",
+   "신경공학"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "반도체공정개론",
+   "의공학개론",
+   "다변수 미적분학",
+   "공학수학Ⅱ",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "회로이론과 계측법",
+   "디지털 신호처리",
+   "신호 및 시스템",
+   "일반물리실험Ⅱ",
+   "프로그래밍",
+   "반도체물성 개론",
+   "확률과 통계 및 실습",
+   "전자회로 이론"
+  ]
+ },
+ "p51_L": {
+  "professor": "이성민",
+  "lab_ko": "지능형 메카트로닉스 및 제어 연구실",
+  "lab_en": "Advanced Intelligent Mechatronics and Control Lab.",
+  "research_fields": [
+   "다자유도 엑추에이터 및 모션 시스템",
+   "무인 비행체",
+   "시간지연 시스템 및 제어 이론/적용"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "유체역학",
+   "로봇동역학 및 제어",
+   "자동제어시스템",
+   "다변수 미적분학",
+   "공학수학Ⅱ",
+   "모빌리티공학개론",
+   "진동공학",
+   "일반물리Ⅰ",
+   "고체역학",
+   "창의공학설계",
+   "기구학",
+   "일반물리Ⅱ",
+   "동역학",
+   "지능형제어시스템",
+   "메카트로닉스",
+   "프로그래밍",
+   "창의기계설계"
+  ]
+ },
+ "p51_R": {
+  "professor": "이아형",
+  "lab_ko": "신경-기계 인터페이스 연구실",
+  "lab_en": "Neuro-Machine Interface Lab.",
+  "research_fields": [
+   "뇌-기계인터페이스",
+   "바이오메디컬 시스템온칩(SoC)",
+   "웨어러블 및 삽입형 생체전자시스템",
+   "무선 네트워크",
+   "뉴로모픽 신경해독"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "전자회로 이론",
+   "디지털 신호처리",
+   "프로그래밍",
+   "아날로그 전자회로",
+   "디지털집적회로설계",
+   "데이터사이언스기초",
+   "신호 및 시스템",
+   "반도체공정개론",
+   "일반물리Ⅰ",
+   "디지털 논리회로",
+   "통신의 기초",
+   "뇌공학개론"
+  ]
+ },
+ "p52_L": {
+  "professor": "이옥균",
+  "lab_ko": "차세대의료영상 연구실",
+  "lab_en": "Next-generation Medical Imaging Lab.",
+  "research_fields": [
+   "의료영상복원 알고리즘 개발/응용",
+   "(x-ray 물질분리*",
+   "적외선을 이용한 3차원 기능성 뇌영상**)"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "기계학습개론",
+   "다변수 미적분학",
+   "확률과 통계 및 실습",
+   "컴퓨터 알고리즘",
+   "프로그래밍",
+   "인공지능 개론"
+  ]
+ },
+ "p52_R": {
+  "professor": "이용석",
+  "lab_ko": "로봇 지능 및 인터페이스 연구실",
+  "lab_en": "Robot Interface, Interaction and Intelligence Lab.",
+  "research_fields": [
+   "로봇 및 physical AI",
+   "디지털 트윈 시뮬레이션",
+   "휴머노이드 정밀조작 연구"
+  ],
+  "courses": [
+   "기구학",
+   "로봇동역학 및 제어",
+   "다변수 미적분학",
+   "프로그래밍",
+   "동역학",
+   "선형대수학",
+   "자동제어시스템",
+   "기계학습개론",
+   "인공지능 개론"
+  ]
+ },
+ "p53_L": {
+  "professor": "이재홍",
+  "lab_ko": "소프트 바이오일렉트로닉스 연구실",
+  "lab_en": "Soft Bioelectronics Lab.",
+  "research_fields": [
+   "웨어러블 전자소자",
+   "체내삽입형 헬스케어 센서",
+   "웨어러블 로보틱스",
+   "1D 유연센서 및 전자소자",
+   "전자섬유"
+  ],
+  "courses": [
+   "프로그래밍",
+   "반도체물성 개론",
+   "반도체공정개론",
+   "일반물리Ⅰ",
+   "회로이론과 계측법",
+   "전자소자개론",
+   "반도체공정실습",
+   "일반물리Ⅱ",
+   "일반화학Ⅰ",
+   "의공학개론",
+   "일반화학Ⅱ",
+   "메카트로닉스"
+  ]
+ },
+ "p53_R": {
+  "professor": "임용섭",
+  "lab_ko": "자율시스템제어 연구실",
+  "lab_en": "Autonomous Systems and Control Lab. (ASCL",
+  "research_fields": [
+   "- 인공지능(Al) 기반 자율주행/비행로봇 인지",
+   "판단 및 제어",
+   "- 지능형 메카트로닉스 제어시스템"
+  ],
+  "courses": [
+   "자동제어시스템",
+   "로봇동역학 및 제어",
+   "메카트로닉스",
+   "디자인 사고",
+   "프로그래밍",
+   "동역학",
+   "진동공학",
+   "고체역학",
+   "기계학습개론"
+  ]
+ },
+ "p54_L": {
+  "professor": "장경인",
+  "lab_ko": "퍼스널라이즈드 피지컬 AI 연구실",
+  "lab_en": "Personalized Physical AI Lab.",
+  "research_fields": [
+   "의료기기 개발",
+   "바이오센서",
+   "뇌공학",
+   "전자피부",
+   "차세대 디스플레이",
+   "바이오 인공지능"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "재료열역학 개론",
+   "다변수 미적분학",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "고체역학",
+   "수리물리",
+   "일반화학Ⅱ",
+   "유체역학",
+   "메카트로닉스",
+   "프로그래밍"
+  ]
+ },
+ "p54_R": {
+  "professor": "정소현",
+  "lab_ko": "유체 및 소프트 로봇 연구실",
+  "lab_en": "Fluid and Soft Robotics Lab.",
+  "research_fields": [
+   "미세유체역학",
+   "소프트물질역학",
+   "생체모방 기계시스템"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "유체역학",
+   "고체역학",
+   "동역학",
+   "다변수 미적분학",
+   "기계재료학",
+   "이동현상개론"
+  ]
+ },
+ "p55_L": {
+  "professor": "한상윤",
+  "lab_ko": "지능형 나노광학 연구실",
+  "lab_en": "Intelligent Nanophotonics Lab.",
+  "research_fields": [
+   "광-반도체",
+   "광-회로",
+   "광-AI 가속기",
+   "양자 컴퓨터",
+   "반도체 라이다"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "전자소자개론",
+   "신호 및 시스템",
+   "다변수 미적분학",
+   "일반물리Ⅱ",
+   "전자회로 이론",
+   "일반물리Ⅰ",
+   "반도체공정개론",
+   "프로그래밍"
+  ]
+ },
+ "p55_R": {
+  "professor": "황민호",
+  "lab_ko": "수술로봇 및 정밀조작 연구실",
+  "lab_en": "Surgical Robotics and Robotic Manipulation Lab.",
+  "research_fields": [
+   "로봇 파지/조작",
+   "학습 기반 로봇 모델링/제어",
+   "AI기반 수술로봇"
+  ],
+  "courses": [
+   "선형대수학",
+   "로봇동역학 및 제어",
+   "시스템의 통합적 모델링",
+   "기구학",
+   "자동제어시스템",
+   "디자인 사고",
+   "프로그래밍",
+   "고체역학",
+   "동역학",
+   "학술 글쓰기",
+   "기계학습개론",
+   "Scientific Writing",
+   "인공지능 개론",
+   "딥러닝개론",
+   "메카트로닉스",
+   "강화학습",
+   "의공학개론"
+  ]
+ },
+ "p58_L": {
+  "professor": "권혁진",
+  "lab_ko": "전기화학 디바이스 계면 연구실",
+  "lab_en": "Electrochemical Device Interfaces Laboratory",
+  "research_fields": [
+   "차세대 Li/Na 전지",
+   "액체/고체 전해질",
+   "전기화학 계면",
+   "멀티스케일 시뮬레",
+   "이션",
+   "전기화학 에너지 저장 장치(Batteries)",
+   "전기화학 에너지 변환 장치",
+   "(Li-NRR)"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "분석화학",
+   "물리화학 Ⅱ",
+   "일반화학Ⅱ",
+   "무기화학 Ⅰ",
+   "재료공학개론Ⅰ",
+   "재료공학개론Ⅱ",
+   "물리화학Ⅰ",
+   "화학공학열역학",
+   "학술 글쓰기"
+  ]
+ },
+ "p58_R": {
+  "professor": "김영규",
+  "lab_ko": "전기화학 재료 및 계면 연구실",
+  "lab_en": "Laboratory of Electrochemical Materials and Interfaces",
+  "research_fields": [
+   "이차전지",
+   "전고체 전지",
+   "계면 분석",
+   "실시간 해석",
+   "다중 모드 분석",
+   "전기화학 시스템 최적화"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "분석화학",
+   "재료공학개론Ⅰ",
+   "재료상변태",
+   "일반물리Ⅰ",
+   "무기화학 Ⅰ",
+   "재료공학개론Ⅱ",
+   "물리화학Ⅰ",
+   "재료열역학 개론",
+   "재료의 기계적 거동",
+   "일반물리Ⅱ",
+   "물리화학 Ⅱ",
+   "결정학 및 회절",
+   "전자회로 이론",
+   "전자재료학"
+  ]
+ },
+ "p59_L": {
+  "professor": "김진수",
+  "lab_ko": "배터리 설계 공정 연구실",
+  "lab_en": "Battery Design and Processing Laboratory",
+  "research_fields": [
+   "차세대 배터리 설계 및 프로세싱"
+  ],
+  "courses": []
+ },
+ "p59_R": {
+  "professor": "박인철",
+  "lab_ko": "소재 AI 연구실",
+  "lab_en": "Advanced Intelligence for Materials Lab.",
+  "research_fields": [
+   "이차전지",
+   "머신러닝·딥러닝 기반 소재 물성 예측 및 공정 최적화",
+   "제일원리·실험 기반 반응 메커니즘 규명",
+   "실험 자동화 기반 소재 탐색 및 AI 특성 분석"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "선형대수학",
+   "일반물리Ⅰ",
+   "확률과 통계 및 실습",
+   "기계학습개론",
+   "프로그래밍",
+   "인공지능기초",
+   "데이터사이언스기초"
+  ]
+ },
+ "p60_L": {
+  "professor": "위태웅",
+  "lab_ko": "차세대 촉매 및 에너지 시스템 연구실",
+  "lab_en": "Advanced Catalysis and Energy System Lab.",
+  "research_fields": [
+   "전기화학공학",
+   "전기화학적 탄소 포집·활용·저장",
+   "배터리",
+   "전기촉매",
+   "에너지 및 지속 가능한 전환",
+   "실시간/극저온 투과전자현미경 분석",
+   "차세대 분석"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "화학공학개론",
+   "무기화학 Ⅱ",
+   "분석화학",
+   "공학수학Ⅰ",
+   "물리화학Ⅰ",
+   "화학공학열역학",
+   "결정학 및 회절",
+   "무기화학 Ⅰ",
+   "반응공학",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "나노재료학"
+  ]
+ },
+ "p60_R": {
+  "professor": "이종수",
+  "lab_ko": "MNEDL연구실",
+  "lab_en": "Multifunctional Nanomaterials &  Energy Device Lab.",
+  "research_fields": [
+   "나노입자 합성",
+   "퀀텀닷 디스플레이 (QLED)",
+   "양자점 태양전지",
+   "2차원 TMDC 소재 및 광전소자"
+  ],
+  "courses": [
+   "일반화학Ⅱ",
+   "분석화학",
+   "무기화학 Ⅱ",
+   "일반물리Ⅱ",
+   "무기화학 Ⅰ",
+   "물리화학 Ⅱ"
+  ]
+ },
+ "p61_L": {
+  "professor": "이주혁",
+  "lab_ko": "에너지변환재료 연구실",
+  "lab_en": "Energy Conversion Materials Engineering Lab.",
+  "research_fields": [
+   "자가발전 전자소자를 위한 차세대 에너지 변환기술",
+   "압전",
+   "마찰대전 에너지 발전 소재 및 소자",
+   "생체모방 생체분자 에너지 소재 및 소자",
+   "에너지 변환소재의 새로운 응용분야 연구"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "유기화학 Ⅰ",
+   "재료공학개론Ⅰ",
+   "결정학 및 회절",
+   "일반화학Ⅱ",
+   "분석화학",
+   "재료열역학 개론",
+   "고분자개론",
+   "일반생물학Ⅰ",
+   "무기화학 Ⅰ",
+   "재료공학실험",
+   "일반물리Ⅰ",
+   "물리화학Ⅰ",
+   "재료공학개론Ⅱ"
+  ]
+ },
+ "p61_R": {
+  "professor": "이태훈",
+  "lab_ko": "데이터 기반 소재 모델링 그룹",
+  "lab_en": "Data-driven Materials Modeling Group",
+  "research_fields": [
+   "전산재료과학",
+   "머신러닝 기반 소재 모델링",
+   "반도체 및 전기화학 소재 물성 예측 및 분석"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "인공지능기초",
+   "재료공학개론Ⅰ",
+   "재료공학개론Ⅱ",
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "프로그래밍",
+   "반도체물성 개론",
+   "일반화학Ⅰ",
+   "일반화학Ⅱ"
+  ]
+ },
+ "p62_L": {
+  "professor": "홍승태",
+  "lab_ko": "디스커버리 연구실",
+  "lab_en": "Discovery Lab.",
+  "research_fields": [
+   "전고체전지(리튬",
+   "나트륨)",
+   "차세대 이차전지(칼슘",
+   "마그네슘 이온전지)",
+   "고체화학",
+   "화학 결정학"
+  ],
+  "courses": [
+   "일반화학Ⅱ",
+   "분석화학",
+   "물리화학 Ⅱ",
+   "재료열역학 개론",
+   "일반화학Ⅰ",
+   "무기화학 Ⅰ",
+   "무기화학 Ⅱ",
+   "물리화학Ⅰ",
+   "재료공학개론Ⅰ",
+   "재료공학개론Ⅱ",
+   "결정학 및 회절",
+   "화학공학개론"
+  ]
+ },
+ "p62_R": null,
+ "p63_L": {
+  "professor": "최승호",
+  "lab_ko": "생물물리 및 연성물질 연구실",
+  "lab_en": "Biophysics and Soft Matter(BioSM) Lab.",
+  "research_fields": [
+   "모델링 및 시뮬레이션 연구",
+   "전해질 및 연성물질의 특성 연구",
+   "광 수집 및 에너지 전달 메커니즘 연구"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "해석역학Ⅰ",
+   "해석역학Ⅱ",
+   "열 및 통계 물리"
+  ]
+ },
+ "p63_R": null,
+ "p64_L": {
+  "professor": "이윤구",
+  "lab_ko": "유기인쇄전자 연구실",
+  "lab_en": "Organic and Printed Electronics Lab.",
+  "research_fields": [
+   "유기태양전지",
+   "OLED",
+   "인쇄전자",
+   "촉각센서"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "유기화학 Ⅰ",
+   "고분자개론",
+   "일반화학Ⅱ",
+   "유기화학 Ⅱ",
+   "물리화학 Ⅱ",
+   "화학공학개론",
+   "유기화학 Ⅲ",
+   "분석화학",
+   "물리화학Ⅰ"
+  ]
+ },
+ "p64_R": {
+  "professor": "이호춘",
+  "lab_ko": "전기화학 연구실",
+  "lab_en": "ELSE",
+  "research_fields": [
+   "전지화학",
+   "이차전지",
+   "전해액"
+  ],
+  "courses": [
+   "분석화학",
+   "고분자개론",
+   "화학공학개론",
+   "물리화학 Ⅱ",
+   "열전달",
+   "물리화학Ⅰ",
+   "유기화학 Ⅱ",
+   "재료열역학 개론",
+   "유기화학 Ⅰ",
+   "무기화학 Ⅱ",
+   "Scientific Writing",
+   "무기화학 Ⅰ",
+   "회로이론과 계측법",
+   "공학수학Ⅱ"
+  ]
+ },
+ "p65_L": {
+  "professor": "인수일",
+  "lab_ko": "광전기 소재 공학 연구실",
+  "lab_en": "Photo & Electrochemical Materials Science & Engineering Lab.",
+  "research_fields": [
+   "인공광합성",
+   "미생물연료전지",
+   "베타전지",
+   "나노기술의공학"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학실험 Ⅱ",
+   "일반화학Ⅱ",
+   "Scientific Writing",
+   "재료열역학 개론"
+  ]
+ },
+ "p65_R": {
+  "professor": "장윤희",
+  "lab_ko": "분자모델링 연구실",
+  "lab_en": "Curious Minds’ Molecular Modeling (CMMM) Lab.",
+  "research_fields": [
+   "분자모델링",
+   "전산모사",
+   "계산화학",
+   "신소재설계"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "물리화학Ⅰ",
+   "물리화학 Ⅱ",
+   "기계학습개론",
+   "일반화학Ⅱ",
+   "분석화학",
+   "무기화학 Ⅱ",
+   "유기화학 Ⅰ",
+   "일반물리Ⅰ",
+   "무기화학 Ⅰ",
+   "프로그래밍"
+  ]
+ },
+ "p66_L": {
+  "professor": "Sangaraju Shanmugam",
+  "lab_ko": "차세대 에너지 소재 연구실",
+  "lab_en": "Advanced Energy Materials Lab. (AEML",
+  "research_fields": [
+   "- Development of low-humidity operating polymer electrolyte membranes",
+   "- Development of  electrocatalysts for water electrolysis",
+   "- Design cost-effective catalysts for the N2/NO to NH3",
+   "- Development of ultra-high ion selective polymer composite membrane",
+   "for all-vanadium redox flow batteries",
+   "- Development of high energy electrode materials based on carbon/carbon",
+   "composites for Zn/Br2 aqueous flow battery applications"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "무기화학 Ⅰ",
+   "무기화학 Ⅱ",
+   "일반화학Ⅱ",
+   "물리화학Ⅰ",
+   "유기화학 Ⅰ"
+  ]
+ },
+ "p66_R": null,
+ "p67_L": {
+  "professor": "고서진",
+  "lab_ko": "하이브리드 광전자 디바이스 연구실",
+  "lab_en": "Hybrid Optoelectronic Device Laboratory",
+  "research_fields": [
+   "광전변환 소재 및 소자",
+   "광센서 / 포토디텍터",
+   "투명디스플레이",
+   "소자물리분석"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "화학공학개론",
+   "화학공학열역학",
+   "고분자개론",
+   "나노재료학",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "전자재료학",
+   "반도체물성 개론",
+   "물리화학Ⅰ",
+   "고체물리Ⅰ",
+   "고체물리Ⅱ"
+  ]
+ },
+ "p67_R": {
+  "professor": "김승현",
+  "lab_ko": "고분자 광촉매 연구실",
+  "lab_en": "Polymer PhotoCatalysts Laboratory",
+  "research_fields": [
+   "고분자화학",
+   "광촉매반응",
+   "지속가능한 화학",
+   "태양연료"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "일반화학실험 Ⅱ",
+   "심화화학실험 Ⅰ(유기.분석 화학)",
+   "고분자개론",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "물리화학Ⅰ",
+   "유기화학 Ⅲ",
+   "공학수학Ⅰ",
+   "유체역학",
+   "화학공학열역학",
+   "반응공학",
+   "이동현상개론"
+  ]
+ },
+ "p68_L": {
+  "professor": "김운혁",
+  "lab_ko": "배터리 소재 및 에너지 연구실",
+  "lab_en": "Battery Material & Energy Lab.",
+  "research_fields": [
+   "이차전지 소재",
+   "전고체전지"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "분석화학",
+   "물리화학 Ⅱ",
+   "재료공학개론Ⅰ",
+   "재료공학개론Ⅱ",
+   "일반화학Ⅱ",
+   "무기화학 Ⅰ",
+   "결정학 및 회절",
+   "화학공학열역학",
+   "물리화학Ⅰ"
+  ]
+ },
+ "p68_R": {
+  "professor": "김찬연",
+  "lab_ko": "촉매 공정 연구실",
+  "lab_en": "Catalyst & Process Lab.",
+  "research_fields": [
+   "불균일계 촉매",
+   "청정연료/화합물 생산",
+   "촉매미세환경 제어",
+   "촉매 메커니즘 규명"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "공학수학Ⅱ",
+   "물리화학 Ⅱ",
+   "물리화학 Ⅲ",
+   "화학공학열역학",
+   "공학수학Ⅰ",
+   "화학공학개론",
+   "고분자개론",
+   "이동현상개론",
+   "물리화학Ⅰ",
+   "반응공학",
+   "분석화학",
+   "나노재료학",
+   "유체역학",
+   "Scientific Writing"
+  ]
+ },
+ "p69_L": {
+  "professor": "박치영",
+  "lab_ko": "유기 및 고분자재료 연구실",
+  "lab_en": "Polymer & Organic Energy Materials Lab.",
+  "research_fields": [
+   "지속가능 고분자",
+   "유연전극 소재",
+   "고분자전해질",
+   "분자기계 및 지능형 복합소재"
+  ],
+  "courses": [
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "유기화학 Ⅲ",
+   "고분자개론",
+   "일반화학Ⅰ",
+   "분석화학",
+   "일반화학Ⅱ",
+   "재료열역학 개론",
+   "화학공학개론"
+  ]
+ },
+ "p69_R": {
+  "professor": "이종민",
+  "lab_ko": "에너지 환경 공학 연구실",
+  "lab_en": "Energy and Environmental Engineering Lab",
+  "research_fields": [
+   "전기화학공학",
+   "전기분해",
+   "수소생성",
+   "배터리",
+   "에너지 및 지속가능한 전환"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "공학수학Ⅱ",
+   "유기화학 Ⅱ",
+   "공학수학Ⅰ",
+   "분석화학",
+   "무기화학 Ⅱ",
+   "화학공학개론",
+   "화학공학열역학",
+   "무기화학 Ⅰ",
+   "유기화학 Ⅰ"
+  ]
+ },
+ "p70_L": {
+  "professor": "양지웅",
+  "lab_ko": "나노재료 연구실",
+  "lab_en": "NanoMaterials Lab.",
+  "research_fields": [
+   "나노재료합성",
+   "양자점 디스플레이 및 광센서",
+   "웨어러블 전자소자",
+   "액상전자현미경",
+   "광촉매"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "무기화학 Ⅰ",
+   "무기화학 Ⅱ",
+   "일반화학Ⅱ",
+   "분석화학",
+   "물리화학 Ⅱ",
+   "물리화학Ⅰ",
+   "유기화학 Ⅰ"
+  ]
+ },
+ "p70_R": {
+  "professor": "최종민",
+  "lab_ko": "화학에너지 소재 연구실",
+  "lab_en": "Chemical & Energy Materials Engineering (CEME) Lab.",
+  "research_fields": [
+   "다기능성 에너지&전자 소재",
+   "금속산화물 나노구조 설계",
+   "양자점 및 페로브스카이트 기반 차세대 태양전지",
+   "촉매 및 환경 소재"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "물리화학 Ⅱ",
+   "화학공학개론",
+   "무기화학 Ⅰ",
+   "화학공학열역학",
+   "전자재료학",
+   "분석화학",
+   "무기화학 Ⅱ",
+   "물리화학Ⅰ",
+   "반도체물성 개론",
+   "나노재료학"
+  ]
+ },
+ "p71_L": {
+  "professor": "허수미",
+  "lab_ko": "연성물질 시뮬레이션 AI 연구실",
+  "lab_en": "",
+  "research_fields": [
+   "고분자 물리",
+   "필드/분자 시뮬레이션",
+   "AI 기반 소재 정보학"
+  ],
+  "courses": [
+   "물리화학 Ⅱ",
+   "물리화학 Ⅲ",
+   "고분자개론",
+   "공학수학Ⅱ",
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "선형대수학",
+   "양자역학Ⅰ",
+   "양자역학Ⅱ",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "확률과 통계 및 실습",
+   "화학공학열역학",
+   "공학수학Ⅰ",
+   "물리화학Ⅰ",
+   "이동현상개론",
+   "다변수 미적분학",
+   "화학공학개론",
+   "무기화학 Ⅰ",
+   "유기화학 Ⅰ",
+   "인공지능기초"
+  ]
+ },
+ "p71_R": {
+  "professor": "호동해",
+  "lab_ko": "에너지 소재 디자인 및 공정 연구실",
+  "lab_en": "Energy Materials Design and Processing Lab",
+  "research_fields": [
+   "유연 전자소자 및 소재 관련 기술의 어플리케이션 적용 및 유연소재 공정",
+   "기술 개발",
+   "열전 및 마찰 발전 소자 개발 및 뉴로모픽 디바이스 적용"
+  ],
+  "courses": [
+   "과학기술과 현대사회",
+   "학술 글쓰기",
+   "나노재료학",
+   "전자재료학",
+   "디자인 사고",
+   "과학철학의 쟁점",
+   "반도체물성 개론",
+   "반도체공정실습"
+  ]
+ },
+ "p74_L": {
+  "professor": "고재원",
+  "lab_ko": "시냅스 형성 및 기능 연구실",
+  "lab_en": "Lab. of Synapse Formation and Function",
+  "research_fields": [
+   "시냅스 및 신경회로 발달 분자기전",
+   "뇌질환 병인기전 모델 개발 및 기전 연구"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "발생 및 발달생물학",
+   "유전학",
+   "분자생물학",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p74_R": {
+  "professor": "김규형",
+  "lab_ko": "신경행동 및 신경회로 연구실",
+  "lab_en": "Lab. of Neurobehavior and Neural Circuit",
+  "research_fields": [
+   "신경행동 가소성 특히 장기기억 (Long-Lasting Memory",
+   "Behavioral Imprinting) 연구 / 자기수용감각 (Proprioception) 연구"
+  ],
+  "courses": []
+ },
+ "p75_L": {
+  "professor": "김민환",
+  "lab_ko": "시냅스 및 신경회로 동역학 연구실",
+  "lab_en": "Laboratory of Synapse and Circuits Dynamics",
+  "research_fields": [
+   "- 시냅스 신호전달 및 신경회로 연결의 동역학적 변화",
+   "그 원인 및 기능 규명 연구",
+   "- 다양한 신경조절인자들에 의한 시냅스 신호전달 및 신경회로망 변화 연구",
+   "- 기계 학습과 자연 지능 학습의 작동 원리 비교 및 연구"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "세포생물학",
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "인공지능기초",
+   "분자생물학",
+   "신경생리학",
+   "프로그래밍",
+   "데이터사이언스기초",
+   "딥러닝개론",
+   "인지뇌과학개론",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ",
+   "기계학습개론"
+  ]
+ },
+ "p75_R": {
+  "professor": "김은경",
+  "lab_ko": "신경대사 연구실",
+  "lab_en": "Neuro Metabolism Lab.",
+  "research_fields": [
+   "뇌신경세포의 대사조절",
+   "대사질환치료",
+   "뇌대사체학"
+  ],
+  "courses": [
+   "생명과학개론",
+   "세포생물학",
+   "일반생물학Ⅰ",
+   "세포생물학 실험",
+   "분자생물학",
+   "일반생물학 실험",
+   "유전학",
+   "뇌과학 특강",
+   "의생명공학",
+   "유전학 실험",
+   "분석화학",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p76_L": {
+  "professor": "문제일",
+  "lab_ko": "화학감각신경계  연구실",
+  "lab_en": "Chemical Senses Lab.",
+  "research_fields": [
+   "후각신경계의 구조와 기능 (후각수용체 구조 및 기능",
+   "후각시스템 발달 등)",
+   "뇌의 후각신호 처리 (후각인지 등)",
+   "후각시스템 기반 임상중개연구 (치매조기진단 등) 및",
+   "상용화연구 (향기마케팅 등)",
+   "신약개발 (뇌졸중",
+   "치매 관련)"
+  ],
+  "courses": [
+   "유전학",
+   "분자생물학",
+   "발생 및 발달생물학",
+   "프로그래밍",
+   "세포생물학",
+   "생화학Ⅰ",
+   "유기화학 Ⅰ",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p76_R": {
+  "professor": "박포정",
+  "lab_ko": "신경생리학 연구실",
+  "lab_en": "Lab. of Optical Neurophysiology",
+  "research_fields": [
+   "형광 단백질 및 광학 도구 개발",
+   "학습과 기억의 기전 규명",
+   "수상돌기 신호",
+   "처리의 이해"
+  ],
+  "courses": [
+   "세포생물학",
+   "인지뇌과학개론",
+   "신경생리학",
+   "뇌공학개론",
+   "계산뇌과학입문",
+   "분자생물학",
+   "뇌질환",
+   "프로그래밍",
+   "정량 생명과학",
+   "뇌과학 특강",
+   "확률과 통계 및 실습",
+   "광학현미경",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p77_L": {
+  "professor": "백명인",
+  "lab_ko": "운동신경회로 연구실",
+  "lab_en": "Locomotor Neurocircuit Lab.",
+  "research_fields": [
+   "운동신경회로 발생 및 진화 기작 연구"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "세포생물학",
+   "분자생물학",
+   "발생 및 발달생물학",
+   "일반생물학 Ⅱ",
+   "세포생물학 실험",
+   "뇌과학 특강",
+   "일반생물학 실험",
+   "유전학 실험",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p77_R": {
+  "professor": "서병창",
+  "lab_ko": "뇌신호조절 연구실",
+  "lab_en": "Lab. of Brain Signal & Synapse Research",
+  "research_fields": [
+   "신경생리학 (Neurophysiology)",
+   "전기생리학 (Electrophysiology)",
+   "분자",
+   "생물학 (Molecular Biology)",
+   "Neuroimaging 기술 기반 - 신경 시냅스",
+   "전후 세포의 이온채널",
+   "수용체",
+   "지질 등 세포막 물질에 의한 신경신호전달",
+   "및 조절기전 규명 / 비정상 시냅스 신호전달에 의한 간질",
+   "통증 등 뇌병리",
+   "현상 발병기전 규명 및 조절 기전 개발"
+  ],
+  "courses": [
+   "생명과학개론",
+   "세포생물학",
+   "생화학Ⅰ",
+   "신경생리학",
+   "일반생물학Ⅰ",
+   "세포생물학 실험",
+   "뇌질환",
+   "뇌공학개론",
+   "일반생물학 Ⅱ",
+   "분자생물학",
+   "뇌과학 특강",
+   "일반생물학 실험",
+   "유기화학 Ⅰ",
+   "회로이론과 계측법",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p78_L": {
+  "professor": "엄지원",
+  "lab_ko": "시냅스 뇌질환 연구실",
+  "lab_en": "Synapse Disorder Lab.",
+  "research_fields": [
+   "시냅스 구조 및 기능의 문제에 따라 발생하는 뇌질환",
+   "(뇌전증",
+   "자폐",
+   "우울증",
+   "알츠하이머 치매)의 병인 분자기전 연구"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "발생 및 발달생물학",
+   "유전학",
+   "분자생물학",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p78_R": {
+  "professor": "오용석",
+  "lab_ko": "분자정신의학 연구실",
+  "lab_en": "Lab. of Molecular Psychiatry",
+  "research_fields": [
+   "- 정신질환의 분자 및 신경회로 기전 연구",
+   "(우울증_Depression",
+   "외상 후 스트레스 장애_PTSD)",
+   "- 뇌-신경회로 유전체-전사체-번역체 패턴규명 및 기능연구",
+   "(세포군-특이적 전사체 반응",
+   "단일세포 전사체 이형성)"
+  ],
+  "courses": [
+   "생물물리학",
+   "유전학",
+   "생화학Ⅰ",
+   "세포생물학",
+   "분자생물학",
+   "일반생물학Ⅰ",
+   "세포생물학 실험",
+   "일반생물학 실험",
+   "유전학 실험",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p79_L": {
+  "professor": "유성운",
+  "lab_ko": "신경세포사멸 연구실",
+  "lab_en": "Lab. of Neuronal Cell Death",
+  "research_fields": [
+   "오토파지에 의한 세포사멸 기전 / 해마신경줄기세포 사멸과 성체 해마신",
+   "경 발생 조절 기전 / 신경염증과 미세아교세포 활성화 기전 / 스트레스에",
+   "의한 치매",
+   "우울증 등 정신질환 발병 기전",
+   "주요 성과",
+   "Autophagy",
+   "Stem Cells 등 논문 게재"
+  ],
+  "courses": [
+   "발생 및 발달생물학",
+   "분석화학",
+   "계산뇌과학입문",
+   "세포생물학",
+   "확률과 통계 및 실습",
+   "유전학",
+   "뇌질환",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p79_R": {
+  "professor": "유우경",
+  "lab_ko": "단백질 생물물리학 연구실",
+  "lab_en": "Lab. of Protein Biophysics",
+  "research_fields": [
+   "Protein biophysics (folding and design",
+   "GPCRs)",
+   "Computational neuroscience",
+   "Bioinformatics"
+  ],
+  "courses": [
+   "선형대수학",
+   "뇌과학 특강",
+   "계산뇌과학입문",
+   "세포생물학",
+   "생화학Ⅰ",
+   "다변수 미적분학",
+   "유전학",
+   "정량 생명과학",
+   "양자역학Ⅱ",
+   "열 및 통계 물리",
+   "물리화학 Ⅱ",
+   "일반화학Ⅰ",
+   "양자역학Ⅰ",
+   "분자생물학",
+   "일반생물학Ⅰ",
+   "물리화학Ⅰ",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ",
+   "프로그래밍"
+  ]
+ },
+ "p80_L": {
+  "professor": "이광",
+  "lab_ko": "신경 다이내믹스 연구실",
+  "lab_en": "Neural Dynamics Lab.",
+  "research_fields": [
+   "행동",
+   "감정 기억",
+   "의사 결정에서의 뇌 작동 메커니즘 규명",
+   "신경 집단 및 뇌 네트워크의 다이나믹스 재구성",
+   "보상과 운동에서의 도파민 다이나믹스",
+   "차세대 뇌 인터페이스와 신경 이미징의 뇌공학 원천기술 개발"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ",
+   "뇌공학개론",
+   "뇌과학실험Ⅰ",
+   "뇌과학실험Ⅱ"
+  ]
+ },
+ "p80_R": {
+  "professor": "이석규",
+  "lab_ko": "환경생명공학 연구실",
+  "lab_en": "Lab. of Environmental Biotechnology",
+  "research_fields": [
+   "플라스틱 분해 미생물",
+   "효소 및 유전자",
+   "플라스틱 분해 미생물 균주 개발",
+   "미세 플라스틱의 생체내 영향"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "세포생물학",
+   "분자생물학",
+   "일반생물학 Ⅱ",
+   "세포생물학 실험",
+   "생화학Ⅰ",
+   "고분자개론",
+   "일반생물학 실험",
+   "화학공학개론",
+   "생화학Ⅱ",
+   "분석화학",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "유전학",
+   "유전학 실험",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p81_L": {
+  "professor": "이성배",
+  "lab_ko": "퇴행성 뇌질환과 노화 연구실",
+  "lab_en": "Lab. of Neurodegenerative diseases and Aging",
+  "research_fields": [
+   "퇴행성 뇌질환",
+   "신경 노화"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "유전학",
+   "뇌질환",
+   "세포생물학",
+   "뇌과학 특강",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p81_R": {
+  "professor": "이효상",
+  "lab_ko": "감정신경과학 연구실",
+  "lab_en": "Lab. of Affective Neuroscience",
+  "research_fields": [
+   "감정을 동반하는 행동의 기반이 되는 신경회로 규명 (통증",
+   "가려움증",
+   "공포",
+   "우울증 관련 신경회로 규명 및 신경세포와 비신경세포의 상호조절",
+   "기전 규명)"
+  ],
+  "courses": [
+   "생명과학개론",
+   "세포생물학",
+   "분자생물학",
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ",
+   "뇌과학 특강"
+  ]
+ },
+ "p82_L": {
+  "professor": "정한빈",
+  "lab_ko": "막단백질 구조 세포 생물학 연구실",
+  "lab_en": "Lab. of Membrane Protein and Structural Cell biology",
+  "research_fields": [
+   "청각 신호 전달 막단백질의 구조 분석을 통해 감각신경성 난청의 원인을 규명",
+   "신경세포 흥분도를 조절하는 이온채널의 구조 변화를 연구하여 뇌전증(간질)",
+   "기전을 탐구",
+   "뇌수막염 균의 뇌 침투 기전을 시각화하여 뇌혈관장벽(BBB) 조절 및",
+   "약물 투과 원리 연구",
+   "주요 성과",
+   "Nature",
+   "PNAS 포함 우수논문 다수 발표"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "세포생물학",
+   "일반생물학 Ⅱ",
+   "유전학",
+   "분자생물학",
+   "일반생물학 실험",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p82_R": {
+  "professor": "조용철",
+  "lab_ko": "신경재생 및 퇴행 연구실",
+  "lab_en": "Lab. of Axon Regeneration and Degeneration",
+  "research_fields": [
+   "신경손상반응의 후성유전학 연구를 통한 재생 인자 발굴",
+   "재생프로그램의 제어원리 이해를 통한 재생촉진소재개발",
+   "신경재생증폭 효과를 이용한 마비/통증 치료 방법 연구",
+   "오믹스분석을 응용한 재생프로그램제어 방법 연구",
+   "주요 성과",
+   "Cell",
+   "Neuron",
+   "PNAS",
+   "EMBO J 등 논문 게재",
+   "국제 특허 등"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "세포생물학",
+   "일반생물학 Ⅱ",
+   "유전학",
+   "분자생물학",
+   "일반생물학 실험",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p83_L": {
+  "professor": "최한경",
+  "lab_ko": "동물행동과 생체시계 연구실",
+  "lab_en": "Lab. of Animal Behavior and Circadian Rhythm",
+  "research_fields": [
+   "고위 뇌기능 (사회행동",
+   "집중력 등) 의 일주기 리듬 연구",
+   "감각 기능-고위 뇌기능으로 이어지는 신경회로의 정량적 이해",
+   "뇌공학 기술의 신경생물학적 원리 이해와 적용법 개발",
+   "주요 성과",
+   "Neuron",
+   "Nat Neurosci",
+   "Cell 등에 논문 게재"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "유전학",
+   "뇌과학실험Ⅰ",
+   "일반생물학 Ⅱ",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ",
+   "뇌과학실험Ⅱ",
+   "일반생물학 실험"
+  ]
+ },
+ "p83_R": {
+  "professor": "현정호",
+  "lab_ko": "뇌인지조절 연구실",
+  "lab_en": "Lab. of Structural Learning and Neuromodulation",
+  "research_fields": [
+   "뇌의 핵심적 고등기능 (의사결정 및 추론)의 신경과학적 기전 연구",
+   "다양한 신경질환들을 극복하기 위한 비침습 기반의 인지증강기술 개발과",
+   "계산정신과학 및 뇌공학적 접근법을 활용한 연구 수행",
+   "주요 성과",
+   "Nature Biotechnology",
+   "Nature Communications",
+   "Nature Neuroscience 등 우수논문 다수 발표"
+  ],
+  "courses": [
+   "신경생리학",
+   "기계학습개론",
+   "인공지능기초",
+   "일반생물학Ⅰ",
+   "확률과 통계 및 실습",
+   "일반생물학 Ⅱ",
+   "뇌공학개론",
+   "분자생물학",
+   "선형대수학",
+   "공학수학Ⅰ",
+   "인지뇌과학개론",
+   "유전학 실험",
+   "프로그래밍",
+   "유전학",
+   "세포생물학",
+   "세포생물학 실험",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ"
+  ]
+ },
+ "p86_L": {
+  "professor": "곽준명",
+  "lab_ko": "발달과 세포신호전달 연구실",
+  "lab_en": "Lab. of Cell Signaling and Development",
+  "research_fields": [
+   "탈리 및 세포 운명 조절",
+   "후성유전학과 공변세포 발달",
+   "세포 특이적 유전학",
+   "신호전달"
+  ],
+  "courses": []
+ },
+ "p86_R": {
+  "professor": "구재형",
+  "lab_ko": "뇌-면역 축 연구실",
+  "lab_en": "Brain-Immune Axis Lab. (BRIMAX Lab.",
+  "research_fields": [
+   "뇌-장내미생물 상호작용 / 뇌 감염 및 염증 / 뇌-암-면역 상호작용 /",
+   "뇌-대사 조절 / 관련 분야 질병 치료"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "면역학",
+   "일반생물학 실험",
+   "세포생물학 실험",
+   "분자생물학",
+   "유전학",
+   "정량 생명과학",
+   "Scientific Writing"
+  ]
+ },
+ "p87_L": {
+  "professor": "기영훈",
+  "lab_ko": "암신호전달 및 유전체 항상성 연구실",
+  "lab_en": "Lab. of Genomic instability and Cancer",
+  "research_fields": [
+   "유전체 불안정성",
+   "DNA 복제 스트레스",
+   "손상복구",
+   "항암 메커니즘",
+   "단백질 상호작용과 항상성"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "유전학",
+   "분자생물학",
+   "Scientific Writing"
+  ]
+ },
+ "p87_R": {
+  "professor": "김민석",
+  "lab_ko": "나노바이오메디슨 연구실",
+  "lab_en": "BioDr. Lab - Nanobiomedicine",
+  "research_fields": [
+   "초정밀 암진단 및 치료기술",
+   "노화 회복기술",
+   "생체모방기술",
+   "(Organ-on-chip & Organoid) 및 조직공학 (3D bioprinting)",
+   "차세대 의공학 기술"
+  ],
+  "courses": []
+ },
+ "p88_L": {
+  "professor": "김민식",
+  "lab_ko": "큐바이오 정밀의학 연구실",
+  "lab_en": "QBio and Precision Medicine",
+  "research_fields": [
+   "질량분석",
+   "시스템생물학",
+   "멀티오믹스 및 정밀의학"
+  ],
+  "courses": [
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "정량 생명과학",
+   "면역학",
+   "프로그래밍",
+   "데이터사이언스기초",
+   "분자생물학",
+   "암생물학",
+   "확률과 통계 및 실습",
+   "생명에 대한 융합적 이해",
+   "줄기세포생물학",
+   "Scientific Writing",
+   "인공지능기초"
+  ]
+ },
+ "p88_R": {
+  "professor": "김유리",
+  "lab_ko": "분자후성유전학 연구실",
+  "lab_en": "Molecular Epigenetics Lab.",
+  "research_fields": [
+   "단분자 이미징을 통한 단백질 기능 및 다이나믹스 연구",
+   "세포 스트레스에 대한 유전체 항상성 이해와 노화질병 메커니즘 연구"
+  ],
+  "courses": [
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "프로그래밍",
+   "생물물리학",
+   "분자생물학",
+   "확률과 통계 및 실습",
+   "나노재료학",
+   "유전학",
+   "Scientific Writing",
+   "세포생물학 실험",
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "유전학 실험"
+  ]
+ },
+ "p89_L": {
+  "professor": "김진해",
+  "lab_ko": "단백질 구조 노화 연구실",
+  "lab_en": "Lab. of Protein Structure Aging",
+  "research_fields": [
+   "노화에 의한 단백질 구조변형 연구 / 단백질에 의한 질병유발 기전 규명 /",
+   "단백질 구조변형에 의한 질병의 치료 전략 개발"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "유전학",
+   "일반생물학 실험",
+   "분자생물학",
+   "세포생물학 실험",
+   "일반화학Ⅰ",
+   "분자생물학 실험",
+   "일반화학Ⅱ",
+   "정량 생명과학",
+   "분석화학"
+  ]
+ },
+ "p89_R": {
+  "professor": "김태완",
+  "lab_ko": "줄기세포 공학 및 치료 연구실",
+  "lab_en": "Stem Cell Engineering / Therapy Lab.",
+  "research_fields": [
+   "인간만능 줄기세포",
+   "세포치료제 개발",
+   "뇌 질환",
+   "직접분화법 개발",
+   "질병 모델링"
+  ],
+  "courses": [
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "암생물학",
+   "분자생물학",
+   "일반생물학 실험",
+   "유전학",
+   "줄기세포생물학",
+   "Scientific Writing",
+   "세포생물학 실험",
+   "발생 및 발달생물학",
+   "유전학 실험"
+  ]
+ },
+ "p90_L": {
+  "professor": "남창훈",
+  "lab_ko": "노화와 면역 연구실",
+  "lab_en": "Aging and Immunity Lab. (AIM Lab.",
+  "research_fields": [
+   "노화면역학",
+   "장내 미생물",
+   "오가노이드"
+  ],
+  "courses": [
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "면역학",
+   "생명에 대한 융합적 이해",
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "유전학",
+   "Scientific Writing",
+   "생명과학과 사회"
+  ]
+ },
+ "p90_R": {
+  "professor": "예경무",
+  "lab_ko": "바이오치료제 디자인 랩",
+  "lab_en": "Bio-therapeutics Design Lab.",
+  "research_fields": [
+   "Agonist 항체 선별법 통한 맞춤형 항체 치료제 개발",
+   "세포외소포체 (Extracellular vesicles) 를 엔지니어링한 새로운 치료법 개발"
+  ],
+  "courses": []
+ },
+ "p91_L": {
+  "professor": "우혜련",
+  "lab_ko": "식물분자커뮤니케이션 연구실",
+  "lab_en": "Plant Molecular Communication",
+  "research_fields": [
+   "식물 노화와 스트레스반응의 분자유전학적 조절기전",
+   "식물줄기세포의",
+   "분열 및 노화 메커니즘"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "유전학",
+   "분자생물학"
+  ]
+ },
+ "p91_R": {
+  "professor": "이병훈",
+  "lab_ko": "단백질 항상성 및 신약개발 연구실",
+  "lab_en": "Lab. of Protein Homeostasis & Drug Discovery",
+  "research_fields": [
+   "단백질분해 제어",
+   "단백질 항상성 유지",
+   "단백질 질병 연관 신약 타겟물질 발굴",
+   "유비퀴틴-프로테오좀 시스템",
+   "‘표적단백질분해(TPD)’ 및 ‘단백질분해 유도’를",
+   "통한 혁신 치료 전략 개발"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "일반화학Ⅱ",
+   "유전학",
+   "분자생물학",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ",
+   "정량 생명과학",
+   "의약품공학"
+  ]
+ },
+ "p92_L": {
+  "professor": "이상임",
+  "lab_ko": "통합동물생태학 연구실",
+  "lab_en": "Lab. of Integrative Animal Ecology (IAE",
+  "research_fields": [
+   "야생 조류의 행동 및 생태 연구",
+   "조류와 곤충의 생태와 진화에 관한 역학",
+   "광학 등과의 융합연구"
+  ],
+  "courses": [
+   "생명체의 다양성과 유기적 관계",
+   "유전학",
+   "생명에 대한 융합적 이해",
+   "정량 생명과학",
+   "확률과 통계 및 실습",
+   "과학철학의 쟁점",
+   "적응의 유체역학",
+   "세포생물학 실험",
+   "Scientific Writing",
+   "유전학 실험"
+  ]
+ },
+ "p92_R": {
+  "professor": "이송이",
+  "lab_ko": "화학생물학 및 단백질공학 연구실",
+  "lab_en": "Chemical biology and Protein engineering Lab.",
+  "research_fields": [
+   "화학반응을 이용한 단백질 네트워크 분석",
+   "단백질 분자기술 개발"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "일반생물학 실험",
+   "유전학",
+   "분자생물학",
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "세포생물학 실험",
+   "분자생물학 실험",
+   "프로그래밍",
+   "유전학 실험",
+   "Scientific Writing",
+   "데이터사이언스기초",
+   "뉴바이올로지특강",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ"
+  ]
+ },
+ "p93_L": {
+  "professor": "이영삼",
+  "lab_ko": "노화기전 연구실",
+  "lab_en": "Senescence-Associated Mechanism Lab. (SAM Lab.",
+  "research_fields": [
+   "동물 세포 노화기전 및 노화제어 기전 규명",
+   "DNA복제 및 수선 관련 단백질의 구조와 기능 해석"
+  ],
+  "courses": [
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "분자생물학 실험",
+   "세포생물학",
+   "분자생물학",
+   "유전학",
+   "Scientific Writing",
+   "세포생물학 실험"
+  ]
+ },
+ "p93_R": {
+  "professor": "이재민",
+  "lab_ko": "노화대사생리 연구실",
+  "lab_en": "Aging, Metabolism and Physiology Lab.",
+  "research_fields": [
+   "대사생리",
+   "당뇨 및 비만",
+   "세포 스트레스 관련 신호전달계"
+  ],
+  "courses": [
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "학술 글쓰기",
+   "분자생물학",
+   "면역학"
+  ]
+ },
+ "p94_L": {
+  "professor": "이종찬",
+  "lab_ko": "세포 다이내믹스 및 이미징 연구실",
+  "lab_en": "Cell Dynamics and Imaging Lab.",
+  "research_fields": [
+   "세포 내 상분리",
+   "CRISPR 기반 기술",
+   "단분자 생물물리",
+   "초고분해능 현미경"
+  ],
+  "courses": [
+   "세포생물학",
+   "분자생물학",
+   "생물물리학",
+   "광학현미경"
+  ]
+ },
+ "p94_R": {
+  "professor": "이창훈",
+  "lab_ko": "바이오인터페이스구조 및 피부 연구실",
+  "lab_en": "Biointerface Structure and Skin Lab.",
+  "research_fields": [
+   "피부생리학",
+   "피부질환",
+   "단백질생화학",
+   "구조기반 신약설계"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "분자생물학 실험",
+   "일반생물학 실험",
+   "유전학",
+   "분자생물학",
+   "세포생물학 실험",
+   "정량 생명과학",
+   "면역학",
+   "유전학 실험",
+   "의약품공학",
+   "Scientific Writing",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ"
+  ]
+ },
+ "p95_L": {
+  "professor": "정찬",
+  "lab_ko": "암 후성유전학 연구실",
+  "lab_en": "Cancer Epigenetics Lab.",
+  "research_fields": [
+   "암의 후성유전적 변화 연구",
+   "종양에서의 신진대사 조절 및 유전적 변이 연구",
+   "신진대사와 후성유전학의 상호 작용",
+   "후성유전적 방법을 타겟으로 한 암치료",
+   "방법 개발"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "유전학",
+   "분자생물학",
+   "Scientific Writing"
+  ]
+ },
+ "p95_R": {
+  "professor": "최일규",
+  "lab_ko": "T세포생물학 및 면역치료 연구실",
+  "lab_en": "Lab. of T-cell Biology and Immunotherapy",
+  "research_fields": [
+   "종양 면역학 및 면역치료",
+   "CD4+ 세포독성 T세포",
+   "인체 공생바이러스로서",
+   "엡스타인-바 바이러스"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "면역학",
+   "유전학",
+   "분자생물학",
+   "Scientific Writing",
+   "암생물학",
+   "현대 미생물학"
+  ]
+ },
+ "p96_L": {
+  "professor": "Felix Jonas",
+  "lab_ko": "단백질 무질서, 유전자 조절, 그리고 오믹스 연구실",
+  "lab_en": "Protein Disorder, Gene Regulation and Omics Lab.",
+  "research_fields": [
+   "- 유전자 조절 및 전사인자",
+   "- 단백질 기능과 내재적 비정형 단백질",
+   "- 계산 유전체학 및 머신러닝",
+   "- CRISPR-Cas9 기반 유전체 편집",
+   "차세대 염기서열 분석"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "유전학",
+   "분자생물학",
+   "Scientific Writing"
+  ]
+ },
+ "p96_R": null,
+ "p97_L": null,
+ "p97_R": null,
+ "p100_L": {
+  "professor": "E. monolith@dgist.ac.kr",
+  "lab_ko": "W. https://interdisciplinary.dgist.ac.kr/",
+  "lab_en": "",
+  "research_fields": [
+   "CIGS/CZTS/신소재 박막태양전지 고효율화",
+   "경량 유연 양면수광 태양전지",
+   "초고효율 탠덤 태양전지"
+  ],
+  "courses": [
+   "화학공학개론",
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "분석화학",
+   "일반화학실험 Ⅱ",
+   "물리화학Ⅰ",
+   "물리화학 Ⅱ"
+  ]
+ },
+ "p100_R": {
+  "professor": "김동환  겸무",
+  "lab_ko": "열전기술연구소",
+  "lab_en": "Thermoelectric Conversion Research Center",
+  "research_fields": [
+   "열전소재 및 소자 연구",
+   "열전냉각/발전 시스템 개발",
+   "나노기반 에너지변환 소재 연구",
+   "희토류 자성소재 연구 (연구분야기술)"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "분석화학",
+   "일반화학Ⅱ",
+   "물리화학Ⅰ",
+   "재료열역학 개론",
+   "일반화학실험 Ⅱ",
+   "무기화학 Ⅰ",
+   "무기화학 Ⅱ"
+  ]
+ },
+ "p101_L": {
+  "professor": "김상동  겸무",
+  "lab_ko": "센서 기반 인지 기술 연구실",
+  "lab_en": "Sensor based Detection & Recognition Lab.",
+  "research_fields": [
+   "센서 신호처리",
+   "인공지능",
+   "센서융합기술"
+  ],
+  "courses": [
+   "선형대수학",
+   "디지털통신",
+   "디지털 신호처리",
+   "지능형제어시스템",
+   "딥러닝개론"
+  ]
+ },
+ "p101_R": {
+  "professor": "김순현  겸무",
+  "lab_ko": "환경 정화 및 에너지 변환 소재 연구실",
+  "lab_en": "Environmental and Energy Materials Lab.",
+  "research_fields": [
+   "광촉매",
+   "고도 산화 수처리",
+   "광(전기) 화학적 수소 생산",
+   "광 에너지 전환 소재"
+  ],
+  "courses": [
+   "일반화학Ⅰ",
+   "화학공학개론",
+   "일반화학Ⅱ",
+   "물리화학Ⅰ",
+   "물리화학 Ⅱ",
+   "무기화학 Ⅰ",
+   "무기화학 Ⅱ",
+   "분석화학"
+  ]
+ },
+ "p102_L": {
+  "professor": "김진영  겸무",
+  "lab_ko": "생체모사 마이크로 시스템 연구실",
+  "lab_en": "Biologically Inspired Microsystems(BioIM) Lab.",
+  "research_fields": [
+   "신체모사칩",
+   "3D 마이크로장기",
+   "미세유체칩",
+   "BioMEMS"
+  ],
+  "courses": [
+   "재료상변태",
+   "분자생물학",
+   "생명과학개론",
+   "분석화학",
+   "유체역학",
+   "프로그래밍",
+   "세포생물학",
+   "의공학개론",
+   "나노재료학",
+   "박막재료공학",
+   "전자재료학"
+  ]
+ },
+ "p102_R": {
+  "professor": "김참  겸무",
+  "lab_ko": "에너지변환소재 연구실",
+  "lab_en": "Energy Conversion Materials Lab.",
+  "research_fields": [
+   "- Thin films and bulk structures for energy conversion materials",
+   "(e.g.",
+   "thermoelectric materials",
+   "electrode materials for lithium ion",
+   "batteries)",
+   "- Microstructure controls for transport property adjustments"
+  ],
+  "courses": []
+ },
+ "p103_L": {
+  "professor": "김현민  겸무",
+  "lab_ko": "비선형광학 연구실",
+  "lab_en": "Nonlinear Photonics Lab.",
+  "research_fields": [
+   "비선형광학현상",
+   "초고속 분광현미경",
+   "바이오 이미징"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "선형대수학",
+   "나노재료학"
+  ]
+ },
+ "p103_R": {
+  "professor": "김호정  겸무",
+  "lab_ko": "신경근육계 연구실",
+  "lab_en": "NeuroMuscular Systems Lab.",
+  "research_fields": [
+   "Motor Control",
+   "Computational Neurophysiology",
+   "Non-invasive",
+   "Neuromodulation"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "프로그래밍",
+   "일반생물학Ⅰ",
+   "확률과 통계 및 실습"
+  ]
+ },
+ "p104_L": {
+  "professor": "안진웅  겸무",
+  "lab_ko": "뇌로봇증강인터랙션 연구실",
+  "lab_en": "Brain Robot Augmented InteractioN Lab.",
+  "research_fields": [
+   "휴먼-모빌리티 인터랙션",
+   "뇌컴퓨터인터페이스",
+   "뉴로햅틱스",
+   "신경조절"
+  ],
+  "courses": [
+   "선형대수학",
+   "Scientific Writing",
+   "의생명공학",
+   "공학수학Ⅰ",
+   "신경과학Ⅰ",
+   "공학수학Ⅱ",
+   "메카트로닉스",
+   "다변수 미적분학",
+   "신경과학Ⅱ",
+   "확률과 통계 및 실습",
+   "자동제어시스템",
+   "데이터사이언스기초",
+   "생명과학개론",
+   "강화학습",
+   "인공지능 개론",
+   "인공지능기초",
+   "지능형제어시스템",
+   "의공학개론",
+   "프로그래밍",
+   "회로이론과 계측법",
+   "기계학습개론",
+   "디지털 신호처리",
+   "이산수학",
+   "학술 글쓰기",
+   "딥러닝개론",
+   "컴퓨터 비전 개론",
+   "객체지향 프로그래밍",
+   "컴퓨터 알고리즘",
+   "디자인 사고",
+   "디지털 영상처리",
+   "과학철학의 쟁점",
+   "UX디자인",
+   "디자인 기획과 전략"
+  ]
+ },
+ "p104_R": {
+  "professor": "이종훈  겸무",
+  "lab_ko": "첨단레이더 연구실",
+  "lab_en": "ART(Advanced Radar Technology) Lab.",
+  "research_fields": [
+   "레이더센서",
+   "신호처리",
+   "AI (머신/딥러닝)",
+   "센서융합기술"
+  ],
+  "courses": [
+   "선형대수학",
+   "일반물리Ⅰ",
+   "공학수학Ⅱ",
+   "인공지능 개론",
+   "디지털 신호처리",
+   "프로그래밍",
+   "데이터사이언스기초",
+   "딥러닝개론",
+   "컴퓨터 비전 개론",
+   "디지털 영상처리",
+   "인공지능기초"
+  ]
+ },
+ "p105_L": {
+  "professor": "이현기  겸무",
+  "lab_ko": "결상 광학 시스템 연구실",
+  "lab_en": "Camera Culture Group",
+  "research_fields": [
+   "Machine Vision",
+   "Intelligent  Robot",
+   "Optomechatronics",
+   "Optical Metrology"
+  ],
+  "courses": [
+   "디자인 사고",
+   "선형대수학",
+   "확률과 통계 및 실습",
+   "현대광학",
+   "프로그래밍",
+   "딥러닝개론",
+   "로봇동역학 및 제어",
+   "자동제어시스템",
+   "컴퓨터 알고리즘",
+   "디지털 신호처리",
+   "메카트로닉스",
+   "동역학"
+  ]
+ },
+ "p105_R": {
+  "professor": "정민경  겸무",
+  "lab_ko": "양자나노소자 연구실",
+  "lab_en": "Quantum Nanoelectronic Device",
+  "research_fields": [
+   "양자나노소자",
+   "microwave cavity-quantum dot hybrid device"
+  ],
+  "courses": []
+ },
+ "p108_L": {
+  "professor": "길현재",
+  "lab_ko": "차세대 경험 및 기술 연구실",
+  "lab_en": "Next-generation Experience and Technology Lab.",
+  "research_fields": [
+   "Human-Computer Interaction(HCI) / VR/AR/MR Interaction / Text Entry",
+   "/ Multi-sensory Haptics / Wearable & Smart Glasses Interfaces"
+  ],
+  "courses": [
+   "프로그래밍",
+   "선형대수학",
+   "공학수학Ⅰ",
+   "확률과 통계 및 실습",
+   "컴퓨터 알고리즘",
+   "컴퓨터 비전 개론",
+   "데이터사이언스기초",
+   "인공지능 개론",
+   "디지털 신호처리",
+   "객체지향 프로그래밍",
+   "기계학습개론",
+   "디지털 영상처리",
+   "디지털 논리회로",
+   "신호 및 시스템",
+   "회로이론과 계측법"
+  ]
+ },
+ "p108_R": {
+  "professor": "김가인",
+  "lab_ko": "신호처리 회로 및 시스템 연구실(CASSP Lab)",
+  "lab_en": "Circuits And Systems for Signal Processing Lab.",
+  "research_fields": [
+   "Analog/mixed-signal circuit design",
+   "Ultra-high-speed wireline chip-",
+   "to-chip transmitter/receiver (SerDes)",
+   "Analog-to-digital converter",
+   "(ADC)",
+   "RFSoC-based programmable digital system design"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "전자회로 이론",
+   "디지털집적회로설계",
+   "다변수 미적분학",
+   "이산수학",
+   "아날로그 전자회로",
+   "디지털통신",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "회로이론과 계측법",
+   "전자소자개론",
+   "반도체공정개론",
+   "디지털 논리회로",
+   "통신의 기초",
+   "객체지향 프로그래밍",
+   "자동제어시스템"
+  ]
+ },
+ "p109_L": {
+  "professor": "김기섭",
+  "lab_ko": "로봇인식 및 자율화 연구실",
+  "lab_en": "Autonomy and Perceptual Robotics Lab.",
+  "research_fields": [
+   "로봇 상태추정/지도작성",
+   "SLAM 2.0 기반 로봇웹",
+   "뉴럴 맵 표현",
+   "의미 및 사",
+   "회적 문맥 기반 비주얼-언어 내비게이션",
+   "로봇 AI 추론",
+   "AI 월드 모델",
+   "강화",
+   "학습 기반 자율 내비게이션"
+  ],
+  "courses": [
+   "선형대수학",
+   "인공지능 개론",
+   "로봇동역학 및 제어",
+   "컴퓨터 비전 개론",
+   "고체역학",
+   "디지털 영상처리",
+   "강화학습",
+   "디자인 사고",
+   "동역학",
+   "기계학습개론",
+   "자동제어시스템",
+   "학술 글쓰기",
+   "프로그래밍",
+   "메카트로닉스",
+   "Scientific Writing"
+  ]
+ },
+ "p109_R": {
+  "professor": "김영식",
+  "lab_ko": "프라이버시 및 응용 암호 연구실(PACL)",
+  "lab_en": "Privacy and Applied Cryptography Lab.",
+  "research_fields": [
+   "Applied cryptography / Quantum safe cryptography / AI security",
+   "/ Privacy enhancing technologies / Vehicular security"
+  ],
+  "courses": [
+   "프로그래밍",
+   "선형대수학",
+   "기계학습개론",
+   "강화학습",
+   "확률과 통계 및 실습",
+   "컴퓨터구조",
+   "디지털통신",
+   "자료구조",
+   "컴퓨터 알고리즘",
+   "컴퓨터보안개론",
+   "인공지능기초",
+   "딥러닝개론",
+   "컴퓨터 네트워크",
+   "이산수학",
+   "통신의 기초",
+   "객체지향 프로그래밍",
+   "디지털 논리회로"
+  ]
+ },
+ "p110_L": {
+  "professor": "문인규",
+  "lab_ko": "지능형 이미징 및 비전 시스템 연구실",
+  "lab_en": "Intelligent Imaging & Vision Systems",
+  "research_fields": [
+   "영상시스템",
+   "딥러닝",
+   "영상처리",
+   "영상분석",
+   "정보보안"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "자료구조",
+   "디지털 영상처리",
+   "일반물리Ⅱ",
+   "공학수학Ⅱ",
+   "컴퓨터 알고리즘",
+   "컴퓨터 비전 개론",
+   "일반물리실험Ⅱ",
+   "확률과 통계 및 실습",
+   "인공지능 개론",
+   "강화학습",
+   "이산수학",
+   "기계학습개론",
+   "프로그래밍",
+   "딥러닝개론",
+   "객체지향 프로그래밍"
+  ]
+ },
+ "p110_R": {
+  "professor": "박경서",
+  "lab_ko": "인터랙티브 로봇 연구실",
+  "lab_en": "Interactive Robot Lab.",
+  "research_fields": [
+   "로보틱스",
+   "물리적 인간-로봇 상호작용",
+   "전신 촉감 측정 시스템"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "자동제어시스템",
+   "디지털 신호처리",
+   "일반물리Ⅰ",
+   "프로그래밍",
+   "진동공학",
+   "로봇동역학 및 제어",
+   "디자인 사고",
+   "회로이론과 계측법",
+   "메카트로닉스",
+   "기구학",
+   "신호 및 시스템",
+   "기계학습개론",
+   "창의기계설계",
+   "동역학",
+   "딥러닝개론",
+   "Scientific Writing"
+  ]
+ },
+ "p111_L": {
+  "professor": "박경준",
+  "lab_ko": "사이버물리시스템 통합 연구실(CSI Lab)",
+  "lab_en": "Cyber-Physical Systems Integration",
+  "research_fields": [
+   "사이버-물리 시스템",
+   "Physical AI",
+   "ROS 2 기반 자율이동로봇",
+   "ROS 2 통신",
+   "미들웨어",
+   "스마트 생산시스템",
+   "네트워크/제어/컴퓨팅 동시설계",
+   "사이버-물리",
+   "융합보안"
+  ],
+  "courses": [
+   "다변수 미적분학",
+   "인공지능 개론",
+   "컴퓨터 네트워크",
+   "공학수학Ⅰ",
+   "신호 및 시스템",
+   "선형대수학",
+   "강화학습",
+   "프로그래밍",
+   "자동제어시스템",
+   "확률과 통계 및 실습",
+   "디지털 신호처리",
+   "운영체제",
+   "공학수학Ⅱ",
+   "통신의 기초",
+   "인공지능기초",
+   "기계학습개론",
+   "객체지향 프로그래밍",
+   "컴퓨터 알고리즘"
+  ]
+ },
+ "p111_R": {
+  "professor": "박대희",
+  "lab_ko": "지능시스템 및 학습 연구실(ISL Lab)",
+  "lab_en": "Intelligent Systems and Learning Lab.",
+  "research_fields": [
+   "Decision-Making AI",
+   "Multimodal AI",
+   "Autonomous Systems",
+   "(Autonomous driving",
+   "robots)"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "인공지능기초",
+   "기계학습개론",
+   "강화학습",
+   "선형대수학",
+   "컴퓨터 알고리즘",
+   "컴퓨터 비전 개론",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "딥러닝개론",
+   "디지털 신호처리",
+   "데이터사이언스기초",
+   "신호 및 시스템",
+   "디지털 영상처리",
+   "자료구조",
+   "이산수학",
+   "객체지향 프로그래밍"
+  ]
+ },
+ "p112_L": {
+  "professor": "서대원",
+  "lab_ko": "정보 및 학습이론 연구실",
+  "lab_en": "Information and Learning Theory Lab.",
+  "research_fields": [
+   "Learning over networks",
+   "Machine learning theory",
+   "Information theory"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "강화학습",
+   "기계학습개론",
+   "다변수 미적분학",
+   "공학수학Ⅱ",
+   "컴퓨터 비전 개론",
+   "신호 및 시스템",
+   "확률과 통계 및 실습",
+   "디지털 신호처리",
+   "인공지능 개론",
+   "프로그래밍",
+   "딥러닝개론",
+   "객체지향 프로그래밍",
+   "통신의 기초"
+  ]
+ },
+ "p112_R": {
+  "professor": "소진현",
+  "lab_ko": "분산 인공지능 연구실",
+  "lab_en": "Distributed Artificial Intelligence Lab.",
+  "research_fields": [
+   "Distributed AI",
+   "Trustworthy AI",
+   "On-device AI",
+   "Multi-modal AI",
+   "Federated Learning"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "딥러닝개론",
+   "강화학습",
+   "다변수 미적분학",
+   "이산수학",
+   "기계학습개론",
+   "디지털 신호처리",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "컴퓨터 비전 개론",
+   "인공지능 개론",
+   "컴퓨터 알고리즘",
+   "컴퓨터구조",
+   "객체지향 프로그래밍"
+  ]
+ },
+ "p113_L": {
+  "professor": "송민영",
+  "lab_ko": "무선 집적 시스템 설계 연구실(WISE Lab)",
+  "lab_en": "Wireless Integrated Systems Engineering Lab.",
+  "research_fields": [
+   "Wireless sensor node for Biomedical/IoT applications",
+   "Energy-efficient RFIC design",
+   "Analog/Mixed-signal/",
+   "RF core circuit design"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "이산수학",
+   "전자회로 이론",
+   "디지털통신",
+   "다변수 미적분학",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "반도체공정개론",
+   "일반물리Ⅱ",
+   "선형대수학",
+   "전자소자개론",
+   "디지털 신호처리",
+   "회로이론과 계측법",
+   "통신의 기초",
+   "디지털 논리회로",
+   "자동제어시스템",
+   "객체지향 프로그래밍",
+   "의공학개론"
+  ]
+ },
+ "p113_R": {
+  "professor": "송철",
+  "lab_ko": "지능 바이오옵토메카트로닉스",
+  "lab_en": "Intelligent Bio-OptoMechatronics",
+  "research_fields": [
+   "몰입형 인간 로봇 상호작용",
+   "광의료 메카트로닉스",
+   "인공지능 내시경 시스템"
+  ],
+  "courses": [
+   "디자인 사고",
+   "프로그래밍",
+   "의공학개론",
+   "현대광학",
+   "일반물리Ⅰ",
+   "자동제어시스템",
+   "일반물리Ⅱ",
+   "메카트로닉스",
+   "진동공학",
+   "인공지능 개론",
+   "객체지향 프로그래밍",
+   "동역학",
+   "기계학습개론",
+   "선형대수학",
+   "딥러닝개론",
+   "강화학습",
+   "로봇전자공학",
+   "컴퓨터 비전 개론",
+   "로봇동역학 및 제어"
+  ]
+ },
+ "p114_L": {
+  "professor": "오세훈",
+  "lab_ko": "모션컨트롤 연구실",
+  "lab_en": "Motion Control Lab.",
+  "research_fields": [
+   "정밀제어",
+   "인간로봇 상호작용제어",
+   "차량제어",
+   "구동기 시스템 개발"
+  ],
+  "courses": [
+   "디자인 사고",
+   "자동제어시스템",
+   "로봇동역학 및 제어",
+   "학술 글쓰기",
+   "프로그래밍",
+   "고전의 산책",
+   "진동공학",
+   "공학수학Ⅰ",
+   "선형대수학",
+   "디지털 신호처리",
+   "기구학",
+   "다변수 미적분학",
+   "동역학",
+   "Scientific Writing",
+   "신호 및 시스템"
+  ]
+ },
+ "p114_R": {
+  "professor": "유재석",
+  "lab_ko": "의생명 초음파 연구실",
+  "lab_en": "Advanced Ultrasound Research Lab.",
+  "research_fields": [
+   "의생명 초음파 및 광음향 영상과 치료 기술",
+   "의료 영상 및 신호 처리",
+   "머신러닝 기반의 신호처리 및 진단 기술 개발",
+   "나노 진단 / 치료 플랫폼 개발"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "디자인 사고",
+   "공학수학Ⅱ",
+   "딥러닝개론",
+   "일반물리Ⅰ",
+   "확률과 통계 및 실습",
+   "의공학개론",
+   "강화학습",
+   "일반물리Ⅱ",
+   "프로그래밍",
+   "기계학습개론",
+   "인공지능 개론"
+  ]
+ },
+ "p115_L": {
+  "professor": "윤동원",
+  "lab_ko": "바이오로봇 및 메카트로닉스 연구실",
+  "lab_en": "Bio Robotics and Mechatronics Lab.",
+  "research_fields": [
+   "자연모사로봇",
+   "산업용/군사용 등 다양한 분야의 로봇연구",
+   "메카트로닉스",
+   "센서 및 액추에이터"
+  ],
+  "courses": [
+   "일반물리Ⅱ",
+   "로봇동역학 및 제어",
+   "자동제어시스템",
+   "일반물리Ⅰ",
+   "기구학",
+   "확률과 통계 및 실습",
+   "다변수 미적분학",
+   "진동공학",
+   "디지털 신호처리",
+   "선형대수학",
+   "동역학",
+   "기계학습개론",
+   "프로그래밍",
+   "인공지능 개론",
+   "창의기계설계"
+  ]
+ },
+ "p115_R": {
+  "professor": "윤종혁",
+  "lab_ko": "지능형 집적 회로 및 시스템 연구실(IICS Lab)",
+  "lab_en": "Intelligent Integrated Circuits and Systems Lab.",
+  "research_fields": [
+   "Edge-intelligent system",
+   "Processing-in-memory circuits",
+   "Clock and",
+   "data recovery",
+   "Mixed-signal circuit design"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "이산수학",
+   "전자회로 이론",
+   "반도체공정개론",
+   "다변수 미적분학",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "일반물리Ⅱ",
+   "선형대수학",
+   "전자소자개론",
+   "프로그래밍",
+   "회로이론과 계측법",
+   "디지털 논리회로"
+  ]
+ },
+ "p116_L": {
+  "professor": "은용순",
+  "lab_ko": "동적 시스템 및 제어 연구실(DSC Lab)",
+  "lab_en": "Dynamic Systems and Control",
+  "research_fields": [
+   "- Resilient control systems",
+   "Control systems with nonlinear",
+   "sensors and actuators",
+   "- Quasi-linear & networked control systems",
+   "- Intelligent transportation systems"
+  ],
+  "courses": [
+   "다변수 미적분학",
+   "선형대수학",
+   "기계학습개론",
+   "메카트로닉스",
+   "확률과 통계 및 실습",
+   "프로그래밍",
+   "디지털 신호처리",
+   "자동제어시스템"
+  ]
+ },
+ "p116_R": {
+  "professor": "임용섭",
+  "lab_ko": "자율시스템제어 연구실",
+  "lab_en": "Autonomous Systems and Control Lab. (ASCL",
+  "research_fields": [
+   "- 인공지능(Al) 기반 자율주행/비행로봇 인지",
+   "판단 및 제어",
+   "- 지능형 메카트로닉스 제어시스템"
+  ],
+  "courses": [
+   "자동제어시스템",
+   "로봇동역학 및 제어",
+   "메카트로닉스",
+   "디자인 사고",
+   "프로그래밍",
+   "동역학",
+   "진동공학",
+   "고체역학",
+   "기계학습개론"
+  ]
+ },
+ "p117_L": {
+  "professor": "장경인",
+  "lab_ko": "생체집적전자소자 연구실",
+  "lab_en": "Bio-integrated Electronics Lab.",
+  "research_fields": [
+   "의료기기 개발",
+   "바이오센서",
+   "뇌공학",
+   "전자피부",
+   "차세대 디스플레이",
+   "바이오 인공지능"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "재료열역학 개론",
+   "다변수 미적분학",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "고체역학",
+   "수리물리",
+   "일반화학Ⅱ",
+   "유체역학",
+   "메카트로닉스",
+   "프로그래밍"
+  ]
+ },
+ "p117_R": {
+  "professor": "장준기",
+  "lab_ko": "데이터 인텔리전스 연구실",
+  "lab_en": "Data Intelligence Lab.",
+  "research_fields": [
+   "Data Mining / Query-Aware Data Systems /",
+   "Streaming & Adaptive Computation / Applied AI"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "인공지능기초",
+   "기계학습개론",
+   "프로그래밍",
+   "선형대수학",
+   "컴퓨터 알고리즘",
+   "컴퓨터 네트워크",
+   "확률과 통계 및 실습",
+   "딥러닝개론",
+   "강화학습",
+   "데이터사이언스기초",
+   "시스템 프로그래밍",
+   "자료구조",
+   "이산수학",
+   "객체지향 프로그래밍"
+  ]
+ },
+ "p118_L": {
+  "professor": "장진호",
+  "lab_ko": "의료융합기술 연구실(MAFI Lab)",
+  "lab_en": "Medical Acoustic Fusion Innovation",
+  "research_fields": [
+   "Biomedical signal & image processing",
+   "Deep learning for medical",
+   "imaging",
+   "Medical ultrasound imaging systems",
+   "Combined",
+   "ultrasound and optical imaging & therapy",
+   "Ultrasound sensors"
+  ],
+  "courses": [
+   "일반물리Ⅱ",
+   "디지털 논리회로",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "일반물리실험Ⅱ",
+   "선형대수학",
+   "의공학개론",
+   "디지털 영상처리",
+   "공학수학Ⅰ",
+   "자료구조",
+   "컴퓨터구조",
+   "강화학습",
+   "프로그래밍",
+   "이산수학",
+   "전자회로 이론",
+   "컴퓨터 비전 개론",
+   "딥러닝개론",
+   "양자 컴퓨팅 개론",
+   "생명에 대한 융합적 이해"
+  ]
+ },
+ "p118_R": {
+  "professor": "좌훈승",
+  "lab_ko": "실시간 컴퓨팅 연구실(RTCL)",
+  "lab_en": "Real-Time Computing Lab.",
+  "research_fields": [
+   "Real-Time Systems",
+   "Real-Time AI Services",
+   "Cyber-Physical Systems",
+   "Mobile Systems"
+  ],
+  "courses": [
+   "프로그래밍",
+   "데이터사이언스기초",
+   "컴퓨터구조",
+   "강화학습",
+   "자료구조",
+   "시스템 프로그래밍",
+   "컴퓨터 비전 개론",
+   "인공지능기초",
+   "기계학습개론",
+   "이산수학",
+   "컴퓨터 알고리즘",
+   "디지털 신호처리",
+   "객체지향 프로그래밍",
+   "운영체제",
+   "컴퓨터 네트워크",
+   "디지털 논리회로",
+   "딥러닝개론",
+   "디지털 영상처리"
+  ]
+ },
+ "p119_L": {
+  "professor": "최재호",
+  "lab_ko": "지능형 무선 센싱 연구실(IRS Lab)",
+  "lab_en": "Intelligent Radio Sensing Lab.",
+  "research_fields": [
+   "AI+Wireless",
+   "Sensor Signal Processing",
+   "Sensor Fusion",
+   "Wireless for Healthcare",
+   "Wireless for Defense"
+  ],
+  "courses": [
+   "인공지능기초",
+   "기계학습개론",
+   "디지털 신호처리",
+   "공학수학Ⅰ",
+   "선형대수학",
+   "딥러닝개론",
+   "디지털 영상처리",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "컴퓨터 비전 개론",
+   "일반물리Ⅱ",
+   "객체지향 프로그래밍",
+   "통신의 기초",
+   "컴퓨터 네트워크",
+   "강화학습"
+  ]
+ },
+ "p119_R": {
+  "professor": "최지웅",
+  "lab_ko": "통신 및 신호처리 연구실(CSP Lab)",
+  "lab_en": "Communicaton & Signal Processing",
+  "research_fields": [
+   "Advanced communication systems",
+   "Brain machine/computer interface (BMI/BCI)",
+   "- Communications theory and signal processing/machine learning",
+   "- Vehicular communications (V2X",
+   "IVN)",
+   "5G/6G",
+   "- Biomedical signal processing/AI",
+   "BMI/BCI",
+   "- Magnetic communication and energy transfer"
+  ],
+  "courses": [
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "선형대수학",
+   "인공지능 개론",
+   "객체지향 프로그래밍",
+   "통신의 기초",
+   "디지털통신",
+   "컴퓨터 네트워크",
+   "신경과학Ⅰ",
+   "의공학개론"
+  ]
+ },
+ "p120_L": {
+  "professor": "황재윤",
+  "lab_ko": "다중의료영상 및 시스템 연구실(MBIS Lab)",
+  "lab_en": "Multimodal Biomedical Imaging and System",
+  "research_fields": [
+   "Ultrasound and Optical Imaging and System",
+   "Signal and",
+   "Image Processing",
+   "Biomedical Applications of Deep Learning",
+   "Intelligent Remote Sensing"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "신호 및 시스템",
+   "강화학습",
+   "다변수 미적분학",
+   "디지털 논리회로",
+   "전자회로 이론",
+   "디지털 신호처리",
+   "일반물리Ⅱ",
+   "인공지능 개론",
+   "전자소자개론",
+   "일반물리실험Ⅱ",
+   "의공학개론",
+   "딥러닝개론",
+   "선형대수학"
+  ]
+ },
+ "p120_R": {
+  "professor": "김기섭",
+  "lab_ko": "인공지능 소프트웨어 연구실 (BASE)",
+  "lab_en": "Bi-directional AI-Software Lab.",
+  "research_fields": [
+   "AI Training & Tuning / AI for Software Engineering / Data for AI /",
+   "Architecture Design / Model Engineering"
+  ],
+  "courses": [
+   "선형대수학",
+   "기계학습개론",
+   "강화학습",
+   "확률과 통계 및 실습",
+   "컴퓨터구조",
+   "컴퓨터보안개론",
+   "자료구조",
+   "컴퓨터 네트워크",
+   "딥러닝개론",
+   "인공지능기초",
+   "시스템 프로그래밍",
+   "이산수학",
+   "운영체제",
+   "객체지향 프로그래밍"
+  ]
+ },
+ "p121_L": null,
+ "p121_R": null,
+ "p124_L": {
+  "professor": "구재형",
+  "lab_ko": "뇌-면역 축 연구실",
+  "lab_en": "Brain-Immune Axis Lab. (BRIMAX Lab.",
+  "research_fields": [
+   "뇌-장내미생물 상호작용 / 뇌 감염 및 염증 / 뇌-암-면역 상호작용 /",
+   "뇌-대사 조절 / 관련 분야 질병 치료"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "면역학",
+   "일반생물학 실험",
+   "세포생물학 실험",
+   "분자생물학",
+   "유전학",
+   "정량 생명과학",
+   "Scientific Writing"
+  ]
+ },
+ "p124_R": {
+  "professor": "김가인",
+  "lab_ko": "신호처리 회로 및 시스템 연구실(CASSP Lab)",
+  "lab_en": "Circuits And Systems for Signal Processing Lab.",
+  "research_fields": [
+   "Analog/mixed-signal circuit design",
+   "Ultra-high-speed wireline chip-",
+   "to-chip transmitter/receiver (SerDes)",
+   "Analog-to-digital converter",
+   "(ADC)",
+   "RFSoC-based programmable digital system design"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "전자회로 이론",
+   "디지털집적회로설계",
+   "다변수 미적분학",
+   "이산수학",
+   "아날로그 전자회로",
+   "디지털통신",
+   "프로그래밍",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "회로이론과 계측법",
+   "전자소자개론",
+   "반도체공정개론",
+   "디지털 논리회로",
+   "통신의 기초",
+   "객체지향 프로그래밍",
+   "자동제어시스템"
+  ]
+ },
+ "p125_L": {
+  "professor": "김민환",
+  "lab_ko": "시냅스 및 신경회로 동역학 연구실",
+  "lab_en": "Lab. of Synapse and Circuits Dynamics",
+  "research_fields": [
+   "- 시냅스 신호전달 및 신경회로 연결의 동역학적 변화",
+   "그 원인 및 기능 규명 연구",
+   "- 다양한 신경조절인자들에 의한 시냅스 신호전달 및 신경회로망 변화 연구",
+   "- 기계 학습과 자연 지능 학습의 작동 원리 비교 및 연구"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "세포생물학",
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "인공지능기초",
+   "분자생물학",
+   "신경생리학",
+   "프로그래밍",
+   "데이터사이언스기초",
+   "딥러닝개론",
+   "인지뇌과학개론",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ",
+   "기계학습개론"
+  ]
+ },
+ "p125_R": {
+  "professor": "김소희",
+  "lab_ko": "신경인터페이스 및 마이크로시스템 연구실",
+  "lab_en": "Neural Interfaces & MicroSystems Lab.",
+  "research_fields": [
+   "BCI",
+   "뇌 인터페이스",
+   "신경 인터페이스",
+   "소프트 바이오전자 소자",
+   "의공학 디바이스"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "디지털 신호처리",
+   "인간과 공학",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "회로이론과 계측법",
+   "반도체공정개론",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ",
+   "창의기계설계",
+   "의공학개론",
+   "고체역학",
+   "신호 및 시스템",
+   "프로그래밍",
+   "확률과 통계 및 실습"
+  ]
+ },
+ "p126_L": {
+  "professor": "김태완",
+  "lab_ko": "줄기세포 공학 및 치료 연구실",
+  "lab_en": "Stem Cell Engineering / Therapy Lab.",
+  "research_fields": [
+   "인간만능 줄기세포",
+   "세포치료제 개발",
+   "뇌 질환",
+   "직접분화법 개발",
+   "질병 모델링"
+  ],
+  "courses": [
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "암생물학",
+   "분자생물학",
+   "일반생물학 실험",
+   "유전학",
+   "줄기세포생물학",
+   "Scientific Writing",
+   "세포생물학 실험",
+   "발생 및 발달생물학",
+   "유전학 실험"
+  ]
+ },
+ "p126_R": {
+  "professor": "김회준",
+  "lab_ko": "나노 소재 및 소자 연구실",
+  "lab_en": "Nano Materials and Devices Lab.",
+  "research_fields": [
+   "반도체 공정/소자",
+   "에너지 하베스팅",
+   "3D 프린팅",
+   "로봇센서",
+   "환경센서"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "Scientific Writing",
+   "반도체공정개론",
+   "일반물리Ⅰ",
+   "회로이론과 계측법",
+   "기계열역학",
+   "반도체공정실습",
+   "일반물리Ⅱ",
+   "창의기계설계",
+   "인간과 공학",
+   "고체역학",
+   "반도체물성 개론",
+   "열전달",
+   "전자소자개론"
+  ]
+ },
+ "p127_L": {
+  "professor": "남창훈",
+  "lab_ko": "노화와 면역 연구실",
+  "lab_en": "Aging and Immunity Lab. (AIM Lab.",
+  "research_fields": [
+   "노화면역학",
+   "장내 미생물",
+   "오가노이드"
+  ],
+  "courses": [
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "면역학",
+   "생명에 대한 융합적 이해",
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "유전학",
+   "Scientific Writing",
+   "생명과학과 사회"
+  ]
+ },
+ "p127_R": {
+  "professor": "라종철  겸직",
+  "lab_ko": "Cortical Circuits and Cognition Lab.",
+  "lab_en": "",
+  "research_fields": [
+   "단기기억의 신경회로 메커니즘",
+   "조현병 모델에서의 인지 기능 저하 회로 기전",
+   "신경회로 수준의 정보 코딩 및 population dynamics 분석"
+  ],
+  "courses": [
+   "생명과학개론",
+   "세포생물학",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ",
+   "신경생리학",
+   "일반생물학Ⅰ",
+   "세포생물학 실험",
+   "뇌과학 특강",
+   "뇌질환",
+   "일반생물학 Ⅱ",
+   "분자생물학",
+   "회로이론과 계측법",
+   "뇌공학개론",
+   "일반생물학 실험",
+   "의공학개론",
+   "정량 생명과학",
+   "프로그래밍"
+  ]
+ },
+ "p128_L": {
+  "professor": "박경서",
+  "lab_ko": "인터랙티브 로봇 연구실",
+  "lab_en": "Interactive Robot Lab.",
+  "research_fields": [
+   "휴머노이드",
+   "물리적 인간-로봇 상호작용",
+   "학습 기반 제어"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "자동제어시스템",
+   "디지털 신호처리",
+   "일반물리Ⅰ",
+   "프로그래밍",
+   "진동공학",
+   "로봇동역학 및 제어",
+   "디자인 사고",
+   "창의기계설계",
+   "메카트로닉스",
+   "기구학",
+   "인공지능 개론",
+   "로봇전자공학",
+   "기계학습개론",
+   "동역학",
+   "딥러닝개론",
+   "Scientific Writing"
+  ]
+ },
+ "p128_R": {
+  "professor": "박석호",
+  "lab_ko": "멀티스케일 의료 로봇 연구실",
+  "lab_en": "Multiscale medical Robotics Lab.",
+  "research_fields": [
+   "의료용(마이크로/나노",
+   "매크로)로봇",
+   "의료용 디바이스"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "동역학",
+   "로봇동역학 및 제어",
+   "기구학",
+   "일반물리Ⅰ",
+   "고체역학",
+   "생물물리학",
+   "객체지향 프로그래밍",
+   "기계학습개론",
+   "메카트로닉스",
+   "디자인 사고",
+   "자동제어시스템",
+   "의공학개론",
+   "인공지능 개론",
+   "컴퓨터 알고리즘"
+  ]
+ },
+ "p129_L": {
+  "professor": "서병창",
+  "lab_ko": "뇌신호조절 연구실",
+  "lab_en": "Lab. of Brain Signal & Synapse Research",
+  "research_fields": [
+   "신경생리학 (Neurophysiology)",
+   "전기생리학 (Electrophysiology)",
+   "분자",
+   "생물학 (Molecular Biology)",
+   "Neuroimaging 기술 기반 - 신경 시냅스",
+   "전후 세포의 이온채널",
+   "수용체",
+   "지질 등 세포막 물질에 의한 신경신호전달",
+   "및 조절기전 규명 / 비정상 시냅스 신호전달에 의한 간질",
+   "통증 등 뇌병리",
+   "현상 발병기전 규명 및 조절 기전 개발"
+  ],
+  "courses": [
+   "생명과학개론",
+   "세포생물학",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ",
+   "신경생리학",
+   "일반생물학Ⅰ",
+   "세포생물학 실험",
+   "생화학Ⅰ",
+   "뇌질환",
+   "일반생물학 Ⅱ",
+   "분자생물학",
+   "뇌과학 특강",
+   "뇌공학개론",
+   "일반생물학 실험",
+   "유기화학 Ⅰ",
+   "회로이론과 계측법"
+  ]
+ },
+ "p129_R": {
+  "professor": "송민영",
+  "lab_ko": "무선 집적 시스템 설계 연구실(WISE Lab)",
+  "lab_en": "Wireless Integrated Systems Engineering Lab.",
+  "research_fields": [
+   "Wireless sensor node for Biomedical/IoT applications",
+   "Energy-efficient RFIC design",
+   "Analog/Mixed-signal/",
+   "RF core circuit design"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "전자회로 이론",
+   "디지털통신",
+   "일변수 미적분학",
+   "이산수학",
+   "아날로그 전자회로",
+   "디지털 신호처리",
+   "다변수 미적분학",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "프로그래밍",
+   "회로이론과 계측법",
+   "통신의 기초",
+   "디지털 논리회로"
+  ]
+ },
+ "p130_L": {
+  "professor": "송철",
+  "lab_ko": "지능 로봇 광메카트로닉스 연구실",
+  "lab_en": "Intelligent Robot OptoMechatronics Lab.",
+  "research_fields": [
+   "몰입형 인간 로봇 상호작용",
+   "광의료 메카트로닉스",
+   "인공지능 내시경 시스템"
+  ],
+  "courses": [
+   "프로그래밍",
+   "의공학개론",
+   "현대광학",
+   "디자인 사고",
+   "자동제어시스템",
+   "일반물리Ⅰ",
+   "메카트로닉스",
+   "인공지능 개론",
+   "일반물리Ⅱ",
+   "진동공학",
+   "로봇동역학 및 제어",
+   "객체지향 프로그래밍",
+   "동역학",
+   "기계학습개론",
+   "딥러닝개론",
+   "시스템의 통합적 모델링"
+  ]
+ },
+ "p130_R": {
+  "professor": "오용석",
+  "lab_ko": "분자정신의학 연구실",
+  "lab_en": "Lab. of Molecular Psychiatry",
+  "research_fields": [
+   "- 정신질환의 분자 및 신경회로 기전 연구",
+   "(우울증_Depression",
+   "외상 후 스트레스 장애_PTSD)",
+   "- 뇌-신경회로 유전체-전사체-번역체 패턴규명 및 기능연구",
+   "(세포군-특이적 전사체 반응",
+   "단일세포 전사체 이형성)"
+  ],
+  "courses": [
+   "생물물리학",
+   "유전학",
+   "생화학Ⅰ",
+   "세포생물학",
+   "분자생물학",
+   "일반생물학Ⅰ",
+   "세포생물학 실험",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ",
+   "일반생물학 실험",
+   "유전학 실험",
+   "프로그래밍",
+   "확률과 통계 및 실습"
+  ]
+ },
+ "p131_L": {
+  "professor": "유재석",
+  "lab_ko": "의생명 초음파 연구실",
+  "lab_en": "Advanced Ultrasound Research Lab.",
+  "research_fields": [
+   "의생명 초음파 및 광음향 영상과 치료 기술",
+   "의료 영상 및 신호 처리",
+   "머신러닝 기반의 신호처리 및 진단 기술 개발",
+   "나노 진단/치료 플랫폼 개발"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "디자인 사고",
+   "공학수학Ⅱ",
+   "딥러닝개론",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "확률과 통계 및 실습",
+   "의공학개론",
+   "강화학습",
+   "프로그래밍",
+   "기계학습개론",
+   "인공지능 개론"
+  ]
+ },
+ "p131_R": {
+  "professor": "윤동원",
+  "lab_ko": "바이오로봇 및 메카트로닉스 연구실",
+  "lab_en": "Bio Robotics and Mechatronics Lab.",
+  "research_fields": [
+   "자연모사로봇",
+   "산업용/군사용 등 다양한 분야의 로봇연구",
+   "메카트로닉스",
+   "센서 및 액추에이터"
+  ],
+  "courses": [
+   "일반물리Ⅱ",
+   "로봇동역학 및 제어",
+   "자동제어시스템",
+   "일반물리Ⅰ",
+   "기구학",
+   "확률과 통계 및 실습",
+   "다변수 미적분학",
+   "디지털 신호처리",
+   "진동공학",
+   "선형대수학",
+   "기계학습개론",
+   "동역학",
+   "프로그래밍",
+   "신호 및 시스템",
+   "인공지능 개론",
+   "딥러닝개론",
+   "창의기계설계"
+  ]
+ },
+ "p132_L": {
+  "professor": "이경태",
+  "lab_ko": "센서 시스템 연구실(Sett Lab)",
+  "lab_en": "Sensor Systems and Circuits",
+  "research_fields": [
+   "Biomedical sensor system design",
+   "Low power sensor IC design",
+   "Li-ion battery management IC design"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "이산수학",
+   "전자회로 이론",
+   "디지털집적회로설계",
+   "다변수 미적분학",
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "프로그래밍",
+   "선형대수학",
+   "전자소자개론",
+   "회로이론과 계측법",
+   "의공학개론",
+   "디지털 논리회로",
+   "아날로그 전자회로",
+   "기계학습개론"
+  ]
+ },
+ "p132_R": {
+  "professor": "이기준",
+  "lab_ko": "양자 및 의생명광학 연구실(QBOL)",
+  "lab_en": "Quantum & Biomedical Optics Lab.",
+  "research_fields": [
+   "Diffuse Optical Spectroscopy/Tomography",
+   "Speckle Contrast based Flowmetry",
+   "Complexity of Biosignals",
+   "Quantum Optics",
+   "Sound and Music Visualization",
+   "Blood flow monitoring study in the context of Traditional Chinese Medicine"
+  ],
+  "courses": [
+   "일반물리Ⅱ",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "일반물리실험Ⅱ",
+   "디지털 영상처리",
+   "디자인 사고",
+   "수리물리",
+   "현대광학",
+   "선형대수학",
+   "의공학개론",
+   "양자 컴퓨팅 개론",
+   "기계학습개론",
+   "딥러닝개론",
+   "생명에 대한 융합적 이해"
+  ]
+ },
+ "p133_L": {
+  "professor": "이병권",
+  "lab_ko": "전산광학 및 생체광자학 영상 연구실(COBI Lab)",
+  "lab_en": "Computational Optics and Biophotonic Imaging",
+  "research_fields": [
+   "Biomedical Optics",
+   "Interferometric Microscopy",
+   "Wavelength-Swept Lasers",
+   "Fourier-Domain Image Processing"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "선형대수학",
+   "전기역학Ⅱ",
+   "현대광학",
+   "다변수 미적분학",
+   "양자역학Ⅰ",
+   "디지털 신호처리",
+   "일반물리Ⅱ",
+   "신호 및 시스템",
+   "디지털 영상처리",
+   "일반물리실험Ⅱ",
+   "컴퓨터구조",
+   "강화학습",
+   "프로그래밍",
+   "의공학개론",
+   "전자회로 이론",
+   "컴퓨터 비전 개론",
+   "인공지능기초",
+   "딥러닝개론"
+  ]
+ },
+ "p133_R": {
+  "professor": "이상훈",
+  "lab_ko": "신경로봇 연구실",
+  "lab_en": "Neuro-interfaced Robotics Lab.",
+  "research_fields": [
+   "신경인터페이스",
+   "말초신경조절기술",
+   "신경보철기술",
+   "생체전자의약품",
+   "신경공학"
+  ],
+  "courses": [
+   "선형대수학",
+   "의공학개론",
+   "반도체공정개론",
+   "회로이론과 계측법",
+   "확률과 통계 및 실습",
+   "디지털 신호처리",
+   "신호 및 시스템",
+   "인공지능기초",
+   "기계학습개론",
+   "반도체물성 개론",
+   "전자회로 이론"
+  ]
+ },
+ "p134_L": {
+  "professor": "이성배",
+  "lab_ko": "퇴행성 뇌질환과 노화 연구실",
+  "lab_en": "Lab. of Neurodegenerative diseases and Aging",
+  "research_fields": [
+   "퇴행성 뇌질환",
+   "신경 노화"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "유전학",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ",
+   "세포생물학",
+   "뇌질환",
+   "뇌과학 특강"
+  ]
+ },
+ "p134_R": {
+  "professor": "이성원",
+  "lab_ko": "생체조화소자 연구실",
+  "lab_en": "Bio Harmonized Device Lab.",
+  "research_fields": [
+   "초박막 소자 및 바이오센서 개발"
+  ],
+  "courses": []
+ },
+ "p135_L": {
+  "professor": "이신범",
+  "lab_ko": "반도체 에너지 센서 연구실",
+  "lab_en": "Semiconductor Energy Sensor Lab.",
+  "research_fields": [
+   "반도체",
+   "에너지",
+   "센서",
+   "박막",
+   "나노구조"
+  ],
+  "courses": [
+   "양자역학Ⅰ",
+   "응용물리특론",
+   "선형대수학",
+   "공학수학Ⅰ",
+   "확률과 통계 및 실습",
+   "재료열역학 개론",
+   "다변수 미적분학",
+   "고체물리Ⅰ",
+   "일반물리Ⅰ",
+   "응용물리 실험",
+   "일반물리실험Ⅱ",
+   "양자역학Ⅱ",
+   "일반물리Ⅱ",
+   "열 및 통계 물리",
+   "프로그래밍"
+  ]
+ },
+ "p135_R": {
+  "professor": "이영삼",
+  "lab_ko": "노화기전 연구실",
+  "lab_en": "Senescence-Associated Mechanism Lab. (SAM Lab.",
+  "research_fields": [
+   "동물 세포 노화기전 및 노화제어 기전 규명",
+   "DNA복제 및 수선 관련 단백질의 구조와 기능 해석"
+  ],
+  "courses": [
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "분자생물학 실험",
+   "유전학",
+   "분자생물학",
+   "세포생물학 실험",
+   "Scientific Writing"
+  ]
+ },
+ "p136_L": {
+  "professor": "이옥균",
+  "lab_ko": "차세대의료영상 연구실",
+  "lab_en": "Next-generation Medical Imaging Lab.",
+  "research_fields": [
+   "의료영상복원 알고리즘 개발/응용",
+   "(x-ray 물질분리*",
+   "적외선을 이용한 3차원 기능성 뇌영상**)"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "기계학습개론",
+   "다변수 미적분학",
+   "확률과 통계 및 실습",
+   "컴퓨터 알고리즘",
+   "프로그래밍",
+   "인공지능 개론"
+  ]
+ },
+ "p136_R": {
+  "professor": "이윤희  겸무교원",
+  "lab_ko": "단분자 바이오센서 및 바이오전자소자 연구실",
+  "lab_en": "Single-molecule Biosensor and Bioelectronics Lab.",
+  "research_fields": [
+   "- 단분자 바이오센서 및 동역학 : CNT FET 및 AFM을 이용한 단분자 수준의",
+   "결합 동역학 분석",
+   "- 차세대 진단 플랫폼 : 엑소좀 나노역학 지문 분석",
+   "체액 내 바이오마커",
+   "정밀 검출 및 딥러닝 기반 진단 플랫폼 개발",
+   "- 나노/마이크로 시스템 : 스케일러블 공정 기술 기반의 바이오 FET 및",
+   "생체 분자 제어 기술 시스템 개발"
+  ],
+  "courses": [
+   "공학수학Ⅱ",
+   "현대물리",
+   "선형대수학",
+   "세포생물학",
+   "회로이론과 계측법",
+   "생물물리학",
+   "의생명공학",
+   "공학수학Ⅰ",
+   "분자생물학",
+   "프로그래밍",
+   "디지털 신호처리",
+   "신호 및 시스템",
+   "분석화학",
+   "반도체물성 개론",
+   "전자소자개론"
+  ]
+ },
+ "p137_L": {
+  "professor": "이재민",
+  "lab_ko": "노화대사생리 연구실",
+  "lab_en": "Aging, Metabolism and Physiology Lab.",
+  "research_fields": [
+   "대사생리",
+   "당뇨 및 비만",
+   "세포 스트레스 관련 신호전달계"
+  ],
+  "courses": [
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "학술 글쓰기",
+   "분자생물학",
+   "면역학"
+  ]
+ },
+ "p137_R": {
+  "professor": "이재홍",
+  "lab_ko": "소프트 바이오일렉트로닉스 연구실",
+  "lab_en": "Soft Bioelectronics Lab.",
+  "research_fields": [
+   "웨어러블 전자소자",
+   "체내삽입형 헬스케어 센서",
+   "웨어러블 로보틱스",
+   "1D 유연센서 및 전자소자",
+   "전자섬유"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "프로그래밍",
+   "반도체물성 개론",
+   "반도체공정개론",
+   "일반물리Ⅱ",
+   "회로이론과 계측법",
+   "전자소자개론",
+   "반도체공정실습",
+   "일반화학Ⅰ",
+   "일반화학Ⅱ",
+   "의공학개론",
+   "메카트로닉스"
+  ]
+ },
+ "p138_L": {
+  "professor": "이정협",
+  "lab_ko": "집적 나노시스템 연구실(INS Lab)",
+  "lab_en": "Integrated Nano-Systems Lab.",
+  "research_fields": [
+   "Analog & mixed-signal circuits / Low-power / High-resolution ADC /",
+   "Brain-computer-interface microsystems / Bio-application AI systems"
+  ],
+  "courses": [
+   "전자회로 이론",
+   "디지털집적회로설계",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "공학수학Ⅱ",
+   "공학수학Ⅰ",
+   "이산수학",
+   "아날로그 전자회로",
+   "반도체공정개론",
+   "일변수 미적분학",
+   "확률과 통계 및 실습",
+   "반도체물성 개론",
+   "디지털 신호처리",
+   "다변수 미적분학",
+   "회로이론과 계측법",
+   "전자소자개론",
+   "프로그래밍",
+   "디지털 논리회로",
+   "신호 및 시스템",
+   "인공지능기초",
+   "컴퓨터구조",
+   "객체지향 프로그래밍",
+   "의공학개론"
+  ]
+ },
+ "p138_R": {
+  "professor": "이종찬",
+  "lab_ko": "세포 다이내믹스 및 이미징 연구실",
+  "lab_en": "Cell Dynamics and Imaging Lab.",
+  "research_fields": [
+   "세포 내 상분리",
+   "CRISPR 기반 기술",
+   "단분자 생물물리",
+   "초고분해능 현미경"
+  ],
+  "courses": [
+   "생물물리학",
+   "분자생물학",
+   "세포생물학",
+   "광학현미경",
+   "프로그래밍",
+   "의생명공학",
+   "신호 및 시스템",
+   "회로이론과 계측법",
+   "디지털 신호처리",
+   "디지털 영상처리"
+  ]
+ },
+ "p139_L": {
+  "professor": "이창훈",
+  "lab_ko": "바이오인터페이스구조 및 피부 연구실",
+  "lab_en": "Biointerface Structure and Skin Lab.",
+  "research_fields": [
+   "피부생리학",
+   "피부질환",
+   "단백질생화학",
+   "구조기반 신약설계"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "일반생물학 실험",
+   "유전학",
+   "분자생물학",
+   "면역학",
+   "세포생물학 실험",
+   "정량 생명과학",
+   "Scientific Writing",
+   "유전학 실험",
+   "분자생물학 실험",
+   "유기화학 Ⅰ",
+   "유기화학 Ⅱ"
+  ]
+ },
+ "p139_R": {
+  "professor": "장경인",
+  "lab_ko": "퍼스널라이즈드 피지컬 AI 연구실",
+  "lab_en": "Personalized Physical AI Lab.",
+  "research_fields": [
+   "의료기기 개발",
+   "바이오센서",
+   "뇌공학",
+   "전자피부",
+   "차세대 디스플레이",
+   "바이오 인공지능"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "재료열역학 개론",
+   "다변수 미적분학",
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "고체역학",
+   "수리물리",
+   "일반화학Ⅱ",
+   "유체역학",
+   "메카트로닉스",
+   "프로그래밍"
+  ]
+ },
+ "p140_L": {
+  "professor": "장진호",
+  "lab_ko": "의료융합기술 연구실(MAFI Lab)",
+  "lab_en": "Medical Acoustic Fusion Innovation",
+  "research_fields": [
+   "Biomedical signal & image processing",
+   "Deep learning for medical",
+   "imaging",
+   "Medical ultrasound imaging systems",
+   "Combined",
+   "ultrasound and optical imaging & therapy",
+   "Ultrasound sensors"
+  ],
+  "courses": [
+   "일반물리Ⅱ",
+   "디지털 논리회로",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "일반물리실험Ⅱ",
+   "선형대수학",
+   "의공학개론",
+   "디지털 영상처리",
+   "공학수학Ⅰ",
+   "자료구조",
+   "컴퓨터구조",
+   "강화학습",
+   "프로그래밍",
+   "이산수학",
+   "전자회로 이론",
+   "컴퓨터 비전 개론",
+   "딥러닝개론",
+   "양자 컴퓨팅 개론"
+  ]
+ },
+ "p140_R": {
+  "professor": "정찬",
+  "lab_ko": "암 후성유전학 연구실",
+  "lab_en": "Cancer Epigenetics Lab.",
+  "research_fields": [
+   "암의 후성유전적 변화 연구",
+   "종양에서의 신진대사 조절 및 유전적 변이 연구",
+   "신진대사와 후성유전학의 상호 작용",
+   "후성유전적 방법을 타겟으로 한 암치료",
+   "방법 개발"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "일반생물학 Ⅱ",
+   "세포생물학",
+   "생화학Ⅰ",
+   "생화학Ⅱ",
+   "유전학",
+   "분자생물학",
+   "Scientific Writing"
+  ]
+ },
+ "p141_L": {
+  "professor": "최지웅",
+  "lab_ko": "통신 및 신호처리 연구실(CSP Lab)",
+  "lab_en": "Communicaton & Signal Processing",
+  "research_fields": [
+   "Advanced communication systems",
+   "Brain machine/computer interface (BMI/BCI)",
+   "- Communications theory and signal processing/machine learning",
+   "- Vehicular communications (V2X",
+   "IVN)",
+   "5G/6G",
+   "- Biomedical signal processing/AI",
+   "BMI/BCI",
+   "- Magnetic communication and energy transfer"
+  ],
+  "courses": [
+   "확률과 통계 및 실습",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "선형대수학",
+   "인공지능 개론",
+   "객체지향 프로그래밍",
+   "통신의 기초",
+   "디지털통신",
+   "컴퓨터 네트워크",
+   "신경과학Ⅰ",
+   "의공학개론"
+  ]
+ },
+ "p141_R": {
+  "professor": "현정호",
+  "lab_ko": "뇌인지조절 연구실",
+  "lab_en": "Lab. of Structural Learning and Neuromodulation",
+  "research_fields": [
+   "뇌의 핵심적 고등기능 (의사결정 및 추론)의 신경과학적 기전 연구",
+   "다양한 신경질환들을 극복하기 위한 비침습 기반의 인지증강기술 개발과",
+   "계산정신과학 및 뇌공학적 접근법을 활용한 연구 수행",
+   "주요 성과",
+   "Nature Biotechnology",
+   "Nature Communications",
+   "Nature Neuroscience 등 우수논문 다수 발표"
+  ],
+  "courses": [
+   "일반생물학Ⅰ",
+   "인공지능기초",
+   "확률과 통계 및 실습",
+   "일반생물학 Ⅱ",
+   "뇌공학개론",
+   "선형대수학",
+   "공학수학Ⅰ",
+   "인지뇌과학개론",
+   "유전학 실험",
+   "프로그래밍",
+   "유전학",
+   "신경과학Ⅰ",
+   "신경과학Ⅱ",
+   "세포생물학",
+   "세포생물학 실험"
+  ]
+ },
+ "p142_L": {
+  "professor": "황재윤",
+  "lab_ko": "다중의료영상 및 시스템 연구실(MBIS Lab)",
+  "lab_en": "Multimodal Biomedical Imaging and System",
+  "research_fields": [
+   "Ultrasound and Optical Imaging and System",
+   "Signal and",
+   "Image Processing",
+   "Biomedical Applications of Deep Learning",
+   "Intelligent Remote Sensing"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "신호 및 시스템",
+   "강화학습",
+   "다변수 미적분학",
+   "디지털 논리회로",
+   "전자회로 이론",
+   "디지털 신호처리",
+   "일반물리Ⅱ",
+   "인공지능 개론",
+   "전자소자개론",
+   "일반물리실험Ⅱ",
+   "의공학개론",
+   "딥러닝개론",
+   "선형대수학"
+  ]
+ },
+ "p142_R": null,
+ "p143_L": null,
+ "p143_R": null,
+ "p146_L": {
+  "professor": "권상일",
+  "lab_ko": "초전도 양자 회로 실험실",
+  "lab_en": "Superconducting Quantum Circuits lab.",
+  "research_fields": [
+   "초전도 회로 기반 양자 전산과 센싱"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "선형대수학",
+   "전기역학Ⅱ",
+   "양자 컴퓨팅 개론",
+   "프로그래밍",
+   "해석역학Ⅰ",
+   "해석역학Ⅱ",
+   "양자역학Ⅰ",
+   "양자역학Ⅱ"
+  ]
+ },
+ "p146_R": {
+  "professor": "김소연",
+  "lab_ko": "강상관 물질 분광학 연구실",
+  "lab_en": "Correlated Matter Spectroscopy Lab.",
+  "research_fields": [
+   "강상관계 양자 상",
+   "비선형 양자광원",
+   "초고속 동역학"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "결정학 및 회절",
+   "현대광학"
+  ]
+ },
+ "p147_L": {
+  "professor": "김아람",
+  "lab_ko": "양자 다체계 이론 연구실",
+  "lab_en": "Quantum Many-Body Theory Group",
+  "research_fields": [
+   "Strongly Correlated Systems",
+   "Quantum Many-Body Physics",
+   "Quantum Monte Carlo Method"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "해석역학Ⅰ",
+   "해석역학Ⅱ",
+   "양자역학Ⅰ",
+   "양자역학Ⅱ",
+   "고체물리Ⅰ",
+   "고체물리Ⅱ",
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "열 및 통계 물리",
+   "수리물리",
+   "양자 컴퓨팅 개론"
+  ]
+ },
+ "p147_R": {
+  "professor": "김영식",
+  "lab_ko": "프라이버시 및 응용 암호 연구실(PACL)",
+  "lab_en": "Privacy and Applied Cryptography Lab.",
+  "research_fields": [
+   "Applied cryptography / Quantum safe cryptography / AI security",
+   "/ Privacy enhancing technologies / Vehicular security"
+  ],
+  "courses": [
+   "프로그래밍",
+   "선형대수학",
+   "기계학습개론",
+   "강화학습",
+   "확률과 통계 및 실습",
+   "컴퓨터구조",
+   "디지털통신",
+   "자료구조",
+   "컴퓨터 알고리즘",
+   "컴퓨터보안개론",
+   "인공지능기초",
+   "딥러닝개론",
+   "컴퓨터 네트워크",
+   "이산수학",
+   "통신의 기초",
+   "객체지향 프로그래밍",
+   "디지털 논리회로"
+  ]
+ },
+ "p148_L": {
+  "professor": "김영욱",
+  "lab_ko": "위상 양자소자 연구실",
+  "lab_en": "Topological Quantum Device",
+  "research_fields": [
+   "Quantum Transport",
+   "Quantum Engineering & Computing"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "해석역학Ⅰ",
+   "해석역학Ⅱ",
+   "열 및 통계 물리",
+   "고체물리Ⅱ",
+   "양자역학Ⅰ",
+   "현대물리",
+   "고체물리Ⅰ",
+   "수리물리",
+   "전기역학Ⅱ"
+  ]
+ },
+ "p148_R": {
+  "professor": "박기성",
+  "lab_ko": "재미있는 양자물질 연구실",
+  "lab_en": "Novel Quantum Materials Lab.",
+  "research_fields": [
+   "초전도체",
+   "자성체",
+   "위상물질",
+   "단결정합성",
+   "저온물리특성",
+   "Xray와 중성자산란"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "해석역학Ⅰ",
+   "해석역학Ⅱ",
+   "양자역학Ⅰ",
+   "양자역학Ⅱ",
+   "응용물리특론",
+   "일반물리실험Ⅰ",
+   "고체물리Ⅰ",
+   "고체물리Ⅱ",
+   "일반물리Ⅱ",
+   "열 및 통계 물리",
+   "결정학 및 회절",
+   "일반물리실험Ⅱ",
+   "응용물리 실험"
+  ]
+ },
+ "p149_L": {
+  "professor": "서정필",
+  "lab_ko": "저차원 위상물질 연구실",
+  "lab_en": "Nanospm Lab.",
+  "research_fields": [
+   "양자물질",
+   "저차원 물질",
+   "양자현미경(STM)"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "열 및 통계 물리",
+   "고체물리Ⅰ"
+  ]
+ },
+ "p149_R": {
+  "professor": "이기준",
+  "lab_ko": "양자 및 의생명광학 연구실(QBOL)",
+  "lab_en": "Quantum & Biomedical Optics Lab.",
+  "research_fields": [
+   "Diffuse Optical Spectroscopy/Tomography",
+   "Speckle Contrast based Flowmetry",
+   "Complexity of Biosignals",
+   "Quantum Optics",
+   "Sound and Music Visualization",
+   "Blood flow monitoring study in the context of Traditional Chinese Medicine"
+  ],
+  "courses": [
+   "일반물리Ⅱ",
+   "신호 및 시스템",
+   "디지털 신호처리",
+   "일반물리실험Ⅱ",
+   "디지털 영상처리",
+   "디자인 사고",
+   "수리물리",
+   "현대광학",
+   "선형대수학",
+   "의공학개론",
+   "양자 컴퓨팅 개론",
+   "기계학습개론",
+   "딥러닝개론",
+   "생명에 대한 융합적 이해"
+  ]
+ },
+ "p150_L": {
+  "professor": "이재동",
+  "lab_ko": "광물성 이론 연구실",
+  "lab_en": "Light and Matter Theory Lab.",
+  "research_fields": [
+   "고체물리이론",
+   "초고속동역학",
+   "비평형현상",
+   "제일원리계산"
+  ],
+  "courses": [
+   "양자역학Ⅰ",
+   "현대광학",
+   "고체물리Ⅰ",
+   "응용물리특론",
+   "양자역학Ⅱ",
+   "열 및 통계 물리"
+  ]
+ },
+ "p150_R": {
+  "professor": "이종찬",
+  "lab_ko": "세포 다이내믹스 및 이미징 연구실",
+  "lab_en": "Cell Dynamics and Imaging Lab.",
+  "research_fields": [
+   "양자 이미징",
+   "초고분해능 광학현미경 개발",
+   "단분자 생물물리"
+  ],
+  "courses": [
+   "생물물리학",
+   "신호 및 시스템",
+   "프로그래밍",
+   "광학현미경",
+   "회로이론과 계측법",
+   "의생명공학",
+   "의공학개론",
+   "현대광학",
+   "디지털 영상처리"
+  ]
+ },
+ "p151_L": {
+  "professor": "조창희",
+  "lab_ko": "반도체 양자 포토닉스 연구",
+  "lab_en": "Semiconductor Quantum Photonics Lab.",
+  "research_fields": [
+   "양자포토닉스",
+   "반도체광학",
+   "빛-물질 상호작용"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "해석역학Ⅱ",
+   "전기역학Ⅱ",
+   "현대물리",
+   "일반물리Ⅱ",
+   "열 및 통계 물리",
+   "양자역학Ⅰ",
+   "고체물리Ⅱ",
+   "양자역학Ⅱ",
+   "고체물리Ⅰ",
+   "수리물리"
+  ]
+ },
+ "p151_R": {
+  "professor": "한상윤",
+  "lab_ko": "지능형 나노광학 연구실",
+  "lab_en": "Intelligent Nanophotonics Lab.",
+  "research_fields": [
+   "광-반도체",
+   "실리콘 포토닉스",
+   "광-AI 가속기",
+   "양자 컴퓨터",
+   "반도체 라이다"
+  ],
+  "courses": [
+   "공학수학Ⅰ",
+   "공학수학Ⅱ",
+   "전자소자개론",
+   "신호 및 시스템",
+   "다변수 미적분학",
+   "일반물리Ⅱ",
+   "전자회로 이론",
+   "일반물리Ⅰ",
+   "반도체공정개론",
+   "프로그래밍"
+  ]
+ },
+ "p152_L": {
+  "professor": "허승정",
+  "lab_ko": "극저온 원자 및 양자 시스템 설계 연구실",
+  "lab_en": "Ultracold Atoms and Engineered Quantum Systems Group",
+  "research_fields": [
+   "Quantum Simulation and Quantum Computation with ultracold",
+   "atoms"
+  ],
+  "courses": [
+   "일반물리Ⅰ",
+   "일반물리Ⅱ",
+   "원자분자물리학",
+   "열 및 통계 물리",
+   "현대광학",
+   "전기역학Ⅱ"
+  ]
+ },
+ "p152_R": null,
+ "p153_L": null,
+ "p153_R": null
+}

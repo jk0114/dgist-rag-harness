@@ -1,5 +1,6 @@
 """RAG 파이프라인 레지스트리.
 
+세 가지만 둔다 — no-rag(대조군), vanilla(순정 RAG), graph-rag(retrieval/graph_rag.py):
 새 변형을 추가하려면 함수를 하나 만들고 @register("이름")을 붙이면 UI 드롭다운과 CLI에 자동으로 뜬다.
 시그니처:  fn(question: str, history: list[dict], params: dict) -> dict
 반환 dict 키:
@@ -8,7 +9,7 @@
   prompt    : 실제로 모델에 보낸 messages (디버그/발표용)
 history 는 이전 대화 [{"role","content"}] 목록 (retrieved 등은 제외된 순수 대화).
 """
-from core import retrieve, chat
+from retrieval.core import retrieve, chat
 import config as C
 
 PIPELINES: dict[str, dict] = {}
@@ -66,5 +67,4 @@ def vanilla(question, history, params):
 # @register("hybrid", "dense + sparse 혼합 검색")
 # def hybrid(question, history, params): ...
 
-import pipeline_track_graph  # noqa: F401  (import 부수효과로 "track_graph" 파이프라인이 PIPELINES에 등록됨)
-import pipeline_gnn_ret      # noqa: F401  (import 부수효과로 "gnn_ret" 파이프라인이 PIPELINES에 등록됨)
+from retrieval import graph_rag  # noqa: F401  (import 부수효과로 "graph-rag" 파이프라인이 PIPELINES에 등록됨)

@@ -1,25 +1,29 @@
-RAG Harness 실행 명령어  (폴더: E:\DGIST\MS\RAGProject, 모든 명령은 이 폴더에서)
+RAG Harness 실행 명령어  (폴더: E:\DGIST\MS\RAGProject, 모든 명령은 이 폴더에서 — 서브패키지는
+반드시 python -m 으로 실행할 것. `python indexing\ingest.py` 처럼 직접 실행하면 프로젝트 루트가
+import 경로에 안 잡혀서 `import config` 같은 게 깨진다.)
 
 0. 준비
    .venv\Scripts\activate
    LM Studio → Developer 탭 → qwen/qwen3.5-9b 로드 → Start Server  (http://localhost:1234)
 
-1. 벡터 DB 만들기  (처음 한 번, 그리고 DB 폴더의 PDF가 바뀌었을 때만)
-   python ingest.py
+1. 벡터 DB 만들기  (처음 한 번, 그리고 DB 폴더의 PDF나 indexing/config.py 설정이 바뀌었을 때만)
+   python -m indexing.ingest
    - chroma/ocr_cache.json 이 있으면 이미지 페이지의 OCR 텍스트를 자동으로 합친다
    - "unauthenticated requests to the HF Hub" 경고는 무시 (토큰 없이 캐시 확인만 하는 것, 무해)
    - 현재 torch가 CPU 빌드라 5~10분 걸림. GPU로 바꾸면(3번) 1분 내외
+   - 청크 크기/중복, 임베딩 모델은 indexing/config.py 에서 바꾼다 (바꾸면 이 명령을 다시 돌려야 반영됨)
 
 2. 하네스 실행
    streamlit run app.py
    - 브라우저 http://localhost:8501
    - 테마: 라이트(흰+하늘) / 다크(검+적)는 .streamlit/config.toml. OS 설정을 따라가고,
      우상단 ⋮ 메뉴 > Settings > Theme 에서 수동 선택 가능
-   - 사이드바: 파이프라인(no-rag = 문서 없는 대조군 / vanilla = 순정 RAG, top-k 무조건 삽입), top-k
-   - 답변 아래에는 답변이 실제로 인용한 출처([n] 파일명 p.쪽 · 제목 · 발췌)만 표시
+   - 사이드바: 파이프라인(no-rag / vanilla / graph-rag), top-k
+   - 답변 아래에는 답변이 실제로 인용한 출처([n] 파일명 p.쪽 · 제목 · 발췌)만 표시 (클릭하면 실제 PDF로 이동)
    - 검색된 top-k 전체(유사도 포함)와 모델에 보낸 원문 프롬프트는 사이드바 "디버그" 체크박스를 켰을 때만 표시
-   - 코드(config/core/pipelines)를 고친 뒤에는 Ctrl+C 후 다시 streamlit run app.py
+   - 코드를 고친 뒤에는 Ctrl+C 후 다시 streamlit run app.py
      (화면의 Rerun만으로는 이미 import된 모듈이 안 바뀌어 AttributeError가 날 수 있음)
+   - 사이드바 아래 "🔬 그래프 실험실" 페이지: vanilla vs graph-rag 유사도 비교 + 그래프 시각화
 
 3. (선택) GPU 사용  — 지금 venv의 torch는 CPU 전용 빌드
    pip uninstall -y torch
@@ -29,14 +33,37 @@ RAG Harness 실행 명령어  (폴더: E:\DGIST\MS\RAGProject, 모든 명령은 
 
 4. (선택) OCR 캐시 다시 만들기  — DB에 PDF를 추가/교체했을 때만
    pip install easyocr
-   python ingest.py --ocr
+   python -m indexing.ingest --ocr
    - GPU면 수 분, CPU면 1시간 이상. 결과는 chroma/ocr_cache.json 에 덮어씀
 
-파일 역할
-   config.py    경로·모델·청킹·top-k 설정
-   ingest.py    PDF → 청크 → bge-m3 임베딩 → chroma/  (--ocr: OCR 캐시 생성)
-   core.py      임베딩·검색·LLM 호출 공통 함수
-   pipelines.py RAG 파이프라인 정의 (no-rag, vanilla). 변형 추가는 여기에 @register
-   app.py       Streamlit 하네스
-   chroma/      벡터 DB, ocr_cache.json, skipped_pages.json(색인에서 빠진 페이지 목록)
-   .streamlit/config.toml  라이트/다크 테마 색
+5. (선택) graph-rag의 키워드-공유 edge 캐시 만들기  — 강의계획서를 추가/교체했을 때만
+   python -m retrieval.build_keyword_cache
+   - 로컬 LLM으로 강의계획서 청크마다 키워드를 뽑아 chroma/keyword_cache.json에 저장 (중단 후 재개 가능)
+
+6. (선택) 추천과목 평가(evaluation) 다시 돌리기  — 코스트리 PDF나 강의계획서 DB가 바뀌었을 때만
+   python -m eval.extract_course_tree   # PDF -> eval/data/course_tree_gt.json (GT)
+   python -m eval.run_eval 10           # GT -> eval/data/queries.json(질의+정답) + eval/data/results/latest.json(채점)
+   - vanilla vs graph-rag를 Precision/Recall/MRR/nDCG@10 으로 비교해 콘솔에 표로 보여준다
+
+폴더 구조
+   config.py              전역 설정: 경로 / LM Studio 서버 / top-k
+   app.py, pages/         Streamlit 하네스 + 그래프 시각화 페이지 (5. visualization)
+   indexing/              PDF -> 청크 -> 임베딩 -> Chroma  (1. 청킹 설계 + 2. 임베딩 선택)
+     config.py              청크 크기/중복, 임베딩 모델 — 실험할 때 여기를 바꾼다
+     ingest.py               색인 실행 스크립트
+     crawl_syllabus.py        강의계획서 PDF 원본 수집
+   retrieval/              검색 + LLM 호출 + 파이프라인  (3. no-rag / vanilla / graph-rag)
+     core.py                 retrieve() / chat() / embedder() 공통 함수
+     pipelines.py             파이프라인 레지스트리 (no-rag, vanilla). @register로 변형 추가
+     graph_rag.py              graph-rag 파이프라인 (GNN-Ret 논문 방식, 유일한 그래프 변형)
+     build_keyword_cache.py    graph-rag용 키워드-공유 edge 캐시 생성
+   eval/                   평가 데이터셋 + GT + 채점  (4. evaluation)
+     extract_course_tree.py   코스트리 PDF -> GT 추출
+     run_eval.py               GT -> 질의 구성 -> 파이프라인별 채점(Precision/Recall/MRR/nDCG)
+     course_names.py           강의계획서 파일명 <-> 정식 과목명 변환 유틸(위 둘이 공유)
+     data/
+       course_tree_gt.json       GT 원본 (교수별 연구분야 + 추천과목)
+       queries.json               사람이 읽을 수 있는 평가 질의+정답 목록
+       results/latest.json        최근 채점 결과(질의별 상세 + 파이프라인별 점수)
+   chroma/                 벡터 DB + 색인 캐시(ocr_cache.json, keyword_cache.json, skipped_pages.json)
+   .streamlit/config.toml  라이트/다크 테마 색 + 정적 파일 서빙(PDF 인용 링크용)

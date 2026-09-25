@@ -1,4 +1,5 @@
-"""'2026 DGIST 연구실별 추천 코스트리.pdf'에서 교수별 연구분야/추천과목을 직접 파싱한다.
+"""'2026 DGIST 연구실별 추천 코스트리.pdf'에서 교수별 연구분야/추천과목을 직접 파싱해
+평가용 GT(정답)를 만든다. (eval/run_eval.py가 이 결과를 읽어 질의를 구성한다.)
 
 pymupdf/pdftotext(poppler) 둘 다 이 PDF에서 한글이 깨진 텍스트를 내놓는데(이전에는 OCR로
 우회했었다), 원인을 확인해보니 PDF에 폰트별 ToUnicode CMap 자체는 정상인데 일부 폰트가
@@ -13,21 +14,21 @@ pdfminer가 돌려주는 텍스트 줄(LTTextLine)은 x좌표를 갖고 있어�
 섞이는 문제 자체가 없음) — 그래서 학년(열) 구분 없이 표 영역의 불릿(· ) 줄을 모두 모으는
 것만으로 과목 전체 목록을 정확히 얻는다.
 
-실행:  python course_tree_extract.py
-출력:  chroma/course_tree_gt.json   {"p{page}_{L|R}": {professor, lab_ko, lab_en,
-                                     research_fields, courses} | null}
+실행:  python -m eval.extract_course_tree
+출력:  eval/data/course_tree_gt.json   {"p{page}_{L|R}": {professor, lab_ko, lab_en,
+                                        research_fields, courses} | null}
 """
 import json
 import re
 from pathlib import Path
 
-import config as C
-from pipeline_track_graph import _SOURCE_RE, _strip_paren, _norm
 from pdfminer.high_level import extract_pages
 from pdfminer.layout import LTTextContainer, LTTextLine
 
+from eval.course_names import SOURCE_RE, strip_paren, norm
+
 PDF_PATH = "2026 DGIST 연구실별 추천 코스트리.pdf"
-GT_PATH = C.DB_DIR / "course_tree_gt.json"
+GT_PATH = Path(__file__).parent / "data" / "course_tree_gt.json"
 SYLLABUS_DIR = Path("DB/Syllabus")
 
 _PHONE_RE = re.compile(r"^T\.\s*0\d{2}")
@@ -63,10 +64,10 @@ def _page_lines(layout) -> list[tuple[float, float, str]]:
 def canonical_map() -> dict[str, str]:
     names = set()
     for p in SYLLABUS_DIR.glob("*.pdf"):
-        m = _SOURCE_RE.match(p.name)
+        m = SOURCE_RE.match(p.name)
         if m:
-            names.add(_strip_paren(m.group("name")))
-    return {_norm(n): n for n in names}
+            names.add(strip_paren(m.group("name")))
+    return {norm(n): n for n in names}
 
 
 def expand_course_text(raw: str) -> list[str]:
@@ -80,7 +81,7 @@ def expand_course_text(raw: str) -> list[str]:
 
 
 def match_canonical(text: str, canon: dict[str, str]) -> str | None:
-    key = _norm(text)
+    key = norm(text)
     if key in canon:
         return canon[key]
     hits = [v for k, v in canon.items() if k.startswith(key)]
@@ -103,7 +104,6 @@ def parse_half(lines: list[tuple[float, float, str]], canon: dict[str, str]) -> 
     email_idx = next((i for i, (_, _, t) in enumerate(lines) if _EMAIL_RE.search(t)), None)
     if email_idx is None:
         return None
-    email = _EMAIL_RE.search(lines[email_idx][2]).group(1)
 
     # 실제 텍스트 추출 순서는 (전화, 이메일, [웹사이트 W. ... (있으면)], 이름+직함,
     # 연구실명(국문), 연구실명(영문)) — 화면에는 이름이 위쪽 색상 바에 크게 보이지만,
@@ -171,6 +171,7 @@ def main():
             if entry:
                 print(f"  {key}: {entry['professor']}  과목 {len(entry['courses'])}개", flush=True)
 
+    GT_PATH.parent.mkdir(parents=True, exist_ok=True)
     GT_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
     n_profs = sum(1 for v in result.values() if v and v.get("courses"))
     print(f"\n완료: {GT_PATH} (교수 {n_profs}명, 전체 키 {len(result)}개)")

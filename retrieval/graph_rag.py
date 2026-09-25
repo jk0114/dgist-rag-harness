@@ -1,17 +1,18 @@
-"""GNN-Ret(arXiv 2406.06572) 논문 3.1절을 그대로 따라 만든 "청크들의 그래프(GoPs)" 기반 검색.
+"""Graph-RAG: GNN-Ret(arXiv 2406.06572) 논문 3.1절을 그대로 따라 만든 "청크들의 그래프(GoPs)"
+기반 검색. (이 프로젝트의 세 번째, 마지막 파이프라인 — no-rag / vanilla / graph-rag 중 하나.)
 
 edge는 논문과 동일하게 두 종류:
   1) 구조적 인접(structure-related) — 같은 문서(PDF) 안에서 순서상 바로 옆에 있는 청크끼리 연결
-  2) 키워드 공유(keyword-related)  — extract_keywords.py가 LLM으로 뽑아둔 키워드가 겹치는 청크끼리 연결
-     (먼저 `python extract_keywords.py` 를 한 번 돌려서 chroma/keyword_cache.json을 만들어둬야 함)
+  2) 키워드 공유(keyword-related)  — build_keyword_cache.py가 LLM으로 뽑아둔 키워드가 겹치는 청크끼리 연결
+     (먼저 `python -m retrieval.build_keyword_cache` 를 한 번 돌려서 chroma/keyword_cache.json을 만들어둬야 함)
 
 점수 전파는 논문이 "학습 없이 쓸 때" 쓰는 기본값을 그대로 쓴다: 1-layer, α=0.5,
 이웃 중 최댓값(=최소 거리)을 메시지로 사용(논문 Table 2에서 평균보다 항상 더 좋았던 방식).
 
-pipeline_track_graph.py와 달리, 그래프 이웃이 처음 dense 검색 후보(top-K) 안에 없어도
-직접 임베딩을 다시 찾아와 점수를 매긴다 (이웃이 후보 풀 밖이라 그냥 버려지는 문제를 피하려고).
+그래프 이웃이 처음 dense 검색 후보(top-K) 안에 없어도 직접 임베딩을 다시 찾아와 점수를
+매긴다(이웃이 후보 풀 밖이라 그냥 버려지는 문제를 피하려고).
 
-사용 범위: extract_keywords.py가 강의계획서 청크만 처리해뒀으므로, 키워드 edge는 강의계획서
+사용 범위: build_keyword_cache.py가 강의계획서 청크만 처리해뒀으므로, 키워드 edge는 강의계획서
 사이에서만 생긴다. 구조적 인접 edge는 추가 비용이 없어서 매뉴얼 포함 전체 청크에 대해 만든다.
 """
 import json
@@ -19,8 +20,8 @@ import re
 from collections import defaultdict
 
 import config as C
-from core import chat, collection, embedder, retrieve, sanitize
-from pipelines import register, SYSTEM_RAG, RULE_TAIL, _ctx
+from retrieval.core import chat, collection, embedder, retrieve, sanitize
+from retrieval.pipelines import register, SYSTEM_RAG, RULE_TAIL, _ctx
 
 ALPHA = 0.5
 POOL_K = 30
@@ -66,7 +67,7 @@ class Graph:
                 if i < len(ordered) - 1:
                     self.struct_neighbors[cid].add(ordered[i + 1])
 
-        # ---- ② 키워드 공유: extract_keywords.py 결과로 역인덱스 구성 ----
+        # ---- ② 키워드 공유: build_keyword_cache.py 결과로 역인덱스 구성 ----
         self.keywords: dict[str, list[str]] = {}
         if KEYWORD_CACHE_PATH.exists():
             self.keywords = json.loads(KEYWORD_CACHE_PATH.read_text(encoding="utf-8"))
@@ -76,7 +77,7 @@ class Graph:
                 kw_index[_norm_kw(kw)].add(cid)
         self.kw_index = kw_index
 
-        print(f"[gnn_ret] 그래프 구성 완료: 청크 {len(ids)}개, "
+        print(f"[graph-rag] 그래프 구성 완료: 청크 {len(ids)}개, "
               f"키워드 태깅된 청크 {len(self.keywords)}개")
 
     def neighbors(self, chunk_id: str) -> set[str]:
@@ -143,10 +144,10 @@ def graph_retrieve(query: str, k: int) -> list[dict]:
     return graph_rescore(query)[:k]
 
 
-@register("gnn_ret", "GNN-Ret 논문 방식 그대로: 같은 문서 인접 청크 + LLM이 뽑은 키워드 공유 청크끼리 "
-                      "유사도를 전파(학습 없음, α=0.5, 이웃 최댓값). 풀 밖 이웃도 직접 점수를 매겨 포함. "
-                      "프롬프트는 vanilla와 동일 — 검색 방식만 비교하기 위함.")
-def gnn_ret(question, history, params):
+@register("graph-rag", "GNN-Ret 논문 방식: 같은 문서 인접 청크 + LLM이 뽑은 키워드 공유 청크끼리 "
+                        "유사도를 전파(학습 없음, α=0.5, 이웃 최댓값). 풀 밖 이웃도 직접 점수를 매겨 포함. "
+                        "프롬프트는 vanilla와 동일 — 검색 방식만 비교하기 위함.")
+def graph_rag(question, history, params):
     k = int(params.get("top_k", C.TOP_K))
     hits = graph_retrieve(question, k)
     msgs = [{"role": "system", "content": SYSTEM_RAG}, *history,

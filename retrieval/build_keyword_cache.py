@@ -1,8 +1,8 @@
 """강의계획서 청크에서 핵심 키워드(entity)를 로컬 LLM으로 뽑아 캐시에 저장한다.
 GNN-Ret 논문(3.1절 "keyword-related")의 그래프 edge 구성 방식 그대로 — LLM에 프롬프트해서
-청크별 키워드를 뽑고, 그 키워드를 공유하는 청크끼리 pipeline_gnn_ret.py에서 그래프로 연결한다.
+청크별 키워드를 뽑고, 그 키워드를 공유하는 청크끼리 retrieval/graph_rag.py에서 그래프로 연결한다.
 
-실행:  python extract_keywords.py
+실행:  python -m retrieval.build_keyword_cache
 출력:  chroma/keyword_cache.json   {chunk_id: [키워드, ...]}
 이미 처리된 chunk_id는 재실행 시 건너뛴다 (중단 후 재개 가능).
 """
@@ -12,7 +12,7 @@ import re
 import chromadb
 
 import config as C
-from core import chat
+from retrieval.core import chat
 
 CACHE_PATH = C.DB_DIR / "keyword_cache.json"
 

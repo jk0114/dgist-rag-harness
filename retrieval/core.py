@@ -4,6 +4,7 @@ import chromadb
 from openai import OpenAI
 from sentence_transformers import SentenceTransformer
 import config as C
+from indexing.config import EMBED_MODEL
 
 # 모델 특수 토큰처럼 보이는 문자열(<|im_start|>, <|endoftext|> 등)을 문서 텍스트에서 제거.
 # 문서 본문이 채팅 템플릿의 역할 토큰으로 오해되는 것을 막는다.
@@ -18,8 +19,10 @@ _emb = {}
 _col = None
 
 def embedder(device: str = "cpu") -> SentenceTransformer:
+    """indexing/config.py 의 EMBED_MODEL을 쓴다 — 색인 때 쓴 모델과 검색 때 쓰는 모델이
+    같아야 유사도 비교가 의미 있다."""
     if device not in _emb:
-        _emb[device] = SentenceTransformer(C.EMBED_MODEL, device=device)
+        _emb[device] = SentenceTransformer(EMBED_MODEL, device=device)
     return _emb[device]
 
 def collection():
