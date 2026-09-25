@@ -1,4 +1,9 @@
-"""'관심분야 -> 추천과목' 검색 품질 평가: vanilla vs graph-rag.
+"""'관심분야 -> 추천과목' 검색 품질 평가: vanilla vs graph-rag, 그리고 각각 HyDE 유무.
+
+4개 조합을 비교한다: vanilla, vanilla+hyde, graph-rag, graph-rag+hyde. HyDE(step2_retrieval/
+hyde.py)는 "질문을 그대로 임베딩" 대신 "질문에 맞춰 LLM이 지어낸 가상의 강의계획서를 임베딩"해서
+검색한다 — 질문 문장과 실제 강의계획서 문체 사이의 격차를 줄여보려는 실험. no-rag는 검색을
+안 하므로 이 비교와 무관해서 뺐다.
 
 GT(정답)는 extract_course_tree.py가 만든 step3_eval/data/course_tree_gt.json을 쓴다.
 연구실 하나당 질의 하나를 만들어 step3_eval/data/queries.json에 사람이 읽을 수 있게 저장한다:
@@ -19,6 +24,7 @@ min(|정답|,K)로 정규화해서 이미 이 문제에서 자유롭고, MAP은 
 
 실행:  python -m step3_eval.run_eval [K]   (K 기본값 10, Precision/Recall/nDCG@K 계산용. MAP은 K와 무관)
 출력:  step3_eval/data/queries.json          사람이 볼 수 있는 질의+정답 목록 (채점과 별개로 항상 갱신)
+       step3_eval/data/hyde_cache.json       질의별로 생성한 HyDE 가상 문서 (중단 후 재개 가능)
        step3_eval/data/results/latest.json   질의별 상세 결과 + 콘솔에 파이프라인별 macro-average 비교표
 """
 import json
@@ -28,16 +34,18 @@ from pathlib import Path
 
 from step2_retrieval.core import retrieve
 from step2_retrieval.graph_rag import graph_rescore
+from step2_retrieval.hyde import generate as hyde_generate
 
 from .course_names import SOURCE_RE, strip_paren
 
 DATA_DIR = Path(__file__).parent / "data"
 GT_PATH = DATA_DIR / "course_tree_gt.json"
 QUERIES_PATH = DATA_DIR / "queries.json"
+HYDE_CACHE_PATH = DATA_DIR / "hyde_cache.json"
 RESULT_PATH = DATA_DIR / "results" / "latest.json"
 POOL = 60
 
-PIPELINES = ["vanilla", "graph-rag"]
+PIPELINES = ["vanilla", "vanilla+hyde", "graph-rag", "graph-rag+hyde"]
 
 
 def build_queries() -> list[dict]:
@@ -83,11 +91,23 @@ def hits_to_courses(hits: list[dict], score_key: str) -> list[str]:
     return out
 
 
-def run_pipeline(name: str, query: str) -> list[str]:
+def load_hyde_cache() -> dict:
+    return json.loads(HYDE_CACHE_PATH.read_text(encoding="utf-8")) if HYDE_CACHE_PATH.exists() else {}
+
+
+def save_hyde_cache(cache: dict):
+    HYDE_CACHE_PATH.write_text(json.dumps(cache, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
+def run_pipeline(name: str, query: str, hyde_text: str | None = None) -> list[str]:
     if name == "vanilla":
         return hits_to_courses(retrieve(query, POOL), "score")
+    if name == "vanilla+hyde":
+        return hits_to_courses(retrieve(hyde_text, POOL), "score")
     if name == "graph-rag":
         return hits_to_courses(graph_rescore(query), "graph_score")
+    if name == "graph-rag+hyde":
+        return hits_to_courses(graph_rescore(query, embed_text=hyde_text), "graph_score")
     raise ValueError(name)
 
 
@@ -129,17 +149,31 @@ def main():
     k = int(sys.argv[1]) if len(sys.argv) > 1 else 10
     queries = build_queries()
     print(f"평가 질의 {len(queries)}개 (연구실별 관심분야 -> 추천과목), k={k}")
-    print(f"질의+정답 목록: {QUERIES_PATH}\n")
+    print(f"질의+정답 목록: {QUERIES_PATH}")
+
+    needs_hyde = any(p.endswith("+hyde") for p in PIPELINES)
+    hyde_cache = load_hyde_cache() if needs_hyde else {}
+    if needs_hyde:
+        print(f"HyDE 캐시 {len(hyde_cache)}개 재사용 ({HYDE_CACHE_PATH})")
+    print()
 
     detail = []
     agg = {p: [] for p in PIPELINES}
 
     for i, q in enumerate(queries, 1):
+        hyde_text = None
+        if needs_hyde:
+            if q["id"] not in hyde_cache:
+                hyde_cache[q["id"]] = hyde_generate(q["query"])
+                if i % 10 == 0:
+                    save_hyde_cache(hyde_cache)
+            hyde_text = hyde_cache[q["id"]]
+
         row = {"id": q["id"], "professor": q["professor"], "lab": q["lab"],
-               "query": q["query"], "relevant": q["relevant"], "pipelines": {}}
+               "query": q["query"], "relevant": q["relevant"], "hyde": hyde_text, "pipelines": {}}
         relevant_set = set(q["relevant"])
         for p in PIPELINES:
-            retrieved = run_pipeline(p, q["query"])  # 자르지 않은 전체 랭킹
+            retrieved = run_pipeline(p, q["query"], hyde_text)  # 자르지 않은 전체 랭킹
             m = metrics(retrieved, relevant_set, k)
             m["ap"] = average_precision(retrieved, relevant_set)
             row["pipelines"][p] = {"retrieved": retrieved[:k], **m}
@@ -149,20 +183,23 @@ def main():
               + " / ".join(f"{p}:P{agg[p][-1]['precision']:.2f} AP{agg[p][-1]['ap']:.2f}" for p in PIPELINES),
               flush=True)
 
+    if needs_hyde:
+        save_hyde_cache(hyde_cache)
+
     RESULT_PATH.parent.mkdir(parents=True, exist_ok=True)
     RESULT_PATH.write_text(json.dumps({"k": k, "detail": detail}, ensure_ascii=False, indent=1),
                             encoding="utf-8")
 
     print(f"\n=== macro-average (질의 {len(queries)}개, k={k}) ===")
     print("nDCG@k, MAP은 질의별 정답 개수 차이에 자동 정규화됨 — 가장 신뢰할 수 있는 비교 지표.")
-    header = f"{'pipeline':<14}{'Precision@k':>13}{'Recall@k':>11}{'MRR':>9}{'nDCG@k':>9}{'MAP':>9}"
+    header = f"{'pipeline':<16}{'Precision@k':>13}{'Recall@k':>11}{'MRR':>9}{'nDCG@k':>9}{'MAP':>9}"
     print(header)
     print("-" * len(header))
     for p in PIPELINES:
         rows = agg[p]
         n = len(rows)
         avg = {m: sum(r[m] for r in rows) / n for m in ("precision", "recall", "mrr", "ndcg", "ap")}
-        print(f"{p:<14}{avg['precision']:>13.4f}{avg['recall']:>11.4f}{avg['mrr']:>9.4f}"
+        print(f"{p:<16}{avg['precision']:>13.4f}{avg['recall']:>11.4f}{avg['mrr']:>9.4f}"
               f"{avg['ndcg']:>9.4f}{avg['ap']:>9.4f}")
 
     print(f"\n상세 결과 저장: {RESULT_PATH}")

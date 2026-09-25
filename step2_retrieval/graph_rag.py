@@ -111,13 +111,17 @@ def _fetch_by_ids(ids: list[str], query_vec: list[float]) -> dict[str, dict]:
     return out
 
 
-def graph_rescore(query: str) -> list[dict]:
+def graph_rescore(query: str, embed_text: str | None = None) -> list[dict]:
     """dense 후보(POOL_K) + 그 이웃(풀 밖이면 직접 점수 매겨서) 전부에 대해 graph_score를 계산해,
     자르지 않고 전부 돌려준다 (실험실 페이지에서 '풀에는 있지만 최종 top-k 밖'인 것들의
-    graph_score도 보려고 분리해둠). 실제 검색은 graph_retrieve()를 쓴다."""
-    graph = get_graph()
+    graph_score도 보려고 분리해둠). 실제 검색은 graph_retrieve()를 쓴다.
 
-    pool = retrieve(query, POOL_K)
+    embed_text: 주어지면 query 대신 이 텍스트를 임베딩해서 검색한다(HyDE — retrieval.hyde.generate()가
+    만든 가상 문서 등). query 자체는 결과에 영향 없음(현재는 로깅 용도로도 안 쓰임)."""
+    graph = get_graph()
+    text = embed_text if embed_text is not None else query
+
+    pool = retrieve(text, POOL_K)
     pool_by_id = {h["id"]: h for h in pool}
 
     # 풀에 없는 그래프 이웃들을 모아서 직접 점수를 매겨 풀에 합친다 (이웃이 top-K 밖이라 버려지는 것 방지)
@@ -126,7 +130,7 @@ def graph_rescore(query: str) -> list[dict]:
         frontier_ids |= graph.neighbors(h["id"])
     frontier_ids -= set(pool_by_id)
     if frontier_ids:
-        q_vec = embedder("cpu").encode([sanitize(query)], normalize_embeddings=True).tolist()[0]
+        q_vec = embedder("cpu").encode([sanitize(text)], normalize_embeddings=True).tolist()[0]
         pool_by_id.update(_fetch_by_ids(list(frontier_ids), q_vec))
 
     all_hits = list(pool_by_id.values())
