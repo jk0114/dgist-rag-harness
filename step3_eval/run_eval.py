@@ -1,7 +1,7 @@
 """'관심분야 -> 추천과목' 검색 품질 평가: vanilla vs graph-rag.
 
-GT(정답)는 extract_course_tree.py가 만든 eval/data/course_tree_gt.json을 쓴다.
-연구실 하나당 질의 하나를 만들어 eval/data/queries.json에 사람이 읽을 수 있게 저장한다:
+GT(정답)는 extract_course_tree.py가 만든 step3_eval/data/course_tree_gt.json을 쓴다.
+연구실 하나당 질의 하나를 만들어 step3_eval/data/queries.json에 사람이 읽을 수 있게 저장한다:
     질의 = "{주요 연구 분야}에 관심이 있는데 어떤 과목을 들으면 좋을까?"
     정답 = 그 연구실의 추천과목 전체(합집합, 정식 과목명 집합)
 
@@ -10,19 +10,19 @@ GT(정답)는 extract_course_tree.py가 만든 eval/data/course_tree_gt.json을 
 중복 제거). 그 top-K 과목 랭킹을 정답 집합과 비교해 Precision/Recall/MRR/nDCG를 계산한다.
 계산식은 metrics() 함수 그대로가 정의다 — 표준 IR 지표(이진 관련성, k 잘라서 평가).
 
-실행:  python -m eval.run_eval [K]   (K 기본값 10)
-출력:  eval/data/queries.json          사람이 볼 수 있는 질의+정답 목록 (채점과 별개로 항상 갱신)
-       eval/data/results/latest.json   질의별 상세 결과 + 콘솔에 파이프라인별 macro-average 비교표
+실행:  python -m step3_eval.run_eval [K]   (K 기본값 10)
+출력:  step3_eval/data/queries.json          사람이 볼 수 있는 질의+정답 목록 (채점과 별개로 항상 갱신)
+       step3_eval/data/results/latest.json   질의별 상세 결과 + 콘솔에 파이프라인별 macro-average 비교표
 """
 import json
 import math
 import sys
 from pathlib import Path
 
-from retrieval.core import retrieve
-from retrieval.graph_rag import graph_rescore
+from step2_retrieval.core import retrieve
+from step2_retrieval.graph_rag import graph_rescore
 
-from eval.course_names import SOURCE_RE, strip_paren
+from .course_names import SOURCE_RE, strip_paren
 
 DATA_DIR = Path(__file__).parent / "data"
 GT_PATH = DATA_DIR / "course_tree_gt.json"

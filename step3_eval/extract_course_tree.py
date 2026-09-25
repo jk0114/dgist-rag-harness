@@ -1,5 +1,5 @@
 """'2026 DGIST 연구실별 추천 코스트리.pdf'에서 교수별 연구분야/추천과목을 직접 파싱해
-평가용 GT(정답)를 만든다. (eval/run_eval.py가 이 결과를 읽어 질의를 구성한다.)
+평가용 GT(정답)를 만든다. (step3_eval/run_eval.py가 이 결과를 읽어 질의를 구성한다.)
 
 pymupdf/pdftotext(poppler) 둘 다 이 PDF에서 한글이 깨진 텍스트를 내놓는데(이전에는 OCR로
 우회했었다), 원인을 확인해보니 PDF에 폰트별 ToUnicode CMap 자체는 정상인데 일부 폰트가
@@ -14,7 +14,7 @@ pdfminer가 돌려주는 텍스트 줄(LTTextLine)은 x좌표를 갖고 있어�
 섞이는 문제 자체가 없음) — 그래서 학년(열) 구분 없이 표 영역의 불릿(· ) 줄을 모두 모으는
 것만으로 과목 전체 목록을 정확히 얻는다.
 
-실행:  python -m eval.extract_course_tree
+실행:  python -m step3_eval.extract_course_tree
 출력:  eval/data/course_tree_gt.json   {"p{page}_{L|R}": {professor, lab_ko, lab_en,
                                         research_fields, courses} | null}
 """
@@ -25,7 +25,7 @@ from pathlib import Path
 from pdfminer.high_level import extract_pages
 from pdfminer.layout import LTTextContainer, LTTextLine
 
-from eval.course_names import SOURCE_RE, strip_paren, norm
+from .course_names import SOURCE_RE, strip_paren, norm
 
 PDF_PATH = "2026 DGIST 연구실별 추천 코스트리.pdf"
 GT_PATH = Path(__file__).parent / "data" / "course_tree_gt.json"

@@ -9,7 +9,7 @@
   prompt    : 실제로 모델에 보낸 messages (디버그/발표용)
 history 는 이전 대화 [{"role","content"}] 목록 (retrieved 등은 제외된 순수 대화).
 """
-from retrieval.core import retrieve, chat
+from .core import retrieve, chat
 import config as C
 
 PIPELINES: dict[str, dict] = {}
@@ -67,4 +67,4 @@ def vanilla(question, history, params):
 # @register("hybrid", "dense + sparse 혼합 검색")
 # def hybrid(question, history, params): ...
 
-from retrieval import graph_rag  # noqa: F401  (import 부수효과로 "graph-rag" 파이프라인이 PIPELINES에 등록됨)
+from . import graph_rag  # noqa: F401  (import 부수효과로 "graph-rag" 파이프라인이 PIPELINES에 등록됨)

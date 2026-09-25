@@ -4,7 +4,7 @@
 edge는 논문과 동일하게 두 종류:
   1) 구조적 인접(structure-related) — 같은 문서(PDF) 안에서 순서상 바로 옆에 있는 청크끼리 연결
   2) 키워드 공유(keyword-related)  — build_keyword_cache.py가 LLM으로 뽑아둔 키워드가 겹치는 청크끼리 연결
-     (먼저 `python -m retrieval.build_keyword_cache` 를 한 번 돌려서 chroma/keyword_cache.json을 만들어둬야 함)
+     (먼저 `python -m step2_retrieval.build_keyword_cache` 를 한 번 돌려서 chroma/keyword_cache.json을 만들어둬야 함)
 
 점수 전파는 논문이 "학습 없이 쓸 때" 쓰는 기본값을 그대로 쓴다: 1-layer, α=0.5,
 이웃 중 최댓값(=최소 거리)을 메시지로 사용(논문 Table 2에서 평균보다 항상 더 좋았던 방식).
@@ -20,8 +20,8 @@ import re
 from collections import defaultdict
 
 import config as C
-from retrieval.core import chat, collection, embedder, retrieve, sanitize
-from retrieval.pipelines import register, SYSTEM_RAG, RULE_TAIL, _ctx
+from .core import chat, collection, embedder, retrieve, sanitize
+from .pipelines import register, SYSTEM_RAG, RULE_TAIL, _ctx
 
 ALPHA = 0.5
 POOL_K = 30

@@ -1,8 +1,8 @@
 """색인 실험 노브: 청킹 크기/중복, 임베딩 모델.
 
-이 값들을 바꾸고 `python -m indexing.ingest` 를 다시 돌리면 새 설정으로 색인이 다시
-만들어진다(같은 chroma 컬렉션을 지우고 새로 채움 — indexing/ingest.py 참고).
-retrieval/core.py 는 검색 시점에 EMBED_MODEL 을 여기서 그대로 읽어온다: 색인 때 쓴
+이 값들을 바꾸고 `python -m step1_indexing.ingest` 를 다시 돌리면 새 설정으로 색인이 다시
+만들어진다(같은 chroma 컬렉션을 지우고 새로 채움 — step1_indexing/ingest.py 참고).
+step2_retrieval/core.py 는 검색 시점에 EMBED_MODEL 을 여기서 그대로 읽어온다: 색인 때 쓴
 임베딩 모델과 검색 때 쓰는 모델이 다르면 벡터 공간이 달라져서 유사도 비교 자체가
 무의미해지기 때문이다.
 """

@@ -1,8 +1,8 @@
 """PDF -> 페이지 단위 청크 -> 임베딩 -> Chroma 저장.
-실행:  python -m indexing.ingest          # chroma/ocr_cache.json 이 있으면 이미지 페이지에 OCR 텍스트를 합친다
-       python -m indexing.ingest --ocr    # OCR 캐시를 (재)생성한 뒤 색인 (easyocr 필요, GPU 있으면 자동 사용)
+실행:  python -m step1_indexing.ingest          # chroma/ocr_cache.json 이 있으면 이미지 페이지에 OCR 텍스트를 합친다
+       python -m step1_indexing.ingest --ocr    # OCR 캐시를 (재)생성한 뒤 색인 (easyocr 필요, GPU 있으면 자동 사용)
 
-청킹 크기/중복, 임베딩 모델은 indexing/config.py 에서 바꾼다.
+청킹 크기/중복, 임베딩 모델은 step1_indexing/config.py 에서 바꾼다.
 
 페이지 처리 순서
   1. PyMuPDF 텍스트 레이어 추출 (블록을 위→아래, 왼→오른 순으로 정렬)
@@ -18,10 +18,10 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 
 import config as C
-from indexing.config import (
+from step1_indexing.config import (
     EMBED_MODEL, MAX_CHUNK_CHARS, OVERLAP_CHARS, OCR_MAX_CHARS, MIN_PAGE_CHARS,
 )
-from retrieval.core import sanitize
+from step2_retrieval.core import sanitize
 
 _PAGE_NO = re.compile(r"^\s*[-–—]?\s*\d{1,3}\s*[-–—]?\s*$|^\s*\d{1,3}\s*/\s*\d{1,3}\s*$|^\s*(page|p\.)\s*\d{1,3}\s*$", re.I)
 
@@ -104,7 +104,7 @@ def build_ocr_cache():
 def build_chunks():
     ocr = json.loads(C.OCR_CACHE.read_text(encoding="utf-8")) if C.OCR_CACHE.exists() else {}
     if not ocr:
-        print("※ OCR 캐시 없음 — 이미지 페이지는 건너뜀. `python -m indexing.ingest --ocr` 로 생성 가능.")
+        print("※ OCR 캐시 없음 — 이미지 페이지는 건너뜀. `python -m step1_indexing.ingest --ocr` 로 생성 가능.")
     chunks, skipped, seen = [], [], {}
     for pdf in sorted(C.PDF_DIR.rglob("*.pdf")):
         digest = hashlib.sha1(pdf.read_bytes()).hexdigest()

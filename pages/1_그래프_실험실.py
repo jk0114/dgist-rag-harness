@@ -3,7 +3,7 @@
 질문 하나를 넣으면:
   1) vanilla(dense만) vs graph-rag 유사도를 나란히 비교하고, 점수가 얼마나 바뀌었는지 표로 보여준다
   2) 그 후보들 사이의 그래프(구조적 인접 / 키워드 공유)를 노드-엣지로 보여준다
-     (graph-rag가 실제로 쓰는 retrieval.graph_rag.graph_retrieve()를 그대로 호출한다 — dense
+     (graph-rag가 실제로 쓰는 step2_retrieval.graph_rag.graph_retrieve()를 그대로 호출한다 — dense
       top-k만 보여주면 "그래프 덕분에 풀 밖에서 새로 끌려온 청크"가 아예 안 보이는 문제가
       있어서, 1·2번 모두 그래프 재점수화까지 끝난 결과를 그대로 쓴다)
 """
@@ -12,8 +12,8 @@ import streamlit as st
 import plotly.graph_objects as go
 from pyvis.network import Network
 
-from retrieval.core import retrieve
-from retrieval import graph_rag as gr
+from step2_retrieval.core import retrieve
+from step2_retrieval import graph_rag as gr
 
 html_escape = html_mod.escape
 

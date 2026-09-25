@@ -6,8 +6,8 @@ streamlit
 # torch: Windows에서 PyPI 기본 wheel은 CPU 전용. GPU를 쓰려면 CUDA 빌드로 설치할 것
 #   pip install torch --index-url https://download.pytorch.org/whl/cu128
 torch
-easyocr   # `python -m indexing.ingest --ocr` 로 OCR 캐시를 다시 만들 때만 필요 (chroma/ocr_cache.json 이 이미 있으면 불필요)
-playwright   # indexing/crawl_syllabus.py 실행에 필요. 설치 후 `playwright install chromium` 한 번 더 필요
+easyocr   # `python -m step1_indexing.ingest --ocr` 로 OCR 캐시를 다시 만들 때만 필요 (chroma/ocr_cache.json 이 이미 있으면 불필요)
+playwright   # step1_indexing/crawl_syllabus.py 실행에 필요. 설치 후 `playwright install chromium` 한 번 더 필요
 plotly       # pages/1_그래프_실험실.py 의 top-k 유사도 차트
 pyvis        # pages/1_그래프_실험실.py 의 그래프(구조/키워드) 시각화
-pdfminer.six   # eval/extract_course_tree.py: 연구실별 추천 코스트리.pdf 텍스트 직접 추출
+pdfminer.six   # step3_eval/extract_course_tree.py: 연구실별 추천 코스트리.pdf 텍스트 직접 추출

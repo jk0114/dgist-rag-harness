@@ -9,8 +9,8 @@ from urllib.parse import quote
 import streamlit as st
 import streamlit.components.v1 as components
 import config as C
-from retrieval.core import check_server
-from retrieval.pipelines import PIPELINES
+from step2_retrieval.core import check_server
+from step2_retrieval.pipelines import PIPELINES
 
 # 출처 카드를 클릭하면 실제 PDF의 해당 페이지로 이동하도록: 파일명 -> DB/ 기준 상대경로 색인.
 # (.streamlit/config.toml 의 enableStaticServing=true + static/DB 가 DB/ 의 실제 복사본이어야 서빙됨.
