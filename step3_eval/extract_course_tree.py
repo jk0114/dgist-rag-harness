@@ -15,8 +15,10 @@ pdfminer가 돌려주는 텍스트 줄(LTTextLine)은 x좌표를 갖고 있어�
 것만으로 과목 전체 목록을 정확히 얻는다.
 
 실행:  python -m step3_eval.extract_course_tree
-출력:  eval/data/course_tree_gt.json   {"p{page}_{L|R}": {professor, lab_ko, lab_en,
-                                        research_fields, courses} | null}
+출력:  step3_eval/data/course_tree_gt.json   {"p{page}_{L|R}": {professor, lab_ko, lab_en,
+    research_fields, courses, courses_unmatched} | null}
+courses_unmatched는 표에는 있지만 정식 과목명 목록과 매칭 못 한 원문(강의계획서 DB에 없거나
+표기가 많이 다른 경우) — GT(courses)에는 안 들어가지만 확인용으로 같이 남긴다.
 """
 import json
 import re
@@ -38,7 +40,9 @@ _GRADE_RE = re.compile(r"^[1234]\s*학년$")
 
 _NUM = r"(?:[IVX]+|[ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ])"
 _TAIL_RE = re.compile(rf"^(?P<base>.*?)\s*(?P<nums>{_NUM}(?:\s*,\s*{_NUM})*)$")
+_TRAILING_NUM_RE = re.compile(rf"{_NUM}\s*$")
 _ROMAN = {"I": "Ⅰ", "II": "Ⅱ", "III": "Ⅲ", "IV": "Ⅳ", "V": "Ⅴ", "VI": "Ⅵ"}
+_FOOTNOTE_RE = re.compile(r"[†‡*※]+\s*$")  # 표 안의 각주 기호(예: "디지털비전/영상처리†")
 
 
 # ---- 1) pdfminer로 줄(bbox 포함) 뽑기 ----
@@ -70,32 +74,70 @@ def canonical_map() -> dict[str, str]:
     return {norm(n): n for n in names}
 
 
+def _text_variants(raw: str) -> list[str]:
+    """각주 기호·부가 설명 괄호가 붙어 있을 수 있어, 뗀 버전도 후보로 같이 시도한다
+    (예: "디지털비전/영상처리†", "회로이론과 계측법 (이론)")."""
+    variants = [raw]
+    no_foot = _FOOTNOTE_RE.sub("", raw).strip()
+    if no_foot != raw:
+        variants.append(no_foot)
+    no_paren = re.sub(r"[\(（][^)）]*[\)）]\s*$", "", no_foot).strip()
+    if no_paren and no_paren not in variants:
+        variants.append(no_paren)
+    return variants
+
+
 def expand_course_text(raw: str) -> list[str]:
-    """'일반화학 I,Ⅱ' -> ['일반화학I','일반화학Ⅱ'](로마숫자 정규화 전), 접미사 없으면 [raw]."""
+    """'일반화학 I,Ⅱ' -> ['일반화학I','일반화학Ⅱ','일반화학I'] 식으로, 원래 표기(I)와
+    유니코드 로마숫자(Ⅰ) 변환본을 둘 다 후보로 낸다 — DGIST 파일명 자체가 일관되지 않아서
+    (대부분 과목은 Ⅰ/Ⅱ를 쓰지만 "일반화학실험"처럼 일부는 그냥 영문자 I를 쓴다) 변환해버리면
+    오히려 못 찾는 경우가 있다. 접미사 없으면 [raw] 그대로."""
     m = _TAIL_RE.match(raw)
     if not m or not m.group("base"):
         return [raw]
     base = m.group("base").strip()
     nums = [n.strip() for n in m.group("nums").split(",")]
-    return [base + _ROMAN.get(n, n) for n in nums]
+    out = []
+    for n in nums:
+        out.append(base + n)
+        conv = _ROMAN.get(n)
+        if conv and conv != n:
+            out.append(base + conv)
+    return out
 
 
-def match_canonical(text: str, canon: dict[str, str]) -> str | None:
+def _base_without_numeral(name: str) -> str:
+    return norm(_TRAILING_NUM_RE.sub("", name))
+
+
+def match_canonical(text: str, canon: dict[str, str]) -> list[str]:
+    """정확히 일치하면 그거 하나. 접두어로만 일치하는 후보가 여럿이면(예: 학년 표시 없이
+    "전기역학"만 쓴 경우) — 그 후보들이 전부 "로마숫자만 다른 같은 과목"일 때만 전부 인정한다.
+    "컴퓨터"처럼 짧은 말이 서로 무관한 여러 과목의 접두어가 되는 경우는(코드가 그 차이를
+    구분할 근거가 없으므로) 배제하고 빈 리스트를 돌려준다."""
     key = norm(text)
     if key in canon:
-        return canon[key]
-    hits = [v for k, v in canon.items() if k.startswith(key)]
-    return hits[0] if len(hits) == 1 else None
+        return [canon[key]]
+    hits = sorted({v for k, v in canon.items() if k.startswith(key)})
+    if len(hits) <= 1:
+        return hits
+    bases = {_base_without_numeral(h) for h in hits}
+    return hits if len(bases) == 1 else []
 
 
-def resolve_course(raw_bullet: str, canon: dict[str, str]) -> list[str]:
-    out, seen = [], set()
-    for cand in expand_course_text(raw_bullet):
-        name = match_canonical(cand, canon)
-        if name and name not in seen:
-            seen.add(name)
-            out.append(name)
-    return out
+def resolve_course(raw_bullet: str, canon: dict[str, str]) -> tuple[list[str], bool]:
+    """(매칭된 정식 과목명 목록, 후보를 하나라도 찾았는지). 두 번째 값이 False면 이 과목은
+    강의계획서 DB에 없거나(개설 안 함/미크롤링) 표기가 너무 달라서 매칭 실패한 것 —
+    parse_half()가 courses_unmatched 에 원문 그대로 남긴다."""
+    out, seen, matched_any = [], set(), False
+    for text in _text_variants(raw_bullet):
+        for cand in expand_course_text(text):
+            for name in match_canonical(cand, canon):
+                matched_any = True
+                if name not in seen:
+                    seen.add(name)
+                    out.append(name)
+    return out, matched_any
 
 
 # ---- 3) 반쪽(교수 1명) 단위로 파싱 ----
@@ -133,19 +175,23 @@ def parse_half(lines: list[tuple[float, float, str]], canon: dict[str, str]) -> 
 
     courses_idx = next((i for i, t in enumerate(texts) if "추천수강과목" in t), None)
     courses: list[str] = []
+    unmatched: list[str] = []
     if courses_idx is not None:
         i = courses_idx + 1
         while i < len(texts) and texts[i] != "MEMO":
             t = texts[i]
             if _BULLET_RE.match(t) and not _GRADE_RE.match(t):
                 raw = _BULLET_RE.sub("", t).strip()
-                for name in resolve_course(raw, canon):
+                names, matched_any = resolve_course(raw, canon)
+                for name in names:
                     if name not in courses:
                         courses.append(name)
+                if not matched_any:
+                    unmatched.append(raw)
             i += 1
 
     return {"professor": professor, "lab_ko": lab_ko, "lab_en": lab_en,
-            "research_fields": fields, "courses": courses}
+            "research_fields": fields, "courses": courses, "courses_unmatched": unmatched}
 
 
 def main():
