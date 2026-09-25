@@ -1,0 +1,42 @@
+RAG Harness 실행 명령어  (폴더: E:\DGIST\MS\RAGProject, 모든 명령은 이 폴더에서)
+
+0. 준비
+   .venv\Scripts\activate
+   LM Studio → Developer 탭 → qwen/qwen3.5-9b 로드 → Start Server  (http://localhost:1234)
+
+1. 벡터 DB 만들기  (처음 한 번, 그리고 DB 폴더의 PDF가 바뀌었을 때만)
+   python ingest.py
+   - chroma/ocr_cache.json 이 있으면 이미지 페이지의 OCR 텍스트를 자동으로 합친다
+   - "unauthenticated requests to the HF Hub" 경고는 무시 (토큰 없이 캐시 확인만 하는 것, 무해)
+   - 현재 torch가 CPU 빌드라 5~10분 걸림. GPU로 바꾸면(3번) 1분 내외
+
+2. 하네스 실행
+   streamlit run app.py
+   - 브라우저 http://localhost:8501
+   - 테마: 라이트(흰+하늘) / 다크(검+적)는 .streamlit/config.toml. OS 설정을 따라가고,
+     우상단 ⋮ 메뉴 > Settings > Theme 에서 수동 선택 가능
+   - 사이드바: 파이프라인(no-rag = 문서 없는 대조군 / vanilla = 순정 RAG, top-k 무조건 삽입), top-k
+   - 답변 아래에는 답변이 실제로 인용한 출처([n] 파일명 p.쪽 · 제목 · 발췌)만 표시
+   - 검색된 top-k 전체(유사도 포함)와 모델에 보낸 원문 프롬프트는 사이드바 "디버그" 체크박스를 켰을 때만 표시
+   - 코드(config/core/pipelines)를 고친 뒤에는 Ctrl+C 후 다시 streamlit run app.py
+     (화면의 Rerun만으로는 이미 import된 모듈이 안 바뀌어 AttributeError가 날 수 있음)
+
+3. (선택) GPU 사용  — 지금 venv의 torch는 CPU 전용 빌드
+   pip uninstall -y torch
+   pip install torch --index-url https://download.pytorch.org/whl/cu128
+   python -c "import torch; print(torch.cuda.is_available(), torch.version.cuda)"
+   - True 12.8 이면 성공. nvidia-smi 우상단 CUDA Version이 12.8 미만이면 cu128 → cu126 으로 바꿔 설치
+
+4. (선택) OCR 캐시 다시 만들기  — DB에 PDF를 추가/교체했을 때만
+   pip install easyocr
+   python ingest.py --ocr
+   - GPU면 수 분, CPU면 1시간 이상. 결과는 chroma/ocr_cache.json 에 덮어씀
+
+파일 역할
+   config.py    경로·모델·청킹·top-k 설정
+   ingest.py    PDF → 청크 → bge-m3 임베딩 → chroma/  (--ocr: OCR 캐시 생성)
+   core.py      임베딩·검색·LLM 호출 공통 함수
+   pipelines.py RAG 파이프라인 정의 (no-rag, vanilla). 변형 추가는 여기에 @register
+   app.py       Streamlit 하네스
+   chroma/      벡터 DB, ocr_cache.json, skipped_pages.json(색인에서 빠진 페이지 목록)
+   .streamlit/config.toml  라이트/다크 테마 색
