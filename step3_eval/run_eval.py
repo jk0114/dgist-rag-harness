@@ -22,7 +22,10 @@ min(|정답|,K)로 정규화해서 이미 이 문제에서 자유롭고, MAP은 
 찾을 때마다의 precision을 평균 내므로 K 자체가 필요 없다 — 그래서 이 두 지표가 질의
 간 공정 비교에 더 적합하다. Precision/Recall@K는 참고용으로 남겨둔다.
 
-실행:  python -m step3_eval.run_eval [K]   (K 기본값 10, Precision/Recall/nDCG@K 계산용. MAP은 K와 무관)
+실행:  python -m step3_eval.run_eval [K] [START:END]
+       K 기본값 10(Precision/Recall/nDCG@K 계산용, MAP은 K와 무관). START:END(1부터, 양끝 포함,
+       예: 30:50)를 주면 질의 전체가 아니라 그 구간만 빠르게 돌려보고, 결과는 latest.json이
+       아니라 results/partial_START-END.json에 따로 저장한다(전체 실행 결과를 안 덮어씀).
 출력:  step3_eval/data/queries.json          사람이 볼 수 있는 질의+정답 목록 (채점과 별개로 항상 갱신)
        step3_eval/data/hyde_cache.json       질의별로 생성한 HyDE 가상 문서 (중단 후 재개 가능)
        step3_eval/data/results/latest.json   질의별 상세 결과 + 콘솔에 파이프라인별 macro-average 비교표
@@ -146,8 +149,18 @@ def average_precision(retrieved: list[str], relevant: set[str]) -> float:
 
 
 def main():
+    """실행:  python -m step3_eval.run_eval [K] [START:END]
+    START:END는 1부터 시작하는 인덱스 범위(양끝 포함, 예: 30:50) — 전체를 다 안 돌리고 일부만
+    빠르게 확인하고 싶을 때 쓴다. 주면 결과를 results/latest.json이 아니라
+    results/partial_START-END.json에 따로 저장해서, 전체 실행 결과(latest.json)를 안 덮어쓴다."""
     k = int(sys.argv[1]) if len(sys.argv) > 1 else 10
     queries = build_queries()
+    result_path = RESULT_PATH
+    if len(sys.argv) > 2:
+        start, end = (int(x) for x in sys.argv[2].split(":"))
+        queries = queries[start - 1:end]
+        result_path = RESULT_PATH.parent / f"partial_{start}-{end}.json"
+        print(f"질의 범위 제한: {start}~{end}번째만 실행 ({len(queries)}개)")
     print(f"평가 질의 {len(queries)}개 (연구실별 관심분야 -> 추천과목), k={k}")
     print(f"질의+정답 목록: {QUERIES_PATH}")
 
@@ -186,8 +199,8 @@ def main():
     if needs_hyde:
         save_hyde_cache(hyde_cache)
 
-    RESULT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    RESULT_PATH.write_text(json.dumps({"k": k, "detail": detail}, ensure_ascii=False, indent=1),
+    result_path.parent.mkdir(parents=True, exist_ok=True)
+    result_path.write_text(json.dumps({"k": k, "detail": detail}, ensure_ascii=False, indent=1),
                             encoding="utf-8")
 
     print(f"\n=== macro-average (질의 {len(queries)}개, k={k}) ===")
@@ -202,7 +215,7 @@ def main():
         print(f"{p:<16}{avg['precision']:>13.4f}{avg['recall']:>11.4f}{avg['mrr']:>9.4f}"
               f"{avg['ndcg']:>9.4f}{avg['ap']:>9.4f}")
 
-    print(f"\n상세 결과 저장: {RESULT_PATH}")
+    print(f"\n상세 결과 저장: {result_path}")
 
 
 if __name__ == "__main__":

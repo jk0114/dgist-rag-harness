@@ -17,6 +17,7 @@ import streamlit as st
 import plotly.graph_objects as go
 from pyvis.network import Network
 
+from step2_retrieval.core import embedder, sanitize
 from step2_retrieval import graph_rag as gr
 from step2_retrieval import hyde
 
@@ -49,6 +50,32 @@ def _score_to_color(score: float, lo: float = 0.3, hi: float = 0.75) -> str:
 def _name(h: dict) -> str:
     t = (h.get("title") or h["source"]).strip()
     return f"{t} (p.{h['page']})"
+
+
+def _complete_pool(pool_by_id: dict, want_ids: set[str], embed_text: str):
+    """pool_by_id는 graph_rescore()가 돌려준, 자기 검색 풀 안의 청크만 score/graph_score를
+    갖고 있다. want_ids(비교 화면에 보여줄 청크 전체) 중 이 풀에 없는 것들을, 직접 코사인
+    유사도를 계산해(graph_rag._fetch_by_ids 재사용) 채워 넣는다 — 그래야 "이 파이프라인은
+    이 청크를 원래 못 찾았다"가 아니라 "이 청크에 대한 점수는 실제로 이거다"를 4개 다
+    비교할 수 있다. graph_score는 이웃(그래프 상 연결된 청크)의 score로 계산하는데, 이웃도
+    풀에 없으면 한 단계 더 가져와서 채운다."""
+    graph_obj = gr.get_graph()
+    missing = [cid for cid in want_ids if cid not in pool_by_id]
+    if not missing:
+        return
+    q_vec = embedder("cpu").encode([sanitize(embed_text)], normalize_embeddings=True).tolist()[0]
+    pool_by_id.update(gr._fetch_by_ids(missing, q_vec))
+    neighbor_missing = set()
+    for cid in missing:
+        neighbor_missing |= graph_obj.neighbors(cid) - pool_by_id.keys()
+    if neighbor_missing:
+        pool_by_id.update(gr._fetch_by_ids(list(neighbor_missing), q_vec))
+    for cid in missing:
+        h = pool_by_id[cid]
+        neighbor_ids = graph_obj.neighbors(cid) & pool_by_id.keys()
+        neighbor_scores = [pool_by_id[n]["score"] for n in neighbor_ids]
+        boost = max(neighbor_scores) if neighbor_scores else h["score"]
+        h["graph_score"] = gr.ALPHA * h["score"] + (1 - gr.ALPHA) * boost
 
 
 if run and query.strip():
@@ -91,12 +118,18 @@ if active_query:
 
     # ==== 1) 4개 파이프라인 Query-Chunk 유사도 비교 ====
     st.subheader("1. Query ↔ Chunk 유사도 — vanilla / graph-rag / vanilla+hyde / graph-rag+hyde")
-    st.caption("4개 중 하나라도 top-k에 뽑은 청크를 전부 모아, 각 파이프라인이 그 청크에 준 점수를 나란히 보여줍니다. "
-               "빈 칸(—)은 그 파이프라인의 검색 풀에 아예 없었던 청크입니다.")
+    st.caption("4개 중 하나라도 top-k에 뽑은 청크를 전부 모아, 그 청크에 대한 4개 파이프라인의 "
+               "실제 점수를 전부 계산해서 나란히 비교합니다(어떤 파이프라인이 원래 못 찾았던 "
+               "청크도 직접 유사도를 계산해 채워 넣습니다 — 빈 칸이 남지 않습니다).")
 
     union_ids = set()
     for ids in variant_topk.values():
         union_ids |= ids
+
+    with st.spinner("빠진 조합 점수 채우는 중..."):
+        _complete_pool(plain_by_id, union_ids, active_query)
+        _complete_pool(hyde_by_id, union_ids, hyde_text)
+        meta_by_id = {**plain_by_id, **hyde_by_id}
 
     def _score_of(cid: str, score_key: str, source: str):
         h = pool_by_source[source].get(cid)

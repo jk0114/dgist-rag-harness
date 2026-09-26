@@ -1,0 +1,2281 @@
+{
+ "k": 10,
+ "detail": [
+  {
+   "id": "p25_L",
+   "professor": "배인환",
+   "lab": "시각 및 물리 지능 연구실",
+   "query": "Computer Vision, Social Kinematics, 3D Scene Understanding, LLMs · VLA · Creative AI에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "강화학습",
+    "객체지향 프로그래밍",
+    "공학수학Ⅰ",
+    "기계학습개론",
+    "데이터사이언스기초",
+    "디지털 신호처리",
+    "디지털 영상처리",
+    "딥러닝개론",
+    "선형대수학",
+    "신호 및 시스템",
+    "이산수학",
+    "인공지능기초",
+    "자료구조",
+    "컴퓨터 비전 개론",
+    "컴퓨터 알고리즘",
+    "프로그래밍",
+    "확률과 통계 및 실습"
+   ],
+   "hyde": "Computer Vision and Generative Intelligence (CS590-01)\n교과개요\nThis course explores the cutting-edge intersection of computer vision, large language models (LLMs), and embodied intelligence. We move beyond traditional 2D image analysis to tackle 3D scene understanding, social kinematics in human-agent interactions, and the development of Vision-Language-Action (VLA) models. The curriculum integrates foundational deep learning architectures with state-of-the-art generative AI techniques, focusing on how multimodal systems perceive, reason about, and creatively generate content in complex environments.\n교과목표\nBy the end of the course, students will be able to design and implement robust 3D scene reconstruction pipelines, analyze dynamic social interactions using kinematic models, and fine-tune VLA agents for creative problem-solving tasks. The course aims to cultivate the ability to bridge theoretical understanding of LLMs with practical applications in robotics and generative media, fostering innovation at the frontier of artificial intelligence.\n\n주차별 강의계획\nWeek 1-2: Foundations of Multimodal Learning - Bridging Vision and Language\nWeek 3-4: Deep Dive into Large Language Models (LLMs) and Attention Mechanisms\nWeek 5-6: Computer Vision Fundamentals for Generative Tasks (Diffusion Models, GANs)\nWeek 7-8: 3D Scene Understanding - NeRFs, Gaussian Splatting, and Point Cloud Analysis\nWeek 9-10: Social Kinematics - Modeling Human Motion and Interaction Dynamics\nWeek 11-12: Vision-Language-Action (VLA) Models for Embodied AI\nWeek 13-14: Creative AI Applications - Generative Design and Multimodal Reasoning\nWeek 15-16: Capstone Project - Building a Prototype VLA System for Real-world Scenarios",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "컴퓨터 비전 개론",
+      "계산이론",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "디지털 영상처리",
+      "신경재생 및 퇴행",
+      "물리화학 Ⅲ",
+      "회계학 원론",
+      "프로그래밍 언어",
+      "프로그래밍",
+      "학부생을 위한 해석학 개론"
+     ],
+     "precision": 0.3,
+     "recall": 0.17647058823529413,
+     "mrr": 1.0,
+     "ndcg": 0.38113435412201996,
+     "n_hit": 3,
+     "ap": 0.2314341512005872
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "컴퓨터 비전 개론",
+      "인공지능 개론",
+      "인공지능기초",
+      "기계학습개론",
+      "계산이론",
+      "프로그래밍 언어",
+      "컴퓨터 네트워크",
+      "딥러닝개론",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "프로그래밍"
+     ],
+     "precision": 0.5,
+     "recall": 0.29411764705882354,
+     "mrr": 1.0,
+     "ndcg": 0.5579780239524,
+     "n_hit": 5,
+     "ap": 0.3197532601557369
+    },
+    "graph-rag": {
+     "retrieved": [
+      "컴퓨터 비전 개론",
+      "인공지능기초",
+      "디지털 영상처리",
+      "계산이론",
+      "컴퓨터 알고리즘",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "딥러닝개론",
+      "커뮤니케이션 특강",
+      "공학수학Ⅱ",
+      "시스템의 통합적 모델링"
+     ],
+     "precision": 0.5,
+     "recall": 0.29411764705882354,
+     "mrr": 1.0,
+     "ndcg": 0.6275071330616558,
+     "n_hit": 5,
+     "ap": 0.3757955916751487
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "컴퓨터 비전 개론",
+      "인공지능기초",
+      "딥러닝개론",
+      "디지털 영상처리",
+      "인공지능 개론",
+      "기계학습개론",
+      "계산이론",
+      "컴퓨터 알고리즘",
+      "커뮤니케이션 특강",
+      "컴퓨터 네트워크"
+     ],
+     "precision": 0.6,
+     "recall": 0.35294117647058826,
+     "mrr": 1.0,
+     "ndcg": 0.7116179486056782,
+     "n_hit": 6,
+     "ap": 0.4793298302865703
+    }
+   }
+  },
+  {
+   "id": "p25_R",
+   "professor": "신동훈",
+   "lab": "계산 이론 및 응용 연구실(CTA Lab)",
+   "query": "Theory of Computation (Computational Geometry, Graph Theory), Security for Critical Infrastructure, ICS Security, Wireless Sensor Networks에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "강화학습",
+    "객체지향 프로그래밍",
+    "기계학습개론",
+    "딥러닝개론",
+    "운영체제",
+    "이산수학",
+    "인공지능 개론",
+    "자동제어시스템",
+    "자료구조",
+    "컴퓨터 네트워크",
+    "컴퓨터 비전 개론",
+    "컴퓨터 알고리즘",
+    "컴퓨터구조",
+    "프로그래밍",
+    "확률과 통계 및 실습"
+   ],
+   "hyde": "이산수학 및 알고리즘 설계 (CS305-01)\n교과개요\nThis course explores the theoretical foundations of computation with a focus on discrete structures and algorithmic efficiency. Topics include graph theory, computational geometry, complexity classes (P, NP, etc.), and formal verification techniques. The curriculum bridges abstract mathematical concepts with practical applications in network security, critical infrastructure protection, and wireless sensor networks. Students will learn to model complex systems using graphs and geometric constraints, analyze the security properties of distributed protocols, and design algorithms that are both correct and efficient for resource-constrained environments.\n교과목표\nBy the end of the course, students should be able to formulate real-world problems in terms of graphs and geometric spaces, prove the computational complexity of proposed algorithms, and apply formal methods to verify the security of critical infrastructure systems. The course also aims to develop rigorous reasoning skills for analyzing distributed network behaviors and designing robust protocols for wireless sensor networks under adversarial conditions.\n\n---\n\n보안 및 신뢰성 공학 (CS410-01)\n교과개요\nThis course addresses advanced challenges in securing cyber-physical systems, specifically targeting critical infrastructure and Internet of Things (IoT) ecosystems. Utilizing concepts from the theory of computation, we examine vulnerabilities in wireless sensor networks and industrial control systems (ICS). The course covers formal security models, intrusion detection mechanisms, and resilience strategies against physical-cyber attacks. We will analyze how computational geometry can be used for spatial access control and how graph-theoretic approaches enhance network topology protection. Practical sessions focus on simulating attacks on critical infrastructure and developing countermeasures that maintain system availability and integrity.\n교과목표\nBy the end of the course, students should be able to identify security flaws in distributed wireless sensor networks, design resilient architectures for critical infrastructure using graph-based redundancy, and apply formal verification techniques to ensure the correctness of safety-critical algorithms. The course also aims to foster an understanding of the trade-offs between computational efficiency and security guarantees in resource-limited environments, enabling students to lead the development of trustworthy embedded systems.",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "학부생을 위한 해석학 개론",
+      "컴퓨터 네트워크",
+      "컴퓨터 비전 개론",
+      "컴퓨터보안개론",
+      "도시지리학",
+      "도심항공교통개론",
+      "텐서들의 기하학과 그 응용",
+      "컴퓨터구조",
+      "계산이론",
+      "일변수 미적분학"
+     ],
+     "precision": 0.3,
+     "recall": 0.2,
+     "mrr": 0.5,
+     "ndcg": 0.31833954895937183,
+     "n_hit": 3,
+     "ap": 0.12207419017763846
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "컴퓨터 네트워크",
+      "컴퓨터보안개론",
+      "컴퓨터구조",
+      "시스템 프로그래밍",
+      "자료구조",
+      "계산이론",
+      "운영체제",
+      "이산수학",
+      "계산뇌과학입문",
+      "디지털집적회로설계"
+     ],
+     "precision": 0.5,
+     "recall": 0.3333333333333333,
+     "mrr": 1.0,
+     "ndcg": 0.5580759111248785,
+     "n_hit": 5,
+     "ap": 0.4106625781625782
+    },
+    "graph-rag": {
+     "retrieved": [
+      "컴퓨터 네트워크",
+      "컴퓨터보안개론",
+      "도시지리학",
+      "컴퓨터 비전 개론",
+      "텐서들의 기하학과 그 응용",
+      "계산이론",
+      "학부생을 위한 해석학 개론",
+      "통신의 기초",
+      "재료공학개론Ⅰ",
+      "일반화학Ⅰ"
+     ],
+     "precision": 0.2,
+     "recall": 0.13333333333333333,
+     "mrr": 1.0,
+     "ndcg": 0.31488013066763093,
+     "n_hit": 2,
+     "ap": 0.18254338254338254
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "컴퓨터 네트워크",
+      "컴퓨터보안개론",
+      "컴퓨터구조",
+      "운영체제",
+      "프로그래밍 언어",
+      "이산수학",
+      "프로그래밍",
+      "계산뇌과학입문",
+      "인공지능 개론",
+      "디지털집적회로설계"
+     ],
+     "precision": 0.6,
+     "recall": 0.4,
+     "mrr": 1.0,
+     "ndcg": 0.6429424283490954,
+     "n_hit": 6,
+     "ap": 0.5288848987344748
+    }
+   }
+  },
+  {
+   "id": "p26_L",
+   "professor": "윤성훈",
+   "lab": "멀티모달지능 연구실 (MIPLab)",
+   "query": "Computer Vision, Multimodal AI, Physical AI, Medical AI에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "강화학습",
+    "객체지향 프로그래밍",
+    "공학수학Ⅰ",
+    "기계학습개론",
+    "데이터사이언스기초",
+    "디지털 신호처리",
+    "디지털 영상처리",
+    "딥러닝개론",
+    "선형대수학",
+    "신호 및 시스템",
+    "이산수학",
+    "인공지능기초",
+    "자료구조",
+    "컴퓨터 비전 개론",
+    "컴퓨터 알고리즘",
+    "프로그래밍",
+    "확률과 통계 및 실습"
+   ],
+   "hyde": "Physical AI for Robotics (ME450-01)\n교과개요\nThis course explores the intersection of deep learning and physical laws to create intelligent agents that can interact safely and efficiently with the real world. Unlike traditional data-driven approaches that rely solely on massive datasets, this curriculum integrates differential equations, conservation laws, and geometric constraints directly into neural network architectures. Students will investigate how multimodal sensor inputs (vision, force, proprioception) can be fused to learn dynamic models of physical environments, enabling robust control in unstructured settings such as medical surgery or disaster response.\n교과목표\nBy the end of the course, students should be able to formulate physical constraints as differentiable layers within neural networks, design multimodal perception systems that align visual observations with physical dynamics, and develop simulation-to-real transfer strategies for robotic manipulation. The course also aims to cultivate the ability to critique existing AI models through the lens of physical plausibility and ethical safety in high-stakes domains like healthcare.\n\n주차별 강의계획\n1 주차: Introduction to Physical AI - Why Physics Matters in Deep Learning\n2 주차: Differentiable Physics - Embedding Conservation Laws into Neural Networks\n3 주차: Multimodal Perception for Robotics - Fusing Vision, Force, and Proprioception\n4 주차: Geometric Deep Learning on Manifolds for 3D Object Manipulation\n5 주차: Learning Dynamics from Data - System Identification with Neural ODEs\n6 주차: Simulation-to-Real Transfer - Domain Adaptation in Physical Environments\n7 주차: Medical AI Applications - Robotic Surgery Planning and Tissue Deformation Modeling\n8 주차: Safety-Critical Control - Lyapunov Stability Analysis for Learned Controllers\n9 주차: Multimodal Foundation Models for Embodied Agents - Vision-Language-Action Integration\n10 주차: Uncertainty Quantification in Physical Predictions - Bayesian Methods for Safe AI\n11 주차: Case Study I - Autonomous Navigation in Cluttered Environments\n12 주차: Case Study II - Assistive Robotics for Elderly Care and Medical Assistance\n13 주차: Ethics and Regulation of Physical AI - Bias, Fairness, and Accountability\n14 주차: Project Presentations and Final Examinations",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "컴퓨터 비전 개론",
+      "신경재생 및 퇴행",
+      "계산이론",
+      "인공지능기초",
+      "해석역학Ⅱ",
+      "인공지능과 뇌과학",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "전자소자개론",
+      "마이크로_나노공학",
+      "일반화학Ⅰ"
+     ],
+     "precision": 0.2,
+     "recall": 0.11764705882352941,
+     "mrr": 1.0,
+     "ndcg": 0.31488013066763093,
+     "n_hit": 2,
+     "ap": 0.12385680768033709
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "로봇동역학 및 제어",
+      "동역학",
+      "고체물리Ⅱ",
+      "재료의 기계적 거동",
+      "딥러닝개론",
+      "인공지능기초",
+      "전산물리",
+      "인공지능 개론",
+      "고체역학",
+      "데이터 기반 신소재 공학"
+     ],
+     "precision": 0.2,
+     "recall": 0.11764705882352941,
+     "mrr": 0.2,
+     "ndcg": 0.1635413866202963,
+     "n_hit": 2,
+     "ap": 0.11189789641346734
+    },
+    "graph-rag": {
+     "retrieved": [
+      "컴퓨터 비전 개론",
+      "인공지능기초",
+      "신경재생 및 퇴행",
+      "인공지능과 뇌과학",
+      "딥러닝개론",
+      "인공지능 개론",
+      "디지털 영상처리",
+      "전산물리",
+      "계산이론",
+      "기계학습개론"
+     ],
+     "precision": 0.5,
+     "recall": 0.29411764705882354,
+     "mrr": 1.0,
+     "ndcg": 0.5810820381115674,
+     "n_hit": 5,
+     "ap": 0.2874874124543809
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "로봇동역학 및 제어",
+      "동역학",
+      "메카트로닉스",
+      "딥러닝개론",
+      "인공지능기초",
+      "전산물리",
+      "인공지능 개론",
+      "인공지능과 뇌과학",
+      "물리화학 Ⅱ",
+      "반응공학"
+     ],
+     "precision": 0.2,
+     "recall": 0.11764705882352941,
+     "mrr": 0.25,
+     "ndcg": 0.17993148201117176,
+     "n_hit": 2,
+     "ap": 0.15321174549533836
+    }
+   }
+  },
+  {
+   "id": "p26_R",
+   "professor": "이용우",
+   "lab": "컴파일러 및 런타임 시스템 연구실(Corus Lab)",
+   "query": "Compiler Optimization / Homomorphic Encryption Compiler /, GPU Compiler for AI/Graph / Domain-specific Compiler에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "강화학습",
+    "객체지향 프로그래밍",
+    "기계학습개론",
+    "데이터사이언스기초",
+    "디지털 논리회로",
+    "딥러닝개론",
+    "시스템 프로그래밍",
+    "운영체제",
+    "이산수학",
+    "인공지능기초",
+    "자료구조",
+    "컴퓨터 네트워크",
+    "컴퓨터 비전 개론",
+    "컴퓨터 알고리즘",
+    "컴퓨터구조",
+    "컴퓨터보안개론",
+    "프로그래밍"
+   ],
+   "hyde": "컴파일러 최적화 및 도메인 특화 컴파일러 (Compiler Optimization / Domain-Specific Compiler)\n교과개요\nThis course explores the advanced techniques and architectural challenges in building high-performance compilers for modern computing platforms. We will cover the full compilation pipeline from source code to optimized machine code, with a specific focus on graph-based optimization strategies, dataflow analysis, and resource-aware scheduling. The curriculum bridges theoretical compiler design with practical implementation, addressing critical issues in parallelism extraction, memory hierarchy management, and energy efficiency. Special attention is given to emerging domains such as GPU acceleration for AI workloads, homomorphic encryption execution environments, and hardware-specific instruction set architectures (ISA). Students will learn how to construct domain-specific compilers that automatically translate high-level mathematical models into efficient low-level code tailored for heterogeneous systems.\n교과목표\nBy the end of this course, students should be able to design and implement compiler passes that effectively optimize complex computational graphs for both CPU and GPU architectures. They will gain proficiency in applying graph rewriting techniques, performing precise dataflow analysis, and managing memory layouts for large-scale matrix operations common in AI applications. Furthermore, students will develop the capability to create domain-specific intermediate representations (IR) and backend generators that support specialized hardware constraints, including those required for secure computation via homomorphic encryption. The course aims to cultivate a deep understanding of how compiler innovations directly impact performance, scalability, and energy consumption in next-generation computing systems.\n\n---\n\nGPU 컴파일러 및 AI 워크로드 최적화 (CS598-01)\n교과개요\nThis intensive seminar focuses on the unique challenges of compiling and optimizing applications for Graphics Processing Units (GPUs) and other accelerators used in Artificial Intelligence. We will delve into the specifics of GPU architectures, including multi-level memory hierarchies, warp scheduling, and tensor core utilization. The course integrates concepts from graph theory to model computational dependencies and data movement patterns, which are essential for optimizing large-scale deep learning frameworks. Topics include automatic parallelization strategies, kernel fusion techniques, and the development of custom compilers that can handle irregular workloads often found in scientific computing and cryptographic applications like homomorphic encryption. Through hands-on projects, students will implement optimizations that reduce latency and increase throughput by aligning software abstractions with hardware capabilities.\n교과목표\nUpon completion, students will be equipped to analyze GPU performance bottlenecks and apply advanced compiler transformations such as loop tiling, vectorization, and memory coalescing to achieve near-peak hardware utilization. They will learn to construct domain-specific compilers that abstract away low-level hardware details while exposing sufficient control for fine-grained optimization of AI models. The course also emphasizes the ability to evaluate trade-offs between compilation time and runtime performance, ensuring that generated code is not only fast but also portable across different GPU generations. Ultimately, students will master the skills necessary to build compiler toolchains that enable efficient execution of complex graph-based computations on heterogeneous hardware platforms.",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "시스템 프로그래밍",
+      "컴퓨터 알고리즘",
+      "디지털집적회로설계",
+      "컴퓨터 비전 개론",
+      "아날로그 전자회로",
+      "디지털 신호처리",
+      "컴퓨터구조",
+      "반도체공정응용(공)",
+      "전자회로 이론(공)",
+      "전자회로 이론"
+     ],
+     "precision": 0.4,
+     "recall": 0.23529411764705882,
+     "mrr": 1.0,
+     "ndcg": 0.5271064966405454,
+     "n_hit": 4,
+     "ap": 0.29869160262460737
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "시스템 프로그래밍",
+      "디지털집적회로설계",
+      "컴퓨터구조",
+      "프로그래밍",
+      "프로그래밍 언어",
+      "반도체공정응용(공)",
+      "디지털 전자회로(공)",
+      "시스템의 통합적 모델링",
+      "양자 컴퓨팅 개론",
+      "아날로그 전자회로"
+     ],
+     "precision": 0.3,
+     "recall": 0.17647058823529413,
+     "mrr": 1.0,
+     "ndcg": 0.424926013816671,
+     "n_hit": 3,
+     "ap": 0.288634492344248
+    },
+    "graph-rag": {
+     "retrieved": [
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "반도체공정응용(공)",
+      "시스템 프로그래밍",
+      "컴퓨터 알고리즘",
+      "계산이론",
+      "디지털 신호처리",
+      "전자회로 이론(공)",
+      "전자회로 이론",
+      "전자소자개론"
+     ],
+     "precision": 0.2,
+     "recall": 0.11764705882352941,
+     "mrr": 0.25,
+     "ndcg": 0.17993148201117176,
+     "n_hit": 2,
+     "ap": 0.22442218962772162
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "컴퓨터구조",
+      "프로그래밍 언어",
+      "시스템 프로그래밍",
+      "프로그래밍",
+      "운영체제",
+      "반도체공정실습(공)",
+      "반도체공정응용(공)",
+      "재료공학실험"
+     ],
+     "precision": 0.4,
+     "recall": 0.23529411764705882,
+     "mrr": 0.3333333333333333,
+     "ndcg": 0.34695119186869644,
+     "n_hit": 4,
+     "ap": 0.2725508376869695
+    }
+   }
+  },
+  {
+   "id": "p27_L",
+   "professor": "이효근",
+   "lab": "RELACS 연구실",
+   "query": "Computer architecture / Resource disaggregation / Memory, security / Memory compression / Chiplet에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "객체지향 프로그래밍",
+    "디지털 논리회로",
+    "디지털집적회로설계",
+    "시스템 프로그래밍",
+    "운영체제",
+    "이산수학",
+    "자료구조",
+    "컴퓨터 알고리즘",
+    "컴퓨터구조",
+    "컴퓨터보안개론",
+    "프로그래밍",
+    "확률과 통계 및 실습"
+   ],
+   "hyde": "컴퓨터 아키텍처 및 리소스 디애그리게이션 (Resource Disaggregation) 에 특화된 가상 강의계획서입니다. 요청하신 형식에 맞춰 작성되었습니다.\n\n컴퓨터구조론 (전산시스템 최적화) (CS450-01)\n교과개요\nThis course explores advanced paradigms in computer architecture with a specific focus on resource disaggregation, memory hierarchy optimization, and security-aware system design. We investigate techniques for decoupling compute, memory, and storage resources to enable flexible scaling and efficient multi-tenant environments. Special emphasis is placed on memory compression algorithms that minimize bandwidth overhead while maintaining data integrity, and the integration of hardware-based security mechanisms within disaggregated architectures. Furthermore, the course examines Chiplet-based design methodologies, analyzing how heterogeneous dies can be interconnected to overcome traditional monolithic scaling limits while addressing inter-chip communication latency and thermal challenges.\n교과목표\nBy the end of this course, students will be able to design resource-disaggregated system topologies that maximize utilization efficiency under varying workload patterns. Students will master advanced memory compression techniques to extend effective memory capacity without proportional power or bandwidth costs, and implement security protocols tailored for distributed memory pools. Additionally, learners will gain proficiency in evaluating Chiplet interconnect architectures (such as CXL and UCIe) to balance performance, cost, and security trade-offs in next-generation heterogeneous computing systems.\n\n주차별 강의계획\n1 주차: 리소스 디애그리게이션 개요 및 아키텍처 패러다임 전환\n2 주차: 메모리 계층 구조와 대역폭 병목 현상 분석\n3 주차: 메모리 압축 알고리즘 (Lossless/Lossy) 과 성능 영향도 평가\n4 주차: 보안 강화된 분산 메모리 풀 설계 및 접근 제어\n5 주차: Chiplet 기반 이종 칩 통합과 인터커넥트 기술 (CXL, UCIe)\n6 주차: 이질적 다이 간 통신 지연 최소화 전략\n7 주차: 열 관리와 전력 효율성 최적화\n8 주차: 실제 사례 연구 - 클라우드 환경에서의 리소스 풀링 구현\n9 주차: 보안 취약점 분석 및 하드웨어 기반 방호 기법\n10 주차: Chiplet 설계 툴체인과 시뮬레이션 방법론\n11 주차: 워크로드 특성에 따른 아키텍처 자동 구성 (Auto-tuning)\n12 주차: 종합 프로젝트 발표 및 미래 컴퓨팅 트렌드 논의",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "컴퓨터구조",
+      "계산이론",
+      "반도체공정응용(공)",
+      "재료공학실험",
+      "학부생을 위한 해석학 개론",
+      "컴퓨터보안개론",
+      "결정학 및 회절",
+      "전자소자개론",
+      "시스템 프로그래밍",
+      "일반화학Ⅰ"
+     ],
+     "precision": 0.3,
+     "recall": 0.25,
+     "mrr": 1.0,
+     "ndcg": 0.3647442587311445,
+     "n_hit": 3,
+     "ap": 0.2347222222222222
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "컴퓨터구조",
+      "자료구조",
+      "컴퓨터 네트워크",
+      "컴퓨터 알고리즘",
+      "시스템 프로그래밍",
+      "객체지향 프로그래밍",
+      "위상수학개론",
+      "운영체제",
+      "컴퓨터 비전 개론",
+      "컴퓨터보안개론"
+     ],
+     "precision": 0.7,
+     "recall": 0.5833333333333334,
+     "mrr": 1.0,
+     "ndcg": 0.7503359712972107,
+     "n_hit": 7,
+     "ap": 0.5625
+    },
+    "graph-rag": {
+     "retrieved": [
+      "컴퓨터구조",
+      "운영체제",
+      "프로그래밍 언어",
+      "반도체공정응용(공)",
+      "전자소자개론",
+      "컴퓨터보안개론",
+      "재료공학실험",
+      "기계재료학",
+      "계산이론",
+      "컴퓨터 알고리즘"
+     ],
+     "precision": 0.4,
+     "recall": 0.3333333333333333,
+     "mrr": 1.0,
+     "ndcg": 0.5009732673492617,
+     "n_hit": 4,
+     "ap": 0.2944003527336861
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "컴퓨터구조",
+      "운영체제",
+      "프로그래밍 언어",
+      "컴퓨터 네트워크",
+      "자료구조",
+      "객체지향 프로그래밍",
+      "컴퓨터 알고리즘",
+      "계산이론",
+      "컴퓨터보안개론",
+      "위상수학개론"
+     ],
+     "precision": 0.6,
+     "recall": 0.5,
+     "mrr": 1.0,
+     "ndcg": 0.6621137423456801,
+     "n_hit": 6,
+     "ap": 0.4899486461251168
+    }
+   }
+  },
+  {
+   "id": "p27_R",
+   "professor": "장준기",
+   "lab": "데이터 인텔리전스 연구실",
+   "query": "Data Mining / Query-Aware Data Systems /, Streaming & Adaptive Computation / Applied AI에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "강화학습",
+    "객체지향 프로그래밍",
+    "공학수학Ⅰ",
+    "기계학습개론",
+    "데이터사이언스기초",
+    "딥러닝개론",
+    "선형대수학",
+    "시스템 프로그래밍",
+    "이산수학",
+    "인공지능기초",
+    "자료구조",
+    "컴퓨터 네트워크",
+    "컴퓨터 알고리즘",
+    "프로그래밍",
+    "확률과 통계 및 실습"
+   ],
+   "hyde": "데이터 마이닝 및 적응형 컴퓨팅 (BS305-01)\n교과개요\nThis course explores advanced techniques for extracting meaningful patterns from high-dimensional and dynamic data streams.\nFocusing on the intersection of Data Mining, Query-Aware Data Systems, and Streaming Computation, we examine how\nsystems can adapt to evolving query workloads in real-time without sacrificing performance or accuracy.\nStudents will investigate adaptive indexing strategies, online learning algorithms for concept drift detection,\nand resource-aware query optimization techniques that leverage hardware heterogeneity. The curriculum bridges\ntheoretical foundations of statistical learning with practical implementations in distributed environments.\n교과목표\nBy the end of the course, students should be able to design scalable data mining pipelines capable of handling\ncontinuous data streams, formulate query-aware system architectures that dynamically adjust to workload changes,\nand apply adaptive computation methods to optimize resource utilization in AI-driven applications.\nThe course also aims to cultivate the ability to evaluate trade-offs between latency, throughput, and model accuracy\nin real-world streaming scenarios.\n\n주차별 강의계획\n1 주차: Introduction to Data Mining in Dynamic Environments - Overview of Streaming Data Characteristics\n2 주차: Foundations of Query-Aware Data Systems - Workload Modeling and Adaptive Indexing Strategies\n3 주차: Sampling Techniques for High-Velocity Streams - Reservoir Sampling and Sketching Algorithms\n4 주차: Concept Drift Detection and Adaptation - Statistical Tests and Online Learning Frameworks\n5 주차: Anomaly Detection in Streaming Data - Unsupervised Methods and Real-Time Alerting Systems\n6 주차: Query Optimization under Uncertainty - Cost Estimation with Evolving Data Distributions\n7 주차: Distributed Stream Processing Architectures - Apache Flink, Spark Streaming, and Custom Implementations\n8 주차: Adaptive Resource Management - Scheduling and Load Balancing for Heterogeneous Clusters\n9 주차: Integration of Applied AI in Data Systems - Embedding Neural Networks into Query Engines\n10 주차: Privacy-Preserving Data Mining in Streams - Differential Privacy and Secure Multi-Party Computation\n11 주차: Case Studies in Real-Time Analytics - Financial Fraud Detection, IoT Sensor Fusion, and Network Monitoring\n12 주차: Capstone Project Presentations - Designing End-to-End Adaptive Data Systems",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "회계학 원론",
+      "계산이론",
+      "디지털 신호처리",
+      "인공지능 개론",
+      "데이터사이언스기초",
+      "인공지능과 뇌과학",
+      "학부생을 위한 해석학 개론",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "도심항공교통개론",
+      "창의기계설계"
+     ],
+     "precision": 0.1,
+     "recall": 0.06666666666666667,
+     "mrr": 0.2,
+     "ndcg": 0.08514311764162098,
+     "n_hit": 1,
+     "ap": 0.1157130647130647
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "데이터 기반 신소재 공학",
+      "시스템의 통합적 모델링",
+      "계산이론",
+      "컴퓨터 알고리즘",
+      "디자인 사고",
+      "데이터사이언스기초",
+      "회계학 원론",
+      "시스템 프로그래밍",
+      "자료구조",
+      "컴퓨터구조"
+     ],
+     "precision": 0.4,
+     "recall": 0.26666666666666666,
+     "mrr": 0.25,
+     "ndcg": 0.3088720787393924,
+     "n_hit": 4,
+     "ap": 0.31421045339523596
+    },
+    "graph-rag": {
+     "retrieved": [
+      "디지털 신호처리",
+      "인공지능 개론",
+      "데이터사이언스기초",
+      "인공지능과 뇌과학",
+      "인공지능기초",
+      "회계학 원론",
+      "데이터 기반 신소재 공학",
+      "계산이론",
+      "컴퓨터 알고리즘",
+      "기계학습개론"
+     ],
+     "precision": 0.4,
+     "recall": 0.26666666666666666,
+     "mrr": 0.3333333333333333,
+     "ndcg": 0.32506401244400185,
+     "n_hit": 4,
+     "ap": 0.2475843383669471
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "계산이론",
+      "컴퓨터 알고리즘",
+      "데이터 기반 신소재 공학",
+      "데이터사이언스기초",
+      "디자인 사고",
+      "프로그래밍",
+      "공학수학Ⅰ",
+      "인공지능 개론",
+      "회계학 원론",
+      "계산뇌과학입문"
+     ],
+     "precision": 0.4,
+     "recall": 0.26666666666666666,
+     "mrr": 0.5,
+     "ndcg": 0.38541299932114065,
+     "n_hit": 4,
+     "ap": 0.3352913015274578
+    }
+   }
+  },
+  {
+   "id": "p28_L",
+   "professor": "전민석",
+   "lab": "프로그래밍 언어 응용 연구실(PLX Lab)",
+   "query": "PL4SE: Developing programming language technologies for, software engineering., PL4ML: Developing programming language technologies for, machine learning.에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "객체지향 프로그래밍",
+    "데이터사이언스기초",
+    "딥러닝개론",
+    "시스템 프로그래밍",
+    "이산수학",
+    "인공지능기초",
+    "자료구조",
+    "컴퓨터 알고리즘",
+    "컴퓨터보안개론",
+    "프로그래밍",
+    "프로그래밍 언어"
+   ],
+   "hyde": "Programming Language Foundations for AI (CS598-01)\n교과개요\nThis course bridges the gap between traditional programming language theory and the emerging demands of artificial intelligence. We explore how to design, implement, and analyze programming languages specifically tailored for machine learning workflows, such as differentiable programming, automatic differentiation, and tensor computation graphs. The curriculum covers type systems that ensure correctness in neural network code, optimization techniques for large-scale model training, and the integration of symbolic reasoning with deep learning. Students will gain hands-on experience building custom DSLs (Domain Specific Languages) to accelerate research in reinforcement learning, natural language processing, and computer vision.\n교과목표\nBy the end of the course, students should be able to design programming languages that natively support gradient-based optimization and backpropagation, implement efficient compilers for machine learning frameworks, and formally verify properties of AI models using advanced type theories. The course also aims to cultivate the ability to identify bottlenecks in current ML infrastructure and propose novel language features that enhance scalability, reproducibility, and safety in data-driven applications.\n\n주차별 강의계획\nWeek 1: Introduction to PL4ML - From Imperative Code to Differentiable Programs\nWeek 2: Automatic Differentiation Primitives and Computational Graphs\nWeek 3: Type Systems for Neural Networks (Dependent Types and Effect Systems)\nWeek 4: Optimizing Compilers for Deep Learning (JIT Compilation and Kernel Fusion)\nWeek 5: Formal Verification of Machine Learning Models\nWeek 6: Domain Specific Languages for Reinforcement Learning\nWeek 7: Symbolic AI and Neuro-Symbolic Integration\nWeek 8: Midterm Project Presentation - Designing a Custom ML DSL\nWeek 9: Distributed Training Paradigms and Language Support\nWeek 10: Privacy-Preserving Computation (Federated Learning) in PL Context\nWeek 11: Hardware-Aware Programming for AI Accelerators\nWeek 12: Ethics, Safety, and Robustness in Language-Driven AI Systems\nWeek 13: Capstone Project Implementation - Building a Full ML Compiler Pipeline\nWeek 14: Final Project Presentation and Course Review",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "프로그래밍 언어",
+      "계산이론",
+      "데이터 기반 신소재 공학",
+      "프로그래밍",
+      "텐서들의 기하학과 그 응용",
+      "학부생을 위한 해석학 개론",
+      "기계학습개론",
+      "화학공학개론",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "강화학습"
+     ],
+     "precision": 0.2,
+     "recall": 0.18181818181818182,
+     "mrr": 1.0,
+     "ndcg": 0.31488013066763093,
+     "n_hit": 2,
+     "ap": 0.21651609260304913
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "프로그래밍 언어",
+      "시스템 프로그래밍",
+      "프로그래밍",
+      "인공지능기초",
+      "계산이론",
+      "기계학습개론",
+      "디지털 영상처리",
+      "딥러닝개론",
+      "디지털 논리회로",
+      "데이터 기반 신소재 공학"
+     ],
+     "precision": 0.5,
+     "recall": 0.45454545454545453,
+     "mrr": 1.0,
+     "ndcg": 0.6332196796270029,
+     "n_hit": 5,
+     "ap": 0.5791958041958042
+    },
+    "graph-rag": {
+     "retrieved": [
+      "프로그래밍 언어",
+      "계산이론",
+      "컴퓨터구조",
+      "운영체제",
+      "컴퓨터 알고리즘",
+      "기계학습개론",
+      "강화학습",
+      "프로그래밍",
+      "텐서들의 기하학과 그 응용",
+      "데이터 기반 신소재 공학"
+     ],
+     "precision": 0.3,
+     "recall": 0.2727272727272727,
+     "mrr": 1.0,
+     "ndcg": 0.3746661058764784,
+     "n_hit": 3,
+     "ap": 0.2993624023035788
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "프로그래밍 언어",
+      "컴퓨터구조",
+      "언어학입문",
+      "운영체제",
+      "프로그래밍",
+      "인공지능기초",
+      "딥러닝개론",
+      "기계학습개론",
+      "인공지능 개론",
+      "계산이론"
+     ],
+     "precision": 0.4,
+     "recall": 0.36363636363636365,
+     "mrr": 1.0,
+     "ndcg": 0.4569970750177365,
+     "n_hit": 4,
+     "ap": 0.4804369031641759
+    }
+   }
+  },
+  {
+   "id": "p28_R",
+   "professor": "좌훈승",
+   "lab": "실시간 컴퓨팅 연구실(RTCL)",
+   "query": "Real-Time Systems, Real-Time AI Services, Cyber-Physical Systems, Mobile Systems에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "강화학습",
+    "객체지향 프로그래밍",
+    "기계학습개론",
+    "데이터사이언스기초",
+    "디지털 논리회로",
+    "디지털 신호처리",
+    "디지털 영상처리",
+    "딥러닝개론",
+    "시스템 프로그래밍",
+    "운영체제",
+    "이산수학",
+    "인공지능기초",
+    "자료구조",
+    "컴퓨터 네트워크",
+    "컴퓨터 비전 개론",
+    "컴퓨터 알고리즘",
+    "컴퓨터구조",
+    "프로그래밍"
+   ],
+   "hyde": "실시간 시스템 및 사이버 물리 시스템 (PHY415-01)\n교과개요\nThis course explores the design and analysis of systems that must operate within strict timing constraints while interacting with physical environments. Utilizing concepts from Real-Time Systems, Mobile Computing, and Cyber-Physical Systems (CPS), we examine how to ensure reliability, safety, and determinism in AI-driven services deployed on resource-constrained mobile platforms. The curriculum bridges theoretical scheduling algorithms with practical implementation challenges in heterogeneous networks and edge computing.\n교과목표\nBy the end of the course, students will be able to model real-time requirements for cyber-physical applications, design robust architectures for mobile AI services that guarantee temporal constraints, and evaluate trade-offs between computational efficiency and system responsiveness. The course also aims to foster the ability to integrate machine learning models into safety-critical systems without compromising real-time performance guarantees.\n\n주차별 강의계획\nWeek 1: Introduction to Real-Time Systems and Cyber-Physical Systems (CPS) Fundamentals\nWeek 2: Timing Constraints, Scheduling Algorithms (Rate Monotonic, Earliest Deadline First), and Worst-Case Execution Time Analysis\nWeek 3: Mobile Systems Architecture for CPS: Edge Computing, Fog Computing, and Network Latency Management\nWeek 4: Real-Time AI Services: Model Compression, Quantization, and Deployment on Embedded Devices\nWeek 5: Safety and Reliability in AI-Driven CPS: Formal Verification Methods and Fault Tolerance Mechanisms\nWeek 6: Communication Protocols for Real-Time Networks (TSN, CAN, Ethernet) and Security Challenges\nWeek 7: Middleware for Heterogeneous Systems: ROS 2, DDS, and Real-Time Operating Systems (RTOS)\nWeek 8: Case Study I: Autonomous Vehicle Perception and Control Systems under Latency Constraints\nWeek 9: Case Study II: Industrial IoT and Predictive Maintenance using Real-Time Stream Processing\nWeek 10: Middleware for Heterogeneous Systems: ROS 2, DDS, and Real-Time Operating Systems (RTOS) [Review]\nWeek 11: Project Presentation I: System Architecture Design and Feasibility Analysis\nWeek 12: Advanced Topics: Federated Learning in Mobile CPS and Dynamic Resource Allocation\nWeek 13: Project Presentation II: Implementation Demo and Performance Evaluation\nWeek 14: Final Review and Course Synthesis",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "도심항공교통개론",
+      "신호 및 시스템",
+      "학부생을 위한 해석학 개론",
+      "모빌리티공학개론",
+      "마이크로_나노공학",
+      "디지털 신호처리",
+      "컴퓨터구조",
+      "전자소자개론(공)",
+      "기계열역학",
+      "해석역학Ⅱ"
+     ],
+     "precision": 0.2,
+     "recall": 0.1111111111111111,
+     "mrr": 0.16666666666666666,
+     "ndcg": 0.15176219107803537,
+     "n_hit": 2,
+     "ap": 0.053141204436936144
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "시스템의 통합적 모델링",
+      "컴퓨터구조",
+      "시스템 프로그래밍",
+      "데이터 기반 신소재 공학",
+      "자동제어시스템",
+      "운영체제",
+      "로봇동역학 및 제어",
+      "창의기계설계",
+      "인공지능 개론",
+      "일반화학Ⅱ"
+     ],
+     "precision": 0.3,
+     "recall": 0.16666666666666666,
+     "mrr": 0.5,
+     "ndcg": 0.32730659600126993,
+     "n_hit": 3,
+     "ap": 0.20315656273275615
+    },
+    "graph-rag": {
+     "retrieved": [
+      "신호 및 시스템",
+      "공학수학Ⅱ",
+      "디지털 신호처리",
+      "양자 컴퓨팅 개론",
+      "시스템의 통합적 모델링",
+      "모빌리티공학개론",
+      "데이터 기반 신소재 공학",
+      "디지털 영상처리",
+      "회로이론과 계측법",
+      "마이크로_나노공학"
+     ],
+     "precision": 0.2,
+     "recall": 0.1111111111111111,
+     "mrr": 0.3333333333333333,
+     "ndcg": 0.17947710508581735,
+     "n_hit": 2,
+     "ap": 0.09786059703884617
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "시스템의 통합적 모델링",
+      "컴퓨터구조",
+      "운영체제",
+      "공학수학Ⅱ",
+      "데이터 기반 신소재 공학",
+      "신호 및 시스템",
+      "일반화학Ⅱ",
+      "컴퓨터 네트워크",
+      "프로그래밍 언어",
+      "창의기계설계"
+     ],
+     "precision": 0.3,
+     "recall": 0.16666666666666666,
+     "mrr": 0.5,
+     "ndcg": 0.31833954895937183,
+     "n_hit": 3,
+     "ap": 0.23371140697681417
+    }
+   }
+  },
+  {
+   "id": "p29_L",
+   "professor": "최원석",
+   "lab": "암호 및 정보보호 연구실(CIS Lab)",
+   "query": "Cryptography, Distributed Computing, Privacy Enhancing, Technologies에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "객체지향 프로그래밍",
+    "게임이론",
+    "공학수학Ⅰ",
+    "공학수학Ⅱ",
+    "다변수 미적분학",
+    "디지털 논리회로",
+    "선형대수학",
+    "양자 컴퓨팅 개론",
+    "이산수학",
+    "일변수 미적분학",
+    "자료구조",
+    "컴퓨터 네트워크",
+    "컴퓨터 알고리즘",
+    "컴퓨터구조",
+    "컴퓨터보안개론",
+    "통신의 기초",
+    "프로그래밍",
+    "학부생을 위한 해석학 개론",
+    "현대대수학 개론",
+    "확률과 통계 및 실습"
+   ],
+   "hyde": "Privacy-Enhancing Cryptography for Distributed Systems (CSE450)\n교과개요\nThis course explores the intersection of advanced cryptography and distributed computing, focusing on techniques that preserve data privacy in decentralized environments. We move beyond traditional encryption to examine protocols such as Secure Multi-Party Computation (MPC), Homomorphic Encryption, and Zero-Knowledge Proofs. The curriculum emphasizes practical implementation challenges in large-scale networks, addressing how to perform computations on encrypted data without revealing underlying inputs or intermediate results. Students will analyze the trade-offs between computational efficiency, communication overhead, and security guarantees when deploying privacy-enhancing technologies in real-world distributed architectures.\n교과목표\nBy the end of this course, students should be able to design cryptographic protocols that enable secure collaboration among untrusted parties in a distributed setting. They will gain proficiency in constructing and evaluating systems based on MPC and Homomorphic Encryption, ensuring robustness against various attack vectors including side-channel analysis and network failures. The course also aims to cultivate the ability to assess privacy risks in emerging distributed frameworks and propose innovative solutions that balance strong security guarantees with practical scalability.\n\n---\n\nDistributed Consensus and Privacy-Preserving Data Analytics (CSE460)\n교과개요\nThis course investigates the fundamental challenges of achieving consensus and performing data analytics in distributed systems where data sensitivity is paramount. We delve into Byzantine fault-tolerant algorithms adapted for privacy constraints, exploring how to maintain system integrity without compromising user confidentiality. Topics include federated learning architectures, differential privacy mechanisms integrated with distributed databases, and secure aggregation protocols for cloud-edge collaboration. Through case studies of blockchain-based identity management and decentralized finance (DeFi) security, students will understand the theoretical underpinnings and practical deployment strategies for privacy-enhancing technologies in next-generation computing infrastructures.\n교과목표\nBy the end of the course, students should be able to formulate distributed algorithms that satisfy both consistency requirements and strict privacy budgets defined by differential privacy. They will apply secure aggregation techniques to build scalable analytics pipelines that prevent data leakage during model training or query execution. The course also aims to strengthen the ability to critically evaluate the security posture of distributed systems against sophisticated adversaries and communicate complex privacy-preserving design decisions effectively to technical stakeholders.",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "컴퓨터보안개론",
+      "디지털통신",
+      "계산이론",
+      "디지털 신호처리",
+      "학부생을 위한 해석학 개론",
+      "양자 컴퓨팅 개론",
+      "메카트로닉스",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "과학기술과 현대사회",
+      "일반생물학Ⅰ"
+     ],
+     "precision": 0.3,
+     "recall": 0.15,
+     "mrr": 1.0,
+     "ndcg": 0.38363315291837646,
+     "n_hit": 3,
+     "ap": 0.19165102952602953
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "컴퓨터보안개론",
+      "시스템 프로그래밍",
+      "양자 컴퓨팅 개론",
+      "디지털집적회로설계",
+      "디지털 신호처리",
+      "자료구조",
+      "시스템의 통합적 모델링",
+      "디지털 전자회로(공)",
+      "메카트로닉스",
+      "디지털통신"
+     ],
+     "precision": 0.3,
+     "recall": 0.15,
+     "mrr": 1.0,
+     "ndcg": 0.40853591842579556,
+     "n_hit": 3,
+     "ap": 0.2620498612778046
+    },
+    "graph-rag": {
+     "retrieved": [
+      "컴퓨터보안개론",
+      "디지털통신",
+      "디지털 신호처리",
+      "양자 컴퓨팅 개론",
+      "인공지능기초",
+      "데이터 기반 신소재 공학",
+      "계산이론",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "시스템 프로그래밍",
+      "컴퓨터 알고리즘"
+     ],
+     "precision": 0.3,
+     "recall": 0.15,
+     "mrr": 1.0,
+     "ndcg": 0.37850091886658266,
+     "n_hit": 3,
+     "ap": 0.18975493347232475
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "컴퓨터보안개론",
+      "시스템 프로그래밍",
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "양자 컴퓨팅 개론",
+      "데이터 기반 신소재 공학",
+      "디지털통신",
+      "컴퓨터구조",
+      "운영체제",
+      "컴퓨터 네트워크"
+     ],
+     "precision": 0.4,
+     "recall": 0.2,
+     "mrr": 1.0,
+     "ndcg": 0.4382868940754301,
+     "n_hit": 4,
+     "ap": 0.22551568810950143
+    }
+   }
+  },
+  {
+   "id": "p30_L",
+   "professor": "권혁준",
+   "lab": "첨단전자소자 그룹(AEDRG, K-Lab)",
+   "query": "Disruptive Electronic Device, Intense Optical Fabrication Process, Flexible/Wearable Platform, AI Device에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "결정학 및 회절",
+    "고체물리Ⅰ",
+    "고체물리Ⅱ",
+    "공학수학Ⅱ",
+    "기계학습개론",
+    "나노재료학",
+    "반도체공정개론",
+    "반도체공정실습",
+    "반도체물성 개론",
+    "분석화학",
+    "선형대수학",
+    "양자역학Ⅰ",
+    "양자역학Ⅱ",
+    "열전달",
+    "인공지능기초",
+    "일반물리Ⅰ",
+    "일반물리Ⅱ",
+    "재료공학개론Ⅱ",
+    "재료상변태",
+    "전자소자개론",
+    "전자재료학",
+    "전자회로 이론",
+    "프로그래밍",
+    "회로이론과 계측법"
+   ],
+   "hyde": "나노광전자공학개론 (NPE401-01)\n교과개요\nThis course explores the frontier of next-generation electronic and photonic devices that transcend traditional silicon limitations. We focus on disruptive technologies such as 2D material-based transistors, intense optical fabrication techniques for nanoscale patterning, and flexible/wearable platform integration. The curriculum bridges advanced semiconductor physics with emerging AI device architectures, emphasizing how novel materials and processing methods enable high-performance, low-power, and conformable electronic systems.\n교과목표\nBy the end of the course, students will be able to design concepts for disruptive electronic devices utilizing non-silicon materials, optimize optical fabrication processes for high-resolution nanostructures, and develop flexible/wearable platforms capable of integrating AI algorithms at the edge. The course aims to cultivate interdisciplinary thinking that connects material science, photonics, and artificial intelligence to solve complex real-world challenges.\n\n주차별 강의계획\n1 주차: Introduction to Disruptive Electronics & Beyond-Silicon Paradigms\n2 주차: Fundamentals of Intense Optical Fabrication (E-beam, Deep UV, Nano-imprint)\n3 주차: 2D Materials (Graphene, TMDs) for High-Mobility Transistors\n4 주차: Flexible Substrates and Stretchable Electronics Design Principles\n5 주차: Integration of AI Algorithms into Wearable Sensor Platforms\n6 주차: Optical Neural Networks and Photonic AI Device Architectures\n7 주차: Advanced Lithography Techniques for Mass Production Scalability\n8 주차: Thermal Management in High-Intensity Optical Processing Environments\n9 주차: Heterogeneous Integration of Flexible Electronics with Rigid AI Chips\n10 주차: Case Studies: Wearable Health Monitoring Systems with Edge AI\n11 주차: Fabrication Challenges and Yield Optimization in Nanofabrication\n12 주차: Future Trends: Bio-integrated Optoelectronics and Quantum-Sensing Devices",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "전자소자개론(공)",
+      "의공학개론",
+      "재료공학실험",
+      "전자회로 이론",
+      "전자회로 이론(공)",
+      "반도체공정응용(공)",
+      "디지털 신호처리",
+      "전자소자개론",
+      "반도체물성 개론",
+      "전자재료학"
+     ],
+     "precision": 0.4,
+     "recall": 0.16666666666666666,
+     "mrr": 0.25,
+     "ndcg": 0.2940945979596688,
+     "n_hit": 4,
+     "ap": 0.130339426708912
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "나노재료학",
+      "반도체공정개론",
+      "반도체물성 개론",
+      "반도체공정개론(공)",
+      "디지털집적회로설계",
+      "전자소자개론",
+      "창의기계설계",
+      "반도체물성 개론(공)",
+      "디지털 전자회로(공)",
+      "전자소자개론(공)"
+     ],
+     "precision": 0.4,
+     "recall": 0.16666666666666666,
+     "mrr": 1.0,
+     "ndcg": 0.5473983622993501,
+     "n_hit": 4,
+     "ap": 0.2623752001724563
+    },
+    "graph-rag": {
+     "retrieved": [
+      "전자소자개론(공)",
+      "전자회로 이론",
+      "전자회로 이론(공)",
+      "재료공학실험",
+      "나노재료학",
+      "반도체물성 개론(공)",
+      "디지털 전자회로(공)",
+      "반도체공정응용(공)",
+      "전자소자개론",
+      "의공학개론"
+     ],
+     "precision": 0.3,
+     "recall": 0.125,
+     "mrr": 0.5,
+     "ndcg": 0.29025978496956456,
+     "n_hit": 3,
+     "ap": 0.22739830771586958
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "반도체공정개론",
+      "반도체공정개론(공)",
+      "나노재료학",
+      "전자소자개론(공)",
+      "전자재료학",
+      "재료공학실험",
+      "반도체물성 개론",
+      "전자소자개론",
+      "반도체물성 개론(공)",
+      "디지털집적회로설계"
+     ],
+     "precision": 0.5,
+     "recall": 0.20833333333333334,
+     "mrr": 1.0,
+     "ndcg": 0.5580759111248785,
+     "n_hit": 5,
+     "ap": 0.35236356900146454
+    }
+   }
+  },
+  {
+   "id": "p30_R",
+   "professor": "김가인",
+   "lab": "신호처리 회로 및 시스템 연구실(CASSP Lab)",
+   "query": "Analog/mixed-signal circuit design, Ultra-high-speed wireline chip-, to-chip transmitter/receiver (SerDes), Analog-to-digital converter, (ADC), RFSoC-based programmable digital system design에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "객체지향 프로그래밍",
+    "공학수학Ⅰ",
+    "다변수 미적분학",
+    "디지털 논리회로",
+    "디지털 신호처리",
+    "디지털집적회로설계",
+    "디지털통신",
+    "반도체공정개론",
+    "선형대수학",
+    "신호 및 시스템",
+    "아날로그 전자회로",
+    "이산수학",
+    "자동제어시스템",
+    "전자소자개론",
+    "전자회로 이론",
+    "통신의 기초",
+    "프로그래밍",
+    "확률과 통계 및 실습",
+    "회로이론과 계측법"
+   ],
+   "hyde": "Analog & Mixed-Signal System Design (EE4XX-01)\n교과개요\nThis course bridges the gap between idealized circuit theory and practical silicon implementation, focusing on the design of high-performance analog and mixed-signal integrated circuits. We explore the trade-offs between noise, power, speed, and area in real-world environments, moving beyond textbook examples to address challenges in ultra-high-speed data transmission and RF system integration. The curriculum emphasizes a unified view of signal integrity across wireline links and wireless front-ends, preparing students for complex SoC architectures.\n교과목표\nBy the end of the course, students will be able to design robust analog building blocks such as low-noise amplifiers, data converters, and clock recovery circuits that meet stringent specifications for SerDes applications. Students will gain proficiency in modeling non-ideal effects like parasitic capacitance, process variations, and thermal noise, enabling them to optimize ADC/DAC linearity and RFSoC-based programmable digital system performance.\n주차별 강의계획\nWeek 1: Introduction to Mixed-Signal Design Trade-offs (Noise, Power, Speed, Area)\nWeek 2: Advanced Op-Amp Design for High-Speed Applications\nWeek 3: Precision Voltage References and Biasing Circuits in Deep Submicron Processes\nWeek 4: Data Converter Architectures (Flash, SAR, Pipelined ADCs) and Linearity Analysis\nWeek 5: Clock Recovery Circuits and Jitter Tolerance in SerDes Links\nWeek 6: Wireline Channel Modeling and Equalization Techniques for Ultra-High-Speed Transmission\nWeek 7: RF Front-End Design and Integration within RFSoC Architectures\nWeek 8: Midterm Project Presentation: System-Level Trade-off Analysis\nWeek 9: Digital-Assisted Analog Calibration and Error Correction Mechanisms\nWeek 10: Power Supply Rejection Ratio (PSRR) and Noise Filtering in Mixed-Signal ICs\nWeek 11: Layout Considerations for High-Speed SerDes and ADCs (Matching, Shielding)\nWeek 12: Testing and Characterization of Mixed-Signal Circuits under Process Variation\nWeek 13: Emerging Trends in Analog/Mixed-Signal Design for AI/ML Accelerators\nWeek 14: Final Project Presentation: End-to-End System Design Proposal",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "디지털집적회로설계",
+      "아날로그 전자회로",
+      "디지털 전자회로(공)",
+      "창의기계설계",
+      "전자회로 이론",
+      "전자회로 이론(공)",
+      "전자소자개론",
+      "나노재료학",
+      "자동제어시스템",
+      "전자소자개론(공)"
+     ],
+     "precision": 0.5,
+     "recall": 0.2631578947368421,
+     "mrr": 1.0,
+     "ndcg": 0.5837154733670048,
+     "n_hit": 5,
+     "ap": 0.37950108865440674
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "아날로그 전자회로",
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "신호 및 시스템",
+      "창의기계설계",
+      "자동제어시스템",
+      "재료공학실험",
+      "전자소자개론",
+      "시스템의 통합적 모델링",
+      "디지털 신호처리"
+     ],
+     "precision": 0.6,
+     "recall": 0.3157894736842105,
+     "mrr": 1.0,
+     "ndcg": 0.6651928536555898,
+     "n_hit": 6,
+     "ap": 0.41651948090126056
+    },
+    "graph-rag": {
+     "retrieved": [
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "아날로그 전자회로",
+      "전자회로 이론",
+      "전자회로 이론(공)",
+      "창의기계설계",
+      "재료공학실험",
+      "전자소자개론",
+      "반도체공정응용(공)",
+      "전자소자개론(공)"
+     ],
+     "precision": 0.4,
+     "recall": 0.21052631578947367,
+     "mrr": 1.0,
+     "ndcg": 0.49435723575344825,
+     "n_hit": 4,
+     "ap": 0.27471174050121416
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "아날로그 전자회로",
+      "전자회로 이론",
+      "전자회로 이론(공)",
+      "재료공학실험",
+      "전자소자개론(공)",
+      "창의기계설계",
+      "자동제어시스템",
+      "반도체물성 개론(공)"
+     ],
+     "precision": 0.4,
+     "recall": 0.21052631578947367,
+     "mrr": 1.0,
+     "ndcg": 0.49118023727106,
+     "n_hit": 4,
+     "ap": 0.29653645812182394
+    }
+   }
+  },
+  {
+   "id": "p31_L",
+   "professor": "송민영",
+   "lab": "무선 집적 시스템 설계 연구실(WISE Lab)",
+   "query": "Wireless sensor node for Biomedical/IoT applications, Energy-efficient RFIC design, Analog/Mixed-signal/, RF core circuit design에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "공학수학Ⅰ",
+    "공학수학Ⅱ",
+    "다변수 미적분학",
+    "디지털 논리회로",
+    "디지털 신호처리",
+    "디지털통신",
+    "신호 및 시스템",
+    "아날로그 전자회로",
+    "이산수학",
+    "일변수 미적분학",
+    "전자회로 이론",
+    "통신의 기초",
+    "프로그래밍",
+    "확률과 통계 및 실습",
+    "회로이론과 계측법"
+   ],
+   "hyde": "RF 시스템 설계 및 에너지 효율 최적화 (EE490-01)\n교과개요\nThis course focuses on the design of energy-efficient Radio Frequency Integrated Circuits (RFICs) tailored for wireless sensor nodes in biomedical and IoT applications. Utilizing advanced analog/mixed-signal techniques, students will explore low-power RF core circuit design, including low-noise amplifiers, mixers, oscillators, and power amplifiers optimized for battery-operated devices. The curriculum bridges theoretical fundamentals with practical constraints such as thermal management, noise figure minimization, and linearity requirements in complex electromagnetic environments. Special attention is given to system-level trade-offs between performance, power consumption, and integration density to enable scalable IoT solutions.\n교과목표\nBy the end of the course, students should be able to design compact RF front-end circuits that meet stringent energy efficiency targets for biomedical implants and wearable sensors. The course aims to equip students with the skills to select appropriate modulation schemes, implement adaptive power control strategies, and validate designs through simulation and measurement techniques. Furthermore, students will learn to integrate analog/mixed-signal blocks into a cohesive system architecture that maximizes operational lifetime while maintaining reliable communication links in diverse IoT scenarios.\n\n주차별 강의계획\n주 1: Introduction to RFIC Design for IoT and Biomedical Applications - System Requirements and Power Budgeting\n주 2: Fundamentals of Low-Power Analog Circuit Design - Subthreshold Operation and Leakage Control\n주 3: Low-Noise Amplifier (LNA) Design Techniques for Sensitivity Optimization\n주 4: Mixer Architectures and Conversion Loss Minimization in Energy-Constrained Systems\n주 5: Voltage-Controlled Oscillator (VCO) Design and Phase Noise Reduction Strategies\n주 6: Power Amplifier (PA) Linearity vs. Efficiency Trade-offs - Class E/F and Doherty Topologies\n주 7: Intermediate Frequency (IF) Processing and Direct Conversion Architectures\n주 8: Midterm Project Presentation - Conceptual Design of a Wireless Sensor Node RF Front-End\n주 9: Data Converters for RF Systems - Low-Power ADC/DAC Integration Challenges\n주 10: Phase-Locked Loops (PLL) and Frequency Synthesis in Battery-Limited Environments\n주 11: Antenna Interface Matching and Impedance Tuning for Miniaturized Sensors\n주 12: Thermal Management and Reliability Analysis in Biomedical Implantable Devices\n주 13: System-Level Simulation and Co-Design of RFIC with Digital Control Logic\n주 14: Emerging Trends in Energy Harvesting and Self-Powered RF Nodes\n주 15: Final Project Presentation - Comprehensive Design Review and Optimization Report",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "아날로그 전자회로",
+      "디지털집적회로설계",
+      "신호 및 시스템",
+      "디지털 신호처리",
+      "의공학개론",
+      "나노재료학",
+      "창의기계설계",
+      "전자회로 이론(공)",
+      "전자회로 이론",
+      "디지털 전자회로(공)"
+     ],
+     "precision": 0.4,
+     "recall": 0.26666666666666666,
+     "mrr": 1.0,
+     "ndcg": 0.49118023727106,
+     "n_hit": 4,
+     "ap": 0.23394699685022263
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "디지털집적회로설계",
+      "아날로그 전자회로",
+      "디지털 전자회로(공)",
+      "창의기계설계",
+      "디지털 신호처리",
+      "전자회로 이론(공)",
+      "신호 및 시스템",
+      "전자회로 이론",
+      "의공학개론",
+      "로봇전자공학"
+     ],
+     "precision": 0.4,
+     "recall": 0.26666666666666666,
+     "mrr": 0.5,
+     "ndcg": 0.36680070555131283,
+     "n_hit": 4,
+     "ap": 0.17972638585214648
+    },
+    "graph-rag": {
+     "retrieved": [
+      "아날로그 전자회로",
+      "전자회로 이론(공)",
+      "전자회로 이론",
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "신호 및 시스템",
+      "회로이론과 계측법",
+      "의공학개론",
+      "디지털 신호처리",
+      "전자소자개론(공)"
+     ],
+     "precision": 0.5,
+     "recall": 0.3333333333333333,
+     "mrr": 1.0,
+     "ndcg": 0.5481540639795447,
+     "n_hit": 5,
+     "ap": 0.26465145864052964
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "아날로그 전자회로",
+      "전자회로 이론(공)",
+      "전자회로 이론",
+      "창의기계설계",
+      "전자소자개론(공)",
+      "재료공학실험",
+      "신호 및 시스템",
+      "회로이론과 계측법"
+     ],
+     "precision": 0.4,
+     "recall": 0.26666666666666666,
+     "mrr": 0.3333333333333333,
+     "ndcg": 0.32506401244400185,
+     "n_hit": 4,
+     "ap": 0.19038701411582767
+    }
+   }
+  },
+  {
+   "id": "p31_R",
+   "professor": "윤종혁",
+   "lab": "지능형 집적 회로 및 시스템 연구실(IICS Lab)",
+   "query": "Edge-intelligent system, Processing-in-memory circuits, Clock and, data recovery, Mixed-signal circuit design에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "공학수학Ⅰ",
+    "다변수 미적분학",
+    "디지털 논리회로",
+    "디지털 신호처리",
+    "반도체공정개론",
+    "선형대수학",
+    "신호 및 시스템",
+    "이산수학",
+    "일반물리Ⅱ",
+    "전자소자개론",
+    "전자회로 이론",
+    "프로그래밍",
+    "확률과 통계 및 실습",
+    "회로이론과 계측법"
+   ],
+   "hyde": "Analog and Mixed-Signal Circuit Design for Edge Intelligence (EE4XX-01)\n교과개요\nThis course bridges the gap between traditional analog circuit theory and the emerging demands of edge-intelligent systems. We explore how processing-in-memory (PIM) architectures, high-speed clock and data recovery (CDR), and mixed-signal co-design enable low-power, real-time inference at the device level. Moving beyond idealized models, students will analyze non-idealities in PIM circuits, design robust CDR loops for noisy environments, and integrate analog front-ends with digital logic to create autonomous edge nodes. The curriculum emphasizes practical trade-offs between power, area, and performance in next-generation sensor fusion and IoT applications.\n교과목표\nBy the end of the course, students will be able to design mixed-signal circuits that support on-chip learning and inference, implement high-speed clock and data recovery mechanisms for asynchronous or low-jitter interfaces, and optimize processing-in-memory architectures for energy-efficient AI workloads. The course aims to cultivate the ability to navigate the complex interplay between analog precision and digital flexibility required for true edge intelligence.\n\n주차별 강의계획\nWeek 1-2: Introduction to Edge Intelligence and PIM Architectures\n- Overview of von Neumann bottleneck vs. Processing-in-Memory paradigms\n- Case studies in neuromorphic computing and in-memory compute arrays\n- Design challenges specific to low-power edge devices\n\nWeek 3-4: Analog Front-Ends for Sensor Fusion\n- Transimpedance amplifiers (TIA) for photodiode and MEMS sensors\n- Noise analysis and optimization for high-sensitivity applications\n- Integration of analog preprocessing with digital signal processing pipelines\n\nWeek 5-6: Clock and Data Recovery (CDR) Fundamentals\n- Principles of phase-locked loops (PLL) and delay-locked loops (DLL)\n- Design of CDR circuits for serial links (e.g., PCIe, USB, Ethernet)\n- Jitter tolerance and eye diagram analysis in noisy environments\n\nWeek 7-8: Mixed-Signal Circuit Co-Design\n- Techniques for simultaneous switching noise mitigation\n- ADC/DAC selection and interface design for PIM systems\n- Power management circuits for autonomous edge nodes\n\nWeek 9-10: Processing-in-Memory Circuit Implementation\n- Design of analog multiply-accumulate units within memory cells\n- SRAM-based PIM array layout considerations\n- Thermal and reliability issues in high-density mixed-signal arrays\n\nWeek 11-12: Advanced Topics in Edge AI Hardware\n- Event-driven computing architectures (spiking neural networks)\n- Hardware acceleration for convolutional neural networks (CNNs)\n- Security and privacy implications of edge intelligence circuits\n\nWeek 13-14: System-Level Integration and Prototyping\n- PCB layout guidelines for mixed-signal high-speed interfaces\n- Verification methodologies using simulation and measurement\n- Project presentations on proposed edge-intelligent system designs",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "전자소자개론",
+      "반도체공정응용(공)",
+      "창의기계설계",
+      "자동제어시스템",
+      "학습과 기억",
+      "디지털 전자회로(공)",
+      "디지털집적회로설계",
+      "전자소자개론(공)",
+      "신호 및 시스템",
+      "디지털 신호처리"
+     ],
+     "precision": 0.3,
+     "recall": 0.21428571428571427,
+     "mrr": 1.0,
+     "ndcg": 0.3499667779514209,
+     "n_hit": 3,
+     "ap": 0.1765547501305748
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "아날로그 전자회로",
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "창의기계설계",
+      "시스템의 통합적 모델링",
+      "인공지능 개론",
+      "자동제어시스템",
+      "컴퓨터구조",
+      "반도체공정응용(공)",
+      "디지털 신호처리"
+     ],
+     "precision": 0.1,
+     "recall": 0.07142857142857142,
+     "mrr": 0.1,
+     "ndcg": 0.06362078819895171,
+     "n_hit": 1,
+     "ap": 0.13309221194987897
+    },
+    "graph-rag": {
+     "retrieved": [
+      "전자소자개론",
+      "반도체공정응용(공)",
+      "디지털 전자회로(공)",
+      "디지털집적회로설계",
+      "창의기계설계",
+      "학습과 기억",
+      "재료공학실험",
+      "아날로그 전자회로",
+      "일반화학Ⅰ",
+      "재료공학개론Ⅰ"
+     ],
+     "precision": 0.1,
+     "recall": 0.07142857142857142,
+     "mrr": 1.0,
+     "ndcg": 0.22009176629808017,
+     "n_hit": 1,
+     "ap": 0.14244396013668517
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "창의기계설계",
+      "아날로그 전자회로",
+      "재료공학실험",
+      "전자회로 이론",
+      "자동제어시스템",
+      "전자회로 이론(공)",
+      "시스템의 통합적 모델링",
+      "인공지능 개론"
+     ],
+     "precision": 0.1,
+     "recall": 0.07142857142857142,
+     "mrr": 0.16666666666666666,
+     "ndcg": 0.07839826897867533,
+     "n_hit": 1,
+     "ap": 0.08785126954007408
+    }
+   }
+  },
+  {
+   "id": "p32_L",
+   "professor": "이경태",
+   "lab": "센서 시스템 연구실(Sett Lab)",
+   "query": "Biomedical sensor system design, Low power sensor IC design, Li-ion battery management IC design에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "공학수학Ⅰ",
+    "기계학습개론",
+    "다변수 미적분학",
+    "디지털 논리회로",
+    "디지털집적회로설계",
+    "선형대수학",
+    "신호 및 시스템",
+    "아날로그 전자회로",
+    "의공학개론",
+    "이산수학",
+    "전자소자개론",
+    "전자회로 이론",
+    "프로그래밍",
+    "확률과 통계 및 실습",
+    "회로이론과 계측법"
+   ],
+   "hyde": "Bio-Integrated Sensor Systems (BIS405)\n교과개요\nThis course explores the design and fabrication of integrated sensing systems that bridge biological interfaces with electronic circuits. Utilizing a multidisciplinary approach combining microfabrication, analog circuit design, and signal processing, students will learn to develop low-power sensor ICs capable of interfacing with physiological signals such as ECG, EEG, and glucose levels. The curriculum emphasizes the unique challenges in biomedical environments, including noise mitigation, biocompatibility considerations, and energy harvesting techniques for implantable devices.\n교과목표\nBy the end of the course, students will be able to design complete sensor front-end circuits with optimized power consumption suitable for wearable or implantable applications. Students will gain proficiency in modeling biological transducers, implementing differential amplification and filtering stages, and integrating these circuits with microcontroller units for real-time data acquisition. The course aims to foster the ability to translate theoretical circuit concepts into practical biomedical prototypes that meet strict safety and performance standards.\n\n---\n\nUltra-Low Power Analog IC Design for Energy Harvesting (EE390)\n교과개요\nThis advanced seminar focuses on the architectural and circuit-level design of ultra-low power integrated circuits specifically tailored for battery-free or long-life applications, such as Li-ion battery management systems and autonomous biomedical sensors. The course delves into sub-threshold circuit operation, leakage current minimization techniques, and efficient power management architectures including DC-DC converters and charge pumps. Students will analyze the trade-offs between performance, area, and power in the context of next-generation energy storage interfaces and smart grid monitoring nodes.\n교과목표\nStudents will master the design methodologies for creating high-efficiency power management ICs (PMICs) capable of managing Li-ion battery charging/discharging cycles with minimal overhead. The course aims to equip students with the skills to synthesize custom analog blocks that maximize energy harvesting efficiency and extend device lifetime in resource-constrained environments. Furthermore, participants will learn to validate their designs through SPICE simulation and understand the implications of process variations on low-power analog performance.\n\n---\n\n주차별 강의계획 (Bio-Integrated Sensor Systems)\n1 주차: Introduction to Bio-Sensing Principles and System Architecture\n2 주차: Microfabrication Techniques for Biological Interfaces\n3 주차: Noise Analysis and Mitigation in Physiological Signal Acquisition\n4 주차: Design of Instrumentation Amplifiers for Biopotential Signals\n5 주차: Front-End Circuit Design for ECG/EEG Sensors\n6 주차: Data Acquisition Systems and ADC Interface Design\n7 주차: Power Management Strategies for Implantable Devices\n8 주차: Midterm Project Presentation and Review\n9 주차: Signal Processing Basics for Sensor Data\n10 주차: Wireless Transmission Protocols for Biomedical IoT\n11 주차: Biocompatibility and Packaging Challenges\n12 주차: Final Project Proposal Defense\n\n---\n\n주차별 강의계획 (Ultra-Low Power Analog IC Design for Energy Harvesting)\n1 주차: Overview of Ultra-Low Power Circuit Design Paradigms\n2 주차: Sub-threshold MOSFET Operation and Modeling\n3 주차: Leakage Current Reduction Techniques in CMOS\n4 주차: Design of High-Efficiency DC-DC Converters (Buck/Boost)\n5 주차: Charge Pump Circuits for Voltage Boosting\n6 주차: Li-ion Battery Management IC Architecture\n7 주차: Fuel Gauge Algorithms and State-of-Charge Estimation\n8 주차: Midterm Project Presentation and Review\n9 주차: Thermal Design and Reliability in Low Power ICs\n10 주차: Integration of Sensor Front-End with PMIC\n11 주차: System-Level Optimization for Energy Harvesting Nodes\n12 주차: Final Project Proposal Defense",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "마이크로_나노공학",
+      "디지털 전자회로(공)",
+      "디지털집적회로설계",
+      "의공학개론",
+      "전자소자개론",
+      "전자소자개론(공)",
+      "자동제어시스템",
+      "전자회로 이론(공)",
+      "의생명공학",
+      "전자회로 이론"
+     ],
+     "precision": 0.4,
+     "recall": 0.26666666666666666,
+     "mrr": 0.3333333333333333,
+     "ndcg": 0.35359815335916356,
+     "n_hit": 4,
+     "ap": 0.1775252525252525
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "디지털집적회로설계",
+      "아날로그 전자회로",
+      "디지털 전자회로(공)",
+      "의공학개론",
+      "창의기계설계",
+      "시스템의 통합적 모델링",
+      "의생명공학",
+      "재료공학실험",
+      "전자소자개론",
+      "신호 및 시스템"
+     ],
+     "precision": 0.5,
+     "recall": 0.3333333333333333,
+     "mrr": 1.0,
+     "ndcg": 0.5836175861945262,
+     "n_hit": 5,
+     "ap": 0.31377104377104376
+    },
+    "graph-rag": {
+     "retrieved": [
+      "디지털 전자회로(공)",
+      "디지털집적회로설계",
+      "전자소자개론(공)",
+      "마이크로_나노공학",
+      "반도체 재료공학 개론(공)",
+      "의공학개론",
+      "반도체공정실습",
+      "전자회로 이론(공)",
+      "반도체물성 개론(공)",
+      "반도체공정실습(공)"
+     ],
+     "precision": 0.2,
+     "recall": 0.13333333333333333,
+     "mrr": 0.5,
+     "ndcg": 0.21726071285222986,
+     "n_hit": 2,
+     "ap": 0.15738162345206924
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "아날로그 전자회로",
+      "전자회로 이론",
+      "전자회로 이론(공)",
+      "재료공학실험",
+      "창의기계설계",
+      "의공학개론",
+      "전자소자개론(공)",
+      "의생명공학"
+     ],
+     "precision": 0.4,
+     "recall": 0.26666666666666666,
+     "mrr": 1.0,
+     "ndcg": 0.49435723575344825,
+     "n_hit": 4,
+     "ap": 0.3105440576836157
+    }
+   }
+  },
+  {
+   "id": "p32_R",
+   "professor": "이병문",
+   "lab": "첨단전자소자 그룹(AEDRG, Lee Lab)",
+   "query": "Skin  Electronics, Energy  Devices, Intelligent  Prosthetics  &, Bioelectronics, Additive Manufacturing, 초고유연성 전자 및 에너지, 소재/소자/시스템 개발에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "고체역학",
+    "공학수학Ⅰ",
+    "공학수학Ⅱ",
+    "반도체공정개론",
+    "반도체공정실습",
+    "반도체물성 개론",
+    "선형대수학",
+    "양자역학Ⅰ",
+    "양자역학Ⅱ",
+    "인공지능기초",
+    "일반물리Ⅰ",
+    "일반물리Ⅱ",
+    "일반화학Ⅰ",
+    "일반화학Ⅱ",
+    "재료공학개론Ⅰ",
+    "재료공학개론Ⅱ",
+    "재료열역학 개론",
+    "전자소자개론",
+    "전자재료학",
+    "전자회로 이론",
+    "프로그래밍",
+    "회로이론과 계측법"
+   ],
+   "hyde": "Bio-Electronic Systems and Flexible Energy (BEE-405)\n교과개요\nThis course explores the convergence of advanced materials science, electronics, and biology to develop next-generation wearable and implantable devices. We focus on ultra-flexible electronic systems capable of conforming to complex biological surfaces, integrating additive manufacturing techniques for rapid prototyping of soft circuits, and designing bio-compatible energy harvesting units. The curriculum bridges the gap between traditional rigid silicon electronics and emerging organic/inorganic hybrid materials suitable for intelligent prosthetics and continuous health monitoring.\n교과목표\nBy the end of this course, students will be able to design and simulate flexible electronic architectures using additive manufacturing principles, select appropriate materials for high-performance energy devices in harsh biological environments, and integrate sensing, processing, and power modules into intelligent prosthetic systems. The course aims to cultivate interdisciplinary problem-solving skills necessary for developing robust bio-electronic interfaces that seamlessly interact with human physiology.\n주차별 강의계획\nWeek 1: Introduction to Bioelectronics and the Future of Wearable Technology\nWeek 2: Fundamentals of Additive Manufacturing for Electronics (3D Printing of Circuits)\nWeek 3: Materials Science for Ultra-Flexible and Stretchable Substrates\nWeek 4: Design Principles of High-Efficiency Flexible Energy Harvesting Devices\nWeek 5: Integration of Sensors and Actuators in Intelligent Prosthetics\nWeek 6: Bio-compatible Interfaces and Signal Transduction Mechanisms\nWeek 7: Midterm Project Presentation: Conceptual Design of a Flexible Bio-device\nWeek 8: Advanced Topics in Organic Electronics and Printed Solar Cells\nWeek 9: System-Level Integration for Continuous Health Monitoring Systems\nWeek 10: Fabrication Techniques for Soft Robotics and Prosthetic Joints\nWeek 11: Data Acquisition and Wireless Communication in Implantable Devices\nWeek 12: Ethical Considerations and Regulatory Pathways for Medical Electronics\nWeek 13: Capstone Project Workshop: Prototyping with Additive Manufacturing\nWeek 14: Final Project Presentation and Future Trends in Bio-Electronic Systems",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "의공학개론",
+      "전자소자개론(공)",
+      "전자재료학",
+      "일반화학Ⅰ",
+      "마이크로_나노공학",
+      "재료공학실험",
+      "나노재료학",
+      "전자소자개론",
+      "고체역학",
+      "창의기계설계"
+     ],
+     "precision": 0.4,
+     "recall": 0.18181818181818182,
+     "mrr": 0.3333333333333333,
+     "ndcg": 0.34051969290975714,
+     "n_hit": 4,
+     "ap": 0.17985590256623854
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "의공학개론",
+      "창의기계설계",
+      "재료공학실험",
+      "전자재료학",
+      "의생명공학",
+      "재료공학개론Ⅰ",
+      "전자소자개론(공)",
+      "재료의 기계적 거동",
+      "반도체공정개론",
+      "시스템의 통합적 모델링"
+     ],
+     "precision": 0.3,
+     "recall": 0.13636363636363635,
+     "mrr": 0.25,
+     "ndcg": 0.23944085680261515,
+     "n_hit": 3,
+     "ap": 0.15359428335082712
+    },
+    "graph-rag": {
+     "retrieved": [
+      "의공학개론",
+      "전자소자개론(공)",
+      "전자재료학",
+      "재료공학실험",
+      "나노재료학",
+      "일반화학Ⅰ",
+      "재료공학개론Ⅰ",
+      "전자소자개론",
+      "반도체물성 개론",
+      "반도체물성 개론(공)"
+     ],
+     "precision": 0.5,
+     "recall": 0.22727272727272727,
+     "mrr": 0.3333333333333333,
+     "ndcg": 0.39749351961824175,
+     "n_hit": 5,
+     "ap": 0.23734018655111766
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "의공학개론",
+      "마이크로_나노공학",
+      "창의기계설계",
+      "반도체공정실습",
+      "의생명공학",
+      "재료공학실험",
+      "전자소자개론(공)",
+      "전자재료학",
+      "나노재료학",
+      "재료공학개론Ⅰ"
+     ],
+     "precision": 0.3,
+     "recall": 0.13636363636363635,
+     "mrr": 0.25,
+     "ndcg": 0.22784037450527975,
+     "n_hit": 3,
+     "ap": 0.20199665128764466
+    }
+   }
+  },
+  {
+   "id": "p33_L",
+   "professor": "이정협",
+   "lab": "집적 나노시스템 연구실(INS Lab)",
+   "query": "Analog & mixed-signal circuits, Low-power, High-resolution ADC, Brain-computer-interface microsystems, Bio-application AI systems에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "객체지향 프로그래밍",
+    "공학수학Ⅰ",
+    "공학수학Ⅱ",
+    "다변수 미적분학",
+    "디지털 논리회로",
+    "디지털 신호처리",
+    "디지털집적회로설계",
+    "반도체공정개론",
+    "반도체물성 개론",
+    "신호 및 시스템",
+    "아날로그 전자회로",
+    "의공학개론",
+    "이산수학",
+    "인공지능기초",
+    "일반물리Ⅰ",
+    "일반물리Ⅱ",
+    "일변수 미적분학",
+    "전자소자개론",
+    "전자회로 이론",
+    "컴퓨터구조",
+    "프로그래밍",
+    "확률과 통계 및 실습",
+    "회로이론과 계측법"
+   ],
+   "hyde": "Analog Integrated Circuit Design for Bio-Applications (EE450)\n교과개요\nThis course bridges the gap between traditional analog circuit design and emerging bio-medical application requirements. We focus on designing low-power, high-resolution mixed-signal circuits specifically tailored for brain-computer interfaces (BCI) and wearable biosensors. The curriculum covers noise analysis in ultra-low signal environments, precision ADC architectures optimized for biological signals, and system-level integration of AI inference engines directly onto the sensor chip. Students will explore trade-offs between power consumption, resolution, and bandwidth critical for implantable or wearable devices.\n교과목표\nBy the end of this course, students will be able to design mixed-signal front-end circuits capable of extracting micro-volt level neural signals with minimal power dissipation. They will master the implementation of high-resolution successive-approximation register (SAR) and delta-sigma ADCs suitable for bio-potential acquisition. Furthermore, students will learn to integrate simple on-chip AI accelerators for real-time signal processing and demonstrate a complete system design flow from circuit simulation to PCB integration for a prototype BCI microsystem.\n\n---\n\nBio-Signal Processing and Edge AI Systems (EE465)\n교과개요\nThis course introduces the fundamentals of processing biological signals using advanced digital techniques and artificial intelligence at the edge. We examine the unique characteristics of bio-signals such as EEG, ECG, and EMG, and develop algorithms for denoising, feature extraction, and classification. The emphasis is placed on deploying lightweight AI models (e.g., TinyML) directly onto resource-constrained microsystems used in brain-computer interfaces and implantable medical devices. Topics include quantization-aware training, hardware-efficient neural network architectures, and the co-design of analog front-ends with digital back-ends for optimal system performance.\n교과목표\nUpon completion, students should be proficient in formulating bio-signal processing pipelines that balance computational efficiency with diagnostic accuracy. They will be able to design and optimize low-power AI inference engines suitable for battery-operated microsystems targeting BCI applications. The course aims to equip students with the skills to translate complex biological data into actionable insights using embedded AI, fostering innovation in next-generation bio-application systems.",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "아날로그 전자회로",
+      "신경재생 및 퇴행",
+      "전자소자개론",
+      "인공지능과 뇌과학",
+      "회로이론과 계측법",
+      "전자회로 이론(공)",
+      "전자회로 이론",
+      "나노재료학",
+      "마이크로_나노공학",
+      "인공지능 개론"
+     ],
+     "precision": 0.4,
+     "recall": 0.17391304347826086,
+     "mrr": 1.0,
+     "ndcg": 0.48864468918810133,
+     "n_hit": 4,
+     "ap": 0.25318100484340894
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "아날로그 전자회로",
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "창의기계설계",
+      "인공지능과 뇌과학",
+      "전자회로 이론(공)",
+      "전자회로 이론",
+      "전자소자개론",
+      "의공학개론",
+      "인공지능 개론"
+     ],
+     "precision": 0.5,
+     "recall": 0.21739130434782608,
+     "mrr": 1.0,
+     "ndcg": 0.568003577662161,
+     "n_hit": 5,
+     "ap": 0.27421515458263335
+    },
+    "graph-rag": {
+     "retrieved": [
+      "아날로그 전자회로",
+      "전자회로 이론(공)",
+      "전자회로 이론",
+      "전자소자개론",
+      "신경재생 및 퇴행",
+      "인공지능과 뇌과학",
+      "인공지능 개론",
+      "반도체공정응용(공)",
+      "인공지능기초",
+      "회로이론과 계측법"
+     ],
+     "precision": 0.5,
+     "recall": 0.21739130434782608,
+     "mrr": 1.0,
+     "ndcg": 0.5548010254700118,
+     "n_hit": 5,
+     "ap": 0.2785591421460986
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "디지털집적회로설계",
+      "디지털 전자회로(공)",
+      "아날로그 전자회로",
+      "전자회로 이론(공)",
+      "전자회로 이론",
+      "전자소자개론(공)",
+      "창의기계설계",
+      "인공지능과 뇌과학",
+      "인공지능 개론",
+      "재료공학실험"
+     ],
+     "precision": 0.3,
+     "recall": 0.13043478260869565,
+     "mrr": 1.0,
+     "ndcg": 0.41528076708874123,
+     "n_hit": 3,
+     "ap": 0.25617881317612334
+    }
+   }
+  },
+  {
+   "id": "p33_R",
+   "professor": "장재은",
+   "lab": "첨단전자소자 그룹(AEDRG, J-Lab)",
+   "query": "Advanced semiconductor device, Haptic device, Bioelectronics, Human-Machine Interface device에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "고체물리Ⅰ",
+    "고체물리Ⅱ",
+    "공학수학Ⅰ",
+    "공학수학Ⅱ",
+    "기계학습개론",
+    "나노재료학",
+    "다변수 미적분학",
+    "디지털 논리회로",
+    "반도체공정개론",
+    "반도체공정실습",
+    "반도체물성 개론",
+    "선형대수학",
+    "의공학개론",
+    "인공지능기초",
+    "일반물리Ⅰ",
+    "일반물리Ⅱ",
+    "재료공학개론Ⅰ",
+    "재료공학개론Ⅱ",
+    "재료열역학 개론",
+    "전자소자개론",
+    "전자재료학",
+    "전자회로 이론",
+    "프로그래밍",
+    "확률과 통계 및 실습",
+    "회로이론과 계측법"
+   ],
+   "hyde": "Advanced Bioelectronic Interfaces and Neural Decoding (BIOE450-01)\n교과개요\nThis course explores the cutting-edge intersection of semiconductor physics, bioelectronics, and neural engineering. We focus on designing advanced haptic feedback systems and human-machine interface (HMI) devices that can seamlessly interact with biological tissues. Utilizing knowledge of ion-channel dynamics and electrochemical transduction, students will learn to develop high-fidelity sensors for decoding neural signals and actuators for precise tactile stimulation. The curriculum bridges the gap between traditional microelectronics and soft robotics, emphasizing the design of biocompatible materials and low-power integrated circuits suitable for implantable or wearable bioelectronic applications.\n교과목표\nBy the end of this course, students will be able to formulate novel architectures for bio-compatible semiconductor devices, analyze signal-to-noise ratios in noisy biological environments, and design closed-loop control systems for haptic feedback and neural decoding. The course aims to cultivate the ability to translate theoretical concepts of charge transport and electrostatics into practical prototypes for next-generation human-machine interfaces, fostering interdisciplinary innovation in bioelectronics and advanced device engineering.\n\n주차별 강의계획\nWeek 1: Introduction to Bioelectronics and Haptics - Fundamentals of Neural Encoding/Decoding\nWeek 2: Electrochemical Interfaces - Ion-to-Electron Transduction Mechanisms\nWeek 3: Semiconductor Materials for Biocompatibility - Silicon, GaN, and Organic Semiconductors\nWeek 4: Design of High-Fidelity Neural Sensors - Amplifier Circuits and Noise Reduction\nWeek 5: Haptic Actuator Principles - Piezoelectric and Electrostatic Drive Mechanisms\nWeek 6: Human-Machine Interface (HMI) Protocols - Wireless Power and Data Transmission\nWeek 7: Soft Robotics Integration - Stretchable Electronics and Flexible Substrates\nWeek 8: Midterm Project Presentation - Conceptual Design of Bioelectronic Devices\nWeek 9: Advanced Neural Decoding Algorithms - Machine Learning for Spike Sorting\nWeek 10: Closed-Loop Control Systems - Feedback Loops for Haptic Stimulation\nWeek 11: Biocompatibility and Safety Standards - Material Degradation and Immune Response\nWeek 12: Wearable Bioelectronics - Energy Harvesting and Low-Power Design\nWeek 13: Case Studies in Implantable Devices - Retinal Implants, Cochlear Implants, and Brain-Computer Interfaces\nWeek 14: Future Trends in Human-Machine Symbiosis - Ethical Considerations and Clinical Translation\nWeek 15: Final Project Presentation - Prototyping and System Integration",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "전자소자개론",
+      "반도체공정응용(공)",
+      "반도체물성 개론",
+      "전자소자개론(공)",
+      "반도체물성 개론(공)",
+      "전자회로 이론(공)",
+      "마이크로_나노공학",
+      "전자회로 이론",
+      "의공학개론",
+      "반도체공정개론(공)"
+     ],
+     "precision": 0.4,
+     "recall": 0.16,
+     "mrr": 1.0,
+     "ndcg": 0.4658230948382866,
+     "n_hit": 4,
+     "ap": 0.17654726128843773
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "의공학개론",
+      "인공지능과 뇌과학",
+      "의생명공학",
+      "신경생리학",
+      "아날로그 전자회로",
+      "인간과 공학",
+      "전자소자개론",
+      "인공지능기초",
+      "반도체공정개론(공)",
+      "반도체공정개론"
+     ],
+     "precision": 0.4,
+     "recall": 0.16,
+     "mrr": 1.0,
+     "ndcg": 0.4265076985331692,
+     "n_hit": 4,
+     "ap": 0.11856232492997197
+    },
+    "graph-rag": {
+     "retrieved": [
+      "전자소자개론",
+      "반도체공정응용(공)",
+      "반도체물성 개론",
+      "반도체물성 개론(공)",
+      "전자회로 이론(공)",
+      "전자회로 이론",
+      "전자소자개론(공)",
+      "재료공학실험",
+      "반도체 재료공학 개론(공)",
+      "마이크로_나노공학"
+     ],
+     "precision": 0.3,
+     "recall": 0.12,
+     "mrr": 1.0,
+     "ndcg": 0.40853591842579556,
+     "n_hit": 3,
+     "ap": 0.24203856936849266
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "의공학개론",
+      "의생명공학",
+      "마이크로_나노공학",
+      "인공지능과 뇌과학",
+      "인공지능기초",
+      "인공지능 개론",
+      "뇌과학실험Ⅰ",
+      "신경생리학",
+      "시스템 뇌과학",
+      "아날로그 전자회로"
+     ],
+     "precision": 0.2,
+     "recall": 0.08,
+     "mrr": 1.0,
+     "ndcg": 0.30523488393970116,
+     "n_hit": 2,
+     "ap": 0.1781723491475844
+    }
+   }
+  },
+  {
+   "id": "p34_L",
+   "professor": "김영식",
+   "lab": "프라이버시 및 응용 암호 연구실(PACL)",
+   "query": "Applied cryptography / Quantum safe cryptography / AI security, / Privacy enhancing technologies / Vehicular security에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "강화학습",
+    "객체지향 프로그래밍",
+    "기계학습개론",
+    "디지털 논리회로",
+    "디지털통신",
+    "딥러닝개론",
+    "선형대수학",
+    "이산수학",
+    "인공지능기초",
+    "자료구조",
+    "컴퓨터 네트워크",
+    "컴퓨터 알고리즘",
+    "컴퓨터구조",
+    "컴퓨터보안개론",
+    "통신의 기초",
+    "프로그래밍",
+    "확률과 통계 및 실습"
+   ],
+   "hyde": "양자보안 및 차세대 암호학 (CSE501-01)\n교과개요\nThis course explores the paradigm shift in cryptography driven by quantum computing and artificial intelligence. We examine how Shor's algorithm threatens classical public-key infrastructure and investigate post-quantum cryptographic standards developed by NIST. The curriculum integrates privacy-enhancing technologies such as homomorphic encryption, secure multi-party computation, and differential privacy to address data security in AI-driven environments. Special attention is given to vehicular security architectures, focusing on protecting connected autonomous vehicles from quantum-enabled attacks and ensuring the integrity of vehicle-to-everything (V2X) communication protocols.\n교과목표\nBy the end of the course, students will be able to evaluate the security implications of quantum algorithms on existing cryptographic systems and select appropriate post-quantum algorithms for specific application scenarios. Students will design privacy-preserving machine learning pipelines that maintain data utility while preventing inference attacks, and develop robust security frameworks for vehicular networks capable of resisting both classical and quantum adversarial threats. The course aims to foster the ability to critically analyze trade-offs between computational efficiency, security strength, and implementation complexity in next-generation secure systems.\n\n주차별 강의계획\n1 주차: 양자 컴퓨팅의 암호학적 위협과 포스트-양자 암호 (PQC) 표준 개요\n2 주차: 격자 기반 암호와 코드 기반 암호의 수학적 기초 및 구현 분석\n3 주차: 다변수 암호와 해시 기반 서명 알고리즘의 성능 평가\n4 주차: 동적 환경에서의 PQC 키 관리 및 하이브리드 암호 시스템 설계\n5 주차: 호모모픽 암호 (Homomorphic Encryption) 와 프라이버시 강화 기술의 원리\n6 주차: 분산 컴퓨팅 환경에서의 안전 다자간 계산 (MPC) 과 차분 프라이버시 적용 사례\n7 주차: AI 모델의 보안 취약점 분석 및 양자 내성 머신러닝 기법 탐구\n8 주차: 자율주행 차량 네트워크 (VANET) 의 보안 아키텍처와 V2X 통신 보호 전략\n9 주차: 양자 키 분배 (QKD) 와 양자 랜덤 넘버 생성기 (QRNG) 의 실용적 한계\n10 주차: 차세대 암호 프로토콜의 표준화 과정과 산업 적용 사례 연구\n11 주차: 차량 보안 시뮬레이션 및 실제 공격 시나리오 대응 전략 수립\n12 주차: 종합 프로젝트 발표 및 양자-고전 하이브리드 보안 시스템 설계",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "양자 컴퓨팅 개론",
+      "양자역학Ⅱ",
+      "컴퓨터보안개론",
+      "디지털 신호처리",
+      "창의기계설계",
+      "암생물학",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "컴퓨터구조",
+      "계산이론",
+      "Scientific Writing"
+     ],
+     "precision": 0.2,
+     "recall": 0.11764705882352941,
+     "mrr": 0.3333333333333333,
+     "ndcg": 0.17947710508581735,
+     "n_hit": 2,
+     "ap": 0.07062055591467355
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "양자 컴퓨팅 개론",
+      "컴퓨터보안개론",
+      "컴퓨터 알고리즘",
+      "자료구조",
+      "계산이론",
+      "양자역학Ⅱ",
+      "일반화학Ⅱ",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "컴퓨터 네트워크",
+      "커뮤니케이션 특강"
+     ],
+     "precision": 0.4,
+     "recall": 0.23529411764705882,
+     "mrr": 0.5,
+     "ndcg": 0.40995091484653445,
+     "n_hit": 4,
+     "ap": 0.2635089631629424
+    },
+    "graph-rag": {
+     "retrieved": [
+      "양자 컴퓨팅 개론",
+      "인공지능기초",
+      "컴퓨터보안개론",
+      "신호 및 시스템",
+      "데이터 기반 신소재 공학",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "시스템 프로그래밍",
+      "커뮤니케이션 특강",
+      "Scientific Writing",
+      "양자역학Ⅱ"
+     ],
+     "precision": 0.2,
+     "recall": 0.11764705882352941,
+     "mrr": 0.5,
+     "ndcg": 0.2489083270225946,
+     "n_hit": 2,
+     "ap": 0.13669988680337297
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "양자 컴퓨팅 개론",
+      "컴퓨터보안개론",
+      "컴퓨터 알고리즘",
+      "계산이론",
+      "신호 및 시스템",
+      "원자분자물리학",
+      "데이터 기반 신소재 공학",
+      "인공지능기초",
+      "데이터사이언스기초",
+      "자료구조"
+     ],
+     "precision": 0.4,
+     "recall": 0.23529411764705882,
+     "mrr": 0.5,
+     "ndcg": 0.3819603371583236,
+     "n_hit": 4,
+     "ap": 0.2965884733339976
+    }
+   }
+  },
+  {
+   "id": "p34_R",
+   "professor": "박경준",
+   "lab": "사이버물리시스템 통합 연구실(CSI Lab)",
+   "query": "사이버-물리 시스템, Physical AI, ROS 2 기반 자율이동로봇, ROS 2 통신, 미들웨어, 스마트 생산시스템, 네트워크/제어/컴퓨팅 동시설계, 사이버-물리, 융합보안에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "강화학습",
+    "객체지향 프로그래밍",
+    "공학수학Ⅰ",
+    "공학수학Ⅱ",
+    "기계학습개론",
+    "다변수 미적분학",
+    "디지털 신호처리",
+    "선형대수학",
+    "신호 및 시스템",
+    "운영체제",
+    "인공지능 개론",
+    "인공지능기초",
+    "자동제어시스템",
+    "컴퓨터 네트워크",
+    "컴퓨터 알고리즘",
+    "통신의 기초",
+    "프로그래밍",
+    "확률과 통계 및 실습"
+   ],
+   "hyde": "사이버 - 물리 시스템 및 자율이동로봇 (ME495-01)\n교과개요\nThis course explores the integration of cyber and physical domains through the lens of modern robotics middleware, specifically focusing on ROS 2. Students will delve into the architecture of autonomous mobile robots, mastering communication protocols, distributed system design, and real-time control strategies. The curriculum bridges theoretical concepts in networked control systems with practical implementations in smart production environments, emphasizing security challenges inherent in cyber-physical infrastructures.\n교과목표\nBy the end of the course, students will be able to design robust middleware architectures for heterogeneous robotic systems, implement secure communication layers for ROS 2 networks, and synthesize control algorithms that ensure stability under network-induced delays. The course aims to cultivate the ability to architect scalable smart production systems while addressing critical fusion security issues in cyber-physical environments.\n\n주차별 강의계획\n1 주차: Introduction to Cyber-Physical Systems (CPS) and System Architecture\n2 주차: ROS 2 Fundamentals: Nodes, Topics, Services, and Actions\n3 주차: ROS 2 Communication Mechanisms: DDS (Data Distribution Service) Deep Dive\n4 주차: Distributed Robotics and Multi-Agent Coordination Protocols\n5 주차: Real-Time Control Strategies for Autonomous Mobile Robots\n6 주차: Sensor Fusion and Perception in Networked Environments\n7 주차: Smart Production Systems: Industry 4.0 Integration with ROS 2\n8 주차: Middleware Security: Authentication, Encryption, and Access Control in CPS\n9 주차: Network-Induced Delays and Robust Control Design\n10 주차: Case Study: Secure Autonomous Navigation in Dynamic Factories\n11 주차: Fusion Security Threat Modeling for Physical AI Systems\n12 주차: Project Presentation and System Integration Workshop",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "도심항공교통개론",
+      "전자소자개론(공)",
+      "해석역학Ⅱ",
+      "의공학개론",
+      "나노재료학",
+      "공학수학Ⅱ",
+      "물리화학 Ⅲ",
+      "화학공학개론",
+      "모빌리티공학개론",
+      "시스템의 통합적 모델링"
+     ],
+     "precision": 0.1,
+     "recall": 0.05555555555555555,
+     "mrr": 0.16666666666666666,
+     "ndcg": 0.07839826897867533,
+     "n_hit": 1,
+     "ap": 0.014814814814814815
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "로봇동역학 및 제어",
+      "시스템의 통합적 모델링",
+      "컴퓨터 네트워크",
+      "로봇전자공학",
+      "메카트로닉스",
+      "창의기계설계",
+      "운영체제",
+      "인공지능 개론",
+      "재료공학실험",
+      "모빌리티공학개론"
+     ],
+     "precision": 0.3,
+     "recall": 0.16666666666666666,
+     "mrr": 0.3333333333333333,
+     "ndcg": 0.2528410271851774,
+     "n_hit": 3,
+     "ap": 0.09549954089427774
+    },
+    "graph-rag": {
+     "retrieved": [
+      "공학수학Ⅱ",
+      "시스템의 통합적 모델링",
+      "일반화학실험 I",
+      "재료공학실험",
+      "반도체물성 개론(공)",
+      "의공학개론",
+      "모빌리티공학개론",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "창의기계설계",
+      "반도체 재료공학 개론(공)"
+     ],
+     "precision": 0.1,
+     "recall": 0.05555555555555555,
+     "mrr": 1.0,
+     "ndcg": 0.22009176629808017,
+     "n_hit": 1,
+     "ap": 0.10763402790084076
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "로봇동역학 및 제어",
+      "메카트로닉스",
+      "컴퓨터 네트워크",
+      "시스템의 통합적 모델링",
+      "기구학",
+      "동역학",
+      "자동제어시스템",
+      "창의기계설계",
+      "컴퓨터 비전 개론",
+      "인간과 공학"
+     ],
+     "precision": 0.2,
+     "recall": 0.1111111111111111,
+     "mrr": 0.3333333333333333,
+     "ndcg": 0.18340980524840012,
+     "n_hit": 2,
+     "ap": 0.17020973316973376
+    }
+   }
+  },
+  {
+   "id": "p35_L",
+   "professor": "서대원",
+   "lab": "정보 및 학습이론 연구실",
+   "query": "Learning over networks, Machine learning theory, Information theory에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "강화학습",
+    "객체지향 프로그래밍",
+    "공학수학Ⅰ",
+    "공학수학Ⅱ",
+    "기계학습개론",
+    "다변수 미적분학",
+    "디지털 신호처리",
+    "딥러닝개론",
+    "선형대수학",
+    "신호 및 시스템",
+    "인공지능 개론",
+    "컴퓨터 비전 개론",
+    "통신의 기초",
+    "프로그래밍",
+    "확률과 통계 및 실습"
+   ],
+   "hyde": "정보이론과 기계학습 이론 (PHY495-01)\n교과개요\nThis course explores the fundamental limits of communication and computation by bridging information theory and machine learning. We examine how concepts such as entropy, mutual information, and channel capacity constrain learning algorithms, while investigating theoretical guarantees for generalization in high-dimensional settings. The curriculum covers rate-distortion theory, minimax lower bounds, and the interplay between model complexity and data efficiency. Through rigorous mathematical analysis, students will understand why certain architectures succeed or fail from an information-theoretic perspective.\n교과목표\nBy the end of the course, students should be able to derive fundamental limits for learning tasks using information-theoretic tools, analyze the generalization error of machine learning models via Fano's inequality and similar bounds, and design algorithms that are optimal with respect to sample complexity. The course also aims to equip students with the ability to critically evaluate recent advances in deep learning theory through the lens of information dynamics.\n\n주차별 강의계획\n1 주차: 정보이론의 기초 - 엔트로피와 상호정보량 (Entropy and Mutual Information)\n2 주차: 채널 용량과 왜율 정리 (Channel Capacity and Rate-Distortion Theorem)\n3 주차: 확률적 학습 모델과 일반화 상한 (Generalization Bounds for Probabilistic Learning Models)\n4 주차: 최소최대 하한 (Minimax Lower Bounds) 과 Fano's Inequality\n5 주차: 정보이론적 접근을 통한 신경망 표현력 분석 (Analyzing Neural Network Expressivity via Information Theory)\n6 주차: 압축 학습과 효율적인 데이터 표현 (Compressed Learning and Efficient Data Representation)\n7 주차: 중간고사 및 정보이론적 최적화 문제 풀이 (Midterm Exam and Optimization Problems)\n8 주차: 생성 모델의 정보 이론적 해석 (Information-Theoretic Interpretation of Generative Models)\n9 주차: 변분 추론과 자유 에너지 원리 (Variational Inference and Free Energy Principle)\n10 주차: 네트워크 학습 동역학 및 전파 현상 (Learning Dynamics on Networks and Propagation Phenomena)\n11 주차: 대규모 데이터셋에서의 정보 병목 현상 (Information Bottleneck in Large-Scale Datasets)\n12 주차: 최근 연구 동향과 미래 전망 (Recent Advances and Future Directions)",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "컴퓨터 네트워크",
+      "학부생을 위한 해석학 개론",
+      "계산이론",
+      "기계학습개론",
+      "양자 컴퓨팅 개론",
+      "텐서들의 기하학과 그 응용",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "현대대수학 개론",
+      "인공지능 개론",
+      "회계학 원론"
+     ],
+     "precision": 0.2,
+     "recall": 0.13333333333333333,
+     "mrr": 0.25,
+     "ndcg": 0.1610425878239398,
+     "n_hit": 2,
+     "ap": 0.12917201636346096
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "데이터 기반 신소재 공학",
+      "기계학습개론",
+      "자료구조",
+      "학부생을 위한 해석학 개론",
+      "생명에 대한 융합적 이해",
+      "컴퓨터 네트워크",
+      "계산뇌과학입문",
+      "시스템 프로그래밍",
+      "인공지능 개론",
+      "계산이론"
+     ],
+     "precision": 0.2,
+     "recall": 0.13333333333333333,
+     "mrr": 0.5,
+     "ndcg": 0.2051166673279436,
+     "n_hit": 2,
+     "ap": 0.0901517694164753
+    },
+    "graph-rag": {
+     "retrieved": [
+      "컴퓨터 네트워크",
+      "기계학습개론",
+      "인공지능 개론",
+      "계산이론",
+      "컴퓨터 알고리즘",
+      "계산뇌과학입문",
+      "텐서들의 기하학과 그 응용",
+      "양자 컴퓨팅 개론",
+      "신호 및 시스템",
+      "인공지능과 뇌과학"
+     ],
+     "precision": 0.3,
+     "recall": 0.2,
+     "mrr": 0.5,
+     "ndcg": 0.31516255047698366,
+     "n_hit": 3,
+     "ap": 0.2202613726143138
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "데이터 기반 신소재 공학",
+      "기계학습개론",
+      "계산뇌과학입문",
+      "인공지능 개론",
+      "인공지능기초",
+      "컴퓨터 네트워크",
+      "학습과 기억",
+      "양자 컴퓨팅 개론",
+      "데이터사이언스기초",
+      "인공지능과 뇌과학"
+     ],
+     "precision": 0.2,
+     "recall": 0.13333333333333333,
+     "mrr": 0.5,
+     "ndcg": 0.23365080824310533,
+     "n_hit": 2,
+     "ap": 0.23163598561248286
+    }
+   }
+  },
+  {
+   "id": "p35_R",
+   "professor": "소진현",
+   "lab": "분산 인공지능 연구실",
+   "query": "Distributed AI, Trustworthy AI, On-device AI, Multi-modal AI, Federated Learning에 관심이 있는데 어떤 과목을 들으면 좋을까?",
+   "relevant": [
+    "강화학습",
+    "객체지향 프로그래밍",
+    "공학수학Ⅰ",
+    "기계학습개론",
+    "다변수 미적분학",
+    "디지털 신호처리",
+    "딥러닝개론",
+    "선형대수학",
+    "신호 및 시스템",
+    "이산수학",
+    "인공지능 개론",
+    "컴퓨터 비전 개론",
+    "컴퓨터 알고리즘",
+    "컴퓨터구조",
+    "프로그래밍",
+    "확률과 통계 및 실습"
+   ],
+   "hyde": "분산형 인공지능 및 신뢰성 있는 AI (Distributed & Trustworthy AI)\n교과개요\nThis course explores the architecture and ethical implications of Artificial Intelligence systems operating across decentralized networks. We focus on Federated Learning paradigms to enable model training on edge devices without compromising data privacy, addressing critical challenges in On-device AI such as resource constraints and heterogeneous data distributions. Furthermore, the curriculum integrates Multi-modal AI techniques to enhance system robustness against adversarial attacks, ensuring that distributed models maintain high integrity and trustworthiness in real-world applications.\n교과목표\nBy the end of this course, students will be able to design efficient Federated Learning protocols for heterogeneous edge environments, implement privacy-preserving mechanisms like differential privacy within multi-modal frameworks, and evaluate the security and reliability of distributed AI systems against various threat models. The course aims to equip learners with the skills to deploy trustworthy AI solutions that balance computational efficiency with rigorous data protection standards.\n\n---\n\n분산형 엣지 컴퓨팅 및 신뢰성 있는 AI (BS305-01)\n교과개요\nThis advanced seminar delves into the intersection of Distributed Systems and Trustworthy AI, specifically targeting the deployment of Multi-modal models on resource-constrained On-device platforms. We examine theoretical foundations for Federated Learning convergence under non-IID data conditions and practical strategies for model compression to facilitate edge inference. The course critically analyzes failure modes in distributed training pipelines and develops methodologies for continuous verification of model fairness and robustness, ensuring that AI systems remain reliable even when operating autonomously across diverse network topologies.\n교과목표\nUpon completion, students should be proficient in architecting scalable Federated Learning frameworks that support multi-modal data inputs while adhering to strict privacy budgets. They will learn to quantify and mitigate risks associated with model poisoning and inference attacks in distributed settings, ultimately formulating comprehensive strategies for building trustworthy AI ecosystems that seamlessly integrate cloud intelligence with on-device execution capabilities.",
+   "pipelines": {
+    "vanilla": {
+     "retrieved": [
+      "디지털 신호처리",
+      "계산이론",
+      "컴퓨터구조",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "데이터 기반 신소재 공학",
+      "창의기계설계",
+      "인지뇌과학개론",
+      "신경재생 및 퇴행",
+      "전자소자개론(공)",
+      "전자소자개론"
+     ],
+     "precision": 0.2,
+     "recall": 0.125,
+     "mrr": 1.0,
+     "ndcg": 0.33013764944712026,
+     "n_hit": 2,
+     "ap": 0.19620380715775454
+    },
+    "vanilla+hyde": {
+     "retrieved": [
+      "인공지능 개론",
+      "인공지능기초",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "데이터 기반 신소재 공학",
+      "커뮤니케이션 특강",
+      "프로그래밍",
+      "양자 컴퓨팅 개론",
+      "창의기계설계",
+      "회계학 원론",
+      "시스템 프로그래밍"
+     ],
+     "precision": 0.2,
+     "recall": 0.125,
+     "mrr": 1.0,
+     "ndcg": 0.2984900352767555,
+     "n_hit": 2,
+     "ap": 0.12134176587301587
+    },
+    "graph-rag": {
+     "retrieved": [
+      "디지털 신호처리",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "데이터 기반 신소재 공학",
+      "창의기계설계",
+      "인지뇌과학개론",
+      "인공지능과 뇌과학",
+      "인공지능기초",
+      "계산이론",
+      "Scientific Writing",
+      "커뮤니케이션 특강"
+     ],
+     "precision": 0.1,
+     "recall": 0.0625,
+     "mrr": 1.0,
+     "ndcg": 0.22009176629808017,
+     "n_hit": 1,
+     "ap": 0.26369366747461337
+    },
+    "graph-rag+hyde": {
+     "retrieved": [
+      "인공지능 개론",
+      "인공지능기초",
+      "인공지능과 뇌과학",
+      "데이터 기반 신소재 공학",
+      "커뮤니케이션 특강",
+      "양자 컴퓨팅 개론",
+      "영어 문학 텍스트 _ 주제적 접근 읽기",
+      "시스템 프로그래밍",
+      "커뮤니케이션과 현대사회",
+      "데이터사이언스기초"
+     ],
+     "precision": 0.1,
+     "recall": 0.0625,
+     "mrr": 1.0,
+     "ndcg": 0.22009176629808017,
+     "n_hit": 1,
+     "ap": 0.18319236732780786
+    }
+   }
+  }
+ ]
+}
