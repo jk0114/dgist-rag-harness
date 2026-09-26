@@ -204,7 +204,7 @@ def main():
                             encoding="utf-8")
 
     print(f"\n=== macro-average (질의 {len(queries)}개, k={k}) ===")
-    print("nDCG@k, MAP은 질의별 정답 개수 차이에 자동 정규화됨 — 가장 신뢰할 수 있는 비교 지표.")
+    print("nDCG@k, MAP은 질의별 정답 개수 차이에 자동 정규화됨 - 가장 신뢰할 수 있는 비교 지표.")
     header = f"{'pipeline':<16}{'Precision@k':>13}{'Recall@k':>11}{'MRR':>9}{'nDCG@k':>9}{'MAP':>9}"
     print(header)
     print("-" * len(header))
