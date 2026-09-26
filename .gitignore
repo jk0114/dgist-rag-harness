@@ -4,7 +4,9 @@ __pycache__/
 *.pyc
 
 # 데이터(용량 크고 재생성 가능) — 코드가 아니라 사용자 로컬 자료
-DB/
+# DB/Syllabus만 공개(강의계획서는 원래 공개 정보) — 매뉴얼류는 학교 내부 문서라 제외
+DB/*
+!DB/Syllabus
 static/
 chroma/
 _removed_duplicates_syllabus/
