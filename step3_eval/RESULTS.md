@@ -11,6 +11,36 @@
 - **지표**: Precision@10·Recall@10·MRR·nDCG@10(모두 top-10 고정), MAP(전체 랭킹, K 무관). 이 데이터셋은 질의별 정답 개수 편차가 크므로(3~33개), **nDCG·MAP이 질의 간 비교에 가장 공정한 지표**다. 계산식은 [`run_eval.py`](run_eval.py)의 `metrics()`/`average_precision()`이 정의다.
 - **검색 풀**: 청크 60개를 먼저 뽑은 뒤 과목 단위로 중복 제거해서 과목 랭킹으로 바꾸고, 그 상위 10개 과목으로 Precision/Recall/nDCG를 계산한다.
 
+## 청크 → 과목 변환(dedup)과 "미발견"의 기준
+
+한 과목의 강의계획서는 보통 여러 페이지(여러 청크)로 나뉘어 색인돼 있는데, GT(정답)는 청크 단위가 아니라 **과목 단위**로 정의돼 있다("이 연구실은 A과목, B과목을 추천한다"). 그래서 평가·케이스 스터디 스크립트는 청크 랭킹을 과목 랭킹으로 바꾸는 dedup을 한 번 거친다 — [`run_eval.py`](run_eval.py)와 [`case_study.py`](case_study.py)가 공유하는 `hits_to_courses()`([run_eval.py:79-94](run_eval.py#L79-L94)):
+
+```python
+def hits_to_courses(hits, score_key):
+    ordered = sorted(hits, key=lambda h: h[score_key], reverse=True)  # 점수 내림차순 정렬
+    seen, out = set(), []
+    for h in ordered:
+        name = strip_paren(SOURCE_RE.match(h["source"]).group("name"))  # 파일명에서 과목명 추출
+        if name in seen:
+            continue     # 이 과목은 이미 (더 높은 점수의 청크로) 리스트에 들어감 — 이 청크는 버림
+        seen.add(name)
+        out.append(name)
+    return out
+```
+
+동작 방식: 후보 풀의 모든 청크를 점수 내림차순으로 정렬한 뒤 위에서부터 훑으면서, **과목명이 처음 나오는 시점의 점수(=그 과목이 가진 청크들 중 가장 높은 점수)를 그 과목의 대표 점수로 삼고, 같은 과목의 나머지 청크는 버린다.** 즉 "과목의 순위" = "그 과목에 속한 청크 중 가장 잘 맞은 한 조각의 순위"다(청크 점수를 평균 내거나 합산하지 않음 — max-pooling에 가깝다).
+
+**후보 풀 크기(파이프라인/스크립트별로 다름):**
+
+| | vanilla / vanilla+hyde | graph-rag / graph-rag+hyde |
+|---|---|---|
+| `run_eval.py` | `retrieve(text, 60)` — 청크 60개 | `graph_rescore()` = dense 30개 + 그래프 이웃 전부(제한 없음, 보통 100개 이상) |
+| `case_study.py` | `retrieve(text, 100)` — 청크 100개 | 위와 동일 |
+
+**"미발견"의 정확한 뜻**: 이 청크 풀(전체 코퍼스 1905개 청크 중 위 크기만큼 뽑은 것) 안에 그 과목에 속한 청크가 **단 하나도** 없었다는 뜻이다. "과목 랭킹에서 순위가 낮다"가 아니라 "애초에 후보에도 못 들었다"는 더 강한 실패 신호 — 그래서 case_study.py의 순위표에서 숫자(예: 41위) 대신 "미발견"이 뜨는 항목은, 61위나 101위 같은 "약간 아쉬운" 위치가 아니라 그 과목의 어떤 페이지도 상위 후보 근처에도 못 갔다는 뜻이다.
+
+**이 dedup은 평가·분석 스크립트(`run_eval.py`, `case_study.py`)에만 있고, 실제 챗봇(`app.py`)이나 실험실 페이지(`pages/1_그래프_실험실.py`)에는 없다.** 그쪽은 청크를 과목 단위로 합치지 않고 각각 독립된 항목으로 그대로 LLM 프롬프트/화면에 넘긴다 — 같은 과목의 청크 2개가 둘 다 top-k에 뽑히면 둘 다 `[근거]`에 별도 번호로 들어간다([pipelines.py:51-53](../step2_retrieval/pipelines.py#L51-L53)의 `_ctx()` 참고). dedup은 순전히 "청크 단위 검색 결과를 과목 단위 GT와 비교하기 위한" 채점상의 편의이지, 실제 검색·생성 파이프라인의 동작이 아니다.
+
 ## 지표 설명
 
 `retrieved`는 한 질의에 대해 모델이 뽑은 과목 랭킹(점수 내림차순), `relevant`는 GT 정답 과목 집합, `k=10`이다.
