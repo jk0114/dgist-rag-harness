@@ -114,7 +114,8 @@ if active_query:
             ranked = sorted(pool.values(), key=lambda h: h[score_key], reverse=True)
             return [h["id"] for h in ranked[:top_k]]
 
-        variant_topk = {name: set(topk_ids(score_key, source)) for name, score_key, source, _ in VARIANTS}
+        variant_topk_ordered = {name: topk_ids(score_key, source) for name, score_key, source, _ in VARIANTS}
+        variant_topk = {name: set(ids) for name, ids in variant_topk_ordered.items()}
 
     # ==== 1) 4개 파이프라인 Query-Chunk 유사도 비교 ====
     st.subheader("1. Query ↔ Chunk 유사도 — vanilla / graph-rag / vanilla+hyde / graph-rag+hyde")
@@ -157,6 +158,17 @@ if active_query:
                        margin=dict(l=10, r=10, t=10, b=10), xaxis_title="유사도 / 점수",
                        xaxis_range=[0, 1], legend=dict(orientation="h", yanchor="bottom", y=1.02))
     st.plotly_chart(fig, use_container_width=True)
+
+    st.markdown(f"**Top-{top_k} 순위표** (각 파이프라인이 몇 번째로 어떤 청크를 뽑았는지 — "
+                "같은 줄이라도 파이프라인마다 다른 청크일 수 있습니다)")
+    rank_rows = []
+    for i in range(top_k):
+        row = {"순위": i + 1}
+        for name, _, _, _ in VARIANTS:
+            ids = variant_topk_ordered[name]
+            row[name] = _label(ids[i]) if i < len(ids) else "—"
+        rank_rows.append(row)
+    st.dataframe(rank_rows, use_container_width=True, hide_index=True)
 
     st.markdown("**점수표** (마지막 열은 graph-rag+hyde가 vanilla 대비 얼마나 바뀌었는지)")
     rows = []
