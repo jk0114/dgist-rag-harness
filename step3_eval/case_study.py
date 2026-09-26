@@ -13,10 +13,11 @@ CASES 리스트에 {"query": ..., "targets": [...]}를 추가하면 케이스가
 import json
 from pathlib import Path
 
-from step2_retrieval.core import retrieve
-from step2_retrieval.graph_rag import graph_rescore
+from step2_retrieval.core import collection, retrieve
+from step2_retrieval.graph_rag import get_graph, graph_rescore, _norm_kw
 from step2_retrieval.hyde import generate as hyde_generate
 
+from .course_names import course_name_from_source
 from .run_eval import hits_to_courses
 
 RESULT_PATH = Path(__file__).parent / "data" / "results" / "case_study.json"
@@ -47,24 +48,61 @@ CASES = [
 ]
 
 
+def neighborhood_of(hits: list[dict], course_name: str, graph) -> dict | None:
+    """hits(graph_rescore 결과) 안에서 course_name에 속한 청크 중 점수가 가장 높은 것을 찾아,
+    그 청크가 키워드 그래프로 어떤 다른 과목들과 연결돼 있는지 정리한다. 즉 "이 과목이 왜
+    graph-rag 후보로 딸려왔는지"를 키워드 단위로 보여준다. course_name이 hits 안에 없으면 None."""
+    candidates = [h for h in hits if course_name_from_source(h.get("source", "")) == course_name]
+    if not candidates:
+        return None
+    score_key = "graph_score" if "graph_score" in candidates[0] else "score"
+    chunk = max(candidates, key=lambda h: h[score_key])
+    cid = chunk["id"]
+    linked_courses: dict[str, list[str]] = {}
+    for kw in graph.keywords.get(cid, []):
+        neighbor_ids = graph.kw_index.get(_norm_kw(kw), set()) - {cid}
+        if not neighbor_ids:
+            continue
+        meta = collection().get(ids=list(neighbor_ids), include=["metadatas"])
+        courses = {course_name_from_source(m.get("source", "")) for m in meta["metadatas"]}
+        courses = {c for c in courses if c and c != course_name}
+        if courses:
+            linked_courses[kw] = sorted(courses)[:6]
+    return {"chunk_id": cid, "keywords": graph.keywords.get(cid, []), "linked_courses": linked_courses}
+
+
 def run_case(query: str, targets: list[str]) -> dict:
-    """네 파이프라인 각각에 대해 과목 랭킹(중복 제거된 전체 순서)을 구하고, 목표 과목들의 순위를 뽑는다."""
+    """네 파이프라인 각각에 대해 과목 랭킹(중복 제거된 전체 순서)을 구하고, 목표 과목들의 순위와
+    (graph-rag+hyde 기준) 키워드 그래프 이웃 관계까지 뽑는다."""
     hyde_text = hyde_generate(query)
-    rankings = {
-        "vanilla": hits_to_courses(retrieve(query, POOL), "score"),
-        "vanilla+hyde": hits_to_courses(retrieve(hyde_text, POOL), "score"),
-        "graph-rag": hits_to_courses(graph_rescore(query), "graph_score"),
-        "graph-rag+hyde": hits_to_courses(graph_rescore(query, embed_text=hyde_text), "graph_score"),
+    raw_hits = {
+        "vanilla": retrieve(query, POOL),
+        "vanilla+hyde": retrieve(hyde_text, POOL),
+        "graph-rag": graph_rescore(query),
+        "graph-rag+hyde": graph_rescore(query, embed_text=hyde_text),
     }
+    score_key = {"vanilla": "score", "vanilla+hyde": "score",
+                 "graph-rag": "graph_score", "graph-rag+hyde": "graph_score"}
+    rankings = {p: hits_to_courses(raw_hits[p], score_key[p]) for p in PIPELINES}
     ranks = {t: {p: (rankings[p].index(t) + 1 if t in rankings[p] else None) for p in PIPELINES}
              for t in targets}
+
+    graph = get_graph()
+    neighborhoods = {}
+    for t in targets:
+        info = neighborhood_of(raw_hits["graph-rag+hyde"], t, graph)
+        if info:
+            neighborhoods[t] = info
+
     return {"query": query, "hyde": hyde_text, "targets": targets,
-            "top10": {p: rankings[p][:10] for p in PIPELINES}, "ranks": ranks}
+            "top10": {p: rankings[p][:10] for p in PIPELINES}, "ranks": ranks,
+            "neighborhoods": neighborhoods}
 
 
 def print_case(result: dict):
     print(f"\n질의: {result['query']}")
-    print("HyDE 가상 문서(앞 200자):", result["hyde"][:200].replace("\n", " "))
+    print("HyDE 가상 문서(전체):")
+    print(result["hyde"])
     print("\ntop-10:")
     for p in PIPELINES:
         print(f"  {p}: {result['top10'][p]}")
@@ -77,6 +115,18 @@ def print_case(result: dict):
             r = result["ranks"][t][p]
             row += f"{(str(r) if r else '미발견'):>16}"
         print(row)
+    print("\ngraph-rag+hyde 기준, 목표 과목이 키워드로 엮인 다른 과목들:")
+    for t in result["targets"]:
+        info = result["neighborhoods"].get(t)
+        if not info:
+            print(f"  {t}: (후보 풀에 없어서 이웃을 볼 수 없음)")
+            continue
+        if not info["linked_courses"]:
+            print(f"  {t}: 키워드 {info['keywords']} - 겹치는 다른 과목 없음")
+            continue
+        print(f"  {t} (키워드 {info['keywords']}):")
+        for kw, courses in info["linked_courses"].items():
+            print(f"    - '{kw}' 공유: {courses}")
 
 
 def main():
