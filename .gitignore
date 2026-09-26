@@ -6,8 +6,8 @@ __pycache__/
 # 데이터(용량 크고 재생성 가능) — 코드가 아니라 사용자 로컬 자료
 DB/
 static/
-SyllabusDB/
 chroma/
+_removed_duplicates_syllabus/
 2026 DGIST 연구실별 추천 코스트리.pdf
 교육과정.pdf
 

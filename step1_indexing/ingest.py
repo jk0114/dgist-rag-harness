@@ -104,7 +104,7 @@ def build_ocr_cache():
 def build_chunks():
     ocr = json.loads(C.OCR_CACHE.read_text(encoding="utf-8")) if C.OCR_CACHE.exists() else {}
     if not ocr:
-        print("※ OCR 캐시 없음 — 이미지 페이지는 건너뜀. `python -m step1_indexing.ingest --ocr` 로 생성 가능.")
+        print("※ OCR 캐시 없음 - 이미지 페이지는 건너뜀. `python -m step1_indexing.ingest --ocr` 로 생성 가능.")
     chunks, skipped, seen = [], [], {}
     for pdf in sorted(C.PDF_DIR.rglob("*.pdf")):
         digest = hashlib.sha1(pdf.read_bytes()).hexdigest()
@@ -112,7 +112,7 @@ def build_chunks():
             for c in chunks:
                 if c["meta"]["source"].startswith(seen[digest]):
                     c["meta"]["source"] = f"{seen[digest]} (= {pdf.name})"
-            print(f"{pdf.name}: {seen[digest]} 와 동일 파일 → 건너뜀")
+            print(f"{pdf.name}: {seen[digest]} 와 동일 파일 -> 건너뜀")
             continue
         seen[digest] = pdf.name
 
