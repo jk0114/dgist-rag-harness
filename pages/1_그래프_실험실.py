@@ -28,7 +28,12 @@ st.title("🔬 RAG 실험실")
 st.caption("질문 → vanilla/graph-rag/+hyde 4가지 유사도 비교, 그래프 시각화까지 한 번에 확인합니다.")
 
 query = st.text_input("질문", value="저는 인공지능에 관심이 많은데 어떤 과목을 들으면 좋을까요?")
-top_k = st.slider("볼 후보 개수", 5, 40, 15)
+c1, c2 = st.columns([2, 1])
+with c1:
+    top_k = st.slider("볼 후보 개수", 5, 40, 15)
+with c2:
+    search_term = st.text_input("과목명 검색", value="", placeholder="예: 인공지능",
+                                 help="아래 표/그래프에서 이 글자가 들어간 과목만 남기거나 하이라이트합니다")
 run = st.button("검색 실행", type="primary")
 
 VARIANTS = [
@@ -50,6 +55,11 @@ def _score_to_color(score: float, lo: float = 0.3, hi: float = 0.75) -> str:
 def _name(h: dict) -> str:
     t = (h.get("title") or h["source"]).strip()
     return f"{t} (p.{h['page']})"
+
+
+def _matches_search(text: str) -> bool:
+    term = search_term.strip()
+    return term.lower() in text.lower() if term else True
 
 
 def _complete_pool(pool_by_id: dict, want_ids: set[str], embed_text: str):
@@ -164,24 +174,35 @@ if active_query:
     rank_rows = []
     for i in range(top_k):
         row = {"순위": i + 1}
+        cell_labels = []
         for name, _, _, _ in VARIANTS:
             ids = variant_topk_ordered[name]
-            row[name] = _label(ids[i]) if i < len(ids) else "—"
-        rank_rows.append(row)
+            lbl = _label(ids[i]) if i < len(ids) else "—"
+            row[name] = lbl
+            cell_labels.append(lbl)
+        if not search_term.strip() or any(_matches_search(lbl) for lbl in cell_labels):
+            rank_rows.append(row)
+    if search_term.strip():
+        st.caption(f"'{search_term}' 포함된 행만 표시 ({len(rank_rows)}/{top_k}줄)")
     st.dataframe(rank_rows, use_container_width=True, hide_index=True)
 
     st.markdown("**점수표** (마지막 열은 graph-rag+hyde가 vanilla 대비 얼마나 바뀌었는지)")
     rows = []
     for cid in union_ids:
         h = meta_by_id[cid]
+        name_label = _name(h)
+        if not _matches_search(name_label):
+            continue
         vals = {name: _score_of(cid, score_key, source) for name, score_key, source, _ in VARIANTS}
-        row = {"청크": _name(h)}
+        row = {"청크": name_label}
         for name, _, _, _ in VARIANTS:
             v = vals[name]
             row[name] = round(v, 3) if v is not None else "—"
         v0, v3 = vals["vanilla"], vals["graph-rag+hyde"]
         row["Δ(graph+hyde-vanilla)"] = round(v3 - v0, 3) if v0 is not None and v3 is not None else "—"
         rows.append(row)
+    if search_term.strip():
+        st.caption(f"'{search_term}' 포함된 청크만 표시 ({len(rows)}/{len(union_ids)}개)")
     st.dataframe(rows, use_container_width=True, hide_index=True)
 
     with st.expander("본문 미리보기"):
@@ -190,9 +211,54 @@ if active_query:
             st.markdown(f"**{_best_score(cid):.3f}** — `{h['source']}` p.{h['page']} · {h['title']}")
             st.caption(h["text"][:200].replace("\n", " ") + "…")
 
-    # ==== 2) 그래프(구조적 인접 / 키워드 공유) 시각화 ====
+    # ==== 2) 델타 분석 — vanilla 대비 가장 많이 오르내린 과목 ====
     st.divider()
-    st.subheader("2. 그래프 — graph-rag가 실제로 후보로 삼은 청크들 사이의 edge")
+    st.subheader("2. 델타 분석 — vanilla 대비 점수가 가장 많이 바뀐 과목")
+    st.caption("위 표(top-k 합집합)보다 더 넓은 후보 풀 전체를 대상으로 합니다 — top-k 밖이라도 "
+               "그래프/HyDE 덕분에(또는 때문에) 크게 움직인 과목까지 보려는 목적입니다.")
+
+    COMPARISONS = {
+        "graph-rag vs vanilla": (lambda cid: plain_by_id[cid]["graph_score"], lambda cid: plain_by_id[cid]["score"]),
+        "vanilla+hyde vs vanilla": (lambda cid: hyde_by_id[cid]["score"], lambda cid: plain_by_id[cid]["score"]),
+        "graph-rag+hyde vs vanilla": (lambda cid: hyde_by_id[cid]["graph_score"], lambda cid: plain_by_id[cid]["score"]),
+    }
+    comparison = st.radio("비교 기준", list(COMPARISONS), horizontal=True, key="delta_comparison")
+    new_fn, base_fn = COMPARISONS[comparison]
+
+    with st.spinner("델타 계산 중... (더 넓은 후보 풀 채우기)"):
+        # union_ids(표에 보이는 top-k 합집합)보다 넓게, 애초에 두 검색(원 질문/HyDE)이 각자
+        # 만들어둔 풀 전체(POOL_K + 그래프 이웃)를 합쳐서 후보로 쓴다 — top-k 밖이라 표에는
+        # 안 보이지만 실제로 크게 움직인 과목까지 델타 분석에서는 잡아내려는 것.
+        full_ids = set(plain_by_id) | set(hyde_by_id)
+        _complete_pool(plain_by_id, full_ids, active_query)
+        _complete_pool(hyde_by_id, full_ids, hyde_text)
+        meta_by_id = {**plain_by_id, **hyde_by_id}
+
+    deltas = []
+    for cid in full_ids:
+        base, new = base_fn(cid), new_fn(cid)
+        deltas.append((cid, new - base, base, new))
+    deltas.sort(key=lambda t: t[1], reverse=True)
+
+    def _delta_rows(items):
+        out = []
+        for cid, d, base, new in items:
+            h = meta_by_id[cid]
+            out.append({"청크": _name(h), "vanilla": round(base, 3), comparison.split(" vs ")[0]: round(new, 3),
+                        "Δ": round(d, 3)})
+        return out
+
+    dcol1, dcol2 = st.columns(2)
+    with dcol1:
+        st.markdown("**🔼 상승 Top 10** (graph/HyDE 덕분에 새로 부각된 과목)")
+        st.dataframe(_delta_rows(deltas[:10]), use_container_width=True, hide_index=True)
+    with dcol2:
+        st.markdown("**🔽 하락 Top 10** (graph/HyDE 적용 후 밀려난 과목)")
+        st.dataframe(_delta_rows(list(reversed(deltas[-10:]))), use_container_width=True, hide_index=True)
+
+    # ==== 3) 그래프(구조적 인접 / 키워드 공유) 시각화 ====
+    st.divider()
+    st.subheader("3. 그래프 — graph-rag가 실제로 후보로 삼은 청크들 사이의 edge")
     st.caption("HyDE 적용 전(순정 질문) 기준의 graph-rag 후보로 고정해서 보여줍니다 — 구조/키워드 edge 자체는 "
                "HyDE로 바뀌지 않고 '어떤 청크가 후보인지'만 바뀌기 때문입니다. "
                "dense top-k만이 아니라, 그래프로 새로 끌려온 청크(vanilla top-k 밖이었던 것)도 노드로 포함합니다 "
@@ -230,20 +296,25 @@ if active_query:
     net = Network(height="700px", width="100%", directed=False, notebook=False, cdn_resources="in_line")
     net.barnes_hut()
 
+    n_search_hits = 0
     for cid in node_ids:
         h = plain_by_id[cid]
         is_frontier = cid not in vanilla_ids  # dense top-k 밖이었는데 그래프 덕분에 들어온 노드
         title_text = (h.get("title") or h["source"]).strip()
-        badge = "✨ " if is_frontier else ""
+        is_hit = _matches_search(title_text) or _matches_search(h["source"])
+        n_search_hits += is_hit
+        badge = ("🔎 " if is_hit else "") + ("✨ " if is_frontier else "")
         gscore = h["graph_score"]
         label = f"{badge}{title_text[:22]}\nvanilla {h['score']:.3f} → graph {gscore:.3f}"
         tooltip = (f"<b>{html_escape(title_text)}</b><br>{html_escape(h['source'])} p.{h['page']}"
                    f"<br>vanilla 유사도(그래프 적용 전): {h['score']:.3f}"
                    f"<br>graph 점수(재점수화 후): {gscore:.3f}"
                    + ("<br><b>✨ dense top-k 밖에서 그래프로 새로 끌려옴</b>" if is_frontier else ""))
+        border_color = "#F1C40F" if is_hit else _node_border(cid)  # 검색 일치 시 금색으로 덮어씀
         net.add_node(cid, label=label, title=tooltip, shape="box",
-                     color={"background": _score_to_color(h["score"]), "border": _node_border(cid)},
-                     borderWidth=3, borderWidthSelected=5, shapeProperties={"borderDashes": is_frontier},
+                     color={"background": _score_to_color(h["score"]), "border": border_color},
+                     borderWidth=5 if is_hit else 3, borderWidthSelected=6,
+                     shapeProperties={"borderDashes": is_frontier},
                      font={"multi": True, "align": "center"})
 
     # edge에 적는 숫자는 항상 "그래프를 돌리기 전, 순정 dense 검색에서의" 질문-청크 유사도다
@@ -265,10 +336,11 @@ if active_query:
                      title=f"[키워드 공유: {html_escape(kw_text)}]<br>vanilla 유사도(그래프 적용 전) {sa:.3f} / {sb:.3f}")
 
     st.caption(
-        f"노드 {len(node_ids)}개 (그중 ✨ 신규 {len(node_ids - vanilla_ids)}개) · "
+        f"노드 {len(node_ids)}개 (그중 ✨ 신규 {len(node_ids - vanilla_ids)}개"
+        + (f", 🔎 검색 일치 {n_search_hits}개" if search_term.strip() else "") + ") · "
         f"구조적 edge {len(struct_pairs)}개(━ 회색) · 키워드 edge {len(kw_pairs)}개(┅ 주황) · "
         f"edge 라벨 = 두 청크 각각의 **vanilla(그래프 적용 전) 유사도**. "
-        f"노드 테두리색: 회색=구조 연결만 / 주황=키워드 연결만 / 보라=둘 다. "
+        f"노드 테두리색: 회색=구조 연결만 / 주황=키워드 연결만 / 보라=둘 다 / **금색=검색 일치**. "
         f"노드 라벨은 'vanilla 점수 → graph 점수'."
     )
     st.components.v1.html(net.generate_html(notebook=False), height=730, scrolling=True)
