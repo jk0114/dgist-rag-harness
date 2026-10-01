@@ -20,6 +20,7 @@ from pyvis.network import Network
 from step2_retrieval.core import embedder, sanitize
 from step2_retrieval import graph_rag as gr
 from step2_retrieval import hyde
+from step3_eval.course_names import course_name_from_source
 
 html_escape = html_mod.escape
 
@@ -52,9 +53,15 @@ def _score_to_color(score: float, lo: float = 0.3, hi: float = 0.75) -> str:
     return f"rgb({r},{g},{b})"
 
 
+def _display_title(h: dict) -> str:
+    """강의계획서는 실제 과목명을, 그 외(매뉴얼 등)는 청크 제목(그 페이지 첫 줄)을 보여준다.
+    title 메타데이터는 ingest.py가 "그 페이지의 첫 줄"로 채워서, 2페이지 이후는 주차별
+    강의계획 중간 줄("10주차:...")처럼 과목명이 아닌 게 뜰 수 있다 — 과목명이 파싱되면 그걸 우선한다."""
+    return course_name_from_source(h.get("source", "")) or (h.get("title") or h["source"]).strip()
+
+
 def _name(h: dict) -> str:
-    t = (h.get("title") or h["source"]).strip()
-    return f"{t} (p.{h['page']})"
+    return f"{_display_title(h)} (p.{h['page']})"
 
 
 def _matches_search(text: str) -> bool:
@@ -68,22 +75,29 @@ def _complete_pool(pool_by_id: dict, want_ids: set[str], embed_text: str):
     유사도를 계산해(graph_rag._fetch_by_ids 재사용) 채워 넣는다 — 그래야 "이 파이프라인은
     이 청크를 원래 못 찾았다"가 아니라 "이 청크에 대한 점수는 실제로 이거다"를 4개 다
     비교할 수 있다. graph_score는 이웃(그래프 상 연결된 청크)의 score로 계산하는데, 이웃도
-    풀에 없으면 한 단계 더 가져와서 채운다."""
+    풀에 없으면 한 단계 더 가져와서 채운다.
+
+    주의: "cid가 pool_by_id에 있다"만으로 완료됐다고 보면 안 된다 — 다른 호출(예: 1번 섹션의
+    top-k 채우기)에서 어떤 cid가 '다른 청크의 이웃'으로만 fetch돼서 score는 있어도 graph_score는
+    없는 채로 이미 들어와 있을 수 있다. 그러면 다음 호출에서 "이미 있으니 missing 아님"으로
+    건너뛰어서 graph_score가 영원히 안 채워진다(실제로 겪은 KeyError). 그래서 graph_score
+    유무로 완료 여부를 따로 판단한다."""
     graph_obj = gr.get_graph()
     missing = [cid for cid in want_ids if cid not in pool_by_id]
-    if not missing:
-        return
-    q_vec = embedder("cpu").encode([sanitize(embed_text)], normalize_embeddings=True).tolist()[0]
-    pool_by_id.update(gr._fetch_by_ids(missing, q_vec))
-    neighbor_missing = set()
-    for cid in missing:
-        neighbor_missing |= graph_obj.neighbors(cid) - pool_by_id.keys()
-    if neighbor_missing:
-        pool_by_id.update(gr._fetch_by_ids(list(neighbor_missing), q_vec))
-    for cid in missing:
+    if missing:
+        q_vec = embedder("cpu").encode([sanitize(embed_text)], normalize_embeddings=True).tolist()[0]
+        pool_by_id.update(gr._fetch_by_ids(missing, q_vec))
+        neighbor_missing = set()
+        for cid in missing:
+            neighbor_missing |= graph_obj.neighbors(cid) - pool_by_id.keys()
+        if neighbor_missing:
+            pool_by_id.update(gr._fetch_by_ids(list(neighbor_missing), q_vec))
+
+    needs_score = [cid for cid in want_ids if cid in pool_by_id and "graph_score" not in pool_by_id[cid]]
+    for cid in needs_score:
         h = pool_by_id[cid]
         neighbor_ids = graph_obj.neighbors(cid) & pool_by_id.keys()
-        neighbor_scores = [pool_by_id[n]["score"] for n in neighbor_ids]
+        neighbor_scores = [pool_by_id[n]["score"] for n in neighbor_ids if "score" in pool_by_id[n]]
         boost = max(neighbor_scores) if neighbor_scores else h["score"]
         h["graph_score"] = gr.ALPHA * h["score"] + (1 - gr.ALPHA) * boost
 
@@ -154,7 +168,7 @@ if active_query:
 
     def _label(cid):
         h = meta_by_id[cid]
-        return f"{(h.get('title') or h['source'])[:24]} (p.{h['page']})"
+        return f"{_display_title(h)[:24]} (p.{h['page']})"
 
     labels = [_label(cid) for cid in union_ids]
 
@@ -300,7 +314,7 @@ if active_query:
     for cid in node_ids:
         h = plain_by_id[cid]
         is_frontier = cid not in vanilla_ids  # dense top-k 밖이었는데 그래프 덕분에 들어온 노드
-        title_text = (h.get("title") or h["source"]).strip()
+        title_text = _display_title(h)
         is_hit = _matches_search(title_text) or _matches_search(h["source"])
         n_search_hits += is_hit
         badge = ("🔎 " if is_hit else "") + ("✨ " if is_frontier else "")
